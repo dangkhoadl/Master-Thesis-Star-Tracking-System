@@ -88,9 +88,9 @@ vector<int> firstPass(const vector<vector<int>> &Image, vector<vector<int>> &lbI
 				int min = prevAbove < prevLeft ? prevAbove : prevLeft;
 				int max = prevAbove > prevLeft ? prevAbove : prevLeft;
 				if (max != MAX)
-					set[max] = min;
+					set[max] = find(min, set);
 				else
-					set[min] = min;
+					set[min] = find(min, set);
 				lbImage[i][j] = min;
 
 				//Update data
