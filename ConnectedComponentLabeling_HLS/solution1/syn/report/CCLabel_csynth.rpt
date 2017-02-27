@@ -1,0 +1,144 @@
+
+
+================================================================
+== Vivado HLS Report for 'CCLabel'
+================================================================
+* Date:           Mon Feb 27 17:20:33 2017
+
+* Version:        2014.4 (Build 1071461 on Tue Nov 18 16:42:57 PM 2014)
+* Project:        ConnectedComponentLabeling_HLS
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +---------+-------+----------+------------+
+    |  Clock  | Target| Estimated| Uncertainty|
+    +---------+-------+----------+------------+
+    |default  |  10.00|      8.67|        1.25|
+    +---------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  131586|  131586|  131587|  131587|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------+--------------------+--------+--------+--------+--------+---------+
+        |                              |                    |     Latency     |     Interval    | Pipeline|
+        |           Instance           |       Module       |   min  |   max  |   min  |   max  |   Type  |
+        +------------------------------+--------------------+--------+--------+--------+--------+---------+
+        |grp_CCLabel_preProcess_fu_13  |CCLabel_preProcess  |  131585|  131585|  131585|  131585|   none  |
+        +------------------------------+--------------------+--------+--------+--------+--------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|Expression       |        -|      -|       -|      -|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|    5408|  19694|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|      7|
+|Register         |        -|      -|       3|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|    5411|  19701|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|       5|     37|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +------------------------------+--------------------+---------+-------+------+-------+
+    |           Instance           |       Module       | BRAM_18K| DSP48E|  FF  |  LUT  |
+    +------------------------------+--------------------+---------+-------+------+-------+
+    |grp_CCLabel_preProcess_fu_13  |CCLabel_preProcess  |        0|      0|  5408|  19694|
+    +------------------------------+--------------------+---------+-------+------+-------+
+    |Total                         |                    |        0|      0|  5408|  19694|
+    +------------------------------+--------------------+---------+-------+------+-------+
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +-------------+----+-----------+-----+-----------+
+    |     Name    | LUT| Input Size| Bits| Total Bits|
+    +-------------+----+-----------+-----+-----------+
+    |Image_r_ce0  |   1|          2|    1|          2|
+    |Image_r_ce1  |   1|          2|    1|          2|
+    |ap_NS_fsm    |   1|          3|    1|          3|
+    |lbImage_ce0  |   1|          2|    1|          2|
+    |lbImage_ce1  |   1|          2|    1|          2|
+    |lbImage_we0  |   1|          2|    1|          2|
+    |lbImage_we1  |   1|          2|    1|          2|
+    +-------------+----+-----------+-----+-----------+
+    |Total        |   7|         15|    7|         15|
+    +-------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------------------+---+----+-----+-----------+
+    |                        Name                        | FF| LUT| Bits| Const Bits|
+    +----------------------------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                                           |  2|   0|    2|          0|
+    |grp_CCLabel_preProcess_fu_13_ap_start_ap_start_reg  |  1|   0|    1|          0|
+    +----------------------------------------------------+---+----+-----+-----------+
+    |Total                                               |  3|   0|    3|          0|
+    +----------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------+-----+-----+------------+--------------+--------------+
+|     RTL Ports    | Dir | Bits|  Protocol  | Source Object|    C Type    |
++------------------+-----+-----+------------+--------------+--------------+
+|ap_clk            |  in |    1| ap_ctrl_hs |    CCLabel   | return value |
+|ap_rst            |  in |    1| ap_ctrl_hs |    CCLabel   | return value |
+|ap_start          |  in |    1| ap_ctrl_hs |    CCLabel   | return value |
+|ap_done           | out |    1| ap_ctrl_hs |    CCLabel   | return value |
+|ap_idle           | out |    1| ap_ctrl_hs |    CCLabel   | return value |
+|ap_ready          | out |    1| ap_ctrl_hs |    CCLabel   | return value |
+|Image_r_address0  | out |   18|  ap_memory |    Image_r   |     array    |
+|Image_r_ce0       | out |    1|  ap_memory |    Image_r   |     array    |
+|Image_r_q0        |  in |   32|  ap_memory |    Image_r   |     array    |
+|Image_r_address1  | out |   18|  ap_memory |    Image_r   |     array    |
+|Image_r_ce1       | out |    1|  ap_memory |    Image_r   |     array    |
+|Image_r_q1        |  in |   32|  ap_memory |    Image_r   |     array    |
+|lbImage_address0  | out |   18|  ap_memory |    lbImage   |     array    |
+|lbImage_ce0       | out |    1|  ap_memory |    lbImage   |     array    |
+|lbImage_we0       | out |    1|  ap_memory |    lbImage   |     array    |
+|lbImage_d0        | out |   32|  ap_memory |    lbImage   |     array    |
+|lbImage_address1  | out |   18|  ap_memory |    lbImage   |     array    |
+|lbImage_ce1       | out |    1|  ap_memory |    lbImage   |     array    |
+|lbImage_we1       | out |    1|  ap_memory |    lbImage   |     array    |
+|lbImage_d1        | out |   32|  ap_memory |    lbImage   |     array    |
++------------------+-----+-----+------------+--------------+--------------+
+

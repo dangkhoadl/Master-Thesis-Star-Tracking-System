@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog>
+        <logs message="@E [SIM-1] CSim failed with errors.&#xD;&#xA;4&#xD;&#xA;    while executing&#xD;&#xA;&quot;csim_design -quiet&quot;&#xD;&#xA;    (file &quot;D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/csim.tcl&quot; line 8)" projectName="ConnectedComponentLabeling_HLS" solutionName="solution1" date="2017-02-27T17:21:29.627+0800"/>
+        <logs message="@E Simulation failed: SIGSEGV." projectName="ConnectedComponentLabeling_HLS" solutionName="solution1" date="2017-02-27T17:21:29.608+0800"/>
+      </csimLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="@W [SCHED-65] Unable to satisfy pipeline directive: Function contains subloop(s) not being unrolled." projectName="ConnectedComponentLabeling_HLS" solutionName="solution1" date="2017-02-27T17:20:17.679+0800" type="Warning"/>
+        <logs message="@W [SYN-107] Renaming port name 'CCLabel/Image' to 'CCLabel/Image_r' to avoid conflict or HDL keywords." projectName="ConnectedComponentLabeling_HLS" solutionName="solution1" date="2017-02-27T17:20:10.824+0800" type="Warning"/>
+        <logs message="@W [XFORM-504] Stop unrolling loop 'Loop-1' (ConnectedComponentLabeling_HLS/core.cpp:13) in function 'preProcess' because it may cause large runtime and excessive memory usage due to increase in code size. Please avoid unrolling the loop or form sub-functions for code in the loop body." projectName="ConnectedComponentLabeling_HLS" solutionName="solution1" date="2017-02-27T17:16:19.387+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
