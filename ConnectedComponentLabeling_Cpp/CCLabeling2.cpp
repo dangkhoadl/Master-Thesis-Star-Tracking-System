@@ -6,21 +6,18 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-#define IMG_HEIGHT 512
-#define IMG_WIDTH 512
+#define IMG_HEIGHT 8
+#define IMG_WIDTH 8
 #define THRESHOLD 70 
+#define MAX 999
 
-vector<vector<int>> Image(IMG_HEIGHT, vector<int>(IMG_WIDTH, 0));
-vector<vector<int>> boolImage(IMG_HEIGHT, vector<int>(IMG_WIDTH, 0));
-vector<int> set(1,0);
-int find(int i) {
+int find(int i, const vector<int> &set) {
 	int temp = i;
-	while (temp != set[i]) {
-		temp = set[i];
+	while (temp != set[temp]) {
+		temp = set[temp];
 	}
 	return temp;
 }
-
 
 struct starStruct {
 	bool status;
@@ -28,55 +25,58 @@ struct starStruct {
 	int x;
 	int y;
 };
-vector<starStruct> starData(1, { false, 0,0,0 });
 
 struct centroid {
+	int root;
 	float x;
 	float y;
 };
-vector<centroid> centroidData;
 
-
-void test() {
+void test(vector<vector<int>> &lbImage) {
 	for (int i = 0; i < IMG_HEIGHT; ++i) {
 		for (int j = 0; j < IMG_WIDTH; ++j) {
-			printf("%2d ", boolImage[i][j]);
+			printf("%2d ", lbImage[i][j]);
 		}
 		printf("\n");
 	}
 }
-void readImage(FILE *&fileIn) {
-	for (int i = 0; i < IMG_HEIGHT; ++i) {
+
+vector<vector<int>> readImage(FILE *&fileIn) {
+	vector<vector<int>> Image(IMG_HEIGHT, vector<int>(IMG_WIDTH, 0));
+	for (int i = 0; i < IMG_HEIGHT; ++i)
 		for (int j = 0; j < IMG_WIDTH; ++j) {
 			fscanf(fileIn, "%d", &Image[i][j]);
 		}
-	}
 	fclose(fileIn);
+	return Image;
 }
 
-void preProcess() {
-	for (int i = 0; i < IMG_HEIGHT; ++i) {
+vector<vector<int>> preProcess(const vector<vector<int>> &Image) {
+	vector<vector<int>> lbImage(IMG_HEIGHT, vector<int>(IMG_WIDTH, 0));
+	for (int i = 0; i < IMG_HEIGHT; ++i)
 		for (int j = 0; j < IMG_WIDTH; ++j) {
 			if (Image[i][j] < THRESHOLD)
-				boolImage[i][j] = 0;
+				lbImage[i][j] = 0;
 			else
-				boolImage[i][j] = 1;
+				lbImage[i][j] = 1;
 		}
-	}
+	return lbImage;
 }
 
-void firstPass() {
+vector<int> firstPass(const vector<vector<int>> &Image, vector<vector<int>> &lbImage, vector<starStruct> &starData) {
+	vector<int> set(1, 0);
+	starData.resize(1, { false, 0,0,0 });
 	int label = 0;
-	for (int i = 0; i < IMG_HEIGHT; ++i) {
+	for (int i = 0; i < IMG_HEIGHT; ++i)
 		for (int j = 0; j < IMG_WIDTH; ++j) {
-			if (boolImage[i][j] == 0)
+			if (lbImage[i][j] == 0)
 				continue;
 
-			int prevAbove = (i != 0 && boolImage[i - 1][j] != 0) ? boolImage[i - 1][j] : 999;
-			int prevLeft = (j != 0 && boolImage[i][j - 1] != 0) ? boolImage[i][j - 1] : 999;
+			int prevAbove = (i != 0 && lbImage[i - 1][j] != 0) ? lbImage[i - 1][j] : MAX;
+			int prevLeft = (j != 0 && lbImage[i][j - 1] != 0) ? lbImage[i][j - 1] : MAX;
 
-			if (prevAbove == 999 && prevLeft == 999) {
-				boolImage[i][j] = ++label;
+			if (prevAbove == MAX && prevLeft == MAX) {
+				lbImage[i][j] = ++label;
 				set.push_back(label);
 
 				//
@@ -87,11 +87,11 @@ void firstPass() {
 				//Joint Set
 				int min = prevAbove < prevLeft ? prevAbove : prevLeft;
 				int max = prevAbove > prevLeft ? prevAbove : prevLeft;
-				if (max != 999)
+				if (max != MAX)
 					set[max] = min;
 				else
 					set[min] = min;
-				boolImage[i][j] = min;
+				lbImage[i][j] = min;
 
 				//Update data
 				starData[min].totalIntensity += Image[i][j];
@@ -99,45 +99,46 @@ void firstPass() {
 				starData[min].y += j * Image[i][j];
 			}
 		}
-	}
+	return set;
 }
 
-void calCentroid() {
-	for (int i = 1; i < starData.size(); ++i) {
-		if (set[i] != i) {
-			starData[i].totalIntensity += starData[find(i)].totalIntensity;
-			starData[i].x += starData[find(i)].x;
-			starData[i].y += starData[find(i)].y;
+vector<centroid> calCentroid(const vector<vector<int>> &lbImage, const vector<int> &set, vector<starStruct> &starData) {
+	vector<centroid> centroidData;
+	for (int i = 1; i < starData.size(); ++i) if (set[i] != i) {
+		int root = find(i, set);
+		starData[root].totalIntensity += starData[i].totalIntensity;
+		starData[root].x += starData[i].x;
+		starData[root].y += starData[i].y;
 
-			starData[find(i)].status = false;
-		}
+		starData[i].status = false;
 	}
 
 	//cal
-	for (int i = 1; i < starData.size(); ++i) {
-		if (starData[i].status) {
-			centroid temp;
-			temp.x = (float)starData[i].x / starData[i].totalIntensity;
-			temp.y = (float)starData[i].y / starData[i].totalIntensity;
+	for (int i = 1; i < starData.size(); ++i) if (starData[i].status) {
+		centroid temp;
+		temp.root = i;
+		temp.x = (float)starData[i].x / starData[i].totalIntensity;
+		temp.y = (float)starData[i].y / starData[i].totalIntensity;
 
-			centroidData.push_back(temp);
-		}
+		centroidData.push_back(temp);
 	}
+
+	return centroidData;
 }
 
-void secondPass() {
+void secondPass(vector<vector<int>> &lbImage, const vector<int> &set) {
 	for (int i = 0; i < IMG_HEIGHT; ++i) {
 		for (int j = 0; j < IMG_WIDTH; ++j) {
-			if (boolImage[i][j] == 0)
+			if (lbImage[i][j] == 0)
 				continue;
-			boolImage[i][j] = find(boolImage[i][j]);
+			lbImage[i][j] = find(lbImage[i][j], set);
 		}
 	}
 }
 
-void printResult() {
+void printResult(const vector<centroid> &centroidData) {
 	for (int i = 0; i < centroidData.size(); ++i) {
-		printf("Star[%d]: x = %f, y = %f\n", i + 1, centroidData[i].x, centroidData[i].y);
+		printf("Star[%d]: root = %d, x = %f, y = %f\n", i + 1, centroidData[i].root, centroidData[i].x, centroidData[i].y);
 	}
 }
 
@@ -153,16 +154,16 @@ int main(int agrc, char *argv[]) {
 		}
 
 		//process
-		readImage(fileIn);
-		preProcess();
-		firstPass();
-		//test();
-		calCentroid();
-		secondPass();
+		vector<vector<int>> Image = readImage(fileIn);
+		vector<vector<int>> lbImage = preProcess(Image);
+		vector<starStruct> starData; vector<int> set = firstPass(Image, lbImage, starData);
+		test(lbImage);
+		vector<centroid> centroidData = calCentroid(lbImage, set, starData);
+		secondPass(lbImage, set);
 		printf("\n\n\n");
-		//test();
+		test(lbImage);
 		printf("\n\n\n");
-		printResult();
+		printResult(centroidData);
 	}
 	else {
 		const char* inputProgram(argv[0]);
