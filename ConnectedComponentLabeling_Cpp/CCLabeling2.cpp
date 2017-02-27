@@ -6,13 +6,20 @@
 #include <vector>
 #include <iostream>
 using namespace std;
-#define IMG_HEIGHT 4
-#define IMG_WIDTH 4
+#define IMG_HEIGHT 512
+#define IMG_WIDTH 512
 #define THRESHOLD 70 
 
 vector<vector<int>> Image(IMG_HEIGHT, vector<int>(IMG_WIDTH, 0));
 vector<vector<int>> boolImage(IMG_HEIGHT, vector<int>(IMG_WIDTH, 0));
-vector<int> set(1, 0);
+vector<int> set(1,0);
+int find(int i) {
+	int temp = i;
+	while (temp != set[i]) {
+		temp = set[i];
+	}
+	return temp;
+}
 
 
 struct starStruct {
@@ -98,11 +105,11 @@ void firstPass() {
 void calCentroid() {
 	for (int i = 1; i < starData.size(); ++i) {
 		if (set[i] != i) {
-			starData[i].totalIntensity += starData[set[i]].totalIntensity;
-			starData[i].x += starData[set[i]].x;
-			starData[i].y += starData[set[i]].y;
+			starData[i].totalIntensity += starData[find(i)].totalIntensity;
+			starData[i].x += starData[find(i)].x;
+			starData[i].y += starData[find(i)].y;
 
-			starData[set[i]].status = false;
+			starData[find(i)].status = false;
 		}
 	}
 
@@ -123,7 +130,7 @@ void secondPass() {
 		for (int j = 0; j < IMG_WIDTH; ++j) {
 			if (boolImage[i][j] == 0)
 				continue;
-			boolImage[i][j] = set[boolImage[i][j]];
+			boolImage[i][j] = find(boolImage[i][j]);
 		}
 	}
 }
@@ -149,11 +156,11 @@ int main(int agrc, char *argv[]) {
 		readImage(fileIn);
 		preProcess();
 		firstPass();
-		test();
+		//test();
 		calCentroid();
 		secondPass();
 		printf("\n\n\n");
-		test();
+		//test();
 		printf("\n\n\n");
 		printResult();
 	}
