@@ -39,6 +39,7 @@ void test(vector<vector<int>> &lbImage) {
 		}
 		printf("\n");
 	}
+	printf("\n\n");
 }
 
 vector<vector<int>> readImage(FILE *&fileIn) {
@@ -102,7 +103,7 @@ vector<int> firstPass(const vector<vector<int>> &Image, vector<vector<int>> &lbI
 	return set;
 }
 
-vector<centroid> calCentroid(const vector<vector<int>> &lbImage, const vector<int> &set, vector<starStruct> &starData) {
+vector<centroid> calCentroid(const vector<int> &set, vector<starStruct> &starData) {
 	vector<centroid> centroidData;
 	for (int i = 1; i < starData.size(); ++i) if (set[i] != i) {
 		int root = find(i, set);
@@ -156,13 +157,13 @@ int main(int agrc, char *argv[]) {
 		//process
 		vector<vector<int>> Image = readImage(fileIn);
 		vector<vector<int>> lbImage = preProcess(Image);
+		test(lbImage);
 		vector<starStruct> starData; vector<int> set = firstPass(Image, lbImage, starData);
 		test(lbImage);
-		vector<centroid> centroidData = calCentroid(lbImage, set, starData);
+		
+		vector<centroid> centroidData = calCentroid(set, starData);
 		secondPass(lbImage, set);
-		printf("\n\n\n");
 		test(lbImage);
-		printf("\n\n\n");
 		printResult(centroidData);
 	}
 	else {

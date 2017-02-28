@@ -18,7 +18,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir I \
     corename Image_r \
     op interface \
-    ports { Image_r_address0 { O 18 vector } Image_r_ce0 { O 1 bit } Image_r_q0 { I 32 vector } Image_r_address1 { O 18 vector } Image_r_ce1 { O 1 bit } Image_r_q1 { I 32 vector } } \
+    ports { Image_r_address0 { O 6 vector } Image_r_ce0 { O 1 bit } Image_r_q0 { I 32 vector } Image_r_address1 { O 6 vector } Image_r_ce1 { O 1 bit } Image_r_q1 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'Image_r'"
@@ -37,7 +37,7 @@ eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     dir O \
     corename lbImage \
     op interface \
-    ports { lbImage_address0 { O 18 vector } lbImage_ce0 { O 1 bit } lbImage_we0 { O 1 bit } lbImage_d0 { O 32 vector } lbImage_address1 { O 18 vector } lbImage_ce1 { O 1 bit } lbImage_we1 { O 1 bit } lbImage_d1 { O 32 vector } } \
+    ports { lbImage_address0 { O 6 vector } lbImage_ce0 { O 1 bit } lbImage_we0 { O 1 bit } lbImage_d0 { O 32 vector } lbImage_address1 { O 6 vector } lbImage_ce1 { O 1 bit } lbImage_we1 { O 1 bit } lbImage_d1 { O 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'lbImage'"

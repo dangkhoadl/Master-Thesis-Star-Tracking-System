@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'CCLabel'" level="0">
-<item name = "Date">Mon Feb 27 17:20:33 2017
+<item name = "Date">Tue Feb 28 17:30:25 2017
 </item>
 <item name = "Version">2014.4 (Build 1071461 on Tue Nov 18 16:42:57 PM 2014)</item>
 <item name = "Project">ConnectedComponentLabeling_HLS</item>
@@ -24,14 +24,16 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">131586, 131586, 131587, 131587, none</column>
+<column name="">?, ?, ?, ?, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_CCLabel_preProcess_fu_13">CCLabel_preProcess, 131585, 131585, 131585, 131585, none</column>
+<column name="grp_CCLabel_calCentroid_fu_35">CCLabel_calCentroid, ?, ?, ?, ?, none</column>
+<column name="grp_CCLabel_firstPass_fu_56">CCLabel_firstPass, ?, ?, ?, ?, none</column>
+<column name="grp_CCLabel_preProcess_fu_74">CCLabel_preProcess, 32, 32, 32, 32, function</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -49,19 +51,21 @@
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="Expression">-, -, -, -</column>
 <column name="FIFO">-, -, -, -</column>
-<column name="Instance">-, -, 5408, 19694</column>
+<column name="Instance">-, 4, 3553, 5671</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 7</column>
-<column name="Register">-, -, 3, -</column>
+<column name="Multiplexer">-, -, -, 295</column>
+<column name="Register">-, -, 71, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, 5, 37</specialColumn>
+<specialColumn name="Utilization (%)">0, 1, 3, 11</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="6">Instance, Module, BRAM_18K, DSP48E, FF, LUT</keys>
-<column name="grp_CCLabel_preProcess_fu_13">CCLabel_preProcess, 0, 0, 5408, 19694</column>
+<column name="grp_CCLabel_calCentroid_fu_35">CCLabel_calCentroid, 0, 0, 3073, 4240</column>
+<column name="grp_CCLabel_firstPass_fu_56">CCLabel_firstPass, 0, 4, 446, 1047</column>
+<column name="grp_CCLabel_preProcess_fu_74">CCLabel_preProcess, 0, 0, 34, 384</column>
 </table>
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
@@ -78,19 +82,54 @@
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="Image_r_ce0">1, 2, 1, 2</column>
+<column name="Image_r_address0">6, 3, 6, 18</column>
+<column name="Image_r_ce0">1, 3, 1, 3</column>
 <column name="Image_r_ce1">1, 2, 1, 2</column>
-<column name="ap_NS_fsm">1, 3, 1, 3</column>
-<column name="lbImage_ce0">1, 2, 1, 2</column>
-<column name="lbImage_ce1">1, 2, 1, 2</column>
-<column name="lbImage_we0">1, 2, 1, 2</column>
-<column name="lbImage_we1">1, 2, 1, 2</column>
+<column name="ap_NS_fsm">66, 38, 1, 38</column>
+<column name="centroidData_root_ce0">1, 2, 1, 2</column>
+<column name="centroidData_root_we0">1, 2, 1, 2</column>
+<column name="centroidData_x_ce0">1, 2, 1, 2</column>
+<column name="centroidData_x_we0">1, 2, 1, 2</column>
+<column name="centroidData_y_ce0">1, 2, 1, 2</column>
+<column name="centroidData_y_we0">1, 2, 1, 2</column>
+<column name="lbImage_address0">6, 3, 6, 18</column>
+<column name="lbImage_address1">6, 3, 6, 18</column>
+<column name="lbImage_ce0">1, 3, 1, 3</column>
+<column name="lbImage_ce1">1, 3, 1, 3</column>
+<column name="lbImage_d0">32, 3, 32, 96</column>
+<column name="lbImage_d1">32, 3, 32, 96</column>
+<column name="lbImage_we0">1, 3, 1, 3</column>
+<column name="lbImage_we1">1, 3, 1, 3</column>
+<column name="set_address0">5, 3, 5, 15</column>
+<column name="set_ce0">1, 3, 1, 3</column>
+<column name="set_we0">1, 2, 1, 2</column>
+<column name="starData_status_address0">5, 3, 5, 15</column>
+<column name="starData_status_ce0">1, 3, 1, 3</column>
+<column name="starData_status_d0">1, 3, 1, 3</column>
+<column name="starData_status_we0">1, 3, 1, 3</column>
+<column name="starData_totalIntensity_address0">5, 3, 5, 15</column>
+<column name="starData_totalIntensity_ce0">1, 3, 1, 3</column>
+<column name="starData_totalIntensity_ce1">1, 2, 1, 2</column>
+<column name="starData_totalIntensity_d0">32, 3, 32, 96</column>
+<column name="starData_totalIntensity_we0">1, 3, 1, 3</column>
+<column name="starData_x_address0">5, 3, 5, 15</column>
+<column name="starData_x_ce0">1, 3, 1, 3</column>
+<column name="starData_x_ce1">1, 2, 1, 2</column>
+<column name="starData_x_d0">32, 3, 32, 96</column>
+<column name="starData_x_we0">1, 3, 1, 3</column>
+<column name="starData_y_address0">5, 3, 5, 15</column>
+<column name="starData_y_ce0">1, 3, 1, 3</column>
+<column name="starData_y_ce1">1, 2, 1, 2</column>
+<column name="starData_y_d0">32, 3, 32, 96</column>
+<column name="starData_y_we0">1, 3, 1, 3</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">2, 0, 2, 0</column>
-<column name="grp_CCLabel_preProcess_fu_13_ap_start_ap_start_reg">1, 0, 1, 0</column>
+<column name="ap_CS_fsm">37, 0, 37, 0</column>
+<column name="grp_CCLabel_calCentroid_fu_35_ap_start_ap_start_reg">1, 0, 1, 0</column>
+<column name="grp_CCLabel_firstPass_fu_56_ap_start_ap_start_reg">1, 0, 1, 0</column>
+<column name="setCount_reg_82">32, 0, 32, 0</column>
 </table>
 </item>
 </section>
@@ -106,20 +145,69 @@
 <column name="ap_done">out, 1, ap_ctrl_hs, CCLabel, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, CCLabel, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, CCLabel, return value</column>
-<column name="Image_r_address0">out, 18, ap_memory, Image_r, array</column>
+<column name="ap_return">out, 32, ap_ctrl_hs, CCLabel, return value</column>
+<column name="Image_r_address0">out, 6, ap_memory, Image_r, array</column>
 <column name="Image_r_ce0">out, 1, ap_memory, Image_r, array</column>
 <column name="Image_r_q0">in, 32, ap_memory, Image_r, array</column>
-<column name="Image_r_address1">out, 18, ap_memory, Image_r, array</column>
+<column name="Image_r_address1">out, 6, ap_memory, Image_r, array</column>
 <column name="Image_r_ce1">out, 1, ap_memory, Image_r, array</column>
 <column name="Image_r_q1">in, 32, ap_memory, Image_r, array</column>
-<column name="lbImage_address0">out, 18, ap_memory, lbImage, array</column>
+<column name="lbImage_address0">out, 6, ap_memory, lbImage, array</column>
 <column name="lbImage_ce0">out, 1, ap_memory, lbImage, array</column>
 <column name="lbImage_we0">out, 1, ap_memory, lbImage, array</column>
 <column name="lbImage_d0">out, 32, ap_memory, lbImage, array</column>
-<column name="lbImage_address1">out, 18, ap_memory, lbImage, array</column>
+<column name="lbImage_q0">in, 32, ap_memory, lbImage, array</column>
+<column name="lbImage_address1">out, 6, ap_memory, lbImage, array</column>
 <column name="lbImage_ce1">out, 1, ap_memory, lbImage, array</column>
 <column name="lbImage_we1">out, 1, ap_memory, lbImage, array</column>
 <column name="lbImage_d1">out, 32, ap_memory, lbImage, array</column>
+<column name="lbImage_q1">in, 32, ap_memory, lbImage, array</column>
+<column name="starData_status_address0">out, 5, ap_memory, starData_status, array</column>
+<column name="starData_status_ce0">out, 1, ap_memory, starData_status, array</column>
+<column name="starData_status_we0">out, 1, ap_memory, starData_status, array</column>
+<column name="starData_status_d0">out, 1, ap_memory, starData_status, array</column>
+<column name="starData_status_q0">in, 1, ap_memory, starData_status, array</column>
+<column name="starData_totalIntensity_address0">out, 5, ap_memory, starData_totalIntensity, array</column>
+<column name="starData_totalIntensity_ce0">out, 1, ap_memory, starData_totalIntensity, array</column>
+<column name="starData_totalIntensity_we0">out, 1, ap_memory, starData_totalIntensity, array</column>
+<column name="starData_totalIntensity_d0">out, 32, ap_memory, starData_totalIntensity, array</column>
+<column name="starData_totalIntensity_q0">in, 32, ap_memory, starData_totalIntensity, array</column>
+<column name="starData_totalIntensity_address1">out, 5, ap_memory, starData_totalIntensity, array</column>
+<column name="starData_totalIntensity_ce1">out, 1, ap_memory, starData_totalIntensity, array</column>
+<column name="starData_totalIntensity_q1">in, 32, ap_memory, starData_totalIntensity, array</column>
+<column name="starData_x_address0">out, 5, ap_memory, starData_x, array</column>
+<column name="starData_x_ce0">out, 1, ap_memory, starData_x, array</column>
+<column name="starData_x_we0">out, 1, ap_memory, starData_x, array</column>
+<column name="starData_x_d0">out, 32, ap_memory, starData_x, array</column>
+<column name="starData_x_q0">in, 32, ap_memory, starData_x, array</column>
+<column name="starData_x_address1">out, 5, ap_memory, starData_x, array</column>
+<column name="starData_x_ce1">out, 1, ap_memory, starData_x, array</column>
+<column name="starData_x_q1">in, 32, ap_memory, starData_x, array</column>
+<column name="starData_y_address0">out, 5, ap_memory, starData_y, array</column>
+<column name="starData_y_ce0">out, 1, ap_memory, starData_y, array</column>
+<column name="starData_y_we0">out, 1, ap_memory, starData_y, array</column>
+<column name="starData_y_d0">out, 32, ap_memory, starData_y, array</column>
+<column name="starData_y_q0">in, 32, ap_memory, starData_y, array</column>
+<column name="starData_y_address1">out, 5, ap_memory, starData_y, array</column>
+<column name="starData_y_ce1">out, 1, ap_memory, starData_y, array</column>
+<column name="starData_y_q1">in, 32, ap_memory, starData_y, array</column>
+<column name="set_address0">out, 5, ap_memory, set, array</column>
+<column name="set_ce0">out, 1, ap_memory, set, array</column>
+<column name="set_we0">out, 1, ap_memory, set, array</column>
+<column name="set_d0">out, 32, ap_memory, set, array</column>
+<column name="set_q0">in, 32, ap_memory, set, array</column>
+<column name="centroidData_root_address0">out, 5, ap_memory, centroidData_root, array</column>
+<column name="centroidData_root_ce0">out, 1, ap_memory, centroidData_root, array</column>
+<column name="centroidData_root_we0">out, 1, ap_memory, centroidData_root, array</column>
+<column name="centroidData_root_d0">out, 32, ap_memory, centroidData_root, array</column>
+<column name="centroidData_x_address0">out, 5, ap_memory, centroidData_x, array</column>
+<column name="centroidData_x_ce0">out, 1, ap_memory, centroidData_x, array</column>
+<column name="centroidData_x_we0">out, 1, ap_memory, centroidData_x, array</column>
+<column name="centroidData_x_d0">out, 32, ap_memory, centroidData_x, array</column>
+<column name="centroidData_y_address0">out, 5, ap_memory, centroidData_y, array</column>
+<column name="centroidData_y_ce0">out, 1, ap_memory, centroidData_y, array</column>
+<column name="centroidData_y_we0">out, 1, ap_memory, centroidData_y, array</column>
+<column name="centroidData_y_d0">out, 32, ap_memory, centroidData_y, array</column>
 </table>
 </item>
 </section>

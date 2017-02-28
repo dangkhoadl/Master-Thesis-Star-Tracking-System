@@ -3,5 +3,14 @@
 <directive functionLabel="" functionName="preProcess" label="">
 <pragma name="PIPELINE"/>
 </directive>
+<directive functionLabel="" functionName="firstPass" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="calCentroid" label="">
+<pragma name="PIPELINE"/>
+</directive>
+<directive functionLabel="" functionName="calCentroid" label="">
+<pragma name="PIPELINE"/>
+</directive>
 </sourceFile>
 </AutoPilot:ProjectResources>

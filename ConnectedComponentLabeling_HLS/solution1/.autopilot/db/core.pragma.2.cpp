@@ -25282,23 +25282,134 @@ namespace std {
 
 
 using namespace std;
+# 14 "ConnectedComponentLabeling_HLS/core.cpp"
+struct starStruct {
+ bool status;
+ unsigned totalIntensity;
+ unsigned x;
+ unsigned y;
+};
 
+struct centroid {
+ unsigned root;
+ float x;
+ float y;
+};
 
+unsigned find(unsigned i,unsigned set[30]) {_ssdm_SpecArrayDimSize(set,30);
+ unsigned temp = i;
+ while (temp != set[temp]) {
+  temp = set[temp];
+ }
+ return temp;
+}
 
-
-
-void preProcess(int Image[512][512], int lbImage[512][512]) {_ssdm_SpecArrayDimSize(lbImage,512);_ssdm_SpecArrayDimSize(Image,512);
+void preProcess(unsigned Image[8][8], unsigned lbImage[8][8]) {_ssdm_SpecArrayDimSize(lbImage,8);_ssdm_SpecArrayDimSize(Image,8);
+ unsigned i = 0,j = 0;
 _ssdm_op_SpecPipeline(1, 1, 1, 0, "");
- for (int i = 0; i < 512; ++i) {
-  for (int j = 0; j < 512; ++j) {
+ for (i = 0; i < 8; ++i) {
+  for (j = 0; j < 8; ++j) {
    if (Image[i][j] < 70)
     lbImage[i][j] = 0;
    else
     lbImage[i][j] = 1;
   }
  }
+
 }
 
-void CCLabel(int Image[512][512], int lbImage[512][512]) {_ssdm_SpecArrayDimSize(lbImage,512);_ssdm_SpecArrayDimSize(Image,512);
+unsigned firstPass( unsigned Image[8][8],
+     unsigned lbImage[8][8],
+     starStruct starData[30],
+     unsigned set[30]) {_ssdm_SpecArrayDimSize(set,30);_ssdm_SpecArrayDimSize(lbImage,8);_ssdm_SpecArrayDimSize(starData,30);_ssdm_SpecArrayDimSize(Image,8);
+ unsigned i = 0, j = 0;
+ unsigned label = 0;
+ unsigned prevAbove = 0;
+ unsigned prevLeft = 0;
+ unsigned setCount = 1;
+ starStruct temp;
+ unsigned min = 0;
+ unsigned max = 999;
+ for(i = 0; i < 8; ++i) {
+  for(j = 0; j < 8; ++j) {_ssdm_RegionBegin("hls_label_0");
+_ssdm_op_SpecPipeline(1, 1, 1, 0, "");
+ if(lbImage[i][j] == 0) {
+    continue;
+   }
+
+   prevAbove = (i != 0 && lbImage[i - 1][j] != 0) ? lbImage[i - 1][j] : 999;
+   prevLeft = (j != 0 && lbImage[i][j - 1] != 0) ? lbImage[i][j - 1] : 999;
+
+   if (prevAbove == 999 && prevLeft == 999) {
+    lbImage[i][j] = ++label;
+    set[setCount] = label;
+
+
+    temp.status = true;
+    temp.totalIntensity = Image[i][j];
+    temp.x = i * Image[i][j];
+    temp.y = j * Image[i][j];
+    starData[setCount] = temp;
+
+    ++setCount;
+   }
+   else {
+    //Joint Set
+    min = prevAbove < prevLeft ? prevAbove : prevLeft;
+    max = prevAbove > prevLeft ? prevAbove : prevLeft;
+    if (max != 999) {
+     set[max] = find(min, set);
+    }
+    else {
+     set[min] = find(min, set);
+    }
+    lbImage[i][j] = min;
+
+    //Update data
+    starData[min].totalIntensity += Image[i][j];
+    starData[min].x += i * Image[i][j];
+    starData[min].y += j * Image[i][j];
+   }
+  _ssdm_RegionEnd("hls_label_0");}
+ }
+ return setCount;
+}
+
+unsigned calCentroid(unsigned set[30], starStruct starData[30], centroid centroidData[30], unsigned setCount) {_ssdm_SpecArrayDimSize(set,30);_ssdm_SpecArrayDimSize(starData,30);_ssdm_SpecArrayDimSize(centroidData,30);
+ unsigned i = 0;
+ unsigned root = 0;
+ unsigned centroidDataCount = 0;
+ centroid temp;
+ for(i = 1; i < setCount; ++i) {_ssdm_RegionBegin("hls_label_1");
+_ssdm_op_SpecPipeline(1, 1, 1, 0, "");
+ if(set[i] != i) {
+   root = find(i, set);
+   starData[root].totalIntensity += starData[i].totalIntensity;
+   starData[root].x += starData[i].x;
+   starData[root].y += starData[i].y;
+   starData[i].status = false;
+  }
+ _ssdm_RegionEnd("hls_label_1");}
+
+ //cal
+ for(i = 1; i < setCount; ++i) {_ssdm_RegionBegin("hls_label_2");
+_ssdm_op_SpecPipeline(1, 1, 1, 0, "");
+ if(starData[i].status == true) {
+   temp.root = i;
+   temp.x = (float)starData[i].x / starData[i].totalIntensity;
+   temp.y = (float)starData[i].y / starData[i].totalIntensity;
+
+   centroidData[centroidDataCount] = temp;
+   ++centroidDataCount;
+  }
+ _ssdm_RegionEnd("hls_label_2");}
+ return centroidDataCount;
+}
+
+unsigned CCLabel(unsigned Image[8][8], unsigned lbImage[8][8], starStruct starData[30], unsigned set[30], centroid centroidData[30]) {_ssdm_SpecArrayDimSize(set,30);_ssdm_SpecArrayDimSize(lbImage,8);_ssdm_SpecArrayDimSize(starData,30);_ssdm_SpecArrayDimSize(Image,8);_ssdm_SpecArrayDimSize(centroidData,30);
  preProcess(Image, lbImage);
+ unsigned setCount = firstPass(Image, lbImage, starData, set);
+ unsigned centroidDataCount = calCentroid(set, starData, centroidData, setCount);
+
+ return centroidDataCount;
 }

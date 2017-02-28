@@ -66,7 +66,7 @@ all: $(TARGET)
 
 $(ObjDir)/test_core.o: ../../../test_core.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../test_core.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) -c -MMD   $(IFLAG) $(DFLAG)  $< -o $@ ; \
+	$(Verb)  $(CC) -c -MMD    $(IFLAG) $(DFLAG)  $< -o $@ ; \
 
 -include $(ObjDir)/test_core.d
 

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'CCLabel'
 ================================================================
-* Date:           Mon Feb 27 17:20:33 2017
+* Date:           Tue Feb 28 17:30:25 2017
 
 * Version:        2014.4 (Build 1071461 on Tue Nov 18 16:42:57 PM 2014)
 * Project:        ConnectedComponentLabeling_HLS
@@ -25,21 +25,23 @@
 
 + Latency (clock cycles): 
     * Summary: 
-    +--------+--------+--------+--------+---------+
-    |     Latency     |     Interval    | Pipeline|
-    |   min  |   max  |   min  |   max  |   Type  |
-    +--------+--------+--------+--------+---------+
-    |  131586|  131586|  131587|  131587|   none  |
-    +--------+--------+--------+--------+---------+
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
 
     + Detail: 
         * Instance: 
-        +------------------------------+--------------------+--------+--------+--------+--------+---------+
-        |                              |                    |     Latency     |     Interval    | Pipeline|
-        |           Instance           |       Module       |   min  |   max  |   min  |   max  |   Type  |
-        +------------------------------+--------------------+--------+--------+--------+--------+---------+
-        |grp_CCLabel_preProcess_fu_13  |CCLabel_preProcess  |  131585|  131585|  131585|  131585|   none  |
-        +------------------------------+--------------------+--------+--------+--------+--------+---------+
+        +-------------------------------+---------------------+-----+-----+-----+-----+----------+
+        |                               |                     |  Latency  |  Interval | Pipeline |
+        |            Instance           |        Module       | min | max | min | max |   Type   |
+        +-------------------------------+---------------------+-----+-----+-----+-----+----------+
+        |grp_CCLabel_calCentroid_fu_35  |CCLabel_calCentroid  |    ?|    ?|    ?|    ?|   none   |
+        |grp_CCLabel_firstPass_fu_56    |CCLabel_firstPass    |    ?|    ?|    ?|    ?|   none   |
+        |grp_CCLabel_preProcess_fu_74   |CCLabel_preProcess   |   32|   32|   32|   32| function |
+        +-------------------------------+---------------------+-----+-----+-----+-----+----------+
 
         * Loop: 
         N/A
@@ -55,27 +57,29 @@
 +-----------------+---------+-------+--------+-------+
 |Expression       |        -|      -|       -|      -|
 |FIFO             |        -|      -|       -|      -|
-|Instance         |        -|      -|    5408|  19694|
+|Instance         |        -|      4|    3553|   5671|
 |Memory           |        -|      -|       -|      -|
-|Multiplexer      |        -|      -|       -|      7|
-|Register         |        -|      -|       3|      -|
+|Multiplexer      |        -|      -|       -|    295|
+|Register         |        -|      -|      71|      -|
 +-----------------+---------+-------+--------+-------+
-|Total            |        0|      0|    5411|  19701|
+|Total            |        0|      4|    3624|   5966|
 +-----------------+---------+-------+--------+-------+
 |Available        |      280|    220|  106400|  53200|
 +-----------------+---------+-------+--------+-------+
-|Utilization (%)  |        0|      0|       5|     37|
+|Utilization (%)  |        0|      1|       3|     11|
 +-----------------+---------+-------+--------+-------+
 
 + Detail: 
     * Instance: 
-    +------------------------------+--------------------+---------+-------+------+-------+
-    |           Instance           |       Module       | BRAM_18K| DSP48E|  FF  |  LUT  |
-    +------------------------------+--------------------+---------+-------+------+-------+
-    |grp_CCLabel_preProcess_fu_13  |CCLabel_preProcess  |        0|      0|  5408|  19694|
-    +------------------------------+--------------------+---------+-------+------+-------+
-    |Total                         |                    |        0|      0|  5408|  19694|
-    +------------------------------+--------------------+---------+-------+------+-------+
+    +-------------------------------+---------------------+---------+-------+------+------+
+    |            Instance           |        Module       | BRAM_18K| DSP48E|  FF  |  LUT |
+    +-------------------------------+---------------------+---------+-------+------+------+
+    |grp_CCLabel_calCentroid_fu_35  |CCLabel_calCentroid  |        0|      0|  3073|  4240|
+    |grp_CCLabel_firstPass_fu_56    |CCLabel_firstPass    |        0|      4|   446|  1047|
+    |grp_CCLabel_preProcess_fu_74   |CCLabel_preProcess   |        0|      0|    34|   384|
+    +-------------------------------+---------------------+---------+-------+------+------+
+    |Total                          |                     |        0|      4|  3553|  5671|
+    +-------------------------------+---------------------+---------+-------+------+------+
 
     * Memory: 
     N/A
@@ -87,29 +91,64 @@
     N/A
 
     * Multiplexer: 
-    +-------------+----+-----------+-----+-----------+
-    |     Name    | LUT| Input Size| Bits| Total Bits|
-    +-------------+----+-----------+-----+-----------+
-    |Image_r_ce0  |   1|          2|    1|          2|
-    |Image_r_ce1  |   1|          2|    1|          2|
-    |ap_NS_fsm    |   1|          3|    1|          3|
-    |lbImage_ce0  |   1|          2|    1|          2|
-    |lbImage_ce1  |   1|          2|    1|          2|
-    |lbImage_we0  |   1|          2|    1|          2|
-    |lbImage_we1  |   1|          2|    1|          2|
-    +-------------+----+-----------+-----+-----------+
-    |Total        |   7|         15|    7|         15|
-    +-------------+----+-----------+-----+-----------+
+    +----------------------------------+----+-----------+-----+-----------+
+    |               Name               | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------+----+-----------+-----+-----------+
+    |Image_r_address0                  |   6|          3|    6|         18|
+    |Image_r_ce0                       |   1|          3|    1|          3|
+    |Image_r_ce1                       |   1|          2|    1|          2|
+    |ap_NS_fsm                         |  66|         38|    1|         38|
+    |centroidData_root_ce0             |   1|          2|    1|          2|
+    |centroidData_root_we0             |   1|          2|    1|          2|
+    |centroidData_x_ce0                |   1|          2|    1|          2|
+    |centroidData_x_we0                |   1|          2|    1|          2|
+    |centroidData_y_ce0                |   1|          2|    1|          2|
+    |centroidData_y_we0                |   1|          2|    1|          2|
+    |lbImage_address0                  |   6|          3|    6|         18|
+    |lbImage_address1                  |   6|          3|    6|         18|
+    |lbImage_ce0                       |   1|          3|    1|          3|
+    |lbImage_ce1                       |   1|          3|    1|          3|
+    |lbImage_d0                        |  32|          3|   32|         96|
+    |lbImage_d1                        |  32|          3|   32|         96|
+    |lbImage_we0                       |   1|          3|    1|          3|
+    |lbImage_we1                       |   1|          3|    1|          3|
+    |set_address0                      |   5|          3|    5|         15|
+    |set_ce0                           |   1|          3|    1|          3|
+    |set_we0                           |   1|          2|    1|          2|
+    |starData_status_address0          |   5|          3|    5|         15|
+    |starData_status_ce0               |   1|          3|    1|          3|
+    |starData_status_d0                |   1|          3|    1|          3|
+    |starData_status_we0               |   1|          3|    1|          3|
+    |starData_totalIntensity_address0  |   5|          3|    5|         15|
+    |starData_totalIntensity_ce0       |   1|          3|    1|          3|
+    |starData_totalIntensity_ce1       |   1|          2|    1|          2|
+    |starData_totalIntensity_d0        |  32|          3|   32|         96|
+    |starData_totalIntensity_we0       |   1|          3|    1|          3|
+    |starData_x_address0               |   5|          3|    5|         15|
+    |starData_x_ce0                    |   1|          3|    1|          3|
+    |starData_x_ce1                    |   1|          2|    1|          2|
+    |starData_x_d0                     |  32|          3|   32|         96|
+    |starData_x_we0                    |   1|          3|    1|          3|
+    |starData_y_address0               |   5|          3|    5|         15|
+    |starData_y_ce0                    |   1|          3|    1|          3|
+    |starData_y_ce1                    |   1|          2|    1|          2|
+    |starData_y_d0                     |  32|          3|   32|         96|
+    |starData_y_we0                    |   1|          3|    1|          3|
+    +----------------------------------+----+-----------+-----+-----------+
+    |Total                             | 295|        144|  230|        714|
+    +----------------------------------+----+-----------+-----+-----------+
 
     * Register: 
-    +----------------------------------------------------+---+----+-----+-----------+
-    |                        Name                        | FF| LUT| Bits| Const Bits|
-    +----------------------------------------------------+---+----+-----+-----------+
-    |ap_CS_fsm                                           |  2|   0|    2|          0|
-    |grp_CCLabel_preProcess_fu_13_ap_start_ap_start_reg  |  1|   0|    1|          0|
-    +----------------------------------------------------+---+----+-----+-----------+
-    |Total                                               |  3|   0|    3|          0|
-    +----------------------------------------------------+---+----+-----+-----------+
+    +-----------------------------------------------------+----+----+-----+-----------+
+    |                         Name                        | FF | LUT| Bits| Const Bits|
+    +-----------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                            |  37|   0|   37|          0|
+    |grp_CCLabel_calCentroid_fu_35_ap_start_ap_start_reg  |   1|   0|    1|          0|
+    |grp_CCLabel_firstPass_fu_56_ap_start_ap_start_reg    |   1|   0|    1|          0|
+    |setCount_reg_82                                      |  32|   0|   32|          0|
+    +-----------------------------------------------------+----+----+-----+-----------+
+    |Total                                                |  71|   0|   71|          0|
+    +-----------------------------------------------------+----+----+-----+-----------+
 
 
 
@@ -117,28 +156,77 @@
 == Interface
 ================================================================
 * Summary: 
-+------------------+-----+-----+------------+--------------+--------------+
-|     RTL Ports    | Dir | Bits|  Protocol  | Source Object|    C Type    |
-+------------------+-----+-----+------------+--------------+--------------+
-|ap_clk            |  in |    1| ap_ctrl_hs |    CCLabel   | return value |
-|ap_rst            |  in |    1| ap_ctrl_hs |    CCLabel   | return value |
-|ap_start          |  in |    1| ap_ctrl_hs |    CCLabel   | return value |
-|ap_done           | out |    1| ap_ctrl_hs |    CCLabel   | return value |
-|ap_idle           | out |    1| ap_ctrl_hs |    CCLabel   | return value |
-|ap_ready          | out |    1| ap_ctrl_hs |    CCLabel   | return value |
-|Image_r_address0  | out |   18|  ap_memory |    Image_r   |     array    |
-|Image_r_ce0       | out |    1|  ap_memory |    Image_r   |     array    |
-|Image_r_q0        |  in |   32|  ap_memory |    Image_r   |     array    |
-|Image_r_address1  | out |   18|  ap_memory |    Image_r   |     array    |
-|Image_r_ce1       | out |    1|  ap_memory |    Image_r   |     array    |
-|Image_r_q1        |  in |   32|  ap_memory |    Image_r   |     array    |
-|lbImage_address0  | out |   18|  ap_memory |    lbImage   |     array    |
-|lbImage_ce0       | out |    1|  ap_memory |    lbImage   |     array    |
-|lbImage_we0       | out |    1|  ap_memory |    lbImage   |     array    |
-|lbImage_d0        | out |   32|  ap_memory |    lbImage   |     array    |
-|lbImage_address1  | out |   18|  ap_memory |    lbImage   |     array    |
-|lbImage_ce1       | out |    1|  ap_memory |    lbImage   |     array    |
-|lbImage_we1       | out |    1|  ap_memory |    lbImage   |     array    |
-|lbImage_d1        | out |   32|  ap_memory |    lbImage   |     array    |
-+------------------+-----+-----+------------+--------------+--------------+
++----------------------------------+-----+-----+------------+-------------------------+--------------+
+|             RTL Ports            | Dir | Bits|  Protocol  |      Source Object      |    C Type    |
++----------------------------------+-----+-----+------------+-------------------------+--------------+
+|ap_clk                            |  in |    1| ap_ctrl_hs |         CCLabel         | return value |
+|ap_rst                            |  in |    1| ap_ctrl_hs |         CCLabel         | return value |
+|ap_start                          |  in |    1| ap_ctrl_hs |         CCLabel         | return value |
+|ap_done                           | out |    1| ap_ctrl_hs |         CCLabel         | return value |
+|ap_idle                           | out |    1| ap_ctrl_hs |         CCLabel         | return value |
+|ap_ready                          | out |    1| ap_ctrl_hs |         CCLabel         | return value |
+|ap_return                         | out |   32| ap_ctrl_hs |         CCLabel         | return value |
+|Image_r_address0                  | out |    6|  ap_memory |         Image_r         |     array    |
+|Image_r_ce0                       | out |    1|  ap_memory |         Image_r         |     array    |
+|Image_r_q0                        |  in |   32|  ap_memory |         Image_r         |     array    |
+|Image_r_address1                  | out |    6|  ap_memory |         Image_r         |     array    |
+|Image_r_ce1                       | out |    1|  ap_memory |         Image_r         |     array    |
+|Image_r_q1                        |  in |   32|  ap_memory |         Image_r         |     array    |
+|lbImage_address0                  | out |    6|  ap_memory |         lbImage         |     array    |
+|lbImage_ce0                       | out |    1|  ap_memory |         lbImage         |     array    |
+|lbImage_we0                       | out |    1|  ap_memory |         lbImage         |     array    |
+|lbImage_d0                        | out |   32|  ap_memory |         lbImage         |     array    |
+|lbImage_q0                        |  in |   32|  ap_memory |         lbImage         |     array    |
+|lbImage_address1                  | out |    6|  ap_memory |         lbImage         |     array    |
+|lbImage_ce1                       | out |    1|  ap_memory |         lbImage         |     array    |
+|lbImage_we1                       | out |    1|  ap_memory |         lbImage         |     array    |
+|lbImage_d1                        | out |   32|  ap_memory |         lbImage         |     array    |
+|lbImage_q1                        |  in |   32|  ap_memory |         lbImage         |     array    |
+|starData_status_address0          | out |    5|  ap_memory |     starData_status     |     array    |
+|starData_status_ce0               | out |    1|  ap_memory |     starData_status     |     array    |
+|starData_status_we0               | out |    1|  ap_memory |     starData_status     |     array    |
+|starData_status_d0                | out |    1|  ap_memory |     starData_status     |     array    |
+|starData_status_q0                |  in |    1|  ap_memory |     starData_status     |     array    |
+|starData_totalIntensity_address0  | out |    5|  ap_memory | starData_totalIntensity |     array    |
+|starData_totalIntensity_ce0       | out |    1|  ap_memory | starData_totalIntensity |     array    |
+|starData_totalIntensity_we0       | out |    1|  ap_memory | starData_totalIntensity |     array    |
+|starData_totalIntensity_d0        | out |   32|  ap_memory | starData_totalIntensity |     array    |
+|starData_totalIntensity_q0        |  in |   32|  ap_memory | starData_totalIntensity |     array    |
+|starData_totalIntensity_address1  | out |    5|  ap_memory | starData_totalIntensity |     array    |
+|starData_totalIntensity_ce1       | out |    1|  ap_memory | starData_totalIntensity |     array    |
+|starData_totalIntensity_q1        |  in |   32|  ap_memory | starData_totalIntensity |     array    |
+|starData_x_address0               | out |    5|  ap_memory |        starData_x       |     array    |
+|starData_x_ce0                    | out |    1|  ap_memory |        starData_x       |     array    |
+|starData_x_we0                    | out |    1|  ap_memory |        starData_x       |     array    |
+|starData_x_d0                     | out |   32|  ap_memory |        starData_x       |     array    |
+|starData_x_q0                     |  in |   32|  ap_memory |        starData_x       |     array    |
+|starData_x_address1               | out |    5|  ap_memory |        starData_x       |     array    |
+|starData_x_ce1                    | out |    1|  ap_memory |        starData_x       |     array    |
+|starData_x_q1                     |  in |   32|  ap_memory |        starData_x       |     array    |
+|starData_y_address0               | out |    5|  ap_memory |        starData_y       |     array    |
+|starData_y_ce0                    | out |    1|  ap_memory |        starData_y       |     array    |
+|starData_y_we0                    | out |    1|  ap_memory |        starData_y       |     array    |
+|starData_y_d0                     | out |   32|  ap_memory |        starData_y       |     array    |
+|starData_y_q0                     |  in |   32|  ap_memory |        starData_y       |     array    |
+|starData_y_address1               | out |    5|  ap_memory |        starData_y       |     array    |
+|starData_y_ce1                    | out |    1|  ap_memory |        starData_y       |     array    |
+|starData_y_q1                     |  in |   32|  ap_memory |        starData_y       |     array    |
+|set_address0                      | out |    5|  ap_memory |           set           |     array    |
+|set_ce0                           | out |    1|  ap_memory |           set           |     array    |
+|set_we0                           | out |    1|  ap_memory |           set           |     array    |
+|set_d0                            | out |   32|  ap_memory |           set           |     array    |
+|set_q0                            |  in |   32|  ap_memory |           set           |     array    |
+|centroidData_root_address0        | out |    5|  ap_memory |    centroidData_root    |     array    |
+|centroidData_root_ce0             | out |    1|  ap_memory |    centroidData_root    |     array    |
+|centroidData_root_we0             | out |    1|  ap_memory |    centroidData_root    |     array    |
+|centroidData_root_d0              | out |   32|  ap_memory |    centroidData_root    |     array    |
+|centroidData_x_address0           | out |    5|  ap_memory |      centroidData_x     |     array    |
+|centroidData_x_ce0                | out |    1|  ap_memory |      centroidData_x     |     array    |
+|centroidData_x_we0                | out |    1|  ap_memory |      centroidData_x     |     array    |
+|centroidData_x_d0                 | out |   32|  ap_memory |      centroidData_x     |     array    |
+|centroidData_y_address0           | out |    5|  ap_memory |      centroidData_y     |     array    |
+|centroidData_y_ce0                | out |    1|  ap_memory |      centroidData_y     |     array    |
+|centroidData_y_we0                | out |    1|  ap_memory |      centroidData_y     |     array    |
+|centroidData_y_d0                 | out |   32|  ap_memory |      centroidData_y     |     array    |
++----------------------------------+-----+-----+------------+-------------------------+--------------+
 

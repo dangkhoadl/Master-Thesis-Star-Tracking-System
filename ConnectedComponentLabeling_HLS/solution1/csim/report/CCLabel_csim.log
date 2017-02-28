@@ -1,4 +1,15 @@
-   Compiling ../../../test_core.cpp in debug mode
    Compiling ../../../core.cpp in debug mode
    Generating csim.exe
-@E [SIM-1] CSim failed with errors.
+0 0 0 0 0 0 0 0 
+0 111 111 111 111 0 0 0 
+0 111 0 0 111 0 111 0 
+0 0 0 0 111 111 111 0 
+0 0 111 111 111 0 0 0 
+0 0 0 111 0 0 0 222 
+0 0 0 0 0 0 0 0 
+0 0 0 0 0 0 0 0 
+
+
+Star[1]: root = 1, x = 2.571429, y = 3.428571
+Star[2]: root = 4, x = 5.000000, y = 7.000000
+@I [SIM-1] CSim done with 0 errors.

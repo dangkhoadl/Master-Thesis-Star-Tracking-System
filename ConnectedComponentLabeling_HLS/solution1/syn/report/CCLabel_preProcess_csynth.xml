@@ -15,32 +15,27 @@
 </UserAssignments>
 
 <PerformanceEstimates>
-<PipelineType>none</PipelineType>
+<PipelineType>function</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
 <EstimatedClockPeriod>8.67</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>131585</Best-caseLatency>
-<Average-caseLatency>131585</Average-caseLatency>
-<Worst-caseLatency>131585</Worst-caseLatency>
-<Interval-min>131585</Interval-min>
-<Interval-max>131585</Interval-max>
+<Best-caseLatency>32</Best-caseLatency>
+<Average-caseLatency>32</Average-caseLatency>
+<Worst-caseLatency>32</Worst-caseLatency>
+<PipelineInitiationInterval>32</PipelineInitiationInterval>
+<PipelineDepth>33</PipelineDepth>
+<Interval-min>32</Interval-min>
+<Interval-max>32</Interval-max>
 </SummaryOfOverallLatency>
-<SummaryOfLoopLatency>
-<Loop1>
-<TripCount>512</TripCount>
-<Latency>131584</Latency>
-<IterationLatency>257</IterationLatency>
-</Loop1>
-</SummaryOfLoopLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<FF>5408</FF>
-<LUT>19694</LUT>
+<FF>34</FF>
+<LUT>384</LUT>
 <BRAM_18K>0</BRAM_18K>
 <DSP48E>0</DSP48E>
 <SLICE>0</SLICE>
@@ -129,7 +124,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>18</Bits>
+<Bits>6</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -162,7 +157,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>18</Bits>
+<Bits>6</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -195,7 +190,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>18</Bits>
+<Bits>6</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -239,7 +234,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>18</Bits>
+<Bits>6</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
