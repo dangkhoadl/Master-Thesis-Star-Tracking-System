@@ -12,7 +12,7 @@ set noPortSwitchingFlag 0
 set FloatingPointFlag 1
 set FftOrFirFlag 0
 set NewDSPMapping 0
-set ResetLevelFlag 1
+set ResetLevelFlag 0
 set ResetStyle "control"
 set ResetSyncFlag 1
 set ResetRegisterFlag 0

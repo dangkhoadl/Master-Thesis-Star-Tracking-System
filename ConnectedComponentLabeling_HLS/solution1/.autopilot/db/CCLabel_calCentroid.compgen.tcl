@@ -1,6 +1,6 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 11
+set id 9
 set name CCLabel_fdiv_32ns_32ns_32_16
 set corename simcore_fdiv
 set op fdiv
@@ -67,7 +67,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 }
 
 
-set id 13
+set id 11
 set name CCLabel_uitofp_32ns_32_6
 set corename simcore_uitofp
 set op uitofp
@@ -139,14 +139,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 16 \
+    id 15 \
     name set \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename set \
     op interface \
-    ports { set_address0 { O 5 vector } set_ce0 { O 1 bit } set_q0 { I 32 vector } } \
+    ports { set_address0 { O 6 vector } set_ce0 { O 1 bit } set_q0 { I 32 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'set'"
@@ -158,17 +158,36 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 17 \
-    name starData_status \
+    id 16 \
+    name totalIntensity \
     reset_level 1 \
     sync_rst true \
     dir IO \
-    corename starData_status \
+    corename totalIntensity \
     op interface \
-    ports { starData_status_address0 { O 5 vector } starData_status_ce0 { O 1 bit } starData_status_we0 { O 1 bit } starData_status_d0 { O 1 vector } starData_status_q0 { I 1 vector } } \
+    ports { totalIntensity_address0 { O 6 vector } totalIntensity_ce0 { O 1 bit } totalIntensity_we0 { O 1 bit } totalIntensity_d0 { O 32 vector } totalIntensity_q0 { I 32 vector } totalIntensity_address1 { O 6 vector } totalIntensity_ce1 { O 1 bit } totalIntensity_q1 { I 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'starData_status'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'totalIntensity'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 17 \
+    name x_r \
+    reset_level 1 \
+    sync_rst true \
+    dir IO \
+    corename x_r \
+    op interface \
+    ports { x_r_address0 { O 6 vector } x_r_ce0 { O 1 bit } x_r_we0 { O 1 bit } x_r_d0 { O 32 vector } x_r_q0 { I 32 vector } x_r_address1 { O 6 vector } x_r_ce1 { O 1 bit } x_r_q1 { I 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_r'"
 }
 }
 
@@ -178,16 +197,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 18 \
-    name starData_totalIntensity \
+    name y_r \
     reset_level 1 \
     sync_rst true \
     dir IO \
-    corename starData_totalIntensity \
+    corename y_r \
     op interface \
-    ports { starData_totalIntensity_address0 { O 5 vector } starData_totalIntensity_ce0 { O 1 bit } starData_totalIntensity_we0 { O 1 bit } starData_totalIntensity_d0 { O 32 vector } starData_totalIntensity_q0 { I 32 vector } starData_totalIntensity_address1 { O 5 vector } starData_totalIntensity_ce1 { O 1 bit } starData_totalIntensity_q1 { I 32 vector } } \
+    ports { y_r_address0 { O 6 vector } y_r_ce0 { O 1 bit } y_r_we0 { O 1 bit } y_r_d0 { O 32 vector } y_r_q0 { I 32 vector } y_r_address1 { O 6 vector } y_r_ce1 { O 1 bit } y_r_q1 { I 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'starData_totalIntensity'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'y_r'"
 }
 }
 
@@ -197,92 +216,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 19 \
-    name starData_x \
+    name status \
     reset_level 1 \
     sync_rst true \
     dir IO \
-    corename starData_x \
+    corename status \
     op interface \
-    ports { starData_x_address0 { O 5 vector } starData_x_ce0 { O 1 bit } starData_x_we0 { O 1 bit } starData_x_d0 { O 32 vector } starData_x_q0 { I 32 vector } starData_x_address1 { O 5 vector } starData_x_ce1 { O 1 bit } starData_x_q1 { I 32 vector } } \
+    ports { status_address0 { O 6 vector } status_ce0 { O 1 bit } status_we0 { O 1 bit } status_d0 { O 1 vector } status_q0 { I 1 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'starData_x'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 20 \
-    name starData_y \
-    reset_level 1 \
-    sync_rst true \
-    dir IO \
-    corename starData_y \
-    op interface \
-    ports { starData_y_address0 { O 5 vector } starData_y_ce0 { O 1 bit } starData_y_we0 { O 1 bit } starData_y_d0 { O 32 vector } starData_y_q0 { I 32 vector } starData_y_address1 { O 5 vector } starData_y_ce1 { O 1 bit } starData_y_q1 { I 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'starData_y'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 21 \
-    name centroidData_root \
-    reset_level 1 \
-    sync_rst true \
-    dir O \
-    corename centroidData_root \
-    op interface \
-    ports { centroidData_root_address0 { O 5 vector } centroidData_root_ce0 { O 1 bit } centroidData_root_we0 { O 1 bit } centroidData_root_d0 { O 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'centroidData_root'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 22 \
-    name centroidData_x \
-    reset_level 1 \
-    sync_rst true \
-    dir O \
-    corename centroidData_x \
-    op interface \
-    ports { centroidData_x_address0 { O 5 vector } centroidData_x_ce0 { O 1 bit } centroidData_x_we0 { O 1 bit } centroidData_x_d0 { O 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'centroidData_x'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 23 \
-    name centroidData_y \
-    reset_level 1 \
-    sync_rst true \
-    dir O \
-    corename centroidData_y \
-    op interface \
-    ports { centroidData_y_address0 { O 5 vector } centroidData_y_ce0 { O 1 bit } centroidData_y_we0 { O 1 bit } centroidData_y_d0 { O 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'centroidData_y'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'status'"
 }
 }
 
@@ -290,7 +233,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 24 \
+    id 14 \
     name setCount \
     type other \
     dir I \

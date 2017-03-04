@@ -29,6 +29,7 @@
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/include"/>
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/include/etc"/>
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/win64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject"/>
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/win64/tools/systemc/include"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.936491195" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
@@ -55,6 +56,7 @@
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/include"/>
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/include/etc"/>
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/win64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject"/>
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/win64/tools/systemc/include"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.314668189" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
@@ -131,6 +133,7 @@
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/include"/>
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/include/etc"/>
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/win64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject"/>
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/win64/tools/systemc/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.542518634" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -143,6 +146,7 @@
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/include"/>
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/include/etc"/>
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/win64/tools/auto_cc/include"/>
+									<listOptionValue builtIn="false" value="D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject"/>
 									<listOptionValue builtIn="false" value="D:/Xilinx/Vivado_HLS/2014.4/win64/tools/systemc/include"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.207805903" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
@@ -197,4 +201,5 @@
 		</scannerConfigBuildInfo>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="refreshScope"/>
 </cproject>

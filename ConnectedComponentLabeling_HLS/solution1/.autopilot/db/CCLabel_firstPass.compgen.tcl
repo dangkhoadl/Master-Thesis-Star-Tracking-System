@@ -1,6 +1,6 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 2
+set id 1
 set name CCLabel_mul_32s_4ns_32_3
 set corename simcore_mul
 set op mul
@@ -78,26 +78,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 4 \
-    name Image_r \
-    reset_level 1 \
-    sync_rst true \
-    dir I \
-    corename Image_r \
-    op interface \
-    ports { Image_r_address0 { O 6 vector } Image_r_ce0 { O 1 bit } Image_r_q0 { I 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'Image_r'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 5 \
+    id 3 \
     name lbImage \
     reset_level 1 \
     sync_rst true \
@@ -116,17 +97,55 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 6 \
-    name starData_status \
+    id 4 \
+    name set \
+    reset_level 1 \
+    sync_rst true \
+    dir IO \
+    corename set \
+    op interface \
+    ports { set_address0 { O 6 vector } set_ce0 { O 1 bit } set_we0 { O 1 bit } set_d0 { O 32 vector } set_q0 { I 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'set'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 5 \
+    name status \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename starData_status \
+    corename status \
     op interface \
-    ports { starData_status_address0 { O 5 vector } starData_status_ce0 { O 1 bit } starData_status_we0 { O 1 bit } starData_status_d0 { O 1 vector } } \
+    ports { status_address0 { O 6 vector } status_ce0 { O 1 bit } status_we0 { O 1 bit } status_d0 { O 1 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'starData_status'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'status'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 6 \
+    name totalIntensity \
+    reset_level 1 \
+    sync_rst true \
+    dir IO \
+    corename totalIntensity \
+    op interface \
+    ports { totalIntensity_address0 { O 6 vector } totalIntensity_ce0 { O 1 bit } totalIntensity_we0 { O 1 bit } totalIntensity_d0 { O 32 vector } totalIntensity_q0 { I 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'totalIntensity'"
 }
 }
 
@@ -136,16 +155,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 7 \
-    name starData_totalIntensity \
+    name x_r \
     reset_level 1 \
     sync_rst true \
     dir IO \
-    corename starData_totalIntensity \
+    corename x_r \
     op interface \
-    ports { starData_totalIntensity_address0 { O 5 vector } starData_totalIntensity_ce0 { O 1 bit } starData_totalIntensity_we0 { O 1 bit } starData_totalIntensity_d0 { O 32 vector } starData_totalIntensity_q0 { I 32 vector } } \
+    ports { x_r_address0 { O 6 vector } x_r_ce0 { O 1 bit } x_r_we0 { O 1 bit } x_r_d0 { O 32 vector } x_r_q0 { I 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'starData_totalIntensity'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'x_r'"
 }
 }
 
@@ -155,54 +174,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 8 \
-    name starData_x \
+    name y_r \
     reset_level 1 \
     sync_rst true \
     dir IO \
-    corename starData_x \
+    corename y_r \
     op interface \
-    ports { starData_x_address0 { O 5 vector } starData_x_ce0 { O 1 bit } starData_x_we0 { O 1 bit } starData_x_d0 { O 32 vector } starData_x_q0 { I 32 vector } } \
+    ports { y_r_address0 { O 6 vector } y_r_ce0 { O 1 bit } y_r_we0 { O 1 bit } y_r_d0 { O 32 vector } y_r_q0 { I 32 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'starData_x'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 9 \
-    name starData_y \
-    reset_level 1 \
-    sync_rst true \
-    dir IO \
-    corename starData_y \
-    op interface \
-    ports { starData_y_address0 { O 5 vector } starData_y_ce0 { O 1 bit } starData_y_we0 { O 1 bit } starData_y_d0 { O 32 vector } starData_y_q0 { I 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'starData_y'"
-}
-}
-
-
-# XIL_BRAM:
-if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 10 \
-    name set \
-    reset_level 1 \
-    sync_rst true \
-    dir IO \
-    corename set \
-    op interface \
-    ports { set_address0 { O 5 vector } set_ce0 { O 1 bit } set_we0 { O 1 bit } set_d0 { O 32 vector } set_q0 { I 32 vector } } \
-} "
-} else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'set'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'y_r'"
 }
 }
 

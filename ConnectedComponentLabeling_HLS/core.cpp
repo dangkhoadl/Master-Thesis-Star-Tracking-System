@@ -1,143 +1,146 @@
 #include <stdio.h>
 #include <iostream>
 
-
-using namespace std;
 #define IMG_HEIGHT 8
 #define IMG_WIDTH 8
 #define THRESHOLD 70
 #define MAX 999
-#define MAX_STAR_DATA_SIZE 30
-#define MAX_SET_SIZE 30
-#define MAX_CENTROID_DATA 30
+#define MAX_STAR_DATA_SIZE 40
+#define MAX_SET_SIZE 40
+#define MAX_CENTROID_DATA 40
 
-struct starStruct {
-	bool status;
-	unsigned totalIntensity;
-	unsigned x;
-	unsigned y;
-};
+unsigned lbImage[IMG_HEIGHT * IMG_WIDTH];
 
-struct centroid {
-	unsigned root;
-	float x;
-	float y;
-};
+unsigned set[MAX_SET_SIZE];
 
-unsigned find(unsigned i,unsigned set[MAX_SET_SIZE]) {
-	unsigned temp = i;
+bool status[MAX_STAR_DATA_SIZE];
+unsigned totalIntensity[MAX_STAR_DATA_SIZE];
+unsigned x[MAX_STAR_DATA_SIZE];
+unsigned y[MAX_STAR_DATA_SIZE];
+
+void preProcess(unsigned Image[IMG_HEIGHT*IMG_WIDTH]) {
+	unsigned i = 0,j = 0;
+	for (i = 0; i < IMG_HEIGHT; ++i) {
+		for (j = 0; j < IMG_WIDTH; ++j) {
+			if (Image[i*IMG_HEIGHT + j] < THRESHOLD)
+				lbImage[i*IMG_HEIGHT + j] = 0;
+			else
+				lbImage[i*IMG_HEIGHT + j] = 1;
+		}
+	}
+}
+
+unsigned find(unsigned id) {
+	int temp = id;
 	while (temp != set[temp]) {
+#pragma HLS PIPELINE
 		temp = set[temp];
 	}
 	return temp;
 }
 
-void preProcess(unsigned Image[IMG_HEIGHT][IMG_WIDTH], unsigned lbImage[IMG_WIDTH][IMG_WIDTH]) {
-	unsigned i = 0,j = 0;
-#pragma HLS PIPELINE
-	for (i = 0; i < IMG_HEIGHT; ++i) {
-		for (j = 0; j < IMG_WIDTH; ++j) {
-			if (Image[i][j] < THRESHOLD)
-				lbImage[i][j] = 0;
-			else
-				lbImage[i][j] = 1;
-		}
-	}
-
-}
-
-unsigned firstPass(	unsigned Image[IMG_HEIGHT][IMG_WIDTH],
-			 	unsigned lbImage[IMG_WIDTH][IMG_WIDTH],
-			 	starStruct starData[MAX_STAR_DATA_SIZE],
-			 	unsigned set[MAX_SET_SIZE]) {
+unsigned firstPass(unsigned Image[IMG_HEIGHT*IMG_WIDTH]) {
 	unsigned i = 0, j = 0;
 	unsigned label = 0;
 	unsigned prevAbove = 0;
 	unsigned prevLeft = 0;
 	unsigned setCount = 1;
-	starStruct temp;
 	unsigned min = 0;
 	unsigned max = MAX;
-	for(i = 0; i < IMG_HEIGHT; ++i) {
-		for(j = 0; j < IMG_WIDTH; ++j) {
+	for (int i = 0; i < IMG_HEIGHT; ++i) {
+		for (int j = 0; j < IMG_WIDTH; ++j) {
 #pragma HLS PIPELINE
-			if(lbImage[i][j] == 0) {
-				continue;
-			}
+			if (lbImage[i*IMG_HEIGHT + j] != 0) {
+				prevAbove = (i != 0 && lbImage[(i - 1)*IMG_HEIGHT + j] != 0) ? lbImage[(i - 1)*IMG_HEIGHT + j] : MAX;
+				prevLeft = (j != 0 && lbImage[i*IMG_HEIGHT + j - 1] != 0) ? lbImage[i*IMG_HEIGHT + j - 1] : MAX;
 
-			prevAbove = (i != 0 && lbImage[i - 1][j] != 0) ? lbImage[i - 1][j] : MAX;
-			prevLeft = (j != 0 && lbImage[i][j - 1] != 0) ? lbImage[i][j - 1] : MAX;
+				if (prevAbove == MAX && prevLeft == MAX) {
+					lbImage[i*IMG_HEIGHT + j] = ++label;
+					set[setCount] = label;
 
-			if (prevAbove == MAX && prevLeft == MAX) {
-				lbImage[i][j] = ++label;
-				set[setCount] = label;
+					//
+					status[setCount] = true;
+					totalIntensity[setCount] = Image[i*IMG_HEIGHT + j];
+					x[setCount] = i * Image[i*IMG_HEIGHT + j];
+					y[setCount] = j * Image[i*IMG_HEIGHT + j];
 
-
-				temp.status = true;
-				temp.totalIntensity = Image[i][j];
-				temp.x = i * Image[i][j];
-				temp.y = j * Image[i][j];
-				starData[setCount] = temp;
-
-				++setCount;
-			}
-			else {
-				//Joint Set
-				min = prevAbove < prevLeft ? prevAbove : prevLeft;
-				max = prevAbove > prevLeft ? prevAbove : prevLeft;
-				if (max != MAX) {
-					set[max] = find(min, set);
+					++setCount;
 				}
 				else {
-					set[min] = find(min, set);
-				}
-				lbImage[i][j] = min;
+					//Joint Set
+					min = prevAbove < prevLeft ? prevAbove : prevLeft;
+					max = prevAbove > prevLeft ? prevAbove : prevLeft;
+					if (max != MAX) {
+						set[max] = find(min);
+					}
+					else {
+						set[min] = find(min);
+					}
+					lbImage[i*IMG_HEIGHT + j] = min;
 
-				//Update data
-				starData[min].totalIntensity += Image[i][j];
-				starData[min].x += i * Image[i][j];
-				starData[min].y += j * Image[i][j];
+					//Update data
+					totalIntensity[min] += Image[i*IMG_HEIGHT + j];
+					x[min] += i * Image[i*IMG_HEIGHT + j];
+					y[min] += j * Image[i*IMG_HEIGHT + j];
+				}
 			}
 		}
 	}
 	return setCount;
 }
 
-unsigned calCentroid(unsigned set[MAX_SET_SIZE], starStruct starData[MAX_STAR_DATA_SIZE], centroid centroidData[MAX_CENTROID_DATA], unsigned setCount) {
+unsigned calCentroid(unsigned setCount, unsigned X[MAX_CENTROID_DATA], unsigned Y[MAX_CENTROID_DATA]) {
 	unsigned i = 0;
 	unsigned root = 0;
 	unsigned centroidDataCount = 0;
-	centroid temp;
-	for(i = 1; i < setCount; ++i) {
+
+	for (i = 1; i < setCount; ++i) {
 #pragma HLS PIPELINE
-		if(set[i] != i) {
-			root = find(i, set);
-			starData[root].totalIntensity += starData[i].totalIntensity;
-			starData[root].x += starData[i].x;
-			starData[root].y += starData[i].y;
-			starData[i].status = false;
+		if (set[i] != i) {
+			root = find(i);
+			totalIntensity[root] += totalIntensity[i];
+			x[root] += x[i];
+			y[root] += y[i];
+			status[i] = false;
 		}
 	}
 
 	//cal
-	for(i = 1; i < setCount; ++i) {
+	for (i = 1; i < setCount; ++i) {
 #pragma HLS PIPELINE
-		if(starData[i].status == true) {
-			temp.root = i;
-			temp.x = (float)starData[i].x / starData[i].totalIntensity;
-			temp.y = (float)starData[i].y / starData[i].totalIntensity;
+		if (status[i] == true) {
+			X[centroidDataCount] = (float)x[i] / totalIntensity[i];
+			Y[centroidDataCount] = (float)y[i] / totalIntensity[i];
 
-			centroidData[centroidDataCount] = temp;
 			++centroidDataCount;
 		}
 	}
 	return centroidDataCount;
 }
 
-unsigned CCLabel(unsigned Image[IMG_HEIGHT][IMG_WIDTH], unsigned lbImage[IMG_HEIGHT][IMG_WIDTH], starStruct starData[MAX_STAR_DATA_SIZE], unsigned set[MAX_SET_SIZE], centroid centroidData[MAX_CENTROID_DATA]) {
-	preProcess(Image, lbImage);
-	unsigned setCount = firstPass(Image, lbImage, starData, set);
-	unsigned centroidDataCount = calCentroid(set, starData, centroidData, setCount);
+void secondPass() {
+	unsigned i = 0, j = 0;
+	unsigned root = 0;
+	for (i = 0; i < IMG_HEIGHT; ++i) {
+		for (j = 0; j < IMG_WIDTH; ++j) {
+#pragma HLS PIPELINE
+			if (lbImage[i*IMG_HEIGHT + j] != 0) {
+				root = find(lbImage[i*IMG_HEIGHT + j]);
+				lbImage[i*IMG_HEIGHT + j] = find(lbImage[i*IMG_HEIGHT + j]);
+			}
+		}
+	}
+}
+
+unsigned CCLabel(unsigned Image[IMG_HEIGHT*IMG_WIDTH], unsigned X[MAX_CENTROID_DATA], unsigned Y[MAX_CENTROID_DATA]) {
+#pragma HLS INTERFACE s_axilite port=return bundle=CRTLS
+#pragma HLS INTERFACE bram port=Image bundle=CRTLS
+#pragma HLS INTERFACE bram port=X bundle=CRTLS
+#pragma HLS INTERFACE bram port=Y bundle=CRTLS
+
+	preProcess(Image);
+	unsigned setCount = firstPass(Image);
+	unsigned centroidDataCount = calCentroid(setCount, X, Y);
 
 	return centroidDataCount;
 }

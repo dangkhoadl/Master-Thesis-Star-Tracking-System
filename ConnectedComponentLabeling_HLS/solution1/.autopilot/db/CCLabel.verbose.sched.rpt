@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'CCLabel'
 ================================================================
-* Date:           Tue Feb 28 17:30:23 2017
+* Date:           Fri Mar 03 22:38:02 2017
 
 * Version:        2014.4 (Build 1071461 on Tue Nov 18 16:42:57 PM 2014)
 * Project:        ConnectedComponentLabeling_HLS
@@ -87,7 +87,27 @@
 == Interface
 ================================================================
 * Summary: 
-N/A
++---------------------+-----+-----+---------+--------------+--------------+
+|      RTL Ports      | Dir | Bits| Protocol| Source Object|    C Type    |
++---------------------+-----+-----+---------+--------------+--------------+
+|s_axi_CRTLS_AWVALID  |  in |    1|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_AWREADY  | out |    1|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_AWADDR   |  in |    5|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_WVALID   |  in |    1|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_WREADY   | out |    1|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_WDATA    |  in |   32|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_WSTRB    |  in |    4|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_ARVALID  |  in |    1|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_ARREADY  | out |    1|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_ARADDR   |  in |    5|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_RVALID   | out |    1|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_RREADY   |  in |    1|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_RDATA    | out |   32|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_RRESP    | out |    2|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_BVALID   | out |    1|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_BREADY   |  in |    1|  s_axi  |     CRTLS    | return value |
+|s_axi_CRTLS_BRESP    | out |    2|  s_axi  |     CRTLS    | return value |
++---------------------+-----+-----+---------+--------------+--------------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -115,7 +135,7 @@ IsGatedGlobalClock: 0
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states: 37
+* Number of FSM states: 6
 * Pipeline: 0
 * Dataflow Pipeline: 0
 
@@ -131,292 +151,66 @@ IsGatedGlobalClock: 0
 5 --> 
 	6  / true
 6 --> 
-	7  / true
-7 --> 
-	8  / true
-8 --> 
-	9  / true
-9 --> 
-	10  / true
-10 --> 
-	11  / true
-11 --> 
-	12  / true
-12 --> 
-	13  / true
-13 --> 
-	14  / true
-14 --> 
-	15  / true
-15 --> 
-	16  / true
-16 --> 
-	17  / true
-17 --> 
-	18  / true
-18 --> 
-	19  / true
-19 --> 
-	20  / true
-20 --> 
-	21  / true
-21 --> 
-	22  / true
-22 --> 
-	23  / true
-23 --> 
-	24  / true
-24 --> 
-	25  / true
-25 --> 
-	26  / true
-26 --> 
-	27  / true
-27 --> 
-	28  / true
-28 --> 
-	29  / true
-29 --> 
-	30  / true
-30 --> 
-	31  / true
-31 --> 
-	32  / true
-32 --> 
-	33  / true
-33 --> 
-	34  / true
-34 --> 
-	35  / true
-35 --> 
-	36  / true
-36 --> 
-	37  / true
-37 --> 
 * FSM state operations: 
 
  <State 1>: 0.00ns
-ST_1: stg_38 [33/33] 0.00ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
+ST_1: stg_7 [2/2] 0.00ns
+:9  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r) nounwind
 
 
- <State 2>: 8.67ns
-ST_2: stg_39 [32/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
+ <State 2>: 0.00ns
+ST_2: stg_8 [1/2] 0.00ns
+:9  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r) nounwind
 
 
- <State 3>: 8.67ns
-ST_3: stg_40 [31/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
+ <State 3>: 0.00ns
+ST_3: setCount [2/2] 0.00ns
+:10  %setCount = call fastcc i32 @CCLabel_firstPass([64 x i32]* %Image_r) nounwind
 
 
- <State 4>: 8.67ns
-ST_4: stg_41 [30/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
+ <State 4>: 0.00ns
+ST_4: setCount [1/2] 0.00ns
+:10  %setCount = call fastcc i32 @CCLabel_firstPass([64 x i32]* %Image_r) nounwind
 
 
- <State 5>: 8.67ns
-ST_5: stg_42 [29/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
+ <State 5>: 0.00ns
+ST_5: centroidDataCount [2/2] 0.00ns
+:11  %centroidDataCount = call fastcc i32 @CCLabel_calCentroid(i32 %setCount, [40 x i32]* %X, [40 x i32]* %Y) nounwind
 
 
- <State 6>: 8.67ns
-ST_6: stg_43 [28/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
+ <State 6>: 0.00ns
+ST_6: stg_12 [1/1] 0.00ns
+:0  call void (...)* @_ssdm_op_SpecBitsMap([64 x i32]* %Image_r) nounwind, !map !41
 
+ST_6: stg_13 [1/1] 0.00ns
+:1  call void (...)* @_ssdm_op_SpecBitsMap([40 x i32]* %X) nounwind, !map !45
 
- <State 7>: 8.67ns
-ST_7: stg_44 [27/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
+ST_6: stg_14 [1/1] 0.00ns
+:2  call void (...)* @_ssdm_op_SpecBitsMap([40 x i32]* %Y) nounwind, !map !49
 
+ST_6: stg_15 [1/1] 0.00ns
+:3  call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !53
 
- <State 8>: 8.67ns
-ST_8: stg_45 [26/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
+ST_6: stg_16 [1/1] 0.00ns
+:4  call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @str) nounwind
 
+ST_6: stg_17 [1/1] 0.00ns
+:5  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str6, i32 0, i32 0, i32 0, i32 0, [6 x i8]* @p_str7, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
 
- <State 9>: 8.67ns
-ST_9: stg_46 [25/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
+ST_6: stg_18 [1/1] 0.00ns
+:6  call void (...)* @_ssdm_op_SpecInterface([64 x i32]* %Image_r, [5 x i8]* @p_str8, i32 0, i32 0, i32 0, i32 0, [6 x i8]* @p_str7, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
 
+ST_6: stg_19 [1/1] 0.00ns
+:7  call void (...)* @_ssdm_op_SpecInterface([40 x i32]* %X, [5 x i8]* @p_str8, i32 0, i32 0, i32 0, i32 0, [6 x i8]* @p_str7, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
 
- <State 10>: 8.67ns
-ST_10: stg_47 [24/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
+ST_6: stg_20 [1/1] 0.00ns
+:8  call void (...)* @_ssdm_op_SpecInterface([40 x i32]* %Y, [5 x i8]* @p_str8, i32 0, i32 0, i32 0, i32 0, [6 x i8]* @p_str7, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
 
+ST_6: centroidDataCount [1/2] 0.00ns
+:11  %centroidDataCount = call fastcc i32 @CCLabel_calCentroid(i32 %setCount, [40 x i32]* %X, [40 x i32]* %Y) nounwind
 
- <State 11>: 8.67ns
-ST_11: stg_48 [23/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 12>: 8.67ns
-ST_12: stg_49 [22/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 13>: 8.67ns
-ST_13: stg_50 [21/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 14>: 8.67ns
-ST_14: stg_51 [20/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 15>: 8.67ns
-ST_15: stg_52 [19/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 16>: 8.67ns
-ST_16: stg_53 [18/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 17>: 8.67ns
-ST_17: stg_54 [17/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 18>: 8.67ns
-ST_18: stg_55 [16/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 19>: 8.67ns
-ST_19: stg_56 [15/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 20>: 8.67ns
-ST_20: stg_57 [14/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 21>: 8.67ns
-ST_21: stg_58 [13/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 22>: 8.67ns
-ST_22: stg_59 [12/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 23>: 8.67ns
-ST_23: stg_60 [11/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 24>: 8.67ns
-ST_24: stg_61 [10/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 25>: 8.67ns
-ST_25: stg_62 [9/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 26>: 8.67ns
-ST_26: stg_63 [8/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 27>: 8.67ns
-ST_27: stg_64 [7/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 28>: 8.67ns
-ST_28: stg_65 [6/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 29>: 8.67ns
-ST_29: stg_66 [5/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 30>: 8.67ns
-ST_30: stg_67 [4/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 31>: 8.67ns
-ST_31: stg_68 [3/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 32>: 8.67ns
-ST_32: stg_69 [2/33] 8.67ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 33>: 0.00ns
-ST_33: stg_70 [1/33] 0.00ns
-:12  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r, [64 x i32]* %lbImage)
-
-
- <State 34>: 0.00ns
-ST_34: setCount [2/2] 0.00ns
-:13  %setCount = call fastcc i32 @CCLabel_firstPass([64 x i32]* nocapture %Image_r, [64 x i32]* nocapture %lbImage, [30 x i1]* nocapture %starData_status, [30 x i32]* nocapture %starData_totalIntensity, [30 x i32]* nocapture %starData_x, [30 x i32]* nocapture %starData_y, [30 x i32]* nocapture %set)
-
-
- <State 35>: 0.00ns
-ST_35: setCount [1/2] 0.00ns
-:13  %setCount = call fastcc i32 @CCLabel_firstPass([64 x i32]* nocapture %Image_r, [64 x i32]* nocapture %lbImage, [30 x i1]* nocapture %starData_status, [30 x i32]* nocapture %starData_totalIntensity, [30 x i32]* nocapture %starData_x, [30 x i32]* nocapture %starData_y, [30 x i32]* nocapture %set)
-
-
- <State 36>: 0.00ns
-ST_36: centroidDataCount [2/2] 0.00ns
-:14  %centroidDataCount = call fastcc i32 @CCLabel_calCentroid([30 x i32]* %set, [30 x i1]* %starData_status, [30 x i32]* %starData_totalIntensity, [30 x i32]* %starData_x, [30 x i32]* %starData_y, [30 x i32]* %centroidData_root, [30 x float]* %centroidData_x, [30 x float]* %centroidData_y, i32 %setCount)
-
-
- <State 37>: 0.00ns
-ST_37: stg_74 [1/1] 0.00ns
-:0  call void (...)* @_ssdm_op_SpecBitsMap([64 x i32]* %Image_r), !map !7
-
-ST_37: stg_75 [1/1] 0.00ns
-:1  call void (...)* @_ssdm_op_SpecBitsMap([64 x i32]* %lbImage), !map !13
-
-ST_37: stg_76 [1/1] 0.00ns
-:2  call void (...)* @_ssdm_op_SpecBitsMap([30 x i1]* %starData_status), !map !17
-
-ST_37: stg_77 [1/1] 0.00ns
-:3  call void (...)* @_ssdm_op_SpecBitsMap([30 x i32]* %starData_totalIntensity), !map !23
-
-ST_37: stg_78 [1/1] 0.00ns
-:4  call void (...)* @_ssdm_op_SpecBitsMap([30 x i32]* %starData_x), !map !27
-
-ST_37: stg_79 [1/1] 0.00ns
-:5  call void (...)* @_ssdm_op_SpecBitsMap([30 x i32]* %starData_y), !map !31
-
-ST_37: stg_80 [1/1] 0.00ns
-:6  call void (...)* @_ssdm_op_SpecBitsMap([30 x i32]* %set), !map !35
-
-ST_37: stg_81 [1/1] 0.00ns
-:7  call void (...)* @_ssdm_op_SpecBitsMap([30 x i32]* %centroidData_root), !map !39
-
-ST_37: stg_82 [1/1] 0.00ns
-:8  call void (...)* @_ssdm_op_SpecBitsMap([30 x float]* %centroidData_x), !map !43
-
-ST_37: stg_83 [1/1] 0.00ns
-:9  call void (...)* @_ssdm_op_SpecBitsMap([30 x float]* %centroidData_y), !map !47
-
-ST_37: stg_84 [1/1] 0.00ns
-:10  call void (...)* @_ssdm_op_SpecBitsMap(i32 0) nounwind, !map !51
-
-ST_37: stg_85 [1/1] 0.00ns
-:11  call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @str) nounwind
-
-ST_37: centroidDataCount [1/2] 0.00ns
-:14  %centroidDataCount = call fastcc i32 @CCLabel_calCentroid([30 x i32]* %set, [30 x i1]* %starData_status, [30 x i32]* %starData_totalIntensity, [30 x i32]* %starData_x, [30 x i32]* %starData_y, [30 x i32]* %centroidData_root, [30 x float]* %centroidData_x, [30 x float]* %centroidData_y, i32 %setCount)
-
-ST_37: stg_87 [1/1] 0.00ns
-:15  ret i32 %centroidDataCount
+ST_6: stg_22 [1/1] 0.00ns
+:12  ret i32 %centroidDataCount
 
 
 
@@ -433,37 +227,6 @@ N/A
 	State 4
 	State 5
 	State 6
-	State 7
-	State 8
-	State 9
-	State 10
-	State 11
-	State 12
-	State 13
-	State 14
-	State 15
-	State 16
-	State 17
-	State 18
-	State 19
-	State 20
-	State 21
-	State 22
-	State 23
-	State 24
-	State 25
-	State 26
-	State 27
-	State 28
-	State 29
-	State 30
-	State 31
-	State 32
-	State 33
-	State 34
-	State 35
-	State 36
-	State 37
 
 
 ============================================================

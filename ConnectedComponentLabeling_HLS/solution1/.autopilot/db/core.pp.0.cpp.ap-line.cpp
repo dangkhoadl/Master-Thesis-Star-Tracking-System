@@ -25264,137 +25264,139 @@ namespace std {
 #pragma empty_line
 }
 #pragma line 3 "ConnectedComponentLabeling_HLS/core.cpp" 2
+#pragma line 12 "ConnectedComponentLabeling_HLS/core.cpp"
+unsigned lbImage[8 * 8];
 #pragma empty_line
+unsigned set[40];
 #pragma empty_line
-using namespace std;
-#pragma line 14 "ConnectedComponentLabeling_HLS/core.cpp"
-struct starStruct {
- bool status;
- unsigned totalIntensity;
- unsigned x;
- unsigned y;
-};
+bool status[40];
+unsigned totalIntensity[40];
+unsigned x[40];
+unsigned y[40];
 #pragma empty_line
-struct centroid {
- unsigned root;
- float x;
- float y;
-};
+void preProcess(unsigned Image[8*8]) {
+ unsigned i = 0,j = 0;
+ for (i = 0; i < 8; ++i) {
+  for (j = 0; j < 8; ++j) {
+   if (Image[i*8 + j] < 70)
+    lbImage[i*8 + j] = 0;
+   else
+    lbImage[i*8 + j] = 1;
+  }
+ }
+}
 #pragma empty_line
-unsigned find(unsigned i,unsigned set[30]) {
- unsigned temp = i;
+unsigned find(unsigned id) {
+ int temp = id;
  while (temp != set[temp]) {
-  temp = set[temp];
+#pragma HLS PIPELINE
+ temp = set[temp];
  }
  return temp;
 }
 #pragma empty_line
-void preProcess(unsigned Image[8][8], unsigned lbImage[8][8]) {
- unsigned i = 0,j = 0;
-#pragma HLS PIPELINE
- for (i = 0; i < 8; ++i) {
-  for (j = 0; j < 8; ++j) {
-   if (Image[i][j] < 70)
-    lbImage[i][j] = 0;
-   else
-    lbImage[i][j] = 1;
-  }
- }
-#pragma empty_line
-}
-#pragma empty_line
-unsigned firstPass( unsigned Image[8][8],
-     unsigned lbImage[8][8],
-     starStruct starData[30],
-     unsigned set[30]) {
+unsigned firstPass(unsigned Image[8*8]) {
  unsigned i = 0, j = 0;
  unsigned label = 0;
  unsigned prevAbove = 0;
  unsigned prevLeft = 0;
  unsigned setCount = 1;
- starStruct temp;
  unsigned min = 0;
  unsigned max = 999;
- for(i = 0; i < 8; ++i) {
-  for(j = 0; j < 8; ++j) {
+ for (int i = 0; i < 8; ++i) {
+  for (int j = 0; j < 8; ++j) {
 #pragma HLS PIPELINE
- if(lbImage[i][j] == 0) {
-    continue;
-   }
+ if (lbImage[i*8 + j] != 0) {
+    prevAbove = (i != 0 && lbImage[(i - 1)*8 + j] != 0) ? lbImage[(i - 1)*8 + j] : 999;
+    prevLeft = (j != 0 && lbImage[i*8 + j - 1] != 0) ? lbImage[i*8 + j - 1] : 999;
 #pragma empty_line
-   prevAbove = (i != 0 && lbImage[i - 1][j] != 0) ? lbImage[i - 1][j] : 999;
-   prevLeft = (j != 0 && lbImage[i][j - 1] != 0) ? lbImage[i][j - 1] : 999;
+    if (prevAbove == 999 && prevLeft == 999) {
+     lbImage[i*8 + j] = ++label;
+     set[setCount] = label;
 #pragma empty_line
-   if (prevAbove == 999 && prevLeft == 999) {
-    lbImage[i][j] = ++label;
-    set[setCount] = label;
+     //
+     status[setCount] = true;
+     totalIntensity[setCount] = Image[i*8 + j];
+     x[setCount] = i * Image[i*8 + j];
+     y[setCount] = j * Image[i*8 + j];
 #pragma empty_line
-#pragma empty_line
-    temp.status = true;
-    temp.totalIntensity = Image[i][j];
-    temp.x = i * Image[i][j];
-    temp.y = j * Image[i][j];
-    starData[setCount] = temp;
-#pragma empty_line
-    ++setCount;
-   }
-   else {
-    //Joint Set
-    min = prevAbove < prevLeft ? prevAbove : prevLeft;
-    max = prevAbove > prevLeft ? prevAbove : prevLeft;
-    if (max != 999) {
-     set[max] = find(min, set);
+     ++setCount;
     }
     else {
-     set[min] = find(min, set);
-    }
-    lbImage[i][j] = min;
+     //Joint Set
+     min = prevAbove < prevLeft ? prevAbove : prevLeft;
+     max = prevAbove > prevLeft ? prevAbove : prevLeft;
+     if (max != 999) {
+      set[max] = find(min);
+     }
+     else {
+      set[min] = find(min);
+     }
+     lbImage[i*8 + j] = min;
 #pragma empty_line
-    //Update data
-    starData[min].totalIntensity += Image[i][j];
-    starData[min].x += i * Image[i][j];
-    starData[min].y += j * Image[i][j];
+     //Update data
+     totalIntensity[min] += Image[i*8 + j];
+     x[min] += i * Image[i*8 + j];
+     y[min] += j * Image[i*8 + j];
+    }
    }
   }
  }
  return setCount;
 }
 #pragma empty_line
-unsigned calCentroid(unsigned set[30], starStruct starData[30], centroid centroidData[30], unsigned setCount) {
+unsigned calCentroid(unsigned setCount, unsigned X[40], unsigned Y[40]) {
  unsigned i = 0;
  unsigned root = 0;
  unsigned centroidDataCount = 0;
- centroid temp;
- for(i = 1; i < setCount; ++i) {
+#pragma empty_line
+ for (i = 1; i < setCount; ++i) {
 #pragma HLS PIPELINE
- if(set[i] != i) {
-   root = find(i, set);
-   starData[root].totalIntensity += starData[i].totalIntensity;
-   starData[root].x += starData[i].x;
-   starData[root].y += starData[i].y;
-   starData[i].status = false;
+ if (set[i] != i) {
+   root = find(i);
+   totalIntensity[root] += totalIntensity[i];
+   x[root] += x[i];
+   y[root] += y[i];
+   status[i] = false;
   }
  }
 #pragma empty_line
  //cal
- for(i = 1; i < setCount; ++i) {
+ for (i = 1; i < setCount; ++i) {
 #pragma HLS PIPELINE
- if(starData[i].status == true) {
-   temp.root = i;
-   temp.x = (float)starData[i].x / starData[i].totalIntensity;
-   temp.y = (float)starData[i].y / starData[i].totalIntensity;
+ if (status[i] == true) {
+   X[centroidDataCount] = (float)x[i] / totalIntensity[i];
+   Y[centroidDataCount] = (float)y[i] / totalIntensity[i];
 #pragma empty_line
-   centroidData[centroidDataCount] = temp;
    ++centroidDataCount;
   }
  }
  return centroidDataCount;
 }
 #pragma empty_line
-unsigned CCLabel(unsigned Image[8][8], unsigned lbImage[8][8], starStruct starData[30], unsigned set[30], centroid centroidData[30]) {
- preProcess(Image, lbImage);
- unsigned setCount = firstPass(Image, lbImage, starData, set);
- unsigned centroidDataCount = calCentroid(set, starData, centroidData, setCount);
+void secondPass() {
+ unsigned i = 0, j = 0;
+ unsigned root = 0;
+ for (i = 0; i < 8; ++i) {
+  for (j = 0; j < 8; ++j) {
+#pragma HLS PIPELINE
+ if (lbImage[i*8 + j] != 0) {
+    root = find(lbImage[i*8 + j]);
+    lbImage[i*8 + j] = find(lbImage[i*8 + j]);
+   }
+  }
+ }
+}
+#pragma empty_line
+unsigned CCLabel(unsigned Image[8*8], unsigned X[40], unsigned Y[40]) {
+#pragma HLS INTERFACE s_axilite port=return bundle=CRTLS
+#pragma HLS INTERFACE bram port=Image bundle=CRTLS
+#pragma HLS INTERFACE bram port=X bundle=CRTLS
+#pragma HLS INTERFACE bram port=Y bundle=CRTLS
+#pragma empty_line
+ preProcess(Image);
+ unsigned setCount = firstPass(Image);
+ unsigned centroidDataCount = calCentroid(setCount, X, Y);
 #pragma empty_line
  return centroidDataCount;
 }

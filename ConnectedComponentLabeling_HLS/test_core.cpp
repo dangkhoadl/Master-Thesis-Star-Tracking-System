@@ -11,13 +11,6 @@ using namespace std;
 #define MAX_SET_SIZE 30
 #define MAX_CENTROID_DATA 30
 
-struct starStruct {
-	bool status;
-	unsigned totalIntensity;
-	unsigned x;
-	unsigned y;
-};
-
 struct centroid {
 	unsigned root;
 	float x;
@@ -25,13 +18,9 @@ struct centroid {
 };
 
 // Image File path
-#define INPUT_IMAGE_CORE "D:\\Dropbox\\DangKhoa\\CEE_Cache\\StarTrackingProject\\ConnectedComponentLabeling_HLS\\RAW_IMG.txt"
+#define INPUT_IMAGE_CORE "D:\\Dropbox\\DangKhoa\\CEE_Cache\\StarTrackingProject\\ConnectedComponentLabeling_HLS\\smallDataSet.txt"
 
-unsigned CCLabel(	unsigned Image[IMG_HEIGHT][IMG_WIDTH],
-					unsigned lbImage[IMG_HEIGHT][IMG_WIDTH],
-					starStruct starData[MAX_STAR_DATA_SIZE],
-					unsigned set[MAX_SET_SIZE],
-					centroid centroidData[MAX_CENTROID_DATA]);
+unsigned CCLabel(unsigned Image[IMG_HEIGHT][IMG_WIDTH], centroid centroidData[MAX_CENTROID_DATA]);
 
 void test(unsigned lbImage[IMG_HEIGHT][IMG_WIDTH]) {
 	for (unsigned i = 0; i < IMG_HEIGHT; ++i) {
@@ -67,11 +56,8 @@ int main() {
 	readImage(fileIn, Image);
 	test(Image);
 
-	unsigned lbImage[IMG_HEIGHT][IMG_WIDTH];
-	starStruct starData[MAX_STAR_DATA_SIZE];
-	unsigned set[MAX_SET_SIZE];
 	centroid centroidData[MAX_CENTROID_DATA];
-	unsigned centroidDataCount = CCLabel(Image, lbImage, starData, set, centroidData);
+	unsigned centroidDataCount = CCLabel(Image, centroidData);
 	printfResult(centroidData, centroidDataCount);
 
 	return 0;

@@ -6,7 +6,10 @@
 ================================================================
 @I [LIC-101] Checked out feature [HLS]
 @I [HLS-10] Running 'D:/Xilinx/Vivado_HLS/2014.4/bin/unwrapped/win64.o/vivado_hls.exe'
-            for user 'E150003' on host 'edell34' (Windows NT_amd64 version 6.1) on Tue Feb 28 16:07:55 +0800 2017
+            for user 'E150003' on host 'edell34' (Windows NT_amd64 version 6.1) on Fri Mar 03 21:45:03 +0800 2017
             in directory 'D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS'
 @I [HLS-10] Bringing up Vivado HLS GUI ... 
+@E [HLS-102] Encountered an internal error;
+             For technical support on this issue, please visit http://www.xilinx.com/support.
+TclStackFree: incorrect freePtr. Call out of sequence?
 @I [LIC-101] Checked in feature [HLS]

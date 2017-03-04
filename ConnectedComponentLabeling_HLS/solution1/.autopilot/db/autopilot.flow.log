@@ -1,165 +1,958 @@
-@I [HLS-0] Workspace D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1 opened at Tue Feb 28 17:30:58 +0800 2017
+@I [HLS-0] Workspace D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1 opened at Fri Mar 03 22:37:42 +0800 2017
 @I [HLS-100] Command "config_clock -quiet -name default -period 10 -default=false "
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
-@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 3.165 sec.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 1.654 sec.
 @I [HLS-100] Command "open_platform DefaultPlatform "
-@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 3.167 sec.
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.656 sec.
 @I [HLS-100] Command "import_lib D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.lib "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.lib "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.172 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 1.667 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.174 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.668 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.175 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.670 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.176 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.671 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.177 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007Total elapsed time: 3.177 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 1.672 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008Total elapsed time: 1.672 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.178 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 1.675 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 3.178 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.676 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.179 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.011Total elapsed time: 3.180 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.677 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.017Total elapsed time: 1.678 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_old.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.181 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 1.682 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_vivado.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.182 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 1.684 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.hlp "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/target_info.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.185 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 1.701 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.hlp "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.186 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 1.705 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 3.186 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.186 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 1.707 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 1.707 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.187 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 3.187 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004Total elapsed time: 1.711 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.019Total elapsed time: 1.711 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/dsp48e1.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 3.187 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 1.713 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 3.188 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 1.714 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 3.188 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.714 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed medium "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 3.188 sec.
-@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.022Total elapsed time: 3.189 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 1.714 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.058Total elapsed time: 1.715 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.191 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007Total elapsed time: 1.727 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.192 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 1.732 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 3.194 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.012Total elapsed time: 1.744 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 3.197 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008Total elapsed time: 1.755 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 3.203 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009Total elapsed time: 3.203 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.764 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.02Total elapsed time: 1.764 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 3.209 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.774 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008Total elapsed time: 3.217 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.01Total elapsed time: 1.785 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 3.217 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 1.787 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.089Total elapsed time: 3.306 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.091Total elapsed time: 1.879 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/struct/list.tcl "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 3.390 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.071Total elapsed time: 3.390 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.014Total elapsed time: 1.962 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.067Total elapsed time: 1.962 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/tps/tcl/tcllib1.11.1/math/bignum.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.394 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.093Total elapsed time: 3.399 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.209Total elapsed time: 3.399 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 1.970 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.095Total elapsed time: 1.975 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.255Total elapsed time: 1.975 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.400 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.211Total elapsed time: 3.400 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.211Total elapsed time: 3.400 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 1.978 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.262Total elapsed time: 1.978 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.264Total elapsed time: 1.978 sec.
 @I [HLS-100] Command "open_platform DefaultPlatform "
-@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 3.400 sec.
+@I [HLS-100] Command 'open_platform' returned 0; elapsed 0Total elapsed time: 1.978 sec.
 @I [HLS-100] Command "import_lib D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6 "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv7.lib "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 3.403 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 1.985 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv.hlp "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.hlp "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/target_info.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.064Total elapsed time: 3.474 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.028Total elapsed time: 2.28 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/xilinx_interface.hlp "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.477 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 2.29 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.478 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 3.478 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0Total elapsed time: 2.30 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 2.30 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.hlp "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.479 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.07Total elapsed time: 3.479 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.071Total elapsed time: 3.479 sec.
-@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.083Total elapsed time: 3.483 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 2.31 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.03Total elapsed time: 2.31 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.039Total elapsed time: 2.31 sec.
+@I [HLS-100] Command 'import_lib' returned 0; elapsed 0.056Total elapsed time: 2.34 sec.
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
 @I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 3.485 sec.
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 3.485 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 2.40 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 2.40 sec.
 @I [HLS-100] Command "set_part xc7z020clg484-1 "
 @I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 3.490 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.46 sec.
 @I [HLS-100] Command "license_exists VIVADO_HLS "
-@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.139Total elapsed time: 3.629 sec.
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.105Total elapsed time: 2.152 sec.
 @I [HLS-100] Command "license_exists ap_opencl "
-@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.214Total elapsed time: 3.843 sec.
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.045Total elapsed time: 2.196 sec.
 @I [HLS-100] Command "license_exists AUTOESL_NI "
-@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.145Total elapsed time: 3.988 sec.
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.069Total elapsed time: 2.266 sec.
 @I [HLS-100] Command "license_exists HLS "
 @I [LICQ-103] Checked out feature [HLS]
 @I [LIC-101] Checked out feature [HLS]
-@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 3.988 sec.
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 2.266 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 3.992 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.269 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 3.992 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.269 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed slow "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 3.992 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.507Total elapsed time: 3.996 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.269 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.227Total elapsed time: 2.273 sec.
 @I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 3.997 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.273 sec.
 @I [HLS-100] Command "license_exists VIVADO_HLS "
-@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.177Total elapsed time: 4.174 sec.
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.099Total elapsed time: 2.373 sec.
 @I [HLS-100] Command "license_exists ap_opencl "
-@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.169Total elapsed time: 4.343 sec.
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.104Total elapsed time: 2.476 sec.
 @I [HLS-100] Command "license_exists AUTOESL_NI "
-@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.055Total elapsed time: 4.398 sec.
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.058Total elapsed time: 2.535 sec.
 @I [HLS-100] Command "license_exists HLS "
-@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 4.398 sec.
-@I [HLS-100] Command 'add_library' returned 0; elapsed 0.406Total elapsed time: 4.402 sec.
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 2.535 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.266Total elapsed time: 2.539 sec.
 @I [HLS-10] Setting target device to 'xc7z020clg484-1'
-@I [HLS-100] Command 'set_part' returned 0; elapsed 0.916Total elapsed time: 4.402 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 0.498Total elapsed time: 2.539 sec.
 @I [HLS-100] Command "get_default_platform "
-@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 4.402 sec.
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.539 sec.
 @I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 4.402 sec.
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.539 sec.
 @I [HLS-100] Command "config_chip_info -quiet -speed slow "
-@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 4.402 sec.
-@I [HLS-100] Command 'open_solution' returned 0; elapsed 1.362Total elapsed time: 4.403 sec.
-@I [HLS-100] Command "csim_design -quiet "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 2.539 sec.
+@I [HLS-100] Command 'open_solution' returned 0; elapsed 1.003Total elapsed time: 2.539 sec.
+@I [HLS-100] Command "set_part xc7z020clg484-1 "
+@I [HLS-100] Command "add_library xilinx/zynq/zynq:xc7z020:clg484:-1 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 2.640 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.26Total elapsed time: 2.900 sec.
+@I [HLS-100] Command "license_exists ap_opencl "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.077Total elapsed time: 2.977 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.048Total elapsed time: 3.25 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 3.25 sec.
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 3.28 sec.
+@I [HLS-100] Command "config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 3.28 sec.
+@I [HLS-100] Command "config_chip_info -quiet -speed slow "
+@I [HLS-100] Command 'config_chip_info' returned 0; elapsed 0Total elapsed time: 3.28 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.393Total elapsed time: 3.31 sec.
+@I [HLS-100] Command "add_library xilinx/zynq/zynq_fpv6 "
+@I [HLS-100] Command "get_default_platform "
+@I [HLS-100] Command 'get_default_platform' returned 0; elapsed 0Total elapsed time: 3.32 sec.
+@I [HLS-100] Command "license_exists VIVADO_HLS "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.267Total elapsed time: 3.299 sec.
+@I [HLS-100] Command "license_exists ap_opencl "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.483Total elapsed time: 3.782 sec.
+@I [HLS-100] Command "license_exists AUTOESL_NI "
+@I [HLS-100] Command 'license_exists' returned 1; elapsed 0.182Total elapsed time: 3.965 sec.
+@I [HLS-100] Command "license_exists HLS "
+@I [HLS-100] Command 'license_exists' returned 0; elapsed 0Total elapsed time: 3.965 sec.
+@I [HLS-100] Command 'add_library' returned 0; elapsed 0.937Total elapsed time: 3.968 sec.
+@I [HLS-100] Command 'set_part' returned 0; elapsed 1.429Total elapsed time: 3.968 sec.
+@I [HLS-100] Command "create_clock -period 10 -name default "
+@I [HLS-100] Command "config_clock -quiet -name default -period 10 -default=false "
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-100] Command 'config_clock' returned 0; elapsed 0Total elapsed time: 3.972 sec.
+@I [HLS-100] Command 'create_clock' returned 0; elapsed 0.004Total elapsed time: 3.972 sec.
+@I [HLS-100] Command "source ./ConnectedComponentLabeling_HLS/solution1/directives.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.139Total elapsed time: 4.112 sec.
+@I [HLS-100] Command "csynth_design "
+@I [HLS-100] Command "elaborate -effort=medium -skip_syncheck=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 "
+@I [HLS-10] Analyzing design file 'ConnectedComponentLabeling_HLS/core.cpp' ... 
+@0 [HLS-0] Analyzing design file 'ConnectedComponentLabeling_HLS/core.cpp' ... 
+@I [HLS-0] Compiling one TU...
+@I [HLS-0] 
+Checking before pre-process: exec clang -fno-limit-debug-info -gcc-toolchain "D:/Xilinx/Vivado_HLS/2014.4/msys" -hls    -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__cdecl=   -I "D:/Xilinx/Vivado_HLS/2014.4/win64/tools/systemc/include" -I "D:/Xilinx/Vivado_HLS/2014.4/include" -I "D:/Xilinx/Vivado_HLS/2014.4/include/ap_sysc" -fexceptions "ConnectedComponentLabeling_HLS/core.cpp"  -o "D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pp.00.o"
+
+@I [HLS-0] Syntax Checker time: 1 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "D:/Xilinx/Vivado_HLS/2014.4/msys" -hls -fno-exceptions  -D__llvm__  -CC -E "ConnectedComponentLabeling_HLS/core.cpp"     -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot" -I "D:/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pp.0.cpp"
+
+@I [HLS-0] GCC PP time: 0 seconds per iteration
+@I [HLS-100] Command "list_core -type functional_unit "
+@I [HLS-100] Command 'list_core' returned 0; elapsed 0Total elapsed time: 6.389 sec.
+@I [HLS-0] Marker-Pragma convertor: D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pp.0.cpp D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pp.0.cpp.ap-line.cpp D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pp.0.cpp.ap-line.cpp.CXX 1
+@I [HLS-0] 
+Source processor: exec D:/Xilinx/Vivado_HLS/2014.4/tps/win64/jre/bin/java -Xmx512m -classpath   "D:/Xilinx/Vivado_HLS/2014.4/lib/classes/autopilot.sourceprocessor.jar;D:/Xilinx/Vivado_HLS/2014.4/lib/classes/org.eclipse.cdt.core_5.3.0.xilinx_patch.jar;D:/Xilinx/Vivado_HLS/2014.4/lib/classes/org.eclipse.core.runtime_3.7.0.v20110110.jar;D:/Xilinx/Vivado_HLS/2014.4/lib/classes/org.eclipse.equinox.common_3.6.0.v20110523.jar;D:/Xilinx/Vivado_HLS/2014.4/lib/classes/com.ibm.icu_4.4.2.v20110208.jar;D:/Xilinx/Vivado_HLS/2014.4/lib/classes/jargs.jar;D:/Xilinx/Vivado_HLS/2014.4/win64/tools/eclipse/plugins/org.eclipse.emf.common_2.10.0.v20140514-1158.jar;D:/Xilinx/Vivado_HLS/2014.4/win64/tools/eclipse/plugins/org.eclipse.emf.ecore_2.10.0.v20140514-1158.jar;D:/Xilinx/Vivado_HLS/2014.4/win64/tools/eclipse/plugins/org.eclipse.emf.ecore.xmi_2.10.0.v20140514-1158.jar;D:/Xilinx/Vivado_HLS/2014.4/win64/tools/eclipse/plugins/com.autoesl.autopilot.ui.directiveFileModel_1.0.0.jar;D:/Xilinx/Vivado_HLS/2014.4/win64/tools/eclipse/plugins/com.autoesl.autopilot.ui.common_1.0.0.jar"  autopilot.sourceprocessor.CParser  "D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pp.0.cpp.ap-line.cpp"  -m "CCLabel" -o "D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pp.0.cpp.ap-cdt.cpp" --ad --pc --pp --directive D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/solution1.directive --source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/core.cpp --error D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db --funcunit "AddSub AddSub_DSP AddSubnS DAddSub_fulldsp DAddSub_nodsp DDiv DExp_fulldsp DExp_meddsp DExp_nodsp DLog_fulldsp DLog_meddsp DLog_nodsp DMul_fulldsp DMul_maxdsp DMul_meddsp DMul_nodsp DRSqrt DRecip DSqrt DivnS FAddSub_fulldsp FAddSub_nodsp FDiv FExp_fulldsp FExp_meddsp FExp_nodsp FLog_fulldsp FLog_meddsp FLog_nodsp FMul_fulldsp FMul_maxdsp FMul_meddsp FMul_nodsp FRSqrt_fulldsp FRSqrt_nodsp FRecip_fulldsp FRecip_nodsp FSqrt Mul Mul2S Mul3S Mul4S Mul5S Mul6S MulnS" --ve --vetcl D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db --lp --ca --es --gf --df --pd --p2d D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db --sd --scff D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/.systemc_flag
+
+@I [HLS-0] Marker-Pragma convertor: D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pp.0.cpp.ap-cdt.cpp D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pragma.0.cpp D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pragma.0.cpp.ap-line.CXX 0
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 8.598 sec.
+@I [HLS-0] CDT processor time: 2 seconds per iteration
+@I [HLS-0] Pragma handling time: 0 seconds per iteration
+@I [HLS-0] 
+Source preprocessing: exec clang -fno-limit-debug-info -gcc-toolchain "D:/Xilinx/Vivado_HLS/2014.4/msys" -hls -fno-exceptions  -D__llvm__  -CC -E "D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pragma.1.cpp"     -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot" -I "D:/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D "__asm__(...)="  -o "D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pragma.2.cpp"
+
+@I [HLS-0] exec clang -fno-limit-debug-info -gcc-toolchain D:/Xilinx/Vivado_HLS/2014.4/msys -hls -fno-exceptions  -D__llvm__  -w  "D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pragma.2.cpp"    -D "__asm__(...)=" -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot" -I "D:/Xilinx/Vivado_HLS/2014.4/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -g -o "D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.g.bc"
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/ve_warning.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 10.739 sec.
+@I [HLS-10] Validating synthesis directives ...
+@0 [HLS-0] Validating synthesis directives ...
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/pragma.status.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.082Total elapsed time: 10.824 sec.
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.bc"  -disable-opt  -LD:/Xilinx/Vivado_HLS/2014.4/win64/lib -lm_basic -o "D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.o.pre"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-0] Linking all ...
+@I [HLS-0] exec llvm-ld  "D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.g.bc"  -disable-opt  -LD:/Xilinx/Vivado_HLS/2014.4/win64/lib -lm_basic -o "D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.g.pre"
+@I [HLS-0] Link time: 0 seconds per iteration
+@I [HLS-100] Command "opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 "
+@I [HLS-100] Command "cleanup_all_models "
+@I [HLS-100] Command 'cleanup_all_models' returned 0; elapsed 0Total elapsed time: 11.787 sec.
+@I [HLS-10] Starting code transformations ...
+@0 [HLS-0] Starting code transformations ...
+@I [HLS-0] std xform: transform -hls -share-std-xform -always-inline -promote-dbg-pointer  -interface-preproc  -scalarrepl -mem2reg -keep-read-access -instcombine -dce  -promote-dbg-pointer  -bitop-raise  -indvars -loop-simplify -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -basicaa  -simplifycfg -mem2reg -globalopt  -global-constprop -deadargelim -instcombine -simplifycfg  -prune-eh -simplifycfg  -scalarrepl -instcombine -reassociate -licm  -simplifycfg -loop-simplify -indvars -instcombine  -simplifycfg -mem2reg -loop-simplify -indvars -instcombine  -gvn -gvn -instcombine -adce  -break-crit-edges  -simplifycfg -loop-delete  -global-array-opt -dce -dse -adce  -find-syn-modules -top CCLabel  -deadargelim  -mem2reg -instcombine -dce  -presyn-prepare -auto-rom-infer  -interface-preproc  -syn-check -check-rec-only  -find-region -simplifycfg -func-extr -function-inline  -mem2reg -instcombine -dce   -gvn -globaldce -adce -adse  -constprop -instcombine -bit-constprop  -instcombine -dce -simplifycfg -bitop-raise  -simplifycfg -dce -loop-delete -reassociate  -globalopt -global-privatize -mem2reg -dce  -global-constprop -pointer-simplify -constprop -dce  -func-inst -deadargelim  -promote-dbg-pointer  -norm-name   D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.g.0.bc -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.g.1.bc -f  -phase std-opt
+@I [XFORM-603] Inlining function 'ap_fixed_base<78, 55, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'hls::cast_IEEE754<unsigned int, float>' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/hls/hls_round.h:395).
+@I [XFORM-603] Inlining function 'ap_fixed_base<1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0>::overflow_adjust' into 'ap_fixed_base<1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0>::ap_fixed_base<55, 55, false, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
+@I [HLS-0] Std xform time: 1 seconds per iteration
+@I [HLS-10] Checking synthesizability ...
+@0 [HLS-0] Checking synthesizability ...
+@I [HLS-0] syn check 1/2: transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -function-uniquify  -directive-preproc -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce  -array-normalize -instcombine -dce  -array-seg-normalize -instcombine -dce  -array-flatten -instcombine -dce  -array-burst -dce  -deadargelim -promote-global-argument  -function-inline -dce  -doublePtrSimplify -doublePtrElim -dce  -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -dse -adse -instcombine  -ptrLegalization  -simplifycfg -dce -instcombine  -pointer-simplify -ptrArgReplace -dce -instcombine   -disaggr -scalarrepl -norm-name -dce  -mem2reg -instcombine -ptrLegalization   -simplifycfg -deadargelim  -instcombine -dce -inst-simplify -function-uniquify  -directive-preproc -function-uniquify -directive-preproc -mem2reg -dse -dce  -globaldce    D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.g.1.bc -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.g.2.prechk.bc -f
+@I [XFORM-602] Inlining function 'find' into 'firstPass' (ConnectedComponentLabeling_HLS/core.cpp:74) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::mantissa' into 'hls::cast_IEEE754<unsigned int, float>' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/hls/hls_round.h:392) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::expv' into 'hls::cast_IEEE754<unsigned int, float>' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/hls/hls_round.h:395) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::__signbit' into 'hls::cast_IEEE754<unsigned int, float>' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/hls/hls_round.h:402) automatically.
+@I [XFORM-602] Inlining function 'find' into 'calCentroid' (ConnectedComponentLabeling_HLS/core.cpp:100) automatically.
+@I [XFORM-602] Inlining function '__hls_fptoui_float_i32' into 'calCentroid' (ConnectedComponentLabeling_HLS/core.cpp:112) automatically.
+@I [HLS-0] Syn check 1/2 time: 0 seconds per iteration
+@I [HLS-0] syn check 2/2: transform -syn-check   D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.g.2.prechk.bc -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.g.2.bc -f  -phase syn-check
+@I [HLS-0] Syn check 2/2 time: 0 seconds per iteration
+@I [HLS-0] Compiler optimizing ...
+@I [HLS-0] Share syncheck's 1.bc for syn flow: copy D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.g.1.bc to D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.o.1.bc
+@I [HLS-0] presyn 1: transform -hls -tmp D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db -type-info -function-uniquify  -directive-preproc -function-uniquify -directive-preproc -mem2reg -dse -dce  -disaggr -scalarrepl -norm-name -deadargelim  -mem2reg -instcombine -dce -auto-rom-infer -dce -function-uniquify  -directive-preproc -function-uniquify -directive-preproc -mem2reg -dse -dce  -func-buffer -dce -array-normalize  -func-legal -instcombine -gvn -constprop -dce   -ptrArgReplace -mem2reg -instcombine -dce  -array-seg-normalize -deadargelim  -instcombine -dce  -pointer-simplify -dce  -port-alignment -dce  -interface-preproc  -data-pack -instcombine -dce   -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -loop-simplify -indvars -instcombine  -gvn -loop-simplify -mem2reg -dce -simplifycfg  -find-region -instcombine  -auto-loop-pipeline  -inst-simplify  -interface-preproc  -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll  -constprop -instcombine -simplifycfg -indvars  -simplifycfg -dce -globaldce  -gvn -disable-agg-range -inst-simplify  -constprop -simplifycfg -dce  -pointer-simplify -dce  -globalopt -constprop -dce  -array-promote -constprop -instcombine -dce -auto-par -instcombine -dce  -array-transform-check  -array-partition -instcombine -simplifycfg -dce  -ptrArgReplace -global-constprop -deadargelim -mem2reg  -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg  -instcombine -simplifycfg -dce  -array-reshape -instcombine -simplifycfg -dce   -mem-intrinsic-preproc -dce  -global-privatize  -mem2reg -globaldce  -promote-global-argument  -ptrArgReplace -mem2reg -instcombine -dce  -globalopt -mergereturn -simplify-global-access -mem2reg -dce  -pointer-simplify -dce  -functionattrs  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -inst-simplify -dce -norm-name  -function-inline  -func-inst -constprop -instcombine -simplifycfg -dce  -func-legal -dce   -directive-preproc -function-uniquify -directive-preproc -mem2reg -dse -dce  -loop-bound  -arraycheck -bitwidthmin -on-by-dataflow  -loop-delete -instcombine -simplifycfg -dce -loop-simplify -simplifycfg -loop-stream -instcombine -simplifycfg -dce -globaldce  -funstream-prep -function-stream -dce -globaldce  -array-streaming -instcombine -simplifycfg -dce    -group-axi-access    -simplifycfg -dce -loop-delete  -norm-name  D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.o.1.bc -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.o.1.tmp.bc -f
+@I [XFORM-502] Unrolling all loops for pipelining in function 'find' (ConnectedComponentLabeling_HLS/core.cpp:33).
+@W [XFORM-503] Cannot unroll loop 'Loop-1' (ConnectedComponentLabeling_HLS/core.cpp:35) in function 'find' completely: variable loop bound.
+@I [XFORM-602] Inlining function 'find' into 'firstPass' (ConnectedComponentLabeling_HLS/core.cpp:74) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::mantissa' into 'hls::cast_IEEE754<unsigned int, float>' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/hls/hls_round.h:392) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::expv' into 'hls::cast_IEEE754<unsigned int, float>' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/hls/hls_round.h:395) automatically.
+@I [XFORM-602] Inlining function 'hls::cast_IEEE754<unsigned int, float>' into '__hls_fptoui_float_i32' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/lib_floatconversion.cpp:49) automatically.
+@I [XFORM-602] Inlining function 'find' into 'calCentroid' (ConnectedComponentLabeling_HLS/core.cpp:100) automatically.
+@I [XFORM-602] Inlining function '__hls_fptoui_float_i32' into 'calCentroid' (ConnectedComponentLabeling_HLS/core.cpp:112) automatically.
+@I [HLS-0] Presyn 1 time: 0 seconds per iteration
+@I [HLS-0] presyn 2: transform -hls -keep-callgraph -scalarrepl -mem2reg  -port-alignment -dce  -indvars -loop-bound  -inst-simplify -instcombine -dce  -merge-array-access -mem2reg -dce  -clean-region -mergereturn -if-conv  -instcombine -dce -constprop  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce  -scalarrepl -mem2reg  -global-constprop -deadargelim -deadargelim  -instcombine -dce -simplifycfg    -ptrArgReplace -mem2reg -function-inline  -mem2reg -instcombine -dce -expr-balance  -instcombine -dce  -bitwidthmin  -directive-preproc  -inst-rectify -instcombine -dce  -functionattrs  -constprop -instcombine -bit-constprop  -simplify-global-access  -globalopt -globaldce  -inst-simplify -instcombine -elimdeaddata -dce  -loop-delete -simplifycfg   -norm-name D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.o.1.tmp.bc -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.o.2.bc -f  -phase presyn
+@I [XFORM-401] Performing if-conversion on hyperblock from (ConnectedComponentLabeling_HLS/core.cpp:112:4) to (ConnectedComponentLabeling_HLS/core.cpp:116:3) in function 'calCentroid'... converting 7 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (ConnectedComponentLabeling_HLS/core.cpp:54:5) to (ConnectedComponentLabeling_HLS/core.cpp:57:5) in function 'firstPass'... converting 7 basic blocks.
+@I [HLS-0] Presyn 2 time: 0 seconds per iteration
+@I [HLS-0] build ssdm: transform -hls -function-uniquify -auto-function-inline  -loop-simplify -indvars -licm -loop-dep  -loop-bound -licm -loop-simplify -flattenloopnest  -array-flatten -gvn -instcombine -dce  -array-map -dce -func-legal  -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify   -array-burst -promote-global-argument -dce  -axi4-lower -array-seg-normalize  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm  -inst-simplify -dce  -globaldce -array-streaming -instcombine  -dce   -deadargelim -doublePtrSimplify  -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer  -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg  -instcombine  -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine  -loop-rot -constprop -cfgopt -simplifycfg -indvars -pointer-simplify -dce -loop-bound  -loop-simplify -loop-preproc  -constprop -gvn -mem2reg -instcombine -dce  -loop-merge -dce  -bitwidthmin  -interface-preproc -interface-gen  -directive-preproc -inst-simplify -dce  -gvn -mem2reg -instcombine -dce -adse  -loop-bound  -instcombine -cfgopt -simplifycfg -loop-simplify  -clean-region -io-protocol  -find-region -mem2reg  -loop-simplify -phi-opt -bitop-raise  -inst-simplify -inst-rectify -instcombine -adce -deadargelim  -cfgopt -simplifycfg -strip-dead-prototypes  -interface-lower -bitop-lower -intrinsic-lower  -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa  -inst-simplify -simplifycfg   -mergereturn -inst-simplify -inst-rectify  -dce -bitop-lower  -loop-rewind -pointer-simplify -dce -cfgopt  -norm-name -legalize -read-loop-dep -dce -bitwidth   -cdfg-build  D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.o.2.bc -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.o.3.bc -f  -phase build-ssdm
+@W [XFORM-542] Cannot flatten a loop nest 'Loop-1' (ConnectedComponentLabeling_HLS/core.cpp:97:7) in function 'calCentroid' : 
+               the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+@W [XFORM-542] Cannot flatten a loop nest 'Loop-1.1' (ConnectedComponentLabeling_HLS/core.cpp:51:17) in function 'firstPass' : 
+               more than one sub loop.
+@I [XFORM-541] Flattening a loop nest 'Loop-1' (ConnectedComponentLabeling_HLS/core.cpp:50:16) in function 'firstPass'.
+@I [HLS-0] Build ssdm time: 0 seconds per iteration
+@I [HLS-0] Finish building internal data model.
+@I [HLS-100] Command 'opt_and_import_c' returned 0; elapsed 7.352Total elapsed time: 19.138 sec.
+@I [HLS-111] Elapsed time: 19.584 seconds; current memory usage: 286 MB.
+@I [HLS-100] Command 'elaborate' returned 0; elapsed 15.063Total elapsed time: 19.176 sec.
+@I [HLS-100] Command "autosyn "
+@I [HLS-10] Starting hardware synthesis ...
+@0 [HLS-0] Starting hardware synthesis ...
+@I [HLS-0] Synthesizing C/C++ design ...
+@I [HLS-10] Synthesizing 'CCLabel' ...
+@0 [HLS-0] Synthesizing 'CCLabel' ...
+@I [HLS-100] Command "ap_set_top_model CCLabel "
+@I [HLS-100] Command 'ap_set_top_model' returned 0; elapsed 0Total elapsed time: 19.720 sec.
+@I [HLS-100] Command "get_model_list CCLabel -filter all-wo-channel -topdown "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 19.721 sec.
+@I [HLS-100] Command "preproc_iomode -model CCLabel "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0.001Total elapsed time: 19.722 sec.
+@I [HLS-100] Command "preproc_iomode -model CCLabel_calCentroid "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0.024Total elapsed time: 19.746 sec.
+@I [HLS-100] Command "preproc_iomode -model CCLabel_firstPass "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0Total elapsed time: 19.746 sec.
+@I [HLS-100] Command "preproc_iomode -model CCLabel_preProcess "
+@I [HLS-100] Command 'preproc_iomode' returned 0; elapsed 0.001Total elapsed time: 19.746 sec.
+@I [HLS-100] Command "get_model_list CCLabel -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0Total elapsed time: 19.747 sec.
+@I [HLS-0] Model list for configure: CCLabel_preProcess CCLabel_firstPass CCLabel_calCentroid CCLabel
+@I [HLS-0] Configuring Module : CCLabel_preProcess ...
+@I [HLS-100] Command "set_default_model CCLabel_preProcess "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 19.748 sec.
+@I [HLS-100] Command "apply_spec_resource_limit CCLabel_preProcess "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 19.748 sec.
+@I [HLS-0] Configuring Module : CCLabel_firstPass ...
+@I [HLS-100] Command "set_default_model CCLabel_firstPass "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 19.748 sec.
+@I [HLS-100] Command "apply_spec_resource_limit CCLabel_firstPass "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 19.748 sec.
+@I [HLS-0] Configuring Module : CCLabel_calCentroid ...
+@I [HLS-100] Command "set_default_model CCLabel_calCentroid "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 19.748 sec.
+@I [HLS-100] Command "apply_spec_resource_limit CCLabel_calCentroid "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 19.748 sec.
+@I [HLS-0] Configuring Module : CCLabel ...
+@I [HLS-100] Command "set_default_model CCLabel "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 19.748 sec.
+@I [HLS-100] Command "apply_spec_resource_limit CCLabel "
+@I [HLS-100] Command 'apply_spec_resource_limit' returned 0; elapsed 0Total elapsed time: 19.748 sec.
+@I [HLS-0] Model list for preprocess: CCLabel_preProcess CCLabel_firstPass CCLabel_calCentroid CCLabel
+@I [HLS-0] Preprocessing Module: CCLabel_preProcess ...
+@I [HLS-100] Command "set_default_model CCLabel_preProcess "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 19.748 sec.
+@I [HLS-100] Command "cdfg_preprocess -model CCLabel_preProcess "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 19.749 sec.
+@I [HLS-100] Command "rtl_gen_preprocess CCLabel_preProcess "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 19.749 sec.
+@I [HLS-0] Preprocessing Module: CCLabel_firstPass ...
+@I [HLS-100] Command "set_default_model CCLabel_firstPass "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 19.749 sec.
+@I [HLS-100] Command "cdfg_preprocess -model CCLabel_firstPass "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0.001Total elapsed time: 19.750 sec.
+@I [HLS-100] Command "rtl_gen_preprocess CCLabel_firstPass "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 19.750 sec.
+@I [HLS-0] Preprocessing Module: CCLabel_calCentroid ...
+@I [HLS-100] Command "set_default_model CCLabel_calCentroid "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 19.750 sec.
+@I [HLS-100] Command "cdfg_preprocess -model CCLabel_calCentroid "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 19.751 sec.
+@I [HLS-100] Command "rtl_gen_preprocess CCLabel_calCentroid "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 19.751 sec.
+@I [HLS-0] Preprocessing Module: CCLabel ...
+@I [HLS-100] Command "set_default_model CCLabel "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 19.751 sec.
+@I [HLS-100] Command "cdfg_preprocess -model CCLabel "
+@I [HLS-100] Command 'cdfg_preprocess' returned 0; elapsed 0Total elapsed time: 19.751 sec.
+@I [HLS-100] Command "rtl_gen_preprocess CCLabel "
+@W [SYN-107] Renaming port name 'CCLabel/Image' to 'CCLabel/Image_r' to avoid conflict or HDL keywords.
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.001Total elapsed time: 19.751 sec.
+@I [HLS-0] Model list for synthesis: CCLabel_preProcess CCLabel_firstPass CCLabel_calCentroid CCLabel
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'CCLabel_preProcess' 
+@0 [HLS-0] -- Scheduling module 'CCLabel_preProcess' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model CCLabel_preProcess "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 19.752 sec.
+@I [HLS-100] Command "schedule -model CCLabel_preProcess "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.047Total elapsed time: 19.798 sec.
+@I [HLS-111] Elapsed time: 0.679 seconds; current memory usage: 286 MB.
+@I [HLS-100] Command "report -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_preProcess.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.007Total elapsed time: 19.904 sec.
+@I [HLS-100] Command "db_write -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_preProcess.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.011Total elapsed time: 19.916 sec.
+@I [HLS-0] Finish scheduling CCLabel_preProcess.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'CCLabel_preProcess' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'CCLabel_preProcess' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model CCLabel_preProcess "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 19.955 sec.
+@I [HLS-100] Command "bind -model CCLabel_preProcess "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=CCLabel_preProcess
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.002Total elapsed time: 19.957 sec.
+@I [HLS-111] Elapsed time: 0.167 seconds; current memory usage: 286 MB.
+@I [HLS-100] Command "report -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_preProcess.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.011Total elapsed time: 20.32 sec.
+@I [HLS-100] Command "db_write -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_preProcess.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.015Total elapsed time: 20.48 sec.
+@I [HLS-0] Finish binding CCLabel_preProcess.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'CCLabel_firstPass' 
+@0 [HLS-0] -- Scheduling module 'CCLabel_firstPass' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model CCLabel_firstPass "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 20.48 sec.
+@I [HLS-100] Command "schedule -model CCLabel_firstPass "
+@I [SCHED-11] Starting scheduling ...
+@W [SCHED-65] Unable to satisfy pipeline directive: Loop contains subloop(s) not being unrolled or flattened.
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@W [SCHED-64] Unable to schedule the loop exit test ('icmp' operation ('tmp_6_i')) in the first II cycles (II = 1).
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 2, Depth: 2.
+@I [SCHED-61] Pipelining loop 'Loop 1.2'.
+@W [SCHED-64] Unable to schedule the loop exit test ('icmp' operation ('tmp_6_i8')) in the first II cycles (II = 1).
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 2, Depth: 2.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.178Total elapsed time: 20.227 sec.
+@I [HLS-111] Elapsed time: 0.252 seconds; current memory usage: 286 MB.
+@I [HLS-100] Command "report -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_firstPass.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.032Total elapsed time: 20.354 sec.
+@I [HLS-100] Command "db_write -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_firstPass.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.03Total elapsed time: 20.384 sec.
+@I [HLS-0] Finish scheduling CCLabel_firstPass.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'CCLabel_firstPass' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'CCLabel_firstPass' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model CCLabel_firstPass "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 20.421 sec.
+@I [HLS-100] Command "bind -model CCLabel_firstPass "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=CCLabel_firstPass
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.016Total elapsed time: 20.436 sec.
+@I [HLS-111] Elapsed time: 0.205 seconds; current memory usage: 286 MB.
+@I [HLS-100] Command "report -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_firstPass.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.051Total elapsed time: 20.530 sec.
+@I [HLS-100] Command "db_write -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_firstPass.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.033Total elapsed time: 20.564 sec.
+@I [HLS-0] Finish binding CCLabel_firstPass.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'CCLabel_calCentroid' 
+@0 [HLS-0] -- Scheduling module 'CCLabel_calCentroid' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model CCLabel_calCentroid "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 20.564 sec.
+@I [HLS-100] Command "schedule -model CCLabel_calCentroid "
+@I [SCHED-11] Starting scheduling ...
+@W [SCHED-65] Unable to satisfy pipeline directive: Loop contains subloop(s) not being unrolled or flattened.
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@W [SCHED-64] Unable to schedule the loop exit test ('icmp' operation ('tmp_6_i')) in the first II cycles (II = 1).
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 2, Depth: 2.
+@I [SCHED-61] Pipelining loop 'Loop 2'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 26.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.174Total elapsed time: 20.738 sec.
+@I [HLS-111] Elapsed time: 0.304 seconds; current memory usage: 285 MB.
+@I [HLS-100] Command "report -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_calCentroid.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.022Total elapsed time: 20.869 sec.
+@I [HLS-100] Command "db_write -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_calCentroid.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.029Total elapsed time: 20.897 sec.
+@I [HLS-0] Finish scheduling CCLabel_calCentroid.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'CCLabel_calCentroid' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'CCLabel_calCentroid' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model CCLabel_calCentroid "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 21.19 sec.
+@I [HLS-100] Command "bind -model CCLabel_calCentroid "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=CCLabel_calCentroid
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.022Total elapsed time: 21.42 sec.
+@I [HLS-111] Elapsed time: 0.299 seconds; current memory usage: 285 MB.
+@I [HLS-100] Command "report -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_calCentroid.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.03Total elapsed time: 21.112 sec.
+@I [HLS-100] Command "db_write -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_calCentroid.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.034Total elapsed time: 21.146 sec.
+@I [HLS-0] Finish binding CCLabel_calCentroid.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'CCLabel' 
+@0 [HLS-0] -- Scheduling module 'CCLabel' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model CCLabel "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 21.146 sec.
+@I [HLS-100] Command "schedule -model CCLabel "
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-100] Command 'schedule' returned 0; elapsed 0.009Total elapsed time: 21.156 sec.
+@I [HLS-111] Elapsed time: 0.114 seconds; current memory usage: 285 MB.
+@I [HLS-100] Command "report -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.verbose.sched.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.016Total elapsed time: 21.618 sec.
+@I [HLS-100] Command "db_write -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.sched.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.011Total elapsed time: 21.630 sec.
+@I [HLS-0] Finish scheduling CCLabel.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'CCLabel' 
+@0 [HLS-0] -- Exploring micro-architecture for module 'CCLabel' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "set_default_model CCLabel "
+@I [HLS-100] Command 'set_default_model' returned 0; elapsed 0Total elapsed time: 21.739 sec.
+@I [HLS-100] Command "bind -model CCLabel "
+@I [BIND-110] clear=
+@I [BIND-110] debug=
+@I [BIND-110] drf=
+@I [BIND-110] effort=
+@I [BIND-110] fast_refine=
+@I [BIND-110] fu_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] global_opt=
+@I [BIND-110] gsearch=
+@I [BIND-110] help=
+@I [BIND-110] help-hidden=
+@I [BIND-110] min_mem_port=
+@I [BIND-110] min_op=
+@I [BIND-110] minreg=
+@I [BIND-110] ml=
+@I [BIND-110] model=CCLabel
+@I [BIND-110] no_false_path=
+@I [BIND-110] no_min_op=
+@I [BIND-110] normalize=
+@I [BIND-110] quiet=
+@I [BIND-110] refine=
+@I [BIND-110] reg_weight=[ 0.0 -- 1.0 ]
+@I [BIND-110] search=
+@I [BIND-110] tight_delay=
+@I [BIND-110] verbose=
+@I [BIND-110] wFF=
+@I [BIND-110] wFU=
+@I [BIND-110] wMUX=
+@I [BIND-110] wNET=
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-100] Command 'bind' returned 0; elapsed 0.044Total elapsed time: 21.783 sec.
+@I [HLS-111] Elapsed time: 0.631 seconds; current memory usage: 285 MB.
+@I [HLS-100] Command "report -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.verbose.bind.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.064Total elapsed time: 21.891 sec.
+@I [HLS-100] Command "db_write -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.bind.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.025Total elapsed time: 21.918 sec.
+@I [HLS-0] Finish binding CCLabel.
+@I [HLS-100] Command "get_model_list CCLabel -filter all-wo-channel "
+@I [HLS-100] Command 'get_model_list' returned 0; elapsed 0.001Total elapsed time: 21.918 sec.
+@I [HLS-0] Preprocessing for RTLGen ...
+@I [HLS-100] Command "rtl_gen_preprocess CCLabel_preProcess "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 21.918 sec.
+@I [HLS-100] Command "rtl_gen_preprocess CCLabel_firstPass "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 21.919 sec.
+@I [HLS-100] Command "rtl_gen_preprocess CCLabel_calCentroid "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0.001Total elapsed time: 21.919 sec.
+@I [HLS-100] Command "rtl_gen_preprocess CCLabel "
+@I [HLS-100] Command 'rtl_gen_preprocess' returned 0; elapsed 0Total elapsed time: 21.919 sec.
+@I [HLS-0] Model list for RTL generation: CCLabel_preProcess CCLabel_firstPass CCLabel_calCentroid CCLabel
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'CCLabel_preProcess' 
+@0 [HLS-0] -- Generating RTL for module 'CCLabel_preProcess' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model CCLabel_preProcess -vendor xilinx -mg_file D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_preProcess.compgen.tcl "
+@W [RTGEN-101] Setting dangling out port 'CCLabel_preProcess/Image_r_WEN_A' to 0.
+@W [RTGEN-101] Setting dangling out port 'CCLabel_preProcess/Image_r_Din_A' to 0.
+@I [RTGEN-100] Finished creating RTL model for 'CCLabel_preProcess'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.032Total elapsed time: 22.155 sec.
+@I [HLS-111] Elapsed time: 0.371 seconds; current memory usage: 286 MB.
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 22.200 sec.
+@I [HLS-100] Command "gen_rtl CCLabel_preProcess -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/systemc/CCLabel_preProcess -synmodules CCLabel_preProcess CCLabel_firstPass CCLabel_calCentroid CCLabel "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.006Total elapsed time: 22.207 sec.
+@I [HLS-100] Command "gen_rtl CCLabel_preProcess -style xilinx -f -lang vhdl -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/vhdl/CCLabel_preProcess "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.004Total elapsed time: 22.211 sec.
+@I [HLS-100] Command "gen_rtl CCLabel_preProcess -style xilinx -f -lang vlog -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/verilog/CCLabel_preProcess "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.004Total elapsed time: 22.215 sec.
+@I [HLS-100] Command "gen_tb_info CCLabel_preProcess -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_preProcess -p D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.097Total elapsed time: 22.312 sec.
+@I [HLS-100] Command "report -model CCLabel_preProcess -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/report/CCLabel_preProcess_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.017Total elapsed time: 22.331 sec.
+@I [HLS-100] Command "report -model CCLabel_preProcess -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/report/CCLabel_preProcess_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.005Total elapsed time: 22.335 sec.
+@I [HLS-100] Command "report -model CCLabel_preProcess -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_preProcess.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.013Total elapsed time: 22.348 sec.
+@I [HLS-100] Command "db_write -model CCLabel_preProcess -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_preProcess.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.015Total elapsed time: 22.363 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'CCLabel_firstPass' 
+@0 [HLS-0] -- Generating RTL for module 'CCLabel_firstPass' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model CCLabel_firstPass -vendor xilinx -mg_file D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_firstPass.compgen.tcl "
+@W [RTGEN-101] Setting dangling out port 'CCLabel_firstPass/Image_r_WEN_A' to 0.
+@W [RTGEN-101] Setting dangling out port 'CCLabel_firstPass/Image_r_Din_A' to 0.
+@I [RTGEN-100] Generating core module 'CCLabel_mul_32s_4ns_32_3': 2 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'CCLabel_firstPass'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.087Total elapsed time: 22.644 sec.
+@I [HLS-111] Elapsed time: 0.497 seconds; current memory usage: 285 MB.
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 22.697 sec.
+@I [HLS-100] Command "gen_rtl CCLabel_firstPass -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/systemc/CCLabel_firstPass -synmodules CCLabel_preProcess CCLabel_firstPass CCLabel_calCentroid CCLabel "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.062Total elapsed time: 22.759 sec.
+@I [HLS-100] Command "gen_rtl CCLabel_firstPass -style xilinx -f -lang vhdl -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/vhdl/CCLabel_firstPass "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.009Total elapsed time: 22.769 sec.
+@I [HLS-100] Command "gen_rtl CCLabel_firstPass -style xilinx -f -lang vlog -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/verilog/CCLabel_firstPass "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 22.779 sec.
+@I [HLS-100] Command "gen_tb_info CCLabel_firstPass -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_firstPass -p D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.008Total elapsed time: 22.788 sec.
+@I [HLS-100] Command "report -model CCLabel_firstPass -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/report/CCLabel_firstPass_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.045Total elapsed time: 22.832 sec.
+@I [HLS-100] Command "report -model CCLabel_firstPass -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/report/CCLabel_firstPass_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.042Total elapsed time: 22.874 sec.
+@I [HLS-100] Command "report -model CCLabel_firstPass -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_firstPass.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.061Total elapsed time: 22.936 sec.
+@I [HLS-100] Command "db_write -model CCLabel_firstPass -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_firstPass.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.045Total elapsed time: 22.981 sec.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'CCLabel_calCentroid' 
+@0 [HLS-0] -- Generating RTL for module 'CCLabel_calCentroid' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model CCLabel_calCentroid -vendor xilinx -mg_file D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_calCentroid.compgen.tcl "
+@I [RTGEN-100] Generating core module 'CCLabel_fdiv_32ns_32ns_32_16': 2 instance(s).
+@I [RTGEN-100] Generating core module 'CCLabel_uitofp_32ns_32_6': 3 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'CCLabel_calCentroid'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.029Total elapsed time: 23.121 sec.
+@I [HLS-111] Elapsed time: 0.47 seconds; current memory usage: 287 MB.
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 23.166 sec.
+@I [HLS-100] Command "gen_rtl CCLabel_calCentroid -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/systemc/CCLabel_calCentroid -synmodules CCLabel_preProcess CCLabel_firstPass CCLabel_calCentroid CCLabel "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.01Total elapsed time: 23.176 sec.
+@I [HLS-100] Command "gen_rtl CCLabel_calCentroid -style xilinx -f -lang vhdl -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/vhdl/CCLabel_calCentroid "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.081Total elapsed time: 23.258 sec.
+@I [HLS-100] Command "gen_rtl CCLabel_calCentroid -style xilinx -f -lang vlog -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/verilog/CCLabel_calCentroid "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.073Total elapsed time: 23.331 sec.
+@I [HLS-100] Command "gen_tb_info CCLabel_calCentroid -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_calCentroid -p D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.005Total elapsed time: 23.336 sec.
+@I [HLS-100] Command "report -model CCLabel_calCentroid -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/report/CCLabel_calCentroid_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.012Total elapsed time: 23.349 sec.
+@I [HLS-100] Command "report -model CCLabel_calCentroid -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/report/CCLabel_calCentroid_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.01Total elapsed time: 23.359 sec.
+@I [HLS-100] Command "report -model CCLabel_calCentroid -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_calCentroid.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.04Total elapsed time: 23.399 sec.
+@I [HLS-100] Command "db_write -model CCLabel_calCentroid -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_calCentroid.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.041Total elapsed time: 23.441 sec.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'CCLabel' 
+@0 [HLS-0] -- Generating RTL for module 'CCLabel' 
+@I [HLS-10] ----------------------------------------------------------------
+@0 [HLS-0] ----------------------------------------------------------------
+@I [HLS-100] Command "create_rtl_model CCLabel -vendor xilinx -mg_file D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.compgen.tcl "
+@I [RTGEN-500] Setting interface mode on port 'CCLabel/Image_r' to 'bram'.
+@I [RTGEN-500] Setting interface mode on port 'CCLabel/X' to 'bram'.
+@I [RTGEN-500] Setting interface mode on port 'CCLabel/Y' to 'bram'.
+@I [RTGEN-500] Setting interface mode on function 'CCLabel' to 's_axilite & ap_ctrl_hs'.
+@W [RTGEN-101] Global array 'lbImage' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'set' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'status' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'totalIntensity' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'x_r' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'y_r' will not be exposed as RTL port.
+@W [RTGEN-101] Setting dangling out port 'CCLabel/Image_r_WEN_A' to 0.
+@W [RTGEN-101] Setting dangling out port 'CCLabel/Image_r_Din_A' to 0.
+@I [RTGEN-100] Finished creating RTL model for 'CCLabel'.
+@I [HLS-100] Command 'create_rtl_model' returned 0; elapsed 0.026Total elapsed time: 23.653 sec.
+@I [HLS-111] Elapsed time: 0.568 seconds; current memory usage: 288 MB.
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.rtl_wrap.cfg.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004Total elapsed time: 23.834 sec.
+@I [HLS-100] Command "gen_rtl CCLabel -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/systemc/CCLabel -synmodules CCLabel_preProcess CCLabel_firstPass CCLabel_calCentroid CCLabel "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.014Total elapsed time: 23.848 sec.
+@I [HLS-100] Command "gen_rtl CCLabel -istop -style xilinx -f -lang vhdl -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/vhdl/CCLabel "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.012Total elapsed time: 23.861 sec.
+@I [HLS-100] Command "gen_rtl CCLabel -istop -style xilinx -f -lang vlog -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/verilog/CCLabel "
+@I [HLS-100] Command 'gen_rtl' returned 0; elapsed 0.031Total elapsed time: 23.891 sec.
+@I [HLS-100] Command "export_constraint_db -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.constraint.tcl -f -tool general "
+@I [HLS-100] Command 'export_constraint_db' returned 0; elapsed 0.009Total elapsed time: 23.914 sec.
+@I [HLS-100] Command "report -model CCLabel -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.design.xml -verbose -f -dv "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.117Total elapsed time: 24.31 sec.
+@I [HLS-100] Command "gen_tb_info CCLabel -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel -p D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db "
+@I [HLS-100] Command 'gen_tb_info' returned 0; elapsed 0.048Total elapsed time: 24.80 sec.
+@I [HLS-100] Command "report -model CCLabel -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/report/CCLabel_csynth.rpt -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.012Total elapsed time: 24.92 sec.
+@I [HLS-100] Command "report -model CCLabel -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/syn/report/CCLabel_csynth.xml -f -x "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.008Total elapsed time: 24.101 sec.
+@I [HLS-100] Command "report -model CCLabel -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.verbose.rpt -verbose -f "
+@I [HLS-100] Command 'report' returned 0; elapsed 0.1Total elapsed time: 24.202 sec.
+@I [HLS-100] Command "db_write -model CCLabel -o D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.adb -f "
+@I [HLS-100] Command 'db_write' returned 0; elapsed 0.021Total elapsed time: 24.297 sec.
+@I [HLS-100] Command "sc_get_clocks CCLabel "
+@I [HLS-100] Command 'sc_get_clocks' returned 0; elapsed 0Total elapsed time: 24.308 sec.
+@I [HLS-100] Command "sc_get_portdomain CCLabel "
+@I [HLS-100] Command 'sc_get_portdomain' returned 0; elapsed 0Total elapsed time: 24.308 sec.
+@I [HLS-0] Model list for RTL component generation: CCLabel_preProcess CCLabel_firstPass CCLabel_calCentroid CCLabel
+@I [HLS-0] Handling components in module [CCLabel_preProcess] ... 
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_preProcess.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.082Total elapsed time: 24.457 sec.
+@I [HLS-0] Handling components in module [CCLabel_firstPass] ... 
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_firstPass.compgen.tcl "
+@I [HLS-0] Found component CCLabel_mul_32s_4ns_32_3.
+@I [HLS-0] Append model CCLabel_mul_32s_4ns_32_3
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.017Total elapsed time: 24.474 sec.
+@I [HLS-0] Handling components in module [CCLabel_calCentroid] ... 
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_calCentroid.compgen.tcl "
+@I [HLS-0] Found component CCLabel_fdiv_32ns_32ns_32_16.
+@I [HLS-0] Append model CCLabel_fdiv_32ns_32ns_32_16
+@I [HLS-0] Found component CCLabel_uitofp_32ns_32_6.
+@I [HLS-0] Append model CCLabel_uitofp_32ns_32_6
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.121Total elapsed time: 24.680 sec.
+@I [HLS-0] Handling components in module [CCLabel] ... 
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.compgen.tcl "
+@I [HLS-0] Found component CCLabel_lbImage.
+@I [HLS-0] Append model CCLabel_lbImage
+@I [HLS-0] Found component CCLabel_set.
+@I [HLS-0] Append model CCLabel_set
+@I [HLS-0] Found component CCLabel_status.
+@I [HLS-0] Append model CCLabel_status
+@I [HLS-0] Found component CCLabel_totalIntensity.
+@I [HLS-0] Append model CCLabel_totalIntensity
+@I [HLS-0] Found component CCLabel_CRTLS_s_axi.
+@I [HLS-0] Append model CCLabel_CRTLS_s_axi
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.069Total elapsed time: 24.825 sec.
+@I [HLS-0] Append model CCLabel_preProcess
+@I [HLS-0] Append model CCLabel_firstPass
+@I [HLS-0] Append model CCLabel_calCentroid
+@I [HLS-0] Append model CCLabel
+@I [HLS-0] Generating RTL model list ...
+@I [HLS-0] All models in this session: CCLabel_mul_32s_4ns_32_3 CCLabel_fdiv_32ns_32ns_32_16 CCLabel_uitofp_32ns_32_6 CCLabel_lbImage CCLabel_set CCLabel_status CCLabel_totalIntensity CCLabel_CRTLS_s_axi CCLabel_preProcess CCLabel_firstPass CCLabel_calCentroid CCLabel
+@I [HLS-0] To file: write model CCLabel_mul_32s_4ns_32_3
+@I [HLS-0] To file: write model CCLabel_fdiv_32ns_32ns_32_16
+@I [HLS-0] To file: write model CCLabel_uitofp_32ns_32_6
+@I [HLS-0] To file: write model CCLabel_lbImage
+@I [HLS-0] To file: write model CCLabel_set
+@I [HLS-0] To file: write model CCLabel_status
+@I [HLS-0] To file: write model CCLabel_totalIntensity
+@I [HLS-0] To file: write model CCLabel_CRTLS_s_axi
+@I [HLS-0] To file: write model CCLabel_preProcess
+@I [HLS-0] To file: write model CCLabel_firstPass
+@I [HLS-0] To file: write model CCLabel_calCentroid
+@I [HLS-0] To file: write model CCLabel
+@I [HLS-0] Finished generating RTL model list.
+
+
+@I [HLS-0] RTL Generation done.
+@I [HLS-0] CAS Generation done.
+@I [HLS-0] CBC Generation done.
+@I [HLS-100] Command "export_ssdm D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/a.export.ll "
+@I [HLS-100] Command 'export_ssdm' returned 0; elapsed 0.011Total elapsed time: 24.982 sec.
 @I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/global.setting.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004Total elapsed time: 4.482 sec.
-@I [HLS-100] Command "source csim/.lst_opt.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 4.510 sec.
-@I [HLS-100] Command "source run_sim.tcl "
-@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.723Total elapsed time: 7.496 sec.
-@I [SIM-1] CSim done with 0 errors.
-@I [HLS-100] Command 'csim_design' returned 0; elapsed 3.13Total elapsed time: 7.532 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 24.994 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/common.gen "
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/APCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 25.54 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.009Total elapsed time: 25.55 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.005Total elapsed time: 25.59 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/op_simcore.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.006Total elapsed time: 25.66 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/generic/autopilot/interface.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 25.68 sec.
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.69 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq.gen "
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/virtex.gen "
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx.gen "
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/plb46.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 25.72 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/fsl.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.73 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/axi4.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.014Total elapsed time: 25.87 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/nativeAXI4.gen "
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/saxilite.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004Total elapsed time: 25.100 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/maxi.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008Total elapsed time: 25.109 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.021Total elapsed time: 25.109 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/scripts/xilinxcoregen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.007Total elapsed time: 25.116 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/interface/XilEDKCoreGen.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.008Total elapsed time: 25.123 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/util.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.124 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfft.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.087Total elapsed time: 25.211 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/ip/xfir.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.021Total elapsed time: 25.232 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.162Total elapsed time: 25.232 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/dsp48.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.234 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.164Total elapsed time: 25.234 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.164Total elapsed time: 25.234 sec.
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/zynq/zynq_fpv6.gen "
+@I [HLS-100] Command "source D:/Xilinx/Vivado_HLS/2014.4/common/technology/xilinx/common/xilinx_fpv6.gen "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 25.236 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.002Total elapsed time: 25.236 sec.
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 25.604 sec.
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004Total elapsed time: 25.609 sec.
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/global.setting.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.003Total elapsed time: 25.616 sec.
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_preProcess.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.004Total elapsed time: 25.624 sec.
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_firstPass.compgen.tcl "
+@I [RTMG-282] Generating pipelined core: 'CCLabel_mul_32s_4ns_32_3_Mul3S_0'
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.054Total elapsed time: 25.678 sec.
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel_calCentroid.compgen.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.134Total elapsed time: 25.813 sec.
+@I [HLS-100] Command "source D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/CCLabel.compgen.tcl "
+@I [RTMG-278] Implementing memory 'CCLabel_lbImage_ram' using block RAMs with power-on initialization.
+@I [RTMG-278] Implementing memory 'CCLabel_set_ram' using block RAMs with power-on initialization.
+@I [RTMG-278] Implementing memory 'CCLabel_status_ram' using distributed RAMs with power-on initialization.
+@I [RTMG-278] Implementing memory 'CCLabel_totalIntensity_ram' using block RAMs with power-on initialization.
+@I [HLS-100] Command "source ./CRTLS.slave.tcl "
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.001Total elapsed time: 26.135 sec.
+@I [HLS-100] Command 'ap_source' returned 0; elapsed 0.346Total elapsed time: 26.160 sec.
+@I [HLS-10] Finished generating all RTL models.
+@0 [HLS-0] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'CCLabel'.
+@I [WVHDL-304] Generating RTL VHDL for 'CCLabel'.
+@I [WVLOG-307] Generating RTL Verilog for 'CCLabel'.
+@I [HLS-100] Command 'autosyn' returned 0; elapsed 7.426Total elapsed time: 26.602 sec.
+@I [HLS-100] Command 'csynth_design' returned 0; elapsed 22.49Total elapsed time: 26.602 sec.
 @I [HLS-100] Command "cleanup_all "
-@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0Total elapsed time: 7.533 sec.
+@I [HLS-100] Command 'cleanup_all' returned 0; elapsed 0.007Total elapsed time: 26.609 sec.

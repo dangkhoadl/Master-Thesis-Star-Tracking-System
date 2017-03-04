@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'CCLabel_preProcess'" level="0">
-<item name = "Date">Tue Feb 28 17:30:21 2017
+<item name = "Date">Fri Mar 03 22:38:00 2017
 </item>
 <item name = "Version">2014.4 (Build 1071461 on Tue Nov 18 16:42:57 PM 2014)</item>
 <item name = "Project">ConnectedComponentLabeling_HLS</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">32, 32, 32, 32, function</column>
+<column name="">145, 145, 145, 145, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,6 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">144, 144, 18, -, -, 8, no</column>
+<column name=" + Loop 1.1">16, 16, 2, -, -, 8, no</column>
 </table>
 </item>
 </section>

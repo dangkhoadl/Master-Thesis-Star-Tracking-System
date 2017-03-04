@@ -382,4 +382,4 @@
 #pragma line 854 "D:/Xilinx/Vivado_HLS/2014.4/win64/tools/clang/bin\\..\\lib\\clang\\3.1/../../../include/c++/4.5.2\\istream" 2 3 ::: 25229
 #pragma line 41 "D:/Xilinx/Vivado_HLS/2014.4/win64/tools/clang/bin\\..\\lib\\clang\\3.1/../../../include/c++/4.5.2\\iostream" 2 3 ::: 25230
 #pragma line 3 "ConnectedComponentLabeling_HLS/core.cpp" 2 ::: 25265
-#pragma line 14 "ConnectedComponentLabeling_HLS/core.cpp" ::: 25269
+#pragma line 12 "ConnectedComponentLabeling_HLS/core.cpp" ::: 25266

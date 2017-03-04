@@ -1,25 +1,206 @@
 @I [LIC-101] Checked out feature [HLS]
 @I [HLS-10] Running 'D:/Xilinx/Vivado_HLS/2014.4/bin/unwrapped/win64.o/vivado_hls.exe'
-            for user 'E150003' on host 'edell34' (Windows NT_amd64 version 6.1) on Tue Feb 28 17:30:58 +0800 2017
+            for user 'E150003' on host 'edell34' (Windows NT_amd64 version 6.1) on Fri Mar 03 22:37:42 +0800 2017
             in directory 'D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject'
 @I [HLS-10] Opening project 'D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS'.
+@I [HLS-10] Adding design file 'ConnectedComponentLabeling_HLS/core.cpp' to the project
+@I [HLS-10] Adding test bench file 'ConnectedComponentLabeling_HLS/test_core.cpp' to the project
 @I [HLS-10] Opening solution 'D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1'.
 @I [SYN-201] Setting up clock 'default' with a period of 10ns.
 @I [LIC-101] Checked out feature [HLS]
 @I [HLS-10] Setting target device to 'xc7z020clg484-1'
-   Compiling ../../../core.cpp in debug mode
-   Generating csim.exe
-0 0 0 0 0 0 0 0 
-0 111 111 111 111 0 0 0 
-0 111 0 0 111 0 111 0 
-0 0 0 0 111 111 111 0 
-0 0 111 111 111 0 0 0 
-0 0 0 111 0 0 0 222 
-0 0 0 0 0 0 0 0 
-0 0 0 0 0 0 0 0 
-
-
-Star[1]: root = 1, x = 2.571429, y = 3.428571
-Star[2]: root = 4, x = 5.000000, y = 7.000000
-@I [SIM-1] CSim done with 0 errors.
+@I [SYN-201] Setting up clock 'default' with a period of 10ns.
+@I [HLS-10] Analyzing design file 'ConnectedComponentLabeling_HLS/core.cpp' ... 
+@I [HLS-10] Validating synthesis directives ...
+@I [HLS-10] Starting code transformations ...
+@I [XFORM-603] Inlining function 'ap_fixed_base<78, 55, false, (ap_q_mode)5, (ap_o_mode)3, 0>::operator<<' into 'hls::cast_IEEE754<unsigned int, float>' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/hls/hls_round.h:395).
+@I [XFORM-603] Inlining function 'ap_fixed_base<1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0>::overflow_adjust' into 'ap_fixed_base<1, 33, false, (ap_q_mode)5, (ap_o_mode)0, 0>::ap_fixed_base<55, 55, false, (ap_q_mode)5, (ap_o_mode)3, 0>' ().
+@I [HLS-10] Checking synthesizability ...
+@I [XFORM-602] Inlining function 'find' into 'firstPass' (ConnectedComponentLabeling_HLS/core.cpp:74) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::mantissa' into 'hls::cast_IEEE754<unsigned int, float>' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/hls/hls_round.h:392) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::expv' into 'hls::cast_IEEE754<unsigned int, float>' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/hls/hls_round.h:395) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::__signbit' into 'hls::cast_IEEE754<unsigned int, float>' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/hls/hls_round.h:402) automatically.
+@I [XFORM-602] Inlining function 'find' into 'calCentroid' (ConnectedComponentLabeling_HLS/core.cpp:100) automatically.
+@I [XFORM-602] Inlining function '__hls_fptoui_float_i32' into 'calCentroid' (ConnectedComponentLabeling_HLS/core.cpp:112) automatically.
+@I [XFORM-502] Unrolling all loops for pipelining in function 'find' (ConnectedComponentLabeling_HLS/core.cpp:33).
+@W [XFORM-503] Cannot unroll loop 'Loop-1' (ConnectedComponentLabeling_HLS/core.cpp:35) in function 'find' completely: variable loop bound.
+@I [XFORM-602] Inlining function 'find' into 'firstPass' (ConnectedComponentLabeling_HLS/core.cpp:74) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::mantissa' into 'hls::cast_IEEE754<unsigned int, float>' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/hls/hls_round.h:392) automatically.
+@I [XFORM-602] Inlining function 'fp_struct<float>::expv' into 'hls::cast_IEEE754<unsigned int, float>' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/hls/hls_round.h:395) automatically.
+@I [XFORM-602] Inlining function 'hls::cast_IEEE754<unsigned int, float>' into '__hls_fptoui_float_i32' (r:/scratch/builds/2014.4/continuous/20141118161353/src/products/hls/hls_lib/src/lib_floatconversion.cpp:49) automatically.
+@I [XFORM-602] Inlining function 'find' into 'calCentroid' (ConnectedComponentLabeling_HLS/core.cpp:100) automatically.
+@I [XFORM-602] Inlining function '__hls_fptoui_float_i32' into 'calCentroid' (ConnectedComponentLabeling_HLS/core.cpp:112) automatically.
+@I [XFORM-401] Performing if-conversion on hyperblock from (ConnectedComponentLabeling_HLS/core.cpp:112:4) to (ConnectedComponentLabeling_HLS/core.cpp:116:3) in function 'calCentroid'... converting 7 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (ConnectedComponentLabeling_HLS/core.cpp:54:5) to (ConnectedComponentLabeling_HLS/core.cpp:57:5) in function 'firstPass'... converting 7 basic blocks.
+@W [XFORM-542] Cannot flatten a loop nest 'Loop-1' (ConnectedComponentLabeling_HLS/core.cpp:97:7) in function 'calCentroid' : 
+               the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+@W [XFORM-542] Cannot flatten a loop nest 'Loop-1.1' (ConnectedComponentLabeling_HLS/core.cpp:51:17) in function 'firstPass' : 
+               more than one sub loop.
+@I [XFORM-541] Flattening a loop nest 'Loop-1' (ConnectedComponentLabeling_HLS/core.cpp:50:16) in function 'firstPass'.
+@I [HLS-111] Elapsed time: 19.584 seconds; current memory usage: 286 MB.
+@I [HLS-10] Starting hardware synthesis ...
+@I [HLS-10] Synthesizing 'CCLabel' ...
+@W [SYN-107] Renaming port name 'CCLabel/Image' to 'CCLabel/Image_r' to avoid conflict or HDL keywords.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'CCLabel_preProcess' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.679 seconds; current memory usage: 286 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'CCLabel_preProcess' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.167 seconds; current memory usage: 286 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'CCLabel_firstPass' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@W [SCHED-65] Unable to satisfy pipeline directive: Loop contains subloop(s) not being unrolled or flattened.
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@W [SCHED-64] Unable to schedule the loop exit test ('icmp' operation ('tmp_6_i')) in the first II cycles (II = 1).
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 2, Depth: 2.
+@I [SCHED-61] Pipelining loop 'Loop 1.2'.
+@W [SCHED-64] Unable to schedule the loop exit test ('icmp' operation ('tmp_6_i8')) in the first II cycles (II = 1).
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 2, Depth: 2.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.252 seconds; current memory usage: 286 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'CCLabel_firstPass' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.205 seconds; current memory usage: 286 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'CCLabel_calCentroid' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@W [SCHED-65] Unable to satisfy pipeline directive: Loop contains subloop(s) not being unrolled or flattened.
+@I [SCHED-61] Pipelining loop 'Loop 1.1'.
+@W [SCHED-64] Unable to schedule the loop exit test ('icmp' operation ('tmp_6_i')) in the first II cycles (II = 1).
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 2, Depth: 2.
+@I [SCHED-61] Pipelining loop 'Loop 2'.
+@I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 26.
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.304 seconds; current memory usage: 285 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'CCLabel_calCentroid' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.299 seconds; current memory usage: 285 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Scheduling module 'CCLabel' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [SCHED-11] Starting scheduling ...
+@I [SCHED-11] Finished scheduling.
+@I [HLS-111] Elapsed time: 0.114 seconds; current memory usage: 285 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Exploring micro-architecture for module 'CCLabel' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [BIND-100] Starting micro-architecture generation ...
+@I [BIND-101] Performing variable lifetime analysis.
+@I [BIND-101] Exploring resource sharing.
+@I [BIND-101] Binding ...
+@I [BIND-100] Finished micro-architecture generation.
+@I [HLS-111] Elapsed time: 0.631 seconds; current memory usage: 285 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'CCLabel_preProcess' 
+@I [HLS-10] ----------------------------------------------------------------
+@W [RTGEN-101] Setting dangling out port 'CCLabel_preProcess/Image_r_WEN_A' to 0.
+@W [RTGEN-101] Setting dangling out port 'CCLabel_preProcess/Image_r_Din_A' to 0.
+@I [RTGEN-100] Finished creating RTL model for 'CCLabel_preProcess'.
+@I [HLS-111] Elapsed time: 0.371 seconds; current memory usage: 286 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'CCLabel_firstPass' 
+@I [HLS-10] ----------------------------------------------------------------
+@W [RTGEN-101] Setting dangling out port 'CCLabel_firstPass/Image_r_WEN_A' to 0.
+@W [RTGEN-101] Setting dangling out port 'CCLabel_firstPass/Image_r_Din_A' to 0.
+@I [RTGEN-100] Generating core module 'CCLabel_mul_32s_4ns_32_3': 2 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'CCLabel_firstPass'.
+@I [HLS-111] Elapsed time: 0.497 seconds; current memory usage: 285 MB.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'CCLabel_calCentroid' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-100] Generating core module 'CCLabel_fdiv_32ns_32ns_32_16': 2 instance(s).
+@I [RTGEN-100] Generating core module 'CCLabel_uitofp_32ns_32_6': 3 instance(s).
+@I [RTGEN-100] Finished creating RTL model for 'CCLabel_calCentroid'.
+@I [HLS-111] Elapsed time: 0.47 seconds; current memory usage: 287 MB.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@W [HLS-40] D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS and r:/scratch/builds/2014.4/continuous/20141118161353/src/products are not the same volume, so there is no relative path.
+@I [HLS-10] ----------------------------------------------------------------
+@I [HLS-10] -- Generating RTL for module 'CCLabel' 
+@I [HLS-10] ----------------------------------------------------------------
+@I [RTGEN-500] Setting interface mode on port 'CCLabel/Image_r' to 'bram'.
+@I [RTGEN-500] Setting interface mode on port 'CCLabel/X' to 'bram'.
+@I [RTGEN-500] Setting interface mode on port 'CCLabel/Y' to 'bram'.
+@I [RTGEN-500] Setting interface mode on function 'CCLabel' to 's_axilite & ap_ctrl_hs'.
+@W [RTGEN-101] Global array 'lbImage' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'set' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'status' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'totalIntensity' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'x_r' will not be exposed as RTL port.
+@W [RTGEN-101] Global array 'y_r' will not be exposed as RTL port.
+@W [RTGEN-101] Setting dangling out port 'CCLabel/Image_r_WEN_A' to 0.
+@W [RTGEN-101] Setting dangling out port 'CCLabel/Image_r_Din_A' to 0.
+@I [RTGEN-100] Finished creating RTL model for 'CCLabel'.
+@I [HLS-111] Elapsed time: 0.568 seconds; current memory usage: 288 MB.
+@I [RTMG-282] Generating pipelined core: 'CCLabel_mul_32s_4ns_32_3_Mul3S_0'
+@I [RTMG-278] Implementing memory 'CCLabel_lbImage_ram' using block RAMs with power-on initialization.
+@I [RTMG-278] Implementing memory 'CCLabel_set_ram' using block RAMs with power-on initialization.
+@I [RTMG-278] Implementing memory 'CCLabel_status_ram' using distributed RAMs with power-on initialization.
+@I [RTMG-278] Implementing memory 'CCLabel_totalIntensity_ram' using block RAMs with power-on initialization.
+@I [HLS-10] Finished generating all RTL models.
+@I [WSYSC-301] Generating RTL SystemC for 'CCLabel'.
+@I [WVHDL-304] Generating RTL VHDL for 'CCLabel'.
+@I [WVLOG-307] Generating RTL Verilog for 'CCLabel'.
+@I [HLS-112] Total elapsed time: 26.770 seconds; peak memory usage: 288 MB.
 @I [LIC-101] Checked in feature [HLS]
