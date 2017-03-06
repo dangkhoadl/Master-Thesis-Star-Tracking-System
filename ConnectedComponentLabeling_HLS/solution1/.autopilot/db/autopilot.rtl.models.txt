@@ -1,6 +1,9 @@
 CCLabel_mul_32s_4ns_32_3
 CCLabel_fdiv_32ns_32ns_32_16
 CCLabel_uitofp_32ns_32_6
+CCLabel_fpext_32ns_64_1
+CCLabel_calCentroid_mask_table1
+CCLabel_calCentroid_one_half_table2
 CCLabel_lbImage
 CCLabel_set
 CCLabel_status

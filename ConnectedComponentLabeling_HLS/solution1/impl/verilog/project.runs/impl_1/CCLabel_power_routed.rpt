@@ -1,0 +1,603 @@
+Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2014.4 (win64) Build 1071353 Tue Nov 18 18:24:04 MST 2014
+| Date             : Mon Mar 06 15:11:01 2017
+| Host             : edell34 running 64-bit Service Pack 1  (build 7601)
+| Command          : report_power -file CCLabel_power_routed.rpt -pb CCLabel_power_summary_routed.pb
+| Design           : CCLabel
+| Device           : xc7z020clg484-1
+| Design State     : Routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+-------+
+| Total On-Chip Power (W)  | 0.161 |
+| Dynamic (W)              | 0.042 |
+| Device Static (W)        | 0.119 |
+| Effective TJA (C/W)      | 11.5  |
+| Max Ambient (C)          | 83.1  |
+| Junction Temperature (C) | 26.9  |
+| Confidence Level         | Low   |
+| Setting File             | ---   |
+| Simulation Activity File | ---   |
+| Design Nets Matched      | NA    |
++--------------------------+-------+
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Clocks                   |     0.000 |        3 |       --- |             --- |
+| Slice Logic              |     0.019 |     9765 |       --- |             --- |
+|   LUT as Logic           |     0.015 |     3987 |     53200 |            7.49 |
+|   CARRY4                 |     0.003 |      635 |     13300 |            4.77 |
+|   Register               |    <0.001 |     3784 |    106400 |            3.55 |
+|   LUT as Shift Register  |    <0.001 |       65 |     17400 |            0.37 |
+|   LUT as Distributed RAM |    <0.001 |        2 |     17400 |            0.01 |
+|   F7/F8 Muxes            |    <0.001 |       51 |     53200 |            0.09 |
+|   Others                 |     0.000 |      840 |       --- |             --- |
+| Signals                  |     0.017 |     7345 |       --- |             --- |
+| Block RAM                |     0.004 |      6.5 |       140 |            4.64 |
+| DSPs                     |     0.003 |        4 |       220 |            1.81 |
+| Static Power             |     0.119 |          |           |                 |
+| Total                    |     0.161 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |     0.050 |       0.042 |      0.008 |
+| Vccaux    |       1.800 |     0.019 |       0.000 |      0.019 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.001 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccpint   |       1.000 |     0.017 |       0.000 |      0.017 |
+| Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
+| Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
+| Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco_mio0 |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco_mio1 |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+------------------------+
+| Ambient Temp (C)      | 25.0                   |
+| ThetaJA (C/W)         | 11.5                   |
+| Airflow (LFM)         | 250                    |
+| Heat Sink             | none                   |
+| ThetaSA (C/W)         | 0.0                    |
+| Board Selection       | medium (10"x10")       |
+| # of Board Layers     | 8to11 (8 to 11 Layers) |
+| Board Temperature (C) | 25.0                   |
++-----------------------+------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++--------+--------+-----------------+
+| Clock  | Domain | Constraint (ns) |
++--------+--------+-----------------+
+| ap_clk | ap_clk |            10.0 |
++--------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++-------------------------------------------------------+-----------+
+| Name                                                  | Power (W) |
++-------------------------------------------------------+-----------+
+| CCLabel                                               |     0.042 |
+|   CCLabel_CRTLS_s_axi_U                               |    <0.001 |
+|   grp_CCLabel_calCentroid_fu_53                       |     0.033 |
+|     CCLabel_fdiv_32ns_32ns_32_16_U10                  |     0.014 |
+|       CCLabel_ap_fdiv_14_no_dsp_32_u                  |     0.014 |
+|         U0                                            |     0.014 |
+|           i_synth                                     |     0.014 |
+|             DIV_OP.SPD.OP                             |     0.014 |
+|               EXP                                     |    <0.001 |
+|                 DIV_BY_ZERO_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 EXP_PRE_RND_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 EXP_SIG_DEL                           |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 FLOW_DEC_DEL                          |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 IP_SIGN_DELAY                         |     0.000 |
+|                   i_pipe                              |     0.000 |
+|                 SIGN_UP_DELAY                         |     0.000 |
+|                   i_pipe                              |     0.000 |
+|                 STATE_DELAY                           |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 STATE_UP_DELAY                        |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|               MANT_DIV                                |     0.014 |
+|                 MSB_DEL                               |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[0].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[10].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[11].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[11].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[12].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[13].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[13].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[14].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[15].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[15].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[16].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[17].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[17].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[18].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[19].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[19].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[1].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[1].MANT_DEL                        |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[20].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[21].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[21].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[22].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[23].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[23].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[23].Q_DEL                          |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[24].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[25].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[25].Q_DEL                          |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[2].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[3].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[3].MANT_DEL                        |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[4].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[5].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[5].MANT_DEL                        |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[6].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[7].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[7].MANT_DEL                        |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[8].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[9].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[9].MANT_DEL                        |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|               OP                                      |    <0.001 |
+|               ROUND                                   |    <0.001 |
+|                 EXP_ADD.ADD                           |    <0.001 |
+|                 LOGIC.RND1                            |    <0.001 |
+|                 LOGIC.RND2                            |    <0.001 |
+|                 RND_BIT_GEN                           |     0.000 |
+|                   NORM_1_OR_0.STRUCT_REQ.GENERAL.RND1 |     0.000 |
+|     CCLabel_fdiv_32ns_32ns_32_16_U9                   |     0.014 |
+|       CCLabel_ap_fdiv_14_no_dsp_32_u                  |     0.014 |
+|         U0                                            |     0.014 |
+|           i_synth                                     |     0.014 |
+|             DIV_OP.SPD.OP                             |     0.014 |
+|               EXP                                     |    <0.001 |
+|                 DIV_BY_ZERO_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 EXP_PRE_RND_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 EXP_SIG_DEL                           |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 FLOW_DEC_DEL                          |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 IP_SIGN_DELAY                         |     0.000 |
+|                   i_pipe                              |     0.000 |
+|                 SIGN_UP_DELAY                         |     0.000 |
+|                   i_pipe                              |     0.000 |
+|                 STATE_DELAY                           |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 STATE_UP_DELAY                        |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|               MANT_DIV                                |     0.014 |
+|                 MSB_DEL                               |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[0].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[10].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[11].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[11].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[12].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[13].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[13].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[14].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[15].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[15].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[16].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[17].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[17].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[18].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[19].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[19].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[1].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[1].MANT_DEL                        |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[20].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[21].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[21].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[22].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[23].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[23].MANT_DEL                       |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[23].Q_DEL                          |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[24].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[25].ADDSUB                         |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[25].Q_DEL                          |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[2].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[3].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[3].MANT_DEL                        |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[4].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[5].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[5].MANT_DEL                        |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[6].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[7].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[7].MANT_DEL                        |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 RT[8].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                 RT[9].ADDSUB                          |    <0.001 |
+|                   ADDSUB                              |    <0.001 |
+|                     Q_DEL                             |    <0.001 |
+|                       i_pipe                          |    <0.001 |
+|                 RT[9].MANT_DEL                        |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|               OP                                      |    <0.001 |
+|               ROUND                                   |    <0.001 |
+|                 EXP_ADD.ADD                           |    <0.001 |
+|                 LOGIC.RND1                            |    <0.001 |
+|                 LOGIC.RND2                            |    <0.001 |
+|                 RND_BIT_GEN                           |     0.000 |
+|                   NORM_1_OR_0.STRUCT_REQ.GENERAL.RND1 |     0.000 |
+|     CCLabel_fpext_32ns_64_1_U14                       |    <0.001 |
+|       CCLabel_ap_fpext_0_no_dsp_32_u                  |    <0.001 |
+|         U0                                            |    <0.001 |
+|           i_synth                                     |    <0.001 |
+|             FLT_TO_FLT_OP.SPD.OP                      |    <0.001 |
+|               EXP                                     |    <0.001 |
+|                 COND_DET                              |    <0.001 |
+|                   MANT_CARRY.MANT_ALL_ZERO_DET        |    <0.001 |
+|                     CARRY_ZERO_DET                    |    <0.001 |
+|     CCLabel_fpext_32ns_64_1_U15                       |    <0.001 |
+|       CCLabel_ap_fpext_0_no_dsp_32_u                  |    <0.001 |
+|         U0                                            |    <0.001 |
+|           i_synth                                     |    <0.001 |
+|             FLT_TO_FLT_OP.SPD.OP                      |    <0.001 |
+|               EXP                                     |    <0.001 |
+|                 COND_DET                              |    <0.001 |
+|                   MANT_CARRY.MANT_ALL_ZERO_DET        |    <0.001 |
+|                     CARRY_ZERO_DET                    |    <0.001 |
+|     CCLabel_uitofp_32ns_32_6_U11                      |    <0.001 |
+|       CCLabel_ap_uitofp_4_no_dsp_32_u                 |    <0.001 |
+|         U0                                            |    <0.001 |
+|           i_synth                                     |    <0.001 |
+|             FIX_TO_FLT_OP.SPD.OP                      |    <0.001 |
+|               EXP                                     |    <0.001 |
+|                 IP_SIGN_DELAY                         |     0.000 |
+|                   i_pipe                              |     0.000 |
+|                 ZERO_DELAY                            |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|               LZE                                     |    <0.001 |
+|                 ENCODE[0].DIST_DEL                    |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 ENCODE[1].DIST_DEL                    |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 ENCODE[1].MUX_0                       |    <0.001 |
+|                   OP_DEL                              |    <0.001 |
+|                     i_pipe                            |    <0.001 |
+|                 TWO.DIST_DEL                          |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 ZERO_DET_CC_1                         |    <0.001 |
+|                 ZERO_DET_CC_2.CC                      |    <0.001 |
+|               M_ABS                                   |    <0.001 |
+|               NEED_Z_DET.Z_DET                        |    <0.001 |
+|                 ENCODE[1].Z_DET_DEL                   |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 ENCODE[2].Z_DET_DEL                   |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 Z_C_DEL                               |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|               NORM_SHIFT                              |    <0.001 |
+|                 MUX_LOOP[1].DEL_SHIFT                 |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 MUX_LOOP[2].DEL_SHIFT                 |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|               OP                                      |    <0.001 |
+|               ROUND                                   |    <0.001 |
+|                 LOGIC.RND1                            |    <0.001 |
+|                 LOGIC.RND2                            |    <0.001 |
+|                 RND_BIT_GEN                           |     0.000 |
+|                   NORM_1_OR_0.STRUCT_REQ.GENERAL.RND1 |     0.000 |
+|               Z_C_DEL                                 |    <0.001 |
+|                 i_pipe                                |    <0.001 |
+|     CCLabel_uitofp_32ns_32_6_U12                      |    <0.001 |
+|       CCLabel_ap_uitofp_4_no_dsp_32_u                 |    <0.001 |
+|         U0                                            |    <0.001 |
+|           i_synth                                     |    <0.001 |
+|             FIX_TO_FLT_OP.SPD.OP                      |    <0.001 |
+|               EXP                                     |    <0.001 |
+|                 IP_SIGN_DELAY                         |     0.000 |
+|                   i_pipe                              |     0.000 |
+|                 ZERO_DELAY                            |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|               LZE                                     |    <0.001 |
+|                 ENCODE[0].DIST_DEL                    |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 ENCODE[1].DIST_DEL                    |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 ENCODE[1].MUX_0                       |    <0.001 |
+|                   OP_DEL                              |    <0.001 |
+|                     i_pipe                            |    <0.001 |
+|                 TWO.DIST_DEL                          |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 ZERO_DET_CC_1                         |    <0.001 |
+|                 ZERO_DET_CC_2.CC                      |    <0.001 |
+|               M_ABS                                   |    <0.001 |
+|               NEED_Z_DET.Z_DET                        |    <0.001 |
+|                 ENCODE[1].Z_DET_DEL                   |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 ENCODE[2].Z_DET_DEL                   |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 Z_C_DEL                               |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|               NORM_SHIFT                              |    <0.001 |
+|                 MUX_LOOP[1].DEL_SHIFT                 |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 MUX_LOOP[2].DEL_SHIFT                 |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|               OP                                      |    <0.001 |
+|               ROUND                                   |    <0.001 |
+|                 LOGIC.RND1                            |    <0.001 |
+|                 LOGIC.RND2                            |    <0.001 |
+|                 RND_BIT_GEN                           |     0.000 |
+|                   NORM_1_OR_0.STRUCT_REQ.GENERAL.RND1 |     0.000 |
+|               Z_C_DEL                                 |    <0.001 |
+|                 i_pipe                                |    <0.001 |
+|     CCLabel_uitofp_32ns_32_6_U13                      |    <0.001 |
+|       CCLabel_ap_uitofp_4_no_dsp_32_u                 |    <0.001 |
+|         U0                                            |    <0.001 |
+|           i_synth                                     |    <0.001 |
+|             FIX_TO_FLT_OP.SPD.OP                      |    <0.001 |
+|               EXP                                     |    <0.001 |
+|                 IP_SIGN_DELAY                         |     0.000 |
+|                   i_pipe                              |     0.000 |
+|                 ZERO_DELAY                            |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|               LZE                                     |    <0.001 |
+|                 ENCODE[0].DIST_DEL                    |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 ENCODE[1].DIST_DEL                    |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 ENCODE[1].MUX_0                       |    <0.001 |
+|                   OP_DEL                              |    <0.001 |
+|                     i_pipe                            |    <0.001 |
+|                 TWO.DIST_DEL                          |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 ZERO_DET_CC_1                         |    <0.001 |
+|                 ZERO_DET_CC_2.CC                      |    <0.001 |
+|               M_ABS                                   |    <0.001 |
+|               NEED_Z_DET.Z_DET                        |    <0.001 |
+|                 ENCODE[1].Z_DET_DEL                   |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 ENCODE[2].Z_DET_DEL                   |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 Z_C_DEL                               |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|               NORM_SHIFT                              |    <0.001 |
+|                 MUX_LOOP[1].DEL_SHIFT                 |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|                 MUX_LOOP[2].DEL_SHIFT                 |    <0.001 |
+|                   i_pipe                              |    <0.001 |
+|               OP                                      |    <0.001 |
+|               ROUND                                   |    <0.001 |
+|                 LOGIC.RND1                            |    <0.001 |
+|                 LOGIC.RND2                            |    <0.001 |
+|                 RND_BIT_GEN                           |     0.000 |
+|                   NORM_1_OR_0.STRUCT_REQ.GENERAL.RND1 |     0.000 |
+|               Z_C_DEL                                 |    <0.001 |
+|                 i_pipe                                |    <0.001 |
+|     mask_table1_U                                     |     0.002 |
+|       CCLabel_calCentroid_mask_table1_rom_U           |     0.002 |
+|     one_half_table2_U                                 |    <0.001 |
+|       CCLabel_calCentroid_one_half_table2_rom_U       |    <0.001 |
+|   grp_CCLabel_firstPass_fu_76                         |     0.005 |
+|     CCLabel_mul_32s_4ns_32_3_U1                       |     0.002 |
+|       CCLabel_mul_32s_4ns_32_3_Mul3S_0_U              |     0.002 |
+|     CCLabel_mul_32s_4ns_32_3_U2                       |     0.002 |
+|       CCLabel_mul_32s_4ns_32_3_Mul3S_0_U              |     0.002 |
+|   grp_CCLabel_preProcess_fu_94                        |    <0.001 |
+|   lbImage_U                                           |     0.002 |
+|     CCLabel_lbImage_ram_U                             |     0.002 |
+|   set_U                                               |     0.002 |
+|     CCLabel_set_ram_U                                 |     0.002 |
+|   status_U                                            |    <0.001 |
+|     CCLabel_status_ram_U                              |    <0.001 |
+|       ram_reg_0_15_0_0                                |    <0.001 |
+|       ram_reg_0_31_0_0                                |    <0.001 |
+|   totalIntensity_U                                    |    <0.001 |
+|     CCLabel_totalIntensity_ram_U                      |    <0.001 |
+|   x_r_U                                               |    <0.001 |
+|     CCLabel_totalIntensity_ram_U                      |    <0.001 |
+|   y_r_U                                               |    <0.001 |
+|     CCLabel_totalIntensity_ram_U                      |    <0.001 |
++-------------------------------------------------------+-----------+
+
+

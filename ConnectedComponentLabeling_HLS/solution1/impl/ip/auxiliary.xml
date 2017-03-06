@@ -2,11 +2,9 @@
 <xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="CCLabel" xd:componentRef="CCLabel" xd:initiationInterval="x" xd:clockPeriod="10.000000" xd:sequential="true" xd:hostMachine="64">
   <xd:returnValue xd:interfaceRef="s_axi_CRTLS" xd:busTypeRef="axilite" xd:offset="0x10" xd:statusOffset="0x14" xd:dataWidth="32"/>
   <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_CRTLS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
-  <xd:arg xd:name="Image[][]" xd:originalName="Image" xd:direction="in" xd:interfaceRef="Image_r_PORTA" xd:busTypeRef="bram" xd:arraySize="64" xd:dataWidth="32"/>
-  <xd:arg xd:name="Image[][]" xd:originalName="Image" xd:direction="in" xd:interfaceRef="Image_r_PORTB" xd:busTypeRef="bram" xd:arraySize="64" xd:dataWidth="32"/>
-  <xd:arg xd:name="centroidData[].root" xd:originalName="centroidData" xd:direction="out" xd:interfaceRef="centroidData_root_PORTA" xd:busTypeRef="bram" xd:arraySize="30" xd:dataWidth="32"/>
-  <xd:arg xd:name="centroidData[].x" xd:originalName="centroidData" xd:direction="out" xd:interfaceRef="centroidData_x_PORTA" xd:busTypeRef="bram" xd:arraySize="30" xd:dataWidth="32"/>
-  <xd:arg xd:name="centroidData[].y" xd:originalName="centroidData" xd:direction="out" xd:interfaceRef="centroidData_y_PORTA" xd:busTypeRef="bram" xd:arraySize="30" xd:dataWidth="32"/>
+  <xd:arg xd:name="Image[]" xd:originalName="Image" xd:direction="in" xd:interfaceRef="Image_r_PORTA" xd:busTypeRef="bram" xd:arraySize="64" xd:dataWidth="32"/>
+  <xd:arg xd:name="X[]" xd:originalName="X" xd:direction="out" xd:interfaceRef="X_PORTA" xd:busTypeRef="bram" xd:arraySize="40" xd:dataWidth="32"/>
+  <xd:arg xd:name="Y[]" xd:originalName="Y" xd:direction="out" xd:interfaceRef="Y_PORTA" xd:busTypeRef="bram" xd:arraySize="40" xd:dataWidth="32"/>
   <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
-  <xd:resourceEstimates xd:LUT="6724" xd:FF="3950" xd:BRAM="2" xd:DSP="4"/>
+  <xd:resourceEstimates xd:LUT="8105" xd:FF="4439" xd:BRAM="13" xd:DSP="4"/>
 </xd:acceleratorMap>

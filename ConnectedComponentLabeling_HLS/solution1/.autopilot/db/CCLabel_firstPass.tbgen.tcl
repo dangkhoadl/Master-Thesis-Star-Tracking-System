@@ -8,7 +8,7 @@ set isOneStateSeq 0
 set C_modelName CCLabel_firstPass
 set C_modelType { int 32 }
 set C_modelArgList { 
-	{ Image_r int 32 regular {bram 64 { 1 3 } 1 1 }  }
+	{ Image_r int 32 regular {bram 64 { 1 } 1 1 }  }
 	{ lbImage int 32 regular {array 64 { 2 2 } 1 1 } {global 2}  }
 	{ set int 32 regular {array 40 { 2 3 } 1 1 } {global 2}  }
 	{ status int 1 regular {array 40 { 0 3 } 0 1 } {global 1}  }

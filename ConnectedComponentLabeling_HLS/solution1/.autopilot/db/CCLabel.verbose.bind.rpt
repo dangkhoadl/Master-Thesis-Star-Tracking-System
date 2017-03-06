@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'CCLabel'
 ================================================================
-* Date:           Fri Mar 03 22:38:02 2017
+* Date:           Mon Mar 06 15:02:56 2017
 
 * Version:        2014.4 (Build 1071461 on Tue Nov 18 16:42:57 PM 2014)
 * Project:        ConnectedComponentLabeling_HLS
@@ -155,27 +155,27 @@ IsGatedGlobalClock: 0
 
  <State 1>: 0.00ns
 ST_1: stg_7 [2/2] 0.00ns
-:9  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r) nounwind
+:10  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r) nounwind
 
 
  <State 2>: 0.00ns
 ST_2: stg_8 [1/2] 0.00ns
-:9  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r) nounwind
+:10  call fastcc void @CCLabel_preProcess([64 x i32]* %Image_r) nounwind
 
 
  <State 3>: 0.00ns
 ST_3: setCount [2/2] 0.00ns
-:10  %setCount = call fastcc i32 @CCLabel_firstPass([64 x i32]* %Image_r) nounwind
+:11  %setCount = call fastcc i32 @CCLabel_firstPass([64 x i32]* %Image_r) nounwind
 
 
  <State 4>: 0.00ns
 ST_4: setCount [1/2] 0.00ns
-:10  %setCount = call fastcc i32 @CCLabel_firstPass([64 x i32]* %Image_r) nounwind
+:11  %setCount = call fastcc i32 @CCLabel_firstPass([64 x i32]* %Image_r) nounwind
 
 
  <State 5>: 0.00ns
 ST_5: centroidDataCount [2/2] 0.00ns
-:11  %centroidDataCount = call fastcc i32 @CCLabel_calCentroid(i32 %setCount, [40 x i32]* %X, [40 x i32]* %Y) nounwind
+:12  %centroidDataCount = call fastcc i32 @CCLabel_calCentroid(i32 %setCount, [40 x i32]* %X, [40 x i32]* %Y) nounwind
 
 
  <State 6>: 0.00ns
@@ -195,22 +195,25 @@ ST_6: stg_16 [1/1] 0.00ns
 :4  call void (...)* @_ssdm_op_SpecTopModule([8 x i8]* @str) nounwind
 
 ST_6: stg_17 [1/1] 0.00ns
-:5  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str6, i32 0, i32 0, i32 0, i32 0, [6 x i8]* @p_str7, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+:5  call void (...)* @_ssdm_op_SpecInterface(i32 0, [10 x i8]* @p_str1813, i32 0, i32 0, i32 0, i32 0, [6 x i8]* @p_str1814, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind
 
 ST_6: stg_18 [1/1] 0.00ns
-:6  call void (...)* @_ssdm_op_SpecInterface([64 x i32]* %Image_r, [5 x i8]* @p_str8, i32 0, i32 0, i32 0, i32 0, [6 x i8]* @p_str7, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+:6  call void (...)* @_ssdm_op_SpecInterface([64 x i32]* %Image_r, [5 x i8]* @p_str1815, i32 0, i32 0, i32 0, i32 0, [6 x i8]* @p_str1814, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind
 
 ST_6: stg_19 [1/1] 0.00ns
-:7  call void (...)* @_ssdm_op_SpecInterface([40 x i32]* %X, [5 x i8]* @p_str8, i32 0, i32 0, i32 0, i32 0, [6 x i8]* @p_str7, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+:7  call void (...)* @_ssdm_op_SpecInterface([40 x i32]* %X, [5 x i8]* @p_str1815, i32 0, i32 0, i32 0, i32 0, [6 x i8]* @p_str1814, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind
 
 ST_6: stg_20 [1/1] 0.00ns
-:8  call void (...)* @_ssdm_op_SpecInterface([40 x i32]* %Y, [5 x i8]* @p_str8, i32 0, i32 0, i32 0, i32 0, [6 x i8]* @p_str7, [1 x i8]* @p_str1, [1 x i8]* @p_str1) nounwind
+:8  call void (...)* @_ssdm_op_SpecInterface([40 x i32]* %Y, [5 x i8]* @p_str1815, i32 0, i32 0, i32 0, i32 0, [6 x i8]* @p_str1814, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind
+
+ST_6: stg_21 [1/1] 0.00ns
+:9  call void (...)* @_ssdm_op_SpecMemCore([64 x i32]* %Image_r, [1 x i8]* @p_str1805, [12 x i8]* @p_str1816, [1 x i8]* @p_str1805, i32 -1, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805, [1 x i8]* @p_str1805) nounwind
 
 ST_6: centroidDataCount [1/2] 0.00ns
-:11  %centroidDataCount = call fastcc i32 @CCLabel_calCentroid(i32 %setCount, [40 x i32]* %X, [40 x i32]* %Y) nounwind
+:12  %centroidDataCount = call fastcc i32 @CCLabel_calCentroid(i32 %setCount, [40 x i32]* %X, [40 x i32]* %Y) nounwind
 
-ST_6: stg_22 [1/1] 0.00ns
-:12  ret i32 %centroidDataCount
+ST_6: stg_23 [1/1] 0.00ns
+:13  ret i32 %centroidDataCount
 
 
 
@@ -226,15 +229,17 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 1
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ Image_r]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; mode=0x7404470; pingpong=0; private_global=0; MemPort=[13]; IO mode=bram:ce=0
-Port [ X]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; mode=0x7404230; pingpong=0; private_global=0; MemPort=[03]; IO mode=bram:ce=0
-Port [ Y]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; mode=0x74041a0; pingpong=0; private_global=0; MemPort=[03]; IO mode=bram:ce=0
-Port [ lbImage]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=0; extern=0; dir=2; type=1; mode=0x74048f0; pingpong=0; private_global=1; linkage=0; visibility=0; MemPort=[22]; IO mode=ap_memory:ce=0
-Port [ set]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=0; extern=0; dir=2; type=1; mode=0xbf38490; pingpong=0; private_global=1; linkage=0; visibility=0; MemPort=[23]; IO mode=ap_memory:ce=0
-Port [ status]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=0; extern=0; dir=2; type=1; mode=0xbf38400; pingpong=0; private_global=1; linkage=0; visibility=0; MemPort=[23]; IO mode=ap_memory:ce=0
-Port [ totalIntensity]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=0; extern=0; dir=2; type=1; mode=0xbf38370; pingpong=0; private_global=1; linkage=0; visibility=0; MemPort=[21]; IO mode=ap_memory:ce=0
-Port [ x_r]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=0; extern=0; dir=2; type=1; mode=0xbf382e0; pingpong=0; private_global=1; linkage=0; visibility=0; MemPort=[21]; IO mode=ap_memory:ce=0
-Port [ y_r]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=0; extern=0; dir=2; type=1; mode=0xbf38250; pingpong=0; private_global=1; linkage=0; visibility=0; MemPort=[21]; IO mode=ap_memory:ce=0
+Port [ Image_r]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; mode=0xd9b1630; pingpong=0; private_global=0; MemPort=[1]; IO mode=bram:ce=0
+Port [ X]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; mode=0xd9b6e80; pingpong=0; private_global=0; MemPort=[03]; IO mode=bram:ce=0
+Port [ Y]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; mode=0xd9b6df0; pingpong=0; private_global=0; MemPort=[03]; IO mode=bram:ce=0
+Port [ lbImage]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=0; extern=0; dir=2; type=1; mode=0xd9a54b0; pingpong=0; private_global=1; linkage=0; visibility=0; MemPort=[22]; IO mode=ap_memory:ce=0
+Port [ set]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=0; extern=0; dir=2; type=1; mode=0xd9a5540; pingpong=0; private_global=1; linkage=0; visibility=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ status]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=0; extern=0; dir=2; type=1; mode=0xd9a5390; pingpong=0; private_global=1; linkage=0; visibility=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ totalIntensity]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=0; extern=0; dir=2; type=1; mode=0xd9a5420; pingpong=0; private_global=1; linkage=0; visibility=0; MemPort=[21]; IO mode=ap_memory:ce=0
+Port [ x_r]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=0; extern=0; dir=2; type=1; mode=0xd9a5270; pingpong=0; private_global=1; linkage=0; visibility=0; MemPort=[21]; IO mode=ap_memory:ce=0
+Port [ y_r]:  wired=0; compound=1; hidden=1; nouse=0; global=1; static=0; extern=0; dir=2; type=1; mode=0xd9a5300; pingpong=0; private_global=1; linkage=0; visibility=0; MemPort=[21]; IO mode=ap_memory:ce=0
+Port [ mask_table1]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; mode=0xd9a51e0; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[11]; IO mode=ap_memory:ce=0
+Port [ one_half_table2]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; mode=0xd9a5030; pingpong=0; private_global=0; linkage=7; visibility=0; MemPort=[11]; IO mode=ap_memory:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------
@@ -252,8 +257,9 @@ stg_17            (specinterface) [ 0000000]
 stg_18            (specinterface) [ 0000000]
 stg_19            (specinterface) [ 0000000]
 stg_20            (specinterface) [ 0000000]
+stg_21            (specmemcore  ) [ 0000000]
 centroidDataCount (call         ) [ 0000000]
-stg_22            (ret          ) [ 0000000]
+stg_23            (ret          ) [ 0000000]
 </LifeTime>
 
 <model>
@@ -264,7 +270,7 @@ stg_22            (ret          ) [ 0000000]
 <pin id="1" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="Image_r"/><MemPortTyVec>1 3 </MemPortTyVec>
+<StgValue><ssdm name="Image_r"/><MemPortTyVec>1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
@@ -349,21 +355,23 @@ stg_22            (ret          ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="18" class="1001" name="const_18">
+<comp id="18" class="1000" name="mask_table1">
 <pin_list>
 <pin id="19" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="CCLabel_preProcess"/></StgValue>
+<StgValue><ssdm name="mask_table1"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
 </bind>
 </comp>
 
-<comp id="20" class="1001" name="const_20">
+<comp id="20" class="1000" name="one_half_table2">
 <pin_list>
 <pin id="21" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="CCLabel_firstPass"/></StgValue>
+<StgValue><ssdm name="one_half_table2"/><MemPortTyVec>1 1 </MemPortTyVec>
+</StgValue>
 </bind>
 </comp>
 
@@ -372,25 +380,25 @@ stg_22            (ret          ) [ 0000000]
 <pin id="23" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="CCLabel_calCentroid"/></StgValue>
+<StgValue><ssdm name="CCLabel_preProcess"/></StgValue>
 </bind>
 </comp>
 
 <comp id="24" class="1001" name="const_24">
 <pin_list>
-<pin id="25" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
+<StgValue><ssdm name="CCLabel_firstPass"/></StgValue>
 </bind>
 </comp>
 
 <comp id="26" class="1001" name="const_26">
 <pin_list>
-<pin id="27" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="CCLabel_calCentroid"/></StgValue>
 </bind>
 </comp>
 
@@ -399,7 +407,7 @@ stg_22            (ret          ) [ 0000000]
 <pin id="29" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecBitsMap"/></StgValue>
 </bind>
 </comp>
 
@@ -408,7 +416,7 @@ stg_22            (ret          ) [ 0000000]
 <pin id="31" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="str"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -417,7 +425,7 @@ stg_22            (ret          ) [ 0000000]
 <pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecTopModule"/></StgValue>
 </bind>
 </comp>
 
@@ -426,7 +434,7 @@ stg_22            (ret          ) [ 0000000]
 <pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str6"/></StgValue>
+<StgValue><ssdm name="str"/></StgValue>
 </bind>
 </comp>
 
@@ -435,7 +443,7 @@ stg_22            (ret          ) [ 0000000]
 <pin id="37" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str7"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
 </bind>
 </comp>
 
@@ -444,7 +452,7 @@ stg_22            (ret          ) [ 0000000]
 <pin id="39" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str1"/></StgValue>
+<StgValue><ssdm name="p_str1813"/></StgValue>
 </bind>
 </comp>
 
@@ -453,22 +461,69 @@ stg_22            (ret          ) [ 0000000]
 <pin id="41" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str8"/></StgValue>
+<StgValue><ssdm name="p_str1814"/></StgValue>
 </bind>
 </comp>
 
-<comp id="43" class="1004" name="grp_CCLabel_calCentroid_fu_43">
+<comp id="42" class="1001" name="const_42">
 <pin_list>
-<pin id="44" dir="0" index="0" bw="32" slack="0"/>
-<pin id="45" dir="0" index="1" bw="32" slack="1"/>
-<pin id="46" dir="0" index="2" bw="32" slack="0"/>
-<pin id="47" dir="0" index="3" bw="32" slack="0"/>
-<pin id="48" dir="0" index="4" bw="32" slack="0"/>
-<pin id="49" dir="0" index="5" bw="32" slack="0"/>
-<pin id="50" dir="0" index="6" bw="32" slack="0"/>
-<pin id="51" dir="0" index="7" bw="32" slack="0"/>
-<pin id="52" dir="0" index="8" bw="1" slack="0"/>
-<pin id="53" dir="1" index="9" bw="32" slack="2147483647"/>
+<pin id="43" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str1805"/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str1815"/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecMemCore"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str1816"/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="53" class="1004" name="grp_CCLabel_calCentroid_fu_53">
+<pin_list>
+<pin id="54" dir="0" index="0" bw="32" slack="0"/>
+<pin id="55" dir="0" index="1" bw="32" slack="1"/>
+<pin id="56" dir="0" index="2" bw="32" slack="0"/>
+<pin id="57" dir="0" index="3" bw="32" slack="0"/>
+<pin id="58" dir="0" index="4" bw="32" slack="0"/>
+<pin id="59" dir="0" index="5" bw="32" slack="0"/>
+<pin id="60" dir="0" index="6" bw="32" slack="0"/>
+<pin id="61" dir="0" index="7" bw="32" slack="0"/>
+<pin id="62" dir="0" index="8" bw="1" slack="0"/>
+<pin id="63" dir="0" index="9" bw="52" slack="0"/>
+<pin id="64" dir="0" index="10" bw="53" slack="0"/>
+<pin id="65" dir="1" index="11" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
@@ -476,17 +531,17 @@ stg_22            (ret          ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="62" class="1004" name="grp_CCLabel_firstPass_fu_62">
+<comp id="76" class="1004" name="grp_CCLabel_firstPass_fu_76">
 <pin_list>
-<pin id="63" dir="0" index="0" bw="32" slack="0"/>
-<pin id="64" dir="0" index="1" bw="32" slack="0"/>
-<pin id="65" dir="0" index="2" bw="32" slack="0"/>
-<pin id="66" dir="0" index="3" bw="32" slack="0"/>
-<pin id="67" dir="0" index="4" bw="1" slack="0"/>
-<pin id="68" dir="0" index="5" bw="32" slack="0"/>
-<pin id="69" dir="0" index="6" bw="32" slack="0"/>
-<pin id="70" dir="0" index="7" bw="32" slack="0"/>
-<pin id="71" dir="1" index="8" bw="32" slack="1"/>
+<pin id="77" dir="0" index="0" bw="32" slack="0"/>
+<pin id="78" dir="0" index="1" bw="32" slack="0"/>
+<pin id="79" dir="0" index="2" bw="32" slack="0"/>
+<pin id="80" dir="0" index="3" bw="32" slack="0"/>
+<pin id="81" dir="0" index="4" bw="1" slack="0"/>
+<pin id="82" dir="0" index="5" bw="32" slack="0"/>
+<pin id="83" dir="0" index="6" bw="32" slack="0"/>
+<pin id="84" dir="0" index="7" bw="32" slack="0"/>
+<pin id="85" dir="1" index="8" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
@@ -494,12 +549,12 @@ stg_22            (ret          ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="80" class="1004" name="grp_CCLabel_preProcess_fu_80">
+<comp id="94" class="1004" name="grp_CCLabel_preProcess_fu_94">
 <pin_list>
-<pin id="81" dir="0" index="0" bw="0" slack="0"/>
-<pin id="82" dir="0" index="1" bw="32" slack="0"/>
-<pin id="83" dir="0" index="2" bw="32" slack="0"/>
-<pin id="84" dir="1" index="3" bw="0" slack="2147483647"/>
+<pin id="95" dir="0" index="0" bw="0" slack="0"/>
+<pin id="96" dir="0" index="1" bw="32" slack="0"/>
+<pin id="97" dir="0" index="2" bw="32" slack="0"/>
+<pin id="98" dir="1" index="3" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
@@ -507,10 +562,10 @@ stg_22            (ret          ) [ 0000000]
 </bind>
 </comp>
 
-<comp id="88" class="1005" name="setCount_reg_88">
+<comp id="102" class="1005" name="setCount_reg_102">
 <pin_list>
-<pin id="89" dir="0" index="0" bw="32" slack="1"/>
-<pin id="90" dir="1" index="1" bw="32" slack="1"/>
+<pin id="103" dir="0" index="0" bw="32" slack="1"/>
+<pin id="104" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="setCount "/>
@@ -520,47 +575,51 @@ stg_22            (ret          ) [ 0000000]
 </comp_list>
 
 <net_list>
-<net id="54"><net_src comp="22" pin="0"/><net_sink comp="43" pin=0"/></net>
+<net id="66"><net_src comp="26" pin="0"/><net_sink comp="53" pin=0"/></net>
 
-<net id="55"><net_src comp="2" pin="0"/><net_sink comp="43" pin=2"/></net>
+<net id="67"><net_src comp="2" pin="0"/><net_sink comp="53" pin=2"/></net>
 
-<net id="56"><net_src comp="4" pin="0"/><net_sink comp="43" pin=3"/></net>
+<net id="68"><net_src comp="4" pin="0"/><net_sink comp="53" pin=3"/></net>
 
-<net id="57"><net_src comp="8" pin="0"/><net_sink comp="43" pin=4"/></net>
+<net id="69"><net_src comp="8" pin="0"/><net_sink comp="53" pin=4"/></net>
 
-<net id="58"><net_src comp="12" pin="0"/><net_sink comp="43" pin=5"/></net>
+<net id="70"><net_src comp="12" pin="0"/><net_sink comp="53" pin=5"/></net>
 
-<net id="59"><net_src comp="14" pin="0"/><net_sink comp="43" pin=6"/></net>
+<net id="71"><net_src comp="14" pin="0"/><net_sink comp="53" pin=6"/></net>
 
-<net id="60"><net_src comp="16" pin="0"/><net_sink comp="43" pin=7"/></net>
+<net id="72"><net_src comp="16" pin="0"/><net_sink comp="53" pin=7"/></net>
 
-<net id="61"><net_src comp="10" pin="0"/><net_sink comp="43" pin=8"/></net>
+<net id="73"><net_src comp="10" pin="0"/><net_sink comp="53" pin=8"/></net>
 
-<net id="72"><net_src comp="20" pin="0"/><net_sink comp="62" pin=0"/></net>
+<net id="74"><net_src comp="18" pin="0"/><net_sink comp="53" pin=9"/></net>
 
-<net id="73"><net_src comp="0" pin="0"/><net_sink comp="62" pin=1"/></net>
+<net id="75"><net_src comp="20" pin="0"/><net_sink comp="53" pin=10"/></net>
 
-<net id="74"><net_src comp="6" pin="0"/><net_sink comp="62" pin=2"/></net>
+<net id="86"><net_src comp="24" pin="0"/><net_sink comp="76" pin=0"/></net>
 
-<net id="75"><net_src comp="8" pin="0"/><net_sink comp="62" pin=3"/></net>
+<net id="87"><net_src comp="0" pin="0"/><net_sink comp="76" pin=1"/></net>
 
-<net id="76"><net_src comp="10" pin="0"/><net_sink comp="62" pin=4"/></net>
+<net id="88"><net_src comp="6" pin="0"/><net_sink comp="76" pin=2"/></net>
 
-<net id="77"><net_src comp="12" pin="0"/><net_sink comp="62" pin=5"/></net>
+<net id="89"><net_src comp="8" pin="0"/><net_sink comp="76" pin=3"/></net>
 
-<net id="78"><net_src comp="14" pin="0"/><net_sink comp="62" pin=6"/></net>
+<net id="90"><net_src comp="10" pin="0"/><net_sink comp="76" pin=4"/></net>
 
-<net id="79"><net_src comp="16" pin="0"/><net_sink comp="62" pin=7"/></net>
+<net id="91"><net_src comp="12" pin="0"/><net_sink comp="76" pin=5"/></net>
 
-<net id="85"><net_src comp="18" pin="0"/><net_sink comp="80" pin=0"/></net>
+<net id="92"><net_src comp="14" pin="0"/><net_sink comp="76" pin=6"/></net>
 
-<net id="86"><net_src comp="0" pin="0"/><net_sink comp="80" pin=1"/></net>
+<net id="93"><net_src comp="16" pin="0"/><net_sink comp="76" pin=7"/></net>
 
-<net id="87"><net_src comp="6" pin="0"/><net_sink comp="80" pin=2"/></net>
+<net id="99"><net_src comp="22" pin="0"/><net_sink comp="94" pin=0"/></net>
 
-<net id="91"><net_src comp="62" pin="8"/><net_sink comp="88" pin=0"/></net>
+<net id="100"><net_src comp="0" pin="0"/><net_sink comp="94" pin=1"/></net>
 
-<net id="92"><net_src comp="88" pin="1"/><net_sink comp="43" pin=1"/></net>
+<net id="101"><net_src comp="6" pin="0"/><net_sink comp="94" pin=2"/></net>
+
+<net id="105"><net_src comp="76" pin="8"/><net_sink comp="102" pin=0"/></net>
+
+<net id="106"><net_src comp="102" pin="1"/><net_sink comp="53" pin=1"/></net>
 
 </net_list>
 
@@ -576,7 +635,7 @@ stg_22            (ret          ) [ 0000000]
 	State 4
 	State 5
 	State 6
-		stg_22 : 1
+		stg_23 : 1
 
 
 ============================================================
@@ -587,35 +646,37 @@ stg_22            (ret          ) [ 0000000]
 |----------|-------------------------------|---------|---------|---------|---------|
 | Operation|        Functional Unit        |  DSP48E |  Delay  |    FF   |   LUT   |
 |----------|-------------------------------|---------|---------|---------|---------|
-|          | grp_CCLabel_calCentroid_fu_43 |    0    |  14.139 |   3276  |   4498  |
-|   call   |  grp_CCLabel_firstPass_fu_62  |    4    |  20.791 |   648   |   956   |
-|          |  grp_CCLabel_preProcess_fu_80 |    0    |  1.571  |    92   |    69   |
+|          | grp_CCLabel_calCentroid_fu_53 |    0    |  20.423 |   3942  |   5866  |
+|   call   |  grp_CCLabel_firstPass_fu_76  |    4    |  20.791 |   648   |   956   |
+|          |  grp_CCLabel_preProcess_fu_94 |    0    |  4.174  |   575   |    91   |
 |----------|-------------------------------|---------|---------|---------|---------|
-|   Total  |                               |    4    |  36.501 |   4016  |   5523  |
+|   Total  |                               |    4    |  45.388 |   5165  |   6913  |
 |----------|-------------------------------|---------|---------|---------|---------|
 
 Memories:
-+--------------+--------+--------+--------+
-|              |  BRAM  |   FF   |   LUT  |
-+--------------+--------+--------+--------+
-|    lbImage   |    2   |    0   |    0   |
-|      set     |    1   |    0   |    0   |
-|    status    |    0   |    2   |    1   |
-|totalIntensity|    2   |    0   |    0   |
-|      x_r     |    2   |    0   |    0   |
-|      y_r     |    2   |    0   |    0   |
-+--------------+--------+--------+--------+
-|     Total    |    9   |    2   |    1   |
-+--------------+--------+--------+--------+
++---------------+--------+--------+--------+
+|               |  BRAM  |   FF   |   LUT  |
++---------------+--------+--------+--------+
+|    lbImage    |    2   |    0   |    0   |
+|  mask_table1  |    2   |    0   |    0   |
+|one_half_table2|    2   |    0   |    0   |
+|      set      |    1   |    0   |    0   |
+|     status    |    0   |    2   |    1   |
+| totalIntensity|    2   |    0   |    0   |
+|      x_r      |    2   |    0   |    0   |
+|      y_r      |    2   |    0   |    0   |
++---------------+--------+--------+--------+
+|     Total     |   13   |    2   |    1   |
++---------------+--------+--------+--------+
 
 * Register list:
-+---------------+--------+
-|               |   FF   |
-+---------------+--------+
-|setCount_reg_88|   32   |
-+---------------+--------+
-|     Total     |   32   |
-+---------------+--------+
++----------------+--------+
+|                |   FF   |
++----------------+--------+
+|setCount_reg_102|   32   |
++----------------+--------+
+|      Total     |   32   |
++----------------+--------+
 
 * Multiplexer (MUX) list: 
 |--------|------|------|------|--------|
@@ -630,10 +691,10 @@ Memories:
 +-----------+--------+--------+--------+--------+--------+
 |           |  BRAM  | DSP48E |  Delay |   FF   |   LUT  |
 +-----------+--------+--------+--------+--------+--------+
-|  Function |    -   |    4   |   36   |  4016  |  5523  |
-|   Memory  |    9   |    -   |    -   |    2   |    1   |
+|  Function |    -   |    4   |   45   |  5165  |  6913  |
+|   Memory  |   13   |    -   |    -   |    2   |    1   |
 |Multiplexer|    -   |    -   |    -   |    -   |    -   |
 |  Register |    -   |    -   |    -   |   32   |    -   |
 +-----------+--------+--------+--------+--------+--------+
-|   Total   |    9   |    4   |   36   |  4050  |  5524  |
+|   Total   |   13   |    4   |   45   |  5199  |  6914  |
 +-----------+--------+--------+--------+--------+--------+

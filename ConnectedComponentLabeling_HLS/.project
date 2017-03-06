@@ -37,6 +37,11 @@
 			<location>D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/.apc/.tb</location>
 		</link>
 		<link>
+			<name>.reference/core.pragma.1.cpp</name>
+			<type>1</type>
+			<location>D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.autopilot/db/core.pragma.1.cpp</location>
+		</link>
+		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
 			<location>D:/Dropbox/DangKhoa/CEE_Cache/StarTrackingProject/ConnectedComponentLabeling_HLS/solution1/.tcls</location>

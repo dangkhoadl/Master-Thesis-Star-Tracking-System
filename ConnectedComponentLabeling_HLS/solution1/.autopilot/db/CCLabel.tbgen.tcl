@@ -8,7 +8,7 @@ set isOneStateSeq 0
 set C_modelName CCLabel
 set C_modelType { int 32 }
 set C_modelArgList { 
-	{ Image_r int 32 regular {bram 64 { 1 3 } 1 1 }  }
+	{ Image_r int 32 regular {bram 64 { 1 } 1 1 }  }
 	{ X int 32 regular {bram 40 { 0 3 } 0 1 }  }
 	{ Y int 32 regular {bram 40 { 0 3 } 0 1 }  }
 }

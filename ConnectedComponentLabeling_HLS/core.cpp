@@ -1,8 +1,10 @@
-#include <stdio.h>
-#include <iostream>
+//#include <stdio.h>
+//#include <iostream>
+#include <hls_math.h>
 
 #define IMG_HEIGHT 8
 #define IMG_WIDTH 8
+
 #define THRESHOLD 70
 #define MAX 999
 #define MAX_STAR_DATA_SIZE 40
@@ -10,7 +12,6 @@
 #define MAX_CENTROID_DATA 40
 
 unsigned lbImage[IMG_HEIGHT * IMG_WIDTH];
-
 unsigned set[MAX_SET_SIZE];
 
 bool status[MAX_STAR_DATA_SIZE];
@@ -21,7 +22,9 @@ unsigned y[MAX_STAR_DATA_SIZE];
 void preProcess(unsigned Image[IMG_HEIGHT*IMG_WIDTH]) {
 	unsigned i = 0,j = 0;
 	for (i = 0; i < IMG_HEIGHT; ++i) {
+#pragma HLS PIPELINE
 		for (j = 0; j < IMG_WIDTH; ++j) {
+#pragma HLS PIPELINE
 			if (Image[i*IMG_HEIGHT + j] < THRESHOLD)
 				lbImage[i*IMG_HEIGHT + j] = 0;
 			else
@@ -51,8 +54,18 @@ unsigned firstPass(unsigned Image[IMG_HEIGHT*IMG_WIDTH]) {
 		for (int j = 0; j < IMG_WIDTH; ++j) {
 #pragma HLS PIPELINE
 			if (lbImage[i*IMG_HEIGHT + j] != 0) {
-				prevAbove = (i != 0 && lbImage[(i - 1)*IMG_HEIGHT + j] != 0) ? lbImage[(i - 1)*IMG_HEIGHT + j] : MAX;
-				prevLeft = (j != 0 && lbImage[i*IMG_HEIGHT + j - 1] != 0) ? lbImage[i*IMG_HEIGHT + j - 1] : MAX;
+				if(i != 0 && lbImage[(i - 1)*IMG_HEIGHT + j] != 0) {
+					prevAbove = lbImage[(i - 1)*IMG_HEIGHT + j];
+				}
+				else {
+					prevAbove = MAX;
+				}
+				if(j != 0 && lbImage[i*IMG_HEIGHT + j - 1] != 0) {
+					prevLeft = lbImage[i*IMG_HEIGHT + j - 1];
+				}
+				else {
+					prevLeft = MAX;
+				}
 
 				if (prevAbove == MAX && prevLeft == MAX) {
 					lbImage[i*IMG_HEIGHT + j] = ++label;
@@ -68,8 +81,19 @@ unsigned firstPass(unsigned Image[IMG_HEIGHT*IMG_WIDTH]) {
 				}
 				else {
 					//Joint Set
-					min = prevAbove < prevLeft ? prevAbove : prevLeft;
-					max = prevAbove > prevLeft ? prevAbove : prevLeft;
+					if(prevAbove < prevLeft) {
+						min = prevAbove;
+					}
+					else {
+						min = prevLeft;
+					}
+					if(prevAbove > prevLeft) {
+						max = prevAbove;
+					}
+					else {
+						max = prevLeft;
+					}
+
 					if (max != MAX) {
 						set[max] = find(min);
 					}
@@ -109,8 +133,8 @@ unsigned calCentroid(unsigned setCount, unsigned X[MAX_CENTROID_DATA], unsigned 
 	for (i = 1; i < setCount; ++i) {
 #pragma HLS PIPELINE
 		if (status[i] == true) {
-			X[centroidDataCount] = (float)x[i] / totalIntensity[i];
-			Y[centroidDataCount] = (float)y[i] / totalIntensity[i];
+			X[centroidDataCount] = round((float)x[i] / totalIntensity[i]);
+			Y[centroidDataCount] = round((float)y[i] / totalIntensity[i]);
 
 			++centroidDataCount;
 		}
@@ -122,6 +146,7 @@ void secondPass() {
 	unsigned i = 0, j = 0;
 	unsigned root = 0;
 	for (i = 0; i < IMG_HEIGHT; ++i) {
+#pragma HLS PIPELINE
 		for (j = 0; j < IMG_WIDTH; ++j) {
 #pragma HLS PIPELINE
 			if (lbImage[i*IMG_HEIGHT + j] != 0) {
@@ -132,11 +157,13 @@ void secondPass() {
 	}
 }
 
-unsigned CCLabel(unsigned Image[IMG_HEIGHT*IMG_WIDTH], unsigned X[MAX_CENTROID_DATA], unsigned Y[MAX_CENTROID_DATA]) {
+unsigned CCLabel(unsigned Image[IMG_HEIGHT * IMG_WIDTH], unsigned X[MAX_CENTROID_DATA], unsigned Y[MAX_CENTROID_DATA]) {
 #pragma HLS INTERFACE s_axilite port=return bundle=CRTLS
 #pragma HLS INTERFACE bram port=Image bundle=CRTLS
 #pragma HLS INTERFACE bram port=X bundle=CRTLS
 #pragma HLS INTERFACE bram port=Y bundle=CRTLS
+
+#pragma HLS RESOURCE variable=Image core=RAM_1P_BRAM
 
 	preProcess(Image);
 	unsigned setCount = firstPass(Image);

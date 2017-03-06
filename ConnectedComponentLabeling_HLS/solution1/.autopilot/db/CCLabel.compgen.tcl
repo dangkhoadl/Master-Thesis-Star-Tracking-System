@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 20
+set ID 24
 set MemName CCLabel_lbImage
 set CoreName ap_simcore_mem
 set PortList { 2 2 }
@@ -84,7 +84,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 21
+set ID 25
 set MemName CCLabel_set
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
@@ -167,7 +167,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 22
+set ID 26
 set MemName CCLabel_status
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
@@ -250,7 +250,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 23
+set ID 27
 set MemName CCLabel_totalIntensity
 set CoreName ap_simcore_mem
 set PortList { 2 1 }
@@ -359,7 +359,7 @@ ap_return {
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 24 \
+			id 28 \
 			corename CCLabel_CRTLS_axilite \
 			name CCLabel_CRTLS_s_axi \
 			ports {$port_CRTLS} \

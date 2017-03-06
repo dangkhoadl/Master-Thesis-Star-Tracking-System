@@ -26,7 +26,7 @@
               </inlineStackInfo>
               <originalName>Image</originalName>
               <rtlName/>
-              <coreName>RAM</coreName>
+              <coreName>RAM_1P_BRAM</coreName>
             </Obj>
             <bitwidth>32</bitwidth>
           </Value>
@@ -102,11 +102,11 @@
           <Value>
             <Obj>
               <type>0</type>
-              <id>19</id>
+              <id>22</id>
               <name/>
               <fileName>ConnectedComponentLabeling_HLS/core.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>141</lineNumber>
+              <lineNumber>168</lineNumber>
               <contextFuncName>CCLabel</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -121,13 +121,13 @@
                         <first>ConnectedComponentLabeling_HLS/core.cpp</first>
                         <second>CCLabel</second>
                       </first>
-                      <second>141</second>
+                      <second>168</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>grp_CCLabel_preProcess_fu_80</rtlName>
+              <rtlName>grp_CCLabel_preProcess_fu_94</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>0</bitwidth>
@@ -135,9 +135,9 @@
           <oprand_edges>
             <count>3</count>
             <item_version>0</item_version>
-            <item>25</item>
-            <item>26</item>
-            <item>36</item>
+            <item>28</item>
+            <item>29</item>
+            <item>39</item>
           </oprand_edges>
           <opcode>call</opcode>
         </item>
@@ -145,11 +145,11 @@
           <Value>
             <Obj>
               <type>0</type>
-              <id>20</id>
+              <id>23</id>
               <name>setCount</name>
               <fileName>ConnectedComponentLabeling_HLS/core.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>142</lineNumber>
+              <lineNumber>169</lineNumber>
               <contextFuncName>CCLabel</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -164,13 +164,13 @@
                         <first>ConnectedComponentLabeling_HLS/core.cpp</first>
                         <second>CCLabel</second>
                       </first>
-                      <second>142</second>
+                      <second>169</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName>setCount</originalName>
-              <rtlName>grp_CCLabel_firstPass_fu_62</rtlName>
+              <rtlName>grp_CCLabel_firstPass_fu_76</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -178,16 +178,16 @@
           <oprand_edges>
             <count>10</count>
             <item_version>0</item_version>
-            <item>28</item>
-            <item>29</item>
-            <item>37</item>
-            <item>38</item>
-            <item>39</item>
+            <item>31</item>
+            <item>32</item>
             <item>40</item>
             <item>41</item>
             <item>42</item>
-            <item>108</item>
-            <item>109</item>
+            <item>43</item>
+            <item>44</item>
+            <item>45</item>
+            <item>125</item>
+            <item>126</item>
           </oprand_edges>
           <opcode>call</opcode>
         </item>
@@ -195,11 +195,11 @@
           <Value>
             <Obj>
               <type>0</type>
-              <id>21</id>
+              <id>24</id>
               <name>centroidDataCount</name>
               <fileName>ConnectedComponentLabeling_HLS/core.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>143</lineNumber>
+              <lineNumber>170</lineNumber>
               <contextFuncName>CCLabel</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -214,31 +214,33 @@
                         <first>ConnectedComponentLabeling_HLS/core.cpp</first>
                         <second>CCLabel</second>
                       </first>
-                      <second>143</second>
+                      <second>170</second>
                     </item>
                   </second>
                 </item>
               </inlineStackInfo>
               <originalName>centroidDataCount</originalName>
-              <rtlName>grp_CCLabel_calCentroid_fu_43</rtlName>
+              <rtlName>grp_CCLabel_calCentroid_fu_53</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
           </Value>
           <oprand_edges>
-            <count>11</count>
+            <count>13</count>
             <item_version>0</item_version>
-            <item>31</item>
-            <item>32</item>
-            <item>33</item>
             <item>34</item>
-            <item>43</item>
-            <item>44</item>
-            <item>45</item>
+            <item>35</item>
+            <item>36</item>
+            <item>37</item>
             <item>46</item>
             <item>47</item>
-            <item>107</item>
-            <item>110</item>
+            <item>48</item>
+            <item>49</item>
+            <item>50</item>
+            <item>51</item>
+            <item>52</item>
+            <item>124</item>
+            <item>127</item>
           </oprand_edges>
           <opcode>call</opcode>
         </item>
@@ -246,11 +248,11 @@
           <Value>
             <Obj>
               <type>0</type>
-              <id>22</id>
+              <id>25</id>
               <name/>
               <fileName>ConnectedComponentLabeling_HLS/core.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>145</lineNumber>
+              <lineNumber>172</lineNumber>
               <contextFuncName>CCLabel</contextFuncName>
               <inlineStackInfo>
                 <count>1</count>
@@ -265,7 +267,7 @@
                         <first>ConnectedComponentLabeling_HLS/core.cpp</first>
                         <second>CCLabel</second>
                       </first>
-                      <second>145</second>
+                      <second>172</second>
                     </item>
                   </second>
                 </item>
@@ -279,7 +281,7 @@
           <oprand_edges>
             <count>1</count>
             <item_version>0</item_version>
-            <item>35</item>
+            <item>38</item>
           </oprand_edges>
           <opcode>ret</opcode>
         </item>
@@ -291,7 +293,7 @@
           <Value>
             <Obj>
               <type>2</type>
-              <id>24</id>
+              <id>27</id>
               <name>CCLabel_preProcess</name>
               <fileName/>
               <fileDirectory/>
@@ -314,7 +316,7 @@
           <Value>
             <Obj>
               <type>2</type>
-              <id>27</id>
+              <id>30</id>
               <name>CCLabel_firstPass</name>
               <fileName/>
               <fileDirectory/>
@@ -337,7 +339,7 @@
           <Value>
             <Obj>
               <type>2</type>
-              <id>30</id>
+              <id>33</id>
               <name>CCLabel_calCentroid</name>
               <fileName/>
               <fileDirectory/>
@@ -363,7 +365,7 @@
         <item class_id="18" tracking_level="1" version="0" object_id="_11">
           <Obj>
             <type>3</type>
-            <id>23</id>
+            <id>26</id>
             <name>CCLabel</name>
             <fileName/>
             <fileDirectory/>
@@ -380,172 +382,184 @@
           <node_objs>
             <count>4</count>
             <item_version>0</item_version>
-            <item>19</item>
-            <item>20</item>
-            <item>21</item>
             <item>22</item>
+            <item>23</item>
+            <item>24</item>
+            <item>25</item>
           </node_objs>
         </item>
       </blocks>
       <edges class_id="19" tracking_level="0" version="0">
-        <count>25</count>
+        <count>27</count>
         <item_version>0</item_version>
         <item class_id="20" tracking_level="1" version="0" object_id="_12">
-          <id>25</id>
-          <edge_type>1</edge_type>
-          <source_obj>24</source_obj>
-          <sink_obj>19</sink_obj>
-        </item>
-        <item class_id_reference="20" object_id="_13">
-          <id>26</id>
-          <edge_type>1</edge_type>
-          <source_obj>1</source_obj>
-          <sink_obj>19</sink_obj>
-        </item>
-        <item class_id_reference="20" object_id="_14">
           <id>28</id>
           <edge_type>1</edge_type>
           <source_obj>27</source_obj>
-          <sink_obj>20</sink_obj>
+          <sink_obj>22</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_15">
+        <item class_id_reference="20" object_id="_13">
           <id>29</id>
           <edge_type>1</edge_type>
           <source_obj>1</source_obj>
-          <sink_obj>20</sink_obj>
+          <sink_obj>22</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_16">
+        <item class_id_reference="20" object_id="_14">
           <id>31</id>
           <edge_type>1</edge_type>
           <source_obj>30</source_obj>
-          <sink_obj>21</sink_obj>
+          <sink_obj>23</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_17">
+        <item class_id_reference="20" object_id="_15">
           <id>32</id>
           <edge_type>1</edge_type>
-          <source_obj>20</source_obj>
-          <sink_obj>21</sink_obj>
+          <source_obj>1</source_obj>
+          <sink_obj>23</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_18">
-          <id>33</id>
-          <edge_type>1</edge_type>
-          <source_obj>2</source_obj>
-          <sink_obj>21</sink_obj>
-        </item>
-        <item class_id_reference="20" object_id="_19">
+        <item class_id_reference="20" object_id="_16">
           <id>34</id>
           <edge_type>1</edge_type>
-          <source_obj>3</source_obj>
-          <sink_obj>21</sink_obj>
+          <source_obj>33</source_obj>
+          <sink_obj>24</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_20">
+        <item class_id_reference="20" object_id="_17">
           <id>35</id>
           <edge_type>1</edge_type>
-          <source_obj>21</source_obj>
-          <sink_obj>22</sink_obj>
+          <source_obj>23</source_obj>
+          <sink_obj>24</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_21">
+        <item class_id_reference="20" object_id="_18">
           <id>36</id>
           <edge_type>1</edge_type>
-          <source_obj>4</source_obj>
-          <sink_obj>19</sink_obj>
+          <source_obj>2</source_obj>
+          <sink_obj>24</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_22">
+        <item class_id_reference="20" object_id="_19">
           <id>37</id>
           <edge_type>1</edge_type>
-          <source_obj>4</source_obj>
-          <sink_obj>20</sink_obj>
+          <source_obj>3</source_obj>
+          <sink_obj>24</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_23">
+        <item class_id_reference="20" object_id="_20">
           <id>38</id>
           <edge_type>1</edge_type>
-          <source_obj>5</source_obj>
-          <sink_obj>20</sink_obj>
+          <source_obj>24</source_obj>
+          <sink_obj>25</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_24">
+        <item class_id_reference="20" object_id="_21">
           <id>39</id>
           <edge_type>1</edge_type>
-          <source_obj>6</source_obj>
-          <sink_obj>20</sink_obj>
+          <source_obj>4</source_obj>
+          <sink_obj>22</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_25">
+        <item class_id_reference="20" object_id="_22">
           <id>40</id>
           <edge_type>1</edge_type>
-          <source_obj>7</source_obj>
-          <sink_obj>20</sink_obj>
+          <source_obj>4</source_obj>
+          <sink_obj>23</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_26">
+        <item class_id_reference="20" object_id="_23">
           <id>41</id>
           <edge_type>1</edge_type>
-          <source_obj>8</source_obj>
-          <sink_obj>20</sink_obj>
+          <source_obj>5</source_obj>
+          <sink_obj>23</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_27">
+        <item class_id_reference="20" object_id="_24">
           <id>42</id>
           <edge_type>1</edge_type>
-          <source_obj>9</source_obj>
-          <sink_obj>20</sink_obj>
+          <source_obj>6</source_obj>
+          <sink_obj>23</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_28">
+        <item class_id_reference="20" object_id="_25">
           <id>43</id>
           <edge_type>1</edge_type>
-          <source_obj>5</source_obj>
-          <sink_obj>21</sink_obj>
+          <source_obj>7</source_obj>
+          <sink_obj>23</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_29">
+        <item class_id_reference="20" object_id="_26">
           <id>44</id>
           <edge_type>1</edge_type>
-          <source_obj>7</source_obj>
-          <sink_obj>21</sink_obj>
+          <source_obj>8</source_obj>
+          <sink_obj>23</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_30">
+        <item class_id_reference="20" object_id="_27">
           <id>45</id>
           <edge_type>1</edge_type>
-          <source_obj>8</source_obj>
-          <sink_obj>21</sink_obj>
+          <source_obj>9</source_obj>
+          <sink_obj>23</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_31">
+        <item class_id_reference="20" object_id="_28">
           <id>46</id>
           <edge_type>1</edge_type>
-          <source_obj>9</source_obj>
-          <sink_obj>21</sink_obj>
+          <source_obj>5</source_obj>
+          <sink_obj>24</sink_obj>
         </item>
-        <item class_id_reference="20" object_id="_32">
+        <item class_id_reference="20" object_id="_29">
           <id>47</id>
           <edge_type>1</edge_type>
+          <source_obj>7</source_obj>
+          <sink_obj>24</sink_obj>
+        </item>
+        <item class_id_reference="20" object_id="_30">
+          <id>48</id>
+          <edge_type>1</edge_type>
+          <source_obj>8</source_obj>
+          <sink_obj>24</sink_obj>
+        </item>
+        <item class_id_reference="20" object_id="_31">
+          <id>49</id>
+          <edge_type>1</edge_type>
+          <source_obj>9</source_obj>
+          <sink_obj>24</sink_obj>
+        </item>
+        <item class_id_reference="20" object_id="_32">
+          <id>50</id>
+          <edge_type>1</edge_type>
           <source_obj>6</source_obj>
-          <sink_obj>21</sink_obj>
+          <sink_obj>24</sink_obj>
         </item>
         <item class_id_reference="20" object_id="_33">
-          <id>107</id>
-          <edge_type>4</edge_type>
-          <source_obj>20</source_obj>
-          <sink_obj>21</sink_obj>
+          <id>51</id>
+          <edge_type>1</edge_type>
+          <source_obj>10</source_obj>
+          <sink_obj>24</sink_obj>
         </item>
         <item class_id_reference="20" object_id="_34">
-          <id>108</id>
-          <edge_type>4</edge_type>
-          <source_obj>19</source_obj>
-          <sink_obj>20</sink_obj>
+          <id>52</id>
+          <edge_type>1</edge_type>
+          <source_obj>11</source_obj>
+          <sink_obj>24</sink_obj>
         </item>
         <item class_id_reference="20" object_id="_35">
-          <id>109</id>
+          <id>124</id>
           <edge_type>4</edge_type>
-          <source_obj>19</source_obj>
-          <sink_obj>20</sink_obj>
+          <source_obj>23</source_obj>
+          <sink_obj>24</sink_obj>
         </item>
         <item class_id_reference="20" object_id="_36">
-          <id>110</id>
+          <id>125</id>
           <edge_type>4</edge_type>
-          <source_obj>20</source_obj>
-          <sink_obj>21</sink_obj>
+          <source_obj>22</source_obj>
+          <sink_obj>23</sink_obj>
+        </item>
+        <item class_id_reference="20" object_id="_37">
+          <id>126</id>
+          <edge_type>4</edge_type>
+          <source_obj>22</source_obj>
+          <sink_obj>23</sink_obj>
+        </item>
+        <item class_id_reference="20" object_id="_38">
+          <id>127</id>
+          <edge_type>4</edge_type>
+          <source_obj>23</source_obj>
+          <sink_obj>24</sink_obj>
         </item>
       </edges>
     </cdfg>
     <cdfg_regions class_id="21" tracking_level="0" version="0">
       <count>1</count>
       <item_version>0</item_version>
-      <item class_id="22" tracking_level="1" version="0" object_id="_37">
+      <item class_id="22" tracking_level="1" version="0" object_id="_39">
         <mId>1</mId>
         <mTag>CCLabel</mTag>
         <mType>0</mType>
@@ -556,7 +570,7 @@
         <basic_blocks>
           <count>1</count>
           <item_version>0</item_version>
-          <item>23</item>
+          <item>26</item>
         </basic_blocks>
         <mII>-1</mII>
         <mDepth>-1</mDepth>
@@ -568,85 +582,75 @@
         <mDfPipe class_id="-1"/>
       </item>
     </cdfg_regions>
-    <fsm class_id="24" tracking_level="1" version="0" object_id="_38">
+    <fsm class_id="24" tracking_level="1" version="0" object_id="_40">
       <states class_id="25" tracking_level="0" version="0">
         <count>6</count>
         <item_version>0</item_version>
-        <item class_id="26" tracking_level="1" version="0" object_id="_39">
+        <item class_id="26" tracking_level="1" version="0" object_id="_41">
           <id>1</id>
           <operations class_id="27" tracking_level="0" version="0">
             <count>1</count>
             <item_version>0</item_version>
-            <item class_id="28" tracking_level="1" version="0" object_id="_40">
-              <id>19</id>
+            <item class_id="28" tracking_level="1" version="0" object_id="_42">
+              <id>22</id>
               <stage>2</stage>
-              <latency>2</latency>
-            </item>
-          </operations>
-        </item>
-        <item class_id_reference="26" object_id="_41">
-          <id>2</id>
-          <operations>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item class_id_reference="28" object_id="_42">
-              <id>19</id>
-              <stage>1</stage>
               <latency>2</latency>
             </item>
           </operations>
         </item>
         <item class_id_reference="26" object_id="_43">
-          <id>3</id>
+          <id>2</id>
           <operations>
             <count>1</count>
             <item_version>0</item_version>
             <item class_id_reference="28" object_id="_44">
-              <id>20</id>
-              <stage>2</stage>
+              <id>22</id>
+              <stage>1</stage>
               <latency>2</latency>
             </item>
           </operations>
         </item>
         <item class_id_reference="26" object_id="_45">
-          <id>4</id>
+          <id>3</id>
           <operations>
             <count>1</count>
             <item_version>0</item_version>
             <item class_id_reference="28" object_id="_46">
-              <id>20</id>
-              <stage>1</stage>
-              <latency>2</latency>
-            </item>
-          </operations>
-        </item>
-        <item class_id_reference="26" object_id="_47">
-          <id>5</id>
-          <operations>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item class_id_reference="28" object_id="_48">
-              <id>21</id>
+              <id>23</id>
               <stage>2</stage>
               <latency>2</latency>
             </item>
           </operations>
         </item>
-        <item class_id_reference="26" object_id="_49">
-          <id>6</id>
+        <item class_id_reference="26" object_id="_47">
+          <id>4</id>
           <operations>
-            <count>11</count>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item class_id_reference="28" object_id="_48">
+              <id>23</id>
+              <stage>1</stage>
+              <latency>2</latency>
+            </item>
+          </operations>
+        </item>
+        <item class_id_reference="26" object_id="_49">
+          <id>5</id>
+          <operations>
+            <count>1</count>
             <item_version>0</item_version>
             <item class_id_reference="28" object_id="_50">
-              <id>10</id>
-              <stage>1</stage>
-              <latency>1</latency>
+              <id>24</id>
+              <stage>2</stage>
+              <latency>2</latency>
             </item>
-            <item class_id_reference="28" object_id="_51">
-              <id>11</id>
-              <stage>1</stage>
-              <latency>1</latency>
-            </item>
+          </operations>
+        </item>
+        <item class_id_reference="26" object_id="_51">
+          <id>6</id>
+          <operations>
+            <count>12</count>
+            <item_version>0</item_version>
             <item class_id_reference="28" object_id="_52">
               <id>12</id>
               <stage>1</stage>
@@ -683,12 +687,27 @@
               <latency>1</latency>
             </item>
             <item class_id_reference="28" object_id="_59">
+              <id>19</id>
+              <stage>1</stage>
+              <latency>1</latency>
+            </item>
+            <item class_id_reference="28" object_id="_60">
+              <id>20</id>
+              <stage>1</stage>
+              <latency>1</latency>
+            </item>
+            <item class_id_reference="28" object_id="_61">
               <id>21</id>
+              <stage>1</stage>
+              <latency>1</latency>
+            </item>
+            <item class_id_reference="28" object_id="_62">
+              <id>24</id>
               <stage>1</stage>
               <latency>2</latency>
             </item>
-            <item class_id_reference="28" object_id="_60">
-              <id>22</id>
+            <item class_id_reference="28" object_id="_63">
+              <id>25</id>
               <stage>1</stage>
               <latency>1</latency>
             </item>
@@ -698,7 +717,7 @@
       <transitions class_id="29" tracking_level="0" version="0">
         <count>5</count>
         <item_version>0</item_version>
-        <item class_id="30" tracking_level="1" version="0" object_id="_61">
+        <item class_id="30" tracking_level="1" version="0" object_id="_64">
           <inState>1</inState>
           <outState>2</outState>
           <condition class_id="31" tracking_level="0" version="0">
@@ -713,7 +732,7 @@
             </sop>
           </condition>
         </item>
-        <item class_id_reference="30" object_id="_62">
+        <item class_id_reference="30" object_id="_65">
           <inState>2</inState>
           <outState>3</outState>
           <condition>
@@ -728,7 +747,7 @@
             </sop>
           </condition>
         </item>
-        <item class_id_reference="30" object_id="_63">
+        <item class_id_reference="30" object_id="_66">
           <inState>3</inState>
           <outState>4</outState>
           <condition>
@@ -743,7 +762,7 @@
             </sop>
           </condition>
         </item>
-        <item class_id_reference="30" object_id="_64">
+        <item class_id_reference="30" object_id="_67">
           <inState>4</inState>
           <outState>5</outState>
           <condition>
@@ -758,7 +777,7 @@
             </sop>
           </condition>
         </item>
-        <item class_id_reference="30" object_id="_65">
+        <item class_id_reference="30" object_id="_68">
           <inState>5</inState>
           <outState>6</outState>
           <condition>
@@ -775,7 +794,7 @@
         </item>
       </transitions>
     </fsm>
-    <res class_id="34" tracking_level="1" version="0" object_id="_66">
+    <res class_id="34" tracking_level="1" version="0" object_id="_69">
       <dp_component_resource class_id="35" tracking_level="0" version="0">
         <count>4</count>
         <item_version>0</item_version>
@@ -799,26 +818,30 @@
           </second>
         </item>
         <item>
-          <first>grp_CCLabel_calCentroid_fu_43 (CCLabel_calCentroid)</first>
+          <first>grp_CCLabel_calCentroid_fu_53 (CCLabel_calCentroid)</first>
           <second>
-            <count>3</count>
+            <count>4</count>
             <item_version>0</item_version>
+            <item>
+              <first>BRAM</first>
+              <second>4</second>
+            </item>
             <item>
               <first>DSP48E</first>
               <second>0</second>
             </item>
             <item>
               <first>FF</first>
-              <second>3063</second>
+              <second>3836</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>4912</second>
+              <second>6500</second>
             </item>
           </second>
         </item>
         <item>
-          <first>grp_CCLabel_firstPass_fu_62 (CCLabel_firstPass)</first>
+          <first>grp_CCLabel_firstPass_fu_76 (CCLabel_firstPass)</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -837,17 +860,17 @@
           </second>
         </item>
         <item>
-          <first>grp_CCLabel_preProcess_fu_80 (CCLabel_preProcess)</first>
+          <first>grp_CCLabel_preProcess_fu_94 (CCLabel_preProcess)</first>
           <second>
             <count>2</count>
             <item_version>0</item_version>
             <item>
               <first>FF</first>
-              <second>29</second>
+              <second>48</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>74</second>
+              <second>194</second>
             </item>
           </second>
         </item>
@@ -1906,7 +1929,7 @@
           </second>
         </item>
         <item>
-          <first>grp_CCLabel_calCentroid_fu_43_ap_start_ap_start_reg</first>
+          <first>grp_CCLabel_calCentroid_fu_53_ap_start_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -1925,7 +1948,7 @@
           </second>
         </item>
         <item>
-          <first>grp_CCLabel_firstPass_fu_62_ap_start_ap_start_reg</first>
+          <first>grp_CCLabel_firstPass_fu_76_ap_start_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -1944,7 +1967,7 @@
           </second>
         </item>
         <item>
-          <first>grp_CCLabel_preProcess_fu_80_ap_start_ap_start_reg</first>
+          <first>grp_CCLabel_preProcess_fu_94_ap_start_ap_start_reg</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -1963,7 +1986,7 @@
           </second>
         </item>
         <item>
-          <first>setCount_reg_88</first>
+          <first>setCount_reg_102</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -1986,27 +2009,27 @@
         <count>3</count>
         <item_version>0</item_version>
         <item class_id="40" tracking_level="0" version="0">
-          <first>grp_CCLabel_calCentroid_fu_43 (CCLabel_calCentroid)</first>
+          <first>grp_CCLabel_calCentroid_fu_53 (CCLabel_calCentroid)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
-            <item>21</item>
+            <item>24</item>
           </second>
         </item>
         <item>
-          <first>grp_CCLabel_firstPass_fu_62 (CCLabel_firstPass)</first>
+          <first>grp_CCLabel_firstPass_fu_76 (CCLabel_firstPass)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
-            <item>20</item>
+            <item>23</item>
           </second>
         </item>
         <item>
-          <first>grp_CCLabel_preProcess_fu_80 (CCLabel_preProcess)</first>
+          <first>grp_CCLabel_preProcess_fu_94 (CCLabel_preProcess)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
-            <item>19</item>
+            <item>22</item>
           </second>
         </item>
       </dp_component_map>
@@ -2026,7 +2049,7 @@
           <second>
             <count>1</count>
             <item_version>0</item_version>
-            <item>86</item>
+            <item>85</item>
           </second>
         </item>
         <item>
@@ -2034,7 +2057,7 @@
           <second>
             <count>1</count>
             <item_version>0</item_version>
-            <item>101</item>
+            <item>100</item>
           </second>
         </item>
         <item>
@@ -2042,7 +2065,7 @@
           <second>
             <count>1</count>
             <item_version>0</item_version>
-            <item>111</item>
+            <item>110</item>
           </second>
         </item>
         <item>
@@ -2050,7 +2073,7 @@
           <second>
             <count>1</count>
             <item_version>0</item_version>
-            <item>121</item>
+            <item>120</item>
           </second>
         </item>
         <item>
@@ -2058,7 +2081,7 @@
           <second>
             <count>1</count>
             <item_version>0</item_version>
-            <item>133</item>
+            <item>132</item>
           </second>
         </item>
         <item>
@@ -2066,7 +2089,7 @@
           <second>
             <count>1</count>
             <item_version>0</item_version>
-            <item>145</item>
+            <item>144</item>
           </second>
         </item>
       </dp_memory_map>
@@ -2075,28 +2098,28 @@
       <count>4</count>
       <item_version>0</item_version>
       <item class_id="42" tracking_level="0" version="0">
-        <first>19</first>
+        <first>22</first>
         <second class_id="43" tracking_level="0" version="0">
           <first>0</first>
           <second>1</second>
         </second>
       </item>
       <item>
-        <first>20</first>
+        <first>23</first>
         <second>
           <first>2</first>
           <second>1</second>
         </second>
       </item>
       <item>
-        <first>21</first>
+        <first>24</first>
         <second>
           <first>4</first>
           <second>1</second>
         </second>
       </item>
       <item>
-        <first>22</first>
+        <first>25</first>
         <second>
           <first>5</first>
           <second>0</second>
@@ -2107,7 +2130,7 @@
       <count>1</count>
       <item_version>0</item_version>
       <item class_id="45" tracking_level="0" version="0">
-        <first>23</first>
+        <first>26</first>
         <second class_id="46" tracking_level="0" version="0">
           <first>0</first>
           <second>5</second>
@@ -2122,30 +2145,30 @@
       <count>3</count>
       <item_version>0</item_version>
       <item class_id="49" tracking_level="0" version="0">
-        <first>43</first>
+        <first>53</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>21</item>
-          <item>21</item>
+          <item>24</item>
+          <item>24</item>
         </second>
       </item>
       <item>
-        <first>62</first>
+        <first>76</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>20</item>
-          <item>20</item>
+          <item>23</item>
+          <item>23</item>
         </second>
       </item>
       <item>
-        <first>80</first>
+        <first>94</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>19</item>
-          <item>19</item>
+          <item>22</item>
+          <item>22</item>
         </second>
       </item>
     </dp_fu_nodes>
@@ -2157,30 +2180,30 @@
       <count>3</count>
       <item_version>0</item_version>
       <item class_id="52" tracking_level="0" version="0">
-        <first>grp_CCLabel_calCentroid_fu_43</first>
+        <first>grp_CCLabel_calCentroid_fu_53</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>21</item>
-          <item>21</item>
+          <item>24</item>
+          <item>24</item>
         </second>
       </item>
       <item>
-        <first>grp_CCLabel_firstPass_fu_62</first>
+        <first>grp_CCLabel_firstPass_fu_76</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>20</item>
-          <item>20</item>
+          <item>23</item>
+          <item>23</item>
         </second>
       </item>
       <item>
-        <first>grp_CCLabel_preProcess_fu_80</first>
+        <first>grp_CCLabel_preProcess_fu_94</first>
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>19</item>
-          <item>19</item>
+          <item>22</item>
+          <item>22</item>
         </second>
       </item>
     </dp_fu_nodes_module>
@@ -2196,12 +2219,12 @@
         <second>
           <count>1</count>
           <item_version>0</item_version>
-          <item>22</item>
+          <item>25</item>
         </second>
       </item>
     </return_ports>
     <dp_mem_port_nodes class_id="53" tracking_level="0" version="0">
-      <count>6</count>
+      <count>8</count>
       <item_version>0</item_version>
       <item class_id="54" tracking_level="0" version="0">
         <first class_id="55" tracking_level="0" version="0">
@@ -2211,8 +2234,30 @@
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>19</item>
-          <item>20</item>
+          <item>22</item>
+          <item>23</item>
+        </second>
+      </item>
+      <item>
+        <first>
+          <first>mask_table1</first>
+          <second>100</second>
+        </first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>24</item>
+        </second>
+      </item>
+      <item>
+        <first>
+          <first>one_half_table2</first>
+          <second>100</second>
+        </first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>24</item>
         </second>
       </item>
       <item>
@@ -2223,8 +2268,8 @@
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>20</item>
-          <item>21</item>
+          <item>23</item>
+          <item>24</item>
         </second>
       </item>
       <item>
@@ -2235,8 +2280,8 @@
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>20</item>
-          <item>21</item>
+          <item>23</item>
+          <item>24</item>
         </second>
       </item>
       <item>
@@ -2247,8 +2292,8 @@
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>20</item>
-          <item>21</item>
+          <item>23</item>
+          <item>24</item>
         </second>
       </item>
       <item>
@@ -2259,8 +2304,8 @@
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>20</item>
-          <item>21</item>
+          <item>23</item>
+          <item>24</item>
         </second>
       </item>
       <item>
@@ -2271,8 +2316,8 @@
         <second>
           <count>2</count>
           <item_version>0</item_version>
-          <item>20</item>
-          <item>21</item>
+          <item>23</item>
+          <item>24</item>
         </second>
       </item>
     </dp_mem_port_nodes>
@@ -2280,11 +2325,11 @@
       <count>1</count>
       <item_version>0</item_version>
       <item>
-        <first>88</first>
+        <first>102</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
-          <item>20</item>
+          <item>23</item>
         </second>
       </item>
     </dp_reg_nodes>
@@ -2292,11 +2337,11 @@
       <count>1</count>
       <item_version>0</item_version>
       <item>
-        <first>setCount_reg_88</first>
+        <first>setCount_reg_102</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
-          <item>20</item>
+          <item>23</item>
         </second>
       </item>
     </dp_regname_nodes>
@@ -2317,7 +2362,7 @@
       <item_version>0</item_version>
       <item class_id="58" tracking_level="0" version="0">
         <first>1</first>
-        <second>RAM</second>
+        <second>RAM_1P_BRAM</second>
       </item>
       <item>
         <first>2</first>

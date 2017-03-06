@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg484-1" LaunchTime="1488784112">
+  <File Type="PWROPT-DCP" Name="CCLabel_pwropt.dcp"/>
+  <File Type="RUN-CONSTRS" Name="$PDATADIR/runs/impl_1/constrs_in.xml"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="CCLabel_timing_summary_postroute_physopted.pb"/>
+  <File Type="PA-DCP" Name="CCLabel.dcp"/>
+  <File Type="RUN-SRCS" Name="$PDATADIR/runs/impl_1/sources.xml"/>
+  <File Type="PWROPT-DRC" Name="CCLabel_drc_pwropted.rpt"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="CCLabel_timing_summary_routed.rpt"/>
+  <File Type="PA-TCL" Name="CCLabel.tcl"/>
+  <File Type="RUN-STRAT" Name="$PDATADIR/runs/impl_1/impl_1.psg"/>
+  <File Type="OPT-DCP" Name="CCLabel_opt.dcp"/>
+  <File Type="OPT-DRC" Name="CCLabel_drc_opted.rpt"/>
+  <File Type="PLACE-DCP" Name="CCLabel_placed.dcp"/>
+  <File Type="PLACE-IO" Name="CCLabel_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="CCLabel_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="CCLabel_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="CCLabel_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="CCLabel_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="CCLabel_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="CCLabel_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="CCLabel_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="CCLabel_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="CCLabel_drc_physopted.rpt"/>
+  <File Type="ROUTE-DCP" Name="CCLabel_routed.dcp"/>
+  <File Type="ROUTE-DRC" Name="CCLabel_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="CCLabel_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="CCLabel_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="CCLabel_power_summary_routed.pb"/>
+  <File Type="ROUTE-STATUS" Name="CCLabel_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="CCLabel_route_status.pb"/>
+  <File Type="ROUTE-TIMING-PB" Name="CCLabel_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="CCLabel_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="CCLabel_incremental_reuse_routed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="CCLabel_postroute_physopt.dcp"/>
+  <File Type="RDI-RDI" Name="CCLabel.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="CCLabel_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="CCLabel_timing_summary_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="CCLabel.bit"/>
+  <File Type="BG-BIN" Name="CCLabel.bin"/>
+  <File Type="BITSTR-MSK" Name="CCLabel.msk"/>
+  <File Type="BITSTR-RBT" Name="CCLabel.rbt"/>
+  <File Type="BITSTR-NKY" Name="CCLabel.nky"/>
+  <File Type="BITSTR-BMM" Name="CCLabel_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="CCLabel.mmi"/>
+  <File Type="BITSTR-SYSDEF" Name="CCLabel.sysdef"/>
+  <File Type="BG-BGN" Name="CCLabel.bgn"/>
+  <File Type="BG-DRC" Name="CCLabel.drc"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/CCLabel_ap_fdiv_14_no_dsp_32/CCLabel_ap_fdiv_14_no_dsp_32.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/CCLabel_ap_fpext_0_no_dsp_32/CCLabel_ap_fpext_0_no_dsp_32.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/ip/CCLabel_ap_uitofp_4_no_dsp_32/CCLabel_ap_uitofp_4_no_dsp_32.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_calCentroid_mask_table1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_calCentroid_one_half_table2.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_fdiv_32ns_32ns_32_16.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_fpext_32ns_64_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_mul_32s_4ns_32_3.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_uitofp_32ns_32_6.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_calCentroid.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_CRTLS_s_axi.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_firstPass.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_lbImage.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_preProcess.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_set.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_status.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel_totalIntensity.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/CCLabel.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="CCLabel"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/CCLabel.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2014">
+      <Desc>Vivado Implementation Defaults</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design" EnableStepBool="1"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

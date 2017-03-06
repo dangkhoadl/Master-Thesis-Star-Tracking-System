@@ -8,7 +8,7 @@ set isOneStateSeq 0
 set C_modelName CCLabel_preProcess
 set C_modelType { void 0 }
 set C_modelArgList { 
-	{ Image_r int 32 regular {bram 64 { 1 3 } 1 1 }  }
+	{ Image_r int 32 regular {bram 64 { 1 } 1 1 }  }
 	{ lbImage int 32 regular {array 64 { 0 3 } 0 1 } {global 1}  }
 }
 set C_modelArgMapList {[ 

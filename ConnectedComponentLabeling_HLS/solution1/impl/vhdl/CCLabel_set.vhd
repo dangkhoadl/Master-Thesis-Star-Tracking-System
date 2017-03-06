@@ -12,10 +12,10 @@ use ieee.std_logic_unsigned.all;
 
 entity CCLabel_set_ram is 
     generic(
-            mem_type    : string := "distributed"; 
+            mem_type    : string := "block"; 
             dwidth     : integer := 32; 
-            awidth     : integer := 5; 
-            mem_size    : integer := 30
+            awidth     : integer := 6; 
+            mem_size    : integer := 40
     ); 
     port (
           addr0     : in std_logic_vector(awidth-1 downto 0); 
@@ -32,10 +32,10 @@ architecture rtl of CCLabel_set_ram is
 
 signal addr0_tmp : std_logic_vector(awidth-1 downto 0); 
 type mem_array is array (0 to mem_size-1) of std_logic_vector (dwidth-1 downto 0); 
-shared variable ram : mem_array;
+shared variable ram : mem_array := (others=>(others=>'0'));
 
 attribute syn_ramstyle : string; 
-attribute syn_ramstyle of ram : variable is "select_ram";
+attribute syn_ramstyle of ram : variable is "block_ram";
 attribute ram_style : string;
 attribute ram_style of ram : variable is mem_type;
 attribute EQUIVALENT_REGISTER_REMOVAL : string;
@@ -77,8 +77,8 @@ use IEEE.std_logic_1164.all;
 entity CCLabel_set is
     generic (
         DataWidth : INTEGER := 32;
-        AddressRange : INTEGER := 30;
-        AddressWidth : INTEGER := 5);
+        AddressRange : INTEGER := 40;
+        AddressWidth : INTEGER := 6);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;
