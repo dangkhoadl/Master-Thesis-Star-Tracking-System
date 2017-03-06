@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CCLAbelling/src/platform.c&apos; to &apos;platform.cc&apos;" description="Rename resource &apos;platform.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/platform.c" name="platform.cc" stamp="1488786007456" updateReferences="true"/>
+</session>
