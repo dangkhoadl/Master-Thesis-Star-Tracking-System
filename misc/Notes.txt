@@ -3,3 +3,6 @@
 	xilflash
 	xD
 
+- HW error
+	+ delete the .elf file
+		Project/Properties/ RunDebug Setting
