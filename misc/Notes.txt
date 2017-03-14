@@ -1,0 +1,5 @@
+- BSP setting
+	tick xilffs
+	xilflash
+	xD
+
