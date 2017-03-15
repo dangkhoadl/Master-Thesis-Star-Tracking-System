@@ -2,8 +2,8 @@
 //#include <iostream>
 #include <hls_math.h>
 
-#define IMG_HEIGHT 8
-#define IMG_WIDTH 8
+#define IMG_HEIGHT 512
+#define IMG_WIDTH 512
 
 #define THRESHOLD 70
 #define MAX 999
@@ -34,7 +34,7 @@ void preProcess(unsigned Image[IMG_HEIGHT*IMG_WIDTH]) {
 }
 
 unsigned find(unsigned id) {
-	int temp = id;
+	unsigned temp = id;
 	while (temp != set[temp]) {
 #pragma HLS PIPELINE
 		temp = set[temp];
@@ -50,8 +50,8 @@ unsigned firstPass(unsigned Image[IMG_HEIGHT*IMG_WIDTH]) {
 	unsigned setCount = 1;
 	unsigned min = 0;
 	unsigned max = MAX;
-	for (int i = 0; i < IMG_HEIGHT; ++i) {
-		for (int j = 0; j < IMG_WIDTH; ++j) {
+	for (i = 0; i < IMG_HEIGHT; ++i) {
+		for (j = 0; j < IMG_WIDTH; ++j) {
 #pragma HLS PIPELINE
 			if (lbImage[i*IMG_HEIGHT + j] != 0) {
 				if(i != 0 && lbImage[(i - 1)*IMG_HEIGHT + j] != 0) {
@@ -144,13 +144,13 @@ unsigned calCentroid(unsigned setCount, unsigned X[MAX_CENTROID_DATA], unsigned 
 
 void secondPass() {
 	unsigned i = 0, j = 0;
-	unsigned root = 0;
+	//unsigned root = 0;
 	for (i = 0; i < IMG_HEIGHT; ++i) {
 #pragma HLS PIPELINE
 		for (j = 0; j < IMG_WIDTH; ++j) {
 #pragma HLS PIPELINE
 			if (lbImage[i*IMG_HEIGHT + j] != 0) {
-				root = find(lbImage[i*IMG_HEIGHT + j]);
+				//root = find(lbImage[i*IMG_HEIGHT + j]);
 				lbImage[i*IMG_HEIGHT + j] = find(lbImage[i*IMG_HEIGHT + j]);
 			}
 		}
@@ -171,5 +171,3 @@ unsigned CCLabel(unsigned Image[IMG_HEIGHT * IMG_WIDTH], unsigned X[MAX_CENTROID
 
 	return centroidDataCount;
 }
-
-
