@@ -1,12 +1,11 @@
-#include <cstdio>
-#include <cmath>
+#include <stdio.h>
+#include <math.h>
 #include <xparameters.h>
 #include "xCCLabel.h"
+#include "xaxidma.h"
 #include "platform.h"
 #include "AxiTimerHelper.h"
 #include "Image.h"
-
-
 
 unsigned int float_to_u32(float val) {
 	unsigned int result;
@@ -21,26 +20,47 @@ unsigned int float_to_u32(float val) {
 }
 
 /********************************************** HARDWARE ****************************************************************/
-unsigned int *XHW = (unsigned int *)0x40000000;
-unsigned int *YHW = (unsigned int *)0x40010000;
-unsigned int *Image = (unsigned int *)0x40002000;
-
 XCclabel cCLabel;
 XCclabel_Config *cCLabel_cfg;
+XAxiDma axiDMA;
+XAxiDma_Config *axiDMA_cfg;
+
+//BRAM addresses
+int *XHW = (int *)0x40000000;
+int *YHW = (int *)0x40010000;
+
+//DMA addresses
+#define MEM_BASE_ADDR 0x01000000
+#define TX_BUFFER_BASE (MEM_BASE_ADDR + 0x00100000)
+
 
 void init_core() {
 	int status = 0;
 
+	// init CC core
 	cCLabel_cfg = XCclabel_LookupConfig(XPAR_CCLABEL_0_DEVICE_ID);
 	if (!cCLabel_cfg) {
-		printf("Error loading config\n");
+		xil_printf("Error loading config\r\n");
 	}
 	else {
 		status = XCclabel_CfgInitialize(&cCLabel,cCLabel_cfg);
 		if (status != XST_SUCCESS) {
-			printf("Error initializing\n");
+			xil_printf("Error initializing CC core\r\n");
 		}
 	}
+
+	//init DMA
+	axiDMA_cfg = XAxiDma_LookupConfig(XPAR_AXIDMA_0_DEVICE_ID);
+	if(axiDMA_cfg) {
+		status = XAxiDma_CfgInitialize(&axiDMA, axiDMA_cfg);
+		if(status != XST_SUCCESS) {
+			xil_printf("Error initializing DMA\r\n");
+		}
+	}
+
+	//Disable Interrupts
+	XAxiDma_IntrDisable(&axiDMA, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
+	XAxiDma_IntrDisable(&axiDMA, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
 }
 
 
@@ -203,24 +223,33 @@ unsigned softwareCCLabel(unsigned swImage[IMG_HEIGHT * IMG_WIDTH], unsigned swX[
 
 int main() {
 	init_platform();
-	//Initialize IP core
+	//Initialize
 	init_core();
 	XCclabel_EnableAutoRestart(&cCLabel);
 
+	//Timer
 	AxiTimerHelper timer;
 
-	//Load IMG into BRAM
-	for(int i=0; i < IMG_HEIGHT * IMG_WIDTH; ++i) {
-		Image[i] = inputIMG[i];
-	}
+	//Load IMG
+	//int *m_dma_buffer_TX = (int *) TX_BUFFER_BASE;
 
 	/********************************************** SOFTWARE ****************************************************************/
 	timer.startTimer();
-	u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+	u32 centroidCountSW = softwareCCLabel(inputIMG, XSW, YSW);
 	timer.stopTimer();
 	double SWtime = timer.getElapsedTimerInSeconds();
 
 	/********************************************** HARDWARE ****************************************************************/
+	//Set parameters
+	XCclabel_Set_imgHeight(&cCLabel, IMG_HEIGHT);
+	XCclabel_Set_imgWidth(&cCLabel, IMG_WIDTH);
+
+	//Flush the cache of the buffers
+	Xil_DCacheFlushRange((u32)inputIMG, IMG_HEIGHT * IMG_WIDTH * sizeof(int));
+
+	//Send data to IP core
+	XAxiDma_SimpleTransfer(&axiDMA, (u32)inputIMG, IMG_HEIGHT * IMG_WIDTH * sizeof(int), XAXIDMA_DMA_TO_DEVICE);
+
 	//Start IP core
 	XCclabel_Start(&cCLabel);
 

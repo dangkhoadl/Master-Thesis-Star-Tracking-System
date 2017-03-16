@@ -7,8 +7,8 @@
 #include <iostream>
 using namespace std;
 
-#define IMG_HEIGHT 8
-#define IMG_WIDTH 8
+#define IMG_HEIGHT 512
+#define IMG_WIDTH 512
 #define THRESHOLD 70 
 #define MAX 999
 #define MAX_STAR_DATA_SIZE 40
@@ -36,25 +36,25 @@ void readImage(FILE *&fileIn) {
 	fclose(fileIn);
 }
 
-void test(unsigned lbImage[IMG_HEIGHT * IMG_WIDTH]) {
-	for (int i = 0; i < IMG_HEIGHT; ++i){
+void test(FILE *fileOut,unsigned lbImage[IMG_HEIGHT * IMG_WIDTH]) {
+	for (int i = 0; i < IMG_HEIGHT; ++i) {
 		for (int j = 0; j < IMG_WIDTH; ++j) {
-			printf("%3d ", lbImage[i*IMG_HEIGHT + j]);
+			fprintf(fileOut, "%3d ", lbImage[i*IMG_HEIGHT + j]);
 		}
-		printf("\n");
+		fprintf(fileOut, "\n");
 	}
-	printf("\n\n");
+	fprintf(fileOut, "\n\n");
 }
 
-void printResult(unsigned centroidDataCount) {
+void printResult(FILE *fileOut, unsigned centroidDataCount) {
 	for (unsigned i = 0; i < centroidDataCount; ++i) {
-		printf("Star[%d]: x = %f, y = %f\n", i + 1,  X[i], Y[i]);
+		fprintf(fileOut, "Star[%d]: x = %f, y = %f\n", i + 1, X[i], Y[i]);
 	}
 }
 
 /*******************************************************************************************/
 void preProcess() {
-	unsigned i = 0,j = 0;
+	unsigned i = 0, j = 0;
 	for (i = 0; i < IMG_HEIGHT; ++i) {
 		for (j = 0; j < IMG_WIDTH; ++j) {
 			if (Image[i*IMG_HEIGHT + j] < THRESHOLD)
@@ -168,7 +168,7 @@ void secondPass() {
 }
 
 int main(int agrc, char *argv[]) {
-	if (agrc == 2) {
+	if (agrc == 3) {
 		const char *inputFileName(argv[1]);
 		FILE *fileIn;
 		fileIn = fopen(inputFileName, "r");
@@ -177,15 +177,28 @@ int main(int agrc, char *argv[]) {
 			printf("File does not exist !!!\n");
 			return 0;
 		}
-
-		//process
+		//Read
 		readImage(fileIn);
+		fclose(fileIn);
+
+		//Process
 		preProcess();
 		unsigned setCount = firstPass();
 		unsigned centroidDataCount = calCentroid(setCount);
 		secondPass();
-		test(lbImage);
-		printResult(centroidDataCount);
+		
+
+		//Output
+		const char *outputFileName(argv[2]);
+		FILE *fileOut;
+		fileOut = fopen(outputFileName, "w");
+
+		//Write
+		//test(fileOut, lbImage);
+		printResult(fileOut, centroidDataCount);
+		fclose(fileOut);
+
+
 	}
 	else {
 		const char* inputProgram(argv[0]);
