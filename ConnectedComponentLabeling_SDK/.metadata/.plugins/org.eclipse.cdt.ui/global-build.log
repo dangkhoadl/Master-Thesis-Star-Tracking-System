@@ -1,0 +1,2694 @@
+17:54:33 **** Build of project CCLabelling_bsp ****
+make -k all 
+"Running Make include in ps7_cortexa9_0/libsrc/axidma_v8_0/src"
+make -C ps7_cortexa9_0/libsrc/axidma_v8_0/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/bram_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/bram_v4_0/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/cclabel_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/cclabel_v1_0/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/devcfg_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_2/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/dmaps_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/emacps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/gpiops_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/qspips_v3_1/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_1/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/scugic_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/scutimer_v2_0/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_0/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/scuwdt_v2_0/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_0/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/sdps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v2_3/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/standalone_v4_2/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v4_2/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/tmrctr_v3_0/src"
+make -C ps7_cortexa9_0/libsrc/tmrctr_v3_0/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/ttcps_v2_0/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v2_0/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/uartps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/usbps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_2/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make include in ps7_cortexa9_0/libsrc/xadcps_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_1/src -s include  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Running Make libs in ps7_cortexa9_0/libsrc/axidma_v8_0/src"
+make -C ps7_cortexa9_0/libsrc/axidma_v8_0/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling axidma"
+arm-xilinx-eabi-ar: creating ../../../lib/libxil.a
+"Running Make libs in ps7_cortexa9_0/libsrc/bram_v4_0/src"
+make -C ps7_cortexa9_0/libsrc/bram_v4_0/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling bram"
+"Running Make libs in ps7_cortexa9_0/libsrc/cclabel_v1_0/src"
+make -C ps7_cortexa9_0/libsrc/cclabel_v1_0/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling CCLabel"
+"Running Make libs in ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/cpu_cortexa9_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling cpu_cortexa9"
+"Running Make libs in ps7_cortexa9_0/libsrc/devcfg_v3_2/src"
+make -C ps7_cortexa9_0/libsrc/devcfg_v3_2/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling devcfg"
+"Running Make libs in ps7_cortexa9_0/libsrc/dmaps_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/dmaps_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling dmaps"
+"Running Make libs in ps7_cortexa9_0/libsrc/emacps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/emacps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling emacps"
+"Running Make libs in ps7_cortexa9_0/libsrc/gpiops_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/gpiops_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling gpiops"
+"Running Make libs in ps7_cortexa9_0/libsrc/qspips_v3_1/src"
+make -C ps7_cortexa9_0/libsrc/qspips_v3_1/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling qspips"
+"Running Make libs in ps7_cortexa9_0/libsrc/scugic_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/scugic_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling scugic"
+"Running Make libs in ps7_cortexa9_0/libsrc/scutimer_v2_0/src"
+make -C ps7_cortexa9_0/libsrc/scutimer_v2_0/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling scutimer"
+"Running Make libs in ps7_cortexa9_0/libsrc/scuwdt_v2_0/src"
+make -C ps7_cortexa9_0/libsrc/scuwdt_v2_0/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling scuwdt"
+"Running Make libs in ps7_cortexa9_0/libsrc/sdps_v2_3/src"
+make -C ps7_cortexa9_0/libsrc/sdps_v2_3/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling sdps"
+"Running Make libs in ps7_cortexa9_0/libsrc/standalone_v4_2/src"
+make -C ps7_cortexa9_0/libsrc/standalone_v4_2/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling standalone"
+"Running Make libs in ps7_cortexa9_0/libsrc/tmrctr_v3_0/src"
+make -C ps7_cortexa9_0/libsrc/tmrctr_v3_0/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling tmrctr"
+"Running Make libs in ps7_cortexa9_0/libsrc/ttcps_v2_0/src"
+make -C ps7_cortexa9_0/libsrc/ttcps_v2_0/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling ttcps"
+"Running Make libs in ps7_cortexa9_0/libsrc/uartps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/uartps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling uartps"
+"Running Make libs in ps7_cortexa9_0/libsrc/usbps_v2_2/src"
+make -C ps7_cortexa9_0/libsrc/usbps_v2_2/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling usbps"
+"Running Make libs in ps7_cortexa9_0/libsrc/xadcps_v2_1/src"
+make -C ps7_cortexa9_0/libsrc/xadcps_v2_1/src -s libs  "SHELL=CMD" "COMPILER=arm-xilinx-eabi-gcc" "ARCHIVER=arm-xilinx-eabi-ar" "COMPILER_FLAGS=  -O2 -c" "EXTRA_COMPILER_FLAGS=-g"
+"Compiling xadcps"
+'Finished building libraries'
+
+**** Build of configuration Debug for project CCLabelling ****
+
+Nothing to build for project CCLabelling
+17:55:23 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/AxiTimerHelper.cpp'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/AxiTimerHelper.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/AxiTimerHelper.d" -MT"src/AxiTimerHelper.d" -o "src/AxiTimerHelper.o" "../src/AxiTimerHelper.cpp"
+'Finished building: ../src/AxiTimerHelper.cpp'
+' '
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building file: ../src/platform.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.cc"
+'Finished building: ../src/platform.cc'
+' '
+'Building target: CCLabelling.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "CCLabelling.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: CCLabelling.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size CCLabelling.elf  |tee "CCLabelling.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 125264	   2620	  26472	 154356	  25af4	CCLabelling.elf
+'Finished building: CCLabelling.elf.size'
+' '
+17:56:17 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: CCLabelling.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "CCLabelling.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: CCLabelling.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size CCLabelling.elf  |tee "CCLabelling.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 125264	   2620	  26472	 154356	  25af4	CCLabelling.elf
+'Finished building: CCLabelling.elf.size'
+' '
+17:56:23 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: CCLabelling.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "CCLabelling.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: CCLabelling.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size CCLabelling.elf  |tee "CCLabelling.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 125264	   2620	  26472	 154356	  25af4	CCLabelling.elf
+'Finished building: CCLabelling.elf.size'
+' '
+17:59:04 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc:30:1: error: 'XAxiDma' does not name a type
+ XAxiDma axiDMA;
+ ^
+../src/main.cc: In function 'int main()':
+../src/main.cc:215:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:220:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+17:59:40 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:216:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:221:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:00:48 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:220:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:225:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:00:53 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc:30:8: error: no macro name given in #define directive
+ #define
+        ^
+../src/main.cc: In function 'int main()':
+../src/main.cc:220:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:225:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:01:08 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:221:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:226:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:01:10 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:222:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:227:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:03:23 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:222:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:227:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:03:55 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:222:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:227:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:07:11 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:227:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:232:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:08:51 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:232:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:237:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:08:54 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:232:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:237:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:09:14 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:232:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:237:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:10:29 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:235:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:240:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:10:33 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:236:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:241:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:10:47 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:236:3: error: 'Image' was not declared in this scope
+   Image[i] = inputIMG[i];
+   ^
+../src/main.cc:241:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:11:56 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:240:40: error: 'Image' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(Image, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:12:14 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: CCLabelling.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "CCLabelling.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: CCLabelling.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size CCLabelling.elf  |tee "CCLabelling.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130728	   2676	  28136	 161540	  27704	CCLabelling.elf
+'Finished building: CCLabelling.elf.size'
+' '
+18:16:23 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:246:25: error: too few arguments to function 'void XCclabel_Set_imgHeight(XCclabel*, u32)'
+  XCclabel_Set_imgHeight()
+                         ^
+In file included from ../src/main.cc:4:0:
+../../CCLabelling_bsp/ps7_cortexa9_0/include/xCCLabel.h:91:6: note: declared here
+ void XCclabel_Set_imgHeight(XCclabel *InstancePtr, u32 Data);
+      ^
+../src/main.cc:249:2: error: expected ';' before 'XCclabel_Start'
+  XCclabel_Start(&cCLabel);
+  ^
+../src/main.cc:236:7: warning: unused variable 'm_dma_buffer_TX' [-Wunused-variable]
+  int *m_dma_buffer_TX = (int *) TX_BUFFER_BASE;
+       ^
+make: *** [src/main.o] Error 1
+18:16:24 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:246:25: error: too few arguments to function 'void XCclabel_Set_imgHeight(XCclabel*, u32)'
+  XCclabel_Set_imgHeight();
+                         ^
+In file included from ../src/main.cc:4:0:
+../../CCLabelling_bsp/ps7_cortexa9_0/include/xCCLabel.h:91:6: note: declared here
+ void XCclabel_Set_imgHeight(XCclabel *InstancePtr, u32 Data);
+      ^
+../src/main.cc:236:7: warning: unused variable 'm_dma_buffer_TX' [-Wunused-variable]
+  int *m_dma_buffer_TX = (int *) TX_BUFFER_BASE;
+       ^
+make: *** [src/main.o] Error 1
+18:17:07 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:244:35: error: invalid conversion from 'int' to 'XCclabel*' [-fpermissive]
+  XCclabel_Set_imgHeight(IMG_HEIGHT);
+                                   ^
+../src/main.cc:244:35: error: too few arguments to function 'void XCclabel_Set_imgHeight(XCclabel*, u32)'
+In file included from ../src/main.cc:4:0:
+../../CCLabelling_bsp/ps7_cortexa9_0/include/xCCLabel.h:91:6: note: declared here
+ void XCclabel_Set_imgHeight(XCclabel *InstancePtr, u32 Data);
+      ^
+../src/main.cc:234:7: warning: unused variable 'm_dma_buffer_TX' [-Wunused-variable]
+  int *m_dma_buffer_TX = (int *) TX_BUFFER_BASE;
+       ^
+make: *** [src/main.o] Error 1
+18:17:57 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:234:7: warning: unused variable 'm_dma_buffer_TX' [-Wunused-variable]
+  int *m_dma_buffer_TX = (int *) TX_BUFFER_BASE;
+       ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: CCLabelling.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "CCLabelling.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: CCLabelling.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size CCLabelling.elf  |tee "CCLabelling.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130728	   2676	  28136	 161540	  27704	CCLabelling.elf
+'Finished building: CCLabelling.elf.size'
+' '
+18:18:01 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:234:7: warning: unused variable 'm_dma_buffer_TX' [-Wunused-variable]
+  int *m_dma_buffer_TX = (int *) TX_BUFFER_BASE;
+       ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: CCLabelling.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "CCLabelling.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: CCLabelling.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size CCLabelling.elf  |tee "CCLabelling.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130728	   2676	  28136	 161540	  27704	CCLabelling.elf
+'Finished building: CCLabelling.elf.size'
+' '
+18:18:20 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:234:7: warning: unused variable 'm_dma_buffer_TX' [-Wunused-variable]
+  int *m_dma_buffer_TX = (int *) TX_BUFFER_BASE;
+       ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: CCLabelling.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "CCLabelling.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: CCLabelling.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size CCLabelling.elf  |tee "CCLabelling.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130792	   2676	  28136	 161604	  27744	CCLabelling.elf
+'Finished building: CCLabelling.elf.size'
+' '
+18:22:52 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:234:7: warning: unused variable 'm_dma_buffer_TX' [-Wunused-variable]
+  int *m_dma_buffer_TX = (int *) TX_BUFFER_BASE;
+       ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: CCLabelling.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "CCLabelling.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: CCLabelling.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size CCLabelling.elf  |tee "CCLabelling.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130792	   2676	  28136	 161604	  27744	CCLabelling.elf
+'Finished building: CCLabelling.elf.size'
+' '
+18:24:12 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:234:7: warning: unused variable 'm_dma_buffer_TX' [-Wunused-variable]
+  int *m_dma_buffer_TX = (int *) TX_BUFFER_BASE;
+       ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: CCLabelling.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "CCLabelling.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: CCLabelling.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size CCLabelling.elf  |tee "CCLabelling.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130792	   2676	  28136	 161604	  27744	CCLabelling.elf
+'Finished building: CCLabelling.elf.size'
+' '
+18:26:46 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:251:39: error: 'inputImage' was not declared in this scope
+  XAxiDma_SimpleTransfer(&axiDMA, (u32)inputImage, IMG_HEIGHT * IMG_WIDTH * sizeof(int), XAXIDMA_DMA_TO_DEVICE);
+                                       ^
+../src/main.cc:234:7: warning: unused variable 'm_dma_buffer_TX' [-Wunused-variable]
+  int *m_dma_buffer_TX = (int *) TX_BUFFER_BASE;
+       ^
+make: *** [src/main.o] Error 1
+18:26:56 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:234:7: warning: unused variable 'm_dma_buffer_TX' [-Wunused-variable]
+  int *m_dma_buffer_TX = (int *) TX_BUFFER_BASE;
+       ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: CCLabelling.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "CCLabelling.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: CCLabelling.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size CCLabelling.elf  |tee "CCLabelling.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130856	   2676	  28136	 161668	  27784	CCLabelling.elf
+'Finished building: CCLabelling.elf.size'
+' '
+18:28:15 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: CCLabelling.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "CCLabelling.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: CCLabelling.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size CCLabelling.elf  |tee "CCLabelling.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130792	   2676	  28136	 161604	  27744	CCLabelling.elf
+'Finished building: CCLabelling.elf.size'
+' '
+18:29:37 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+18:29:57 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+18:31:30 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:238:40: error: 'inputIMG' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(inputIMG, XSW, YSW);
+                                        ^
+make: *** [src/main.o] Error 1
+18:31:47 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: CCLabelling.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "CCLabelling.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: CCLabelling.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size CCLabelling.elf  |tee "CCLabelling.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130856	1050996	1076456	2258308	 227584	CCLabelling.elf
+'Finished building: CCLabelling.elf.size'
+' '
+18:31:58 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+18:34:15 **** Auto Build of configuration Debug for project CCLabelling ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: CCLabelling.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "CCLabelling.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: CCLabelling.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size CCLabelling.elf  |tee "CCLabelling.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130856	1050996	1076456	2258308	 227584	CCLabelling.elf
+'Finished building: CCLabelling.elf.size'
+' '
+18:34:20 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+11:12:39 **** Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  19500	   1152	  22556	  43208	   a8c8	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:13:33 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building file: ../src/AxiTimerHelper.cpp'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/AxiTimerHelper.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/AxiTimerHelper.d" -MT"src/AxiTimerHelper.d" -o "src/AxiTimerHelper.o" "../src/AxiTimerHelper.cpp"
+'Finished building: ../src/AxiTimerHelper.cpp'
+' '
+'Building file: ../src/platform.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.cc"
+'Finished building: ../src/platform.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130856	1050996	1076456	2258308	 227584	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:14:09 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+11:14:17 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+11:14:50 **** Clean-only build of configuration Debug for project StarTracking ****
+make clean 
+rm -rf  ./src/main.d ./src/platform.d  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o  ./src/AxiTimerHelper.d  StarTracking.elf.size  StarTracking.elf
+' '
+11:14:50 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/AxiTimerHelper.cpp'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/AxiTimerHelper.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/AxiTimerHelper.d" -MT"src/AxiTimerHelper.d" -o "src/AxiTimerHelper.o" "../src/AxiTimerHelper.cpp"
+'Finished building: ../src/AxiTimerHelper.cpp'
+' '
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building file: ../src/platform.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.cc"
+'Finished building: ../src/platform.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130856	1050996	1076456	2258308	 227584	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:15:26 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130728	1050996	1076456	2258180	 227504	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:16:01 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+11:16:05 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:175:12: error: 'init_core' was not declared in this scope
+  init_core();
+            ^
+../src/main.cc:176:30: error: 'cCLabel' was not declared in this scope
+  XCclabel_EnableAutoRestart(&cCLabel);
+                              ^
+../src/main.cc:199:26: error: 'axiDMA' was not declared in this scope
+  XAxiDma_SimpleTransfer(&axiDMA, (u32)inputIMG, IMG_HEIGHT * IMG_WIDTH * sizeof(int), XAXIDMA_DMA_TO_DEVICE);
+                          ^
+../src/main.cc:229:47: error: 'XHW' was not declared in this scope
+   xil_printf("  Star[%d]: (%d, %d)\r\n", i+1, XHW[i], YHW[i]);
+                                               ^
+../src/main.cc:229:55: error: 'YHW' was not declared in this scope
+   xil_printf("  Star[%d]: (%d, %d)\r\n", i+1, XHW[i], YHW[i]);
+                                                       ^
+make: *** [src/main.o] Error 1
+11:16:24 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 130728	1050996	1076456	2258180	 227504	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:16:52 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:25:50: error: 'XSW' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(inputIMG, XSW, YSW);
+                                                  ^
+../src/main.cc:25:55: error: 'YSW' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(inputIMG, XSW, YSW);
+                                                       ^
+../src/main.cc:25:58: error: 'softwareCCLabel' was not declared in this scope
+  u32 centroidCountSW = softwareCCLabel(inputIMG, XSW, YSW);
+                                                          ^
+make: *** [src/main.o] Error 1
+11:17:15 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:55:54: error: 'SWtime' was not declared in this scope
+  xil_printf(" SW runtime: %d ns\r\n", (unsigned int)(SWtime * 1000000000));
+                                                      ^
+../src/main.cc:56:45: error: 'centroidCountSW' was not declared in this scope
+  xil_printf(" Number of centroids: %d\r\n", centroidCountSW);
+                                             ^
+../src/main.cc:58:47: error: 'XSW' was not declared in this scope
+   xil_printf("  Star[%d]: (%d, %d)\r\n", i+1, XSW[i], YSW[i]);
+                                               ^
+../src/main.cc:58:55: error: 'YSW' was not declared in this scope
+   xil_printf("  Star[%d]: (%d, %d)\r\n", i+1, XSW[i], YSW[i]);
+                                                       ^
+make: *** [src/main.o] Error 1
+11:17:53 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:43:9: warning: unused variable 'HWtime' [-Wunused-variable]
+  double HWtime = timer.getElapsedTimerInSeconds();
+         ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:17:57 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:43:9: warning: unused variable 'HWtime' [-Wunused-variable]
+  double HWtime = timer.getElapsedTimerInSeconds();
+         ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:18:51 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:39:9: warning: unused variable 'HWtime' [-Wunused-variable]
+  double HWtime = timer.getElapsedTimerInSeconds();
+         ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:19:04 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:39:9: warning: unused variable 'HWtime' [-Wunused-variable]
+  double HWtime = timer.getElapsedTimerInSeconds();
+         ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:19:22 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:39:9: warning: unused variable 'HWtime' [-Wunused-variable]
+  double HWtime = timer.getElapsedTimerInSeconds();
+         ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:20:31 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:21:05 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:21:24 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:25:54 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:37:7: warning: unused variable 'centroidCountHW' [-Wunused-variable]
+   u32 centroidCountHW = XCclabel_Get_return(&cCLabel);
+       ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:25:59 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:37:6: warning: unused variable 'centroidCountHW' [-Wunused-variable]
+  u32 centroidCountHW = XCclabel_Get_return(&cCLabel);
+      ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:26:21 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127608	1050996	  26872	1205476	 1264e4	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:27:06 **** Incremental Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+11:27:07 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+11:27:32 **** Incremental Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+11:27:33 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+11:37:49 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:37:51 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:38:22 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:38:44 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc:9:7: error: storage size of 'X' isn't known
+ int X[];
+       ^
+make: *** [src/main.o] Error 1
+11:38:56 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:39:07 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 127456	1050996	  26872	1205324	 12644c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:39:42 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:39:2: error: 'vector' was not declared in this scope
+  vector<>
+  ^
+../src/main.cc:39:2: note: suggested alternative:
+In file included from d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\vector:64:0,
+                 from ../src/main.cc:8:
+d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\bits\stl_vector.h:210:11: note:   'std::vector'
+     class vector : protected _Vector_base<_Tp, _Alloc>
+           ^
+../src/main.cc:39:9: error: expected primary-expression before '>' token
+  vector<>
+         ^
+../src/main.cc:40:6: error: expected primary-expression before 'centroidCountHW'
+  u32 centroidCountHW = XCclabel_Get_return(&cCLabel);
+      ^
+../src/main.cc:40:6: error: expected ';' before 'centroidCountHW'
+../src/main.cc:41:26: error: 'centroidCountHW' was not declared in this scope
+  for(unsigned i = 0; i < centroidCountHW; ++i) {
+                          ^
+make: *** [src/main.o] Error 1
+11:39:45 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:39:14: error: wrong number of template arguments (0, should be 2)
+  std::vector<>
+              ^
+In file included from d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\vector:64:0,
+                 from ../src/main.cc:8:
+d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\bits\stl_vector.h:210:11: error: provided for 'template<class _Tp, class _Alloc> class std::vector'
+     class vector : protected _Vector_base<_Tp, _Alloc>
+           ^
+../src/main.cc:40:6: error: expected initializer before 'centroidCountHW'
+  u32 centroidCountHW = XCclabel_Get_return(&cCLabel);
+      ^
+../src/main.cc:41:26: error: 'centroidCountHW' was not declared in this scope
+  for(unsigned i = 0; i < centroidCountHW; ++i) {
+                          ^
+make: *** [src/main.o] Error 1
+11:43:22 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:41:14: error: wrong number of template arguments (0, should be 2)
+  std::vector<>
+              ^
+In file included from d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\vector:64:0,
+                 from ../src/main.cc:8:
+d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\bits\stl_vector.h:210:11: error: provided for 'template<class _Tp, class _Alloc> class std::vector'
+     class vector : protected _Vector_base<_Tp, _Alloc>
+           ^
+../src/main.cc:42:6: error: expected initializer before 'centroidCountHW'
+  u32 centroidCountHW = XCclabel_Get_return(&cCLabel);
+      ^
+../src/main.cc:43:26: error: 'centroidCountHW' was not declared in this scope
+  for(unsigned i = 0; i < centroidCountHW; ++i) {
+                          ^
+make: *** [src/main.o] Error 1
+11:43:35 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:43:14: error: wrong number of template arguments (0, should be 2)
+  std::vector<>
+              ^
+In file included from d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\vector:64:0,
+                 from ../src/main.cc:8:
+d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\bits\stl_vector.h:210:11: error: provided for 'template<class _Tp, class _Alloc> class std::vector'
+     class vector : protected _Vector_base<_Tp, _Alloc>
+           ^
+../src/main.cc:44:6: error: expected initializer before 'centroidCountHW'
+  u32 centroidCountHW = XCclabel_Get_return(&cCLabel);
+      ^
+../src/main.cc:45:26: error: 'centroidCountHW' was not declared in this scope
+  for(unsigned i = 0; i < centroidCountHW; ++i) {
+                          ^
+make: *** [src/main.o] Error 1
+11:43:43 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:44:14: error: wrong number of template arguments (0, should be 2)
+  std::vector<>
+              ^
+In file included from d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\vector:64:0,
+                 from ../src/main.cc:8:
+d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\bits\stl_vector.h:210:11: error: provided for 'template<class _Tp, class _Alloc> class std::vector'
+     class vector : protected _Vector_base<_Tp, _Alloc>
+           ^
+../src/main.cc:45:6: error: expected initializer before 'centroidCountHW'
+  u32 centroidCountHW = XCclabel_Get_return(&cCLabel);
+      ^
+../src/main.cc:46:26: error: 'centroidCountHW' was not declared in this scope
+  for(unsigned i = 0; i < centroidCountHW; ++i) {
+                          ^
+make: *** [src/main.o] Error 1
+11:44:01 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 128504	1050996	  26880	1206380	 12686c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:44:37 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:47:25: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11 [enabled by default]
+   starCentroid.push_back({XHW[i], YHW[i]});
+                         ^
+../src/main.cc:47:42: warning: extended initializer lists only available with -std=c++11 or -std=gnu++11 [enabled by default]
+   starCentroid.push_back({XHW[i], YHW[i]});
+                                          ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 155204	1051000	  26912	1233116	 12d0dc	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:50:04 **** Clean-only build of configuration Debug for project StarTracking ****
+make clean 
+rm -rf  ./src/main.d ./src/platform.d  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o  ./src/AxiTimerHelper.d  StarTracking.elf.size  StarTracking.elf
+' '
+11:50:04 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/AxiTimerHelper.cpp'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/AxiTimerHelper.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/AxiTimerHelper.d" -MT"src/AxiTimerHelper.d" -o "src/AxiTimerHelper.o" "../src/AxiTimerHelper.cpp"
+'Finished building: ../src/AxiTimerHelper.cpp'
+' '
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building file: ../src/platform.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.cc"
+'Finished building: ../src/platform.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 154748	1051000	  26920	1232668	 12cf1c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:50:09 **** Clean-only build of configuration Debug for project StarTracking ****
+make clean 
+rm -rf  ./src/main.d ./src/platform.d  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o  ./src/AxiTimerHelper.d  StarTracking.elf.size  StarTracking.elf
+' '
+11:50:09 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/AxiTimerHelper.cpp'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/AxiTimerHelper.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/AxiTimerHelper.d" -MT"src/AxiTimerHelper.d" -o "src/AxiTimerHelper.o" "../src/AxiTimerHelper.cpp"
+'Finished building: ../src/AxiTimerHelper.cpp'
+' '
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building file: ../src/platform.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.cc"
+'Finished building: ../src/platform.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 154748	1051000	  26920	1232668	 12cf1c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:51:31 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:51:3: error: 'cout' is not a member of 'std'
+   std::cout << starCentroid[i].X << ' ' << starCentroid[i].Y << std::endl;
+   ^
+../src/main.cc:51:65: error: 'endl' is not a member of 'std'
+   std::cout << starCentroid[i].X << ' ' << starCentroid[i].Y << std::endl;
+                                                                 ^
+make: *** [src/main.o] Error 1
+11:51:58 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 495568	1051224	  33056	1579848	 181b48	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:52:07 **** Incremental Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+11:52:08 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+11:52:29 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 495328	1051224	  33064	1579616	 181a60	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+11:52:53 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 495328	1051224	  33064	1579616	 181a60	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:01:05 **** Clean-only build of configuration Debug for project StarTracking ****
+make clean 
+rm -rf  ./src/main.d ./src/platform.d  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o  ./src/AxiTimerHelper.d  StarTracking.elf.size  StarTracking.elf
+' '
+12:01:05 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/AxiTimerHelper.cpp'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/AxiTimerHelper.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/AxiTimerHelper.d" -MT"src/AxiTimerHelper.d" -o "src/AxiTimerHelper.o" "../src/AxiTimerHelper.cpp"
+'Finished building: ../src/AxiTimerHelper.cpp'
+' '
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc:7:24: fatal error: CCLabel_HW.h: No such file or directory
+ #include "CCLabel_HW.h"
+                        ^
+compilation terminated.
+make: *** [src/main.o] Error 1
+12:01:18 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building file: ../src/platform.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.cc"
+'Finished building: ../src/platform.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 495328	1051224	  33064	1579616	 181a60	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:02:28 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:02:45 **** Clean-only build of configuration Debug for project StarTracking ****
+make clean 
+rm -rf  ./src/main.d ./src/platform.d  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o  ./src/AxiTimerHelper.d  StarTracking.elf.size  StarTracking.elf
+' '
+12:02:45 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/AxiTimerHelper.cpp'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/AxiTimerHelper.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/AxiTimerHelper.d" -MT"src/AxiTimerHelper.d" -o "src/AxiTimerHelper.o" "../src/AxiTimerHelper.cpp"
+'Finished building: ../src/AxiTimerHelper.cpp'
+' '
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building file: ../src/platform.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/platform.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/platform.d" -MT"src/platform.d" -o "src/platform.o" "../src/platform.cc"
+'Finished building: ../src/platform.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 495328	1051224	  33064	1579616	 181a60	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:02:54 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:06:53 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:07:10 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:09:36 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:10:52 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 495328	1051224	  33064	1579616	 181a60	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:11:57 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:39:14: error: 'centroid' was not declared in this scope
+  std::vector<centroid> starCentroid;
+              ^
+../src/main.cc:39:22: error: template argument 1 is invalid
+  std::vector<centroid> starCentroid;
+                      ^
+../src/main.cc:39:22: error: template argument 2 is invalid
+../src/main.cc:39:36: error: invalid type in declaration before ';' token
+  std::vector<centroid> starCentroid;
+                                    ^
+../src/main.cc:39:24: warning: unused variable 'starCentroid' [-Wunused-variable]
+  std::vector<centroid> starCentroid;
+                        ^
+../src/main.cc:40:6: warning: unused variable 'centroidCountHW' [-Wunused-variable]
+  u32 centroidCountHW = XCclabel_Get_return(&cCLabel);
+      ^
+make: *** [src/main.o] Error 1
+12:12:04 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:39:6: warning: unused variable 'centroidCountHW' [-Wunused-variable]
+  u32 centroidCountHW = XCclabel_Get_return(&cCLabel);
+      ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 491020	1051224	  33064	1575308	 18098c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:12:09 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:12:15 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:13:54 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:27:38 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:28:06 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:28:14 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:28:19 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:28:42 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:28:56 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:34:48 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:35:09 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:35:14 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:35:57 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:36:06 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:36:25 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:37:39 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:39:17 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:39:32 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:40:49 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:41:13 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:42:14: error: 'Star' was not declared in this scope
+  std::vector<Star> starList = chooseStarRef(XHW, YHW, centroidCountHW, IMG_HEIGHT, IMG_WIDTH);
+              ^
+../src/main.cc:42:18: error: template argument 1 is invalid
+  std::vector<Star> starList = chooseStarRef(XHW, YHW, centroidCountHW, IMG_HEIGHT, IMG_WIDTH);
+                  ^
+../src/main.cc:42:18: error: template argument 2 is invalid
+../src/main.cc:42:29: error: invalid type in declaration before '=' token
+  std::vector<Star> starList = chooseStarRef(XHW, YHW, centroidCountHW, IMG_HEIGHT, IMG_WIDTH);
+                             ^
+../src/main.cc:42:93: error: 'chooseStarRef' was not declared in this scope
+  std::vector<Star> starList = chooseStarRef(XHW, YHW, centroidCountHW, IMG_HEIGHT, IMG_WIDTH);
+                                                                                             ^
+../src/main.cc:42:20: warning: unused variable 'starList' [-Wunused-variable]
+  std::vector<Star> starList = chooseStarRef(XHW, YHW, centroidCountHW, IMG_HEIGHT, IMG_WIDTH);
+                    ^
+make: *** [src/main.o] Error 1
+12:41:39 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc:8:24: fatal error: Alogorithm.h: No such file or directory
+ #include "Alogorithm.h"
+                        ^
+compilation terminated.
+make: *** [src/main.o] Error 1
+12:41:49 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+In file included from ../src/main.cc:8:0:
+../src/Algorithm.h:20:1: error: 'vector' in namespace 'std' does not name a type
+ std::vector<Star> chooseStarRef(int *X, int *Y, unsigned centroidCount, int imgHeight, int imgWidth) {
+ ^
+In file included from ../src/main.cc:8:0:
+../src/Algorithm.h:30:28: error: 'vector' is not a member of 'std'
+ StarPattern getStarPattern(std::vector<Star> &starList,int FOV) {
+                            ^
+../src/Algorithm.h:30:44: error: expected primary-expression before '>' token
+ StarPattern getStarPattern(std::vector<Star> &starList,int FOV) {
+                                            ^
+../src/Algorithm.h:30:47: error: 'starList' was not declared in this scope
+ StarPattern getStarPattern(std::vector<Star> &starList,int FOV) {
+                                               ^
+../src/Algorithm.h:30:56: error: expected primary-expression before 'int'
+ StarPattern getStarPattern(std::vector<Star> &starList,int FOV) {
+                                                        ^
+../src/Algorithm.h:30:65: error: expected ',' or ';' before '{' token
+ StarPattern getStarPattern(std::vector<Star> &starList,int FOV) {
+                                                                 ^
+In file included from d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\new:40:0,
+                 from d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\ext\new_allocator.h:33,
+                 from d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\arm-xilinx-eabi\bits\c++allocator.h:33,
+                 from d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\bits\allocator.h:46,
+                 from d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\vector:61,
+                 from ../src/main.cc:9:
+d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\exception:35:37: error: expected declaration before end of line
+ #pragma GCC visibility push(default)
+                                     ^
+make: *** [src/main.o] Error 1
+12:42:13 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+In file included from ../src/main.cc:8:0:
+../src/Algorithm.h: In function 'std::vector<Star> chooseStarRef(int*, int*, unsigned int, int, int)':
+../src/Algorithm.h:24:115: error: 'sqrt' was not declared in this scope
+   starList.push_back({X[i], Y[i], sqrt((X[i] - imgHeight)*(X[i] - imgHeight) + (Y[i] - imgWidth)*(Y[i] - imgWidth)),0});
+                                                                                                                   ^
+../src/Algorithm.h:24:119: error: no matching function for call to 'std::vector<Star>::push_back(<brace-enclosed initializer list>)'
+   starList.push_back({X[i], Y[i], sqrt((X[i] - imgHeight)*(X[i] - imgHeight) + (Y[i] - imgWidth)*(Y[i] - imgWidth)),0});
+                                                                                                                       ^
+../src/Algorithm.h:24:119: note: candidates are:
+In file included from d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\vector:64:0,
+                 from ../src/Algorithm.h:3,
+                 from ../src/main.cc:8:
+d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\bits\stl_vector.h:901:7: note: void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = Star; _Alloc = std::allocator<Star>; std::vector<_Tp, _Alloc>::value_type = Star]
+       push_back(const value_type& __x)
+       ^
+d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\bits\stl_vector.h:901:7: note:   no known conversion for argument 1 from '<brace-enclosed initializer list>' to 'const value_type& {aka const Star&}'
+d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\bits\stl_vector.h:919:7: note: void std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = Star; _Alloc = std::allocator<Star>; std::vector<_Tp, _Alloc>::value_type = Star]
+       push_back(value_type&& __x)
+       ^
+d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\bits\stl_vector.h:919:7: note:   no known conversion for argument 1 from '<brace-enclosed initializer list>' to 'std::vector<Star>::value_type&& {aka Star&&}'
+In file included from ../src/main.cc:8:0:
+../src/Algorithm.h:25:2: error: 'make_heap' is not a member of 'std'
+  std::make_heap(starList.begin(), starList.end(), [](const Star &a, const Star &b) {return a.starDistance2Centre > b.starDistance2Centre; });
+  ^
+In file included from ../src/main.cc:8:0:
+../src/Algorithm.h: In function 'StarPattern getStarPattern(std::vector<Star>&, int)':
+../src/Algorithm.h:36:2: error: 'pop_heap' is not a member of 'std'
+  std::pop_heap(starList.begin(), starList.end(), [](const Star &a, const Star &b) {return a.starDistance2Centre > b.starDistance2Centre; });
+  ^
+../src/Algorithm.h:39:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < starList.size(); ++i) {
+                                    ^
+../src/Algorithm.h:40:156: error: 'sqrt' was not declared in this scope
+   starList[i].starDistance2StarRef = sqrt((starRef.X - starList[i].X)*(starRef.X - starList[i].X) + (starRef.Y - starList[i].Y)*(starRef.Y - starList[i].Y));
+                                                                                                                                                            ^
+../src/Algorithm.h:42:2: error: 'make_heap' is not a member of 'std'
+  std::make_heap(starList.begin(), starList.end(), [](const Star &a, const Star &b) {return a.starDistance2StarRef > b.starDistance2StarRef; });
+  ^
+../src/Algorithm.h:52:3: error: 'pop_heap' is not a member of 'std'
+   std::pop_heap(starList.begin(), starList.end(), [](const Star &a, const Star &b) {return a.starDistance2StarRef > b.starDistance2StarRef; });
+   ^
+make: *** [src/main.o] Error 1
+12:42:42 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+In file included from ../src/main.cc:8:0:
+../src/Algorithm.h:4:16: fatal error: math: No such file or directory
+ #include <math>
+                ^
+compilation terminated.
+make: *** [src/main.o] Error 1
+12:43:27 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+In file included from ../src/main.cc:8:0:
+../src/Algorithm.h: In function 'std::vector<Star> chooseStarRef(int*, int*, unsigned int, int, int)':
+../src/Algorithm.h:24:115: warning: narrowing conversion of 'sqrt((double)((*(X + (sizetype)((unsigned int)i * 4u)) - imgHeight) * (*(X + (sizetype)((unsigned int)i * 4u)) - imgHeight) + (*(Y + (sizetype)((unsigned int)i * 4u)) - imgWidth) * (*(Y + (sizetype)((unsigned int)i * 4u)) - imgWidth)))' from 'double' to 'float' inside { } [-Wnarrowing]
+   starList.push_back({X[i], Y[i], sqrt((X[i] - imgHeight)*(X[i] - imgHeight) + (Y[i] - imgWidth)*(Y[i] - imgWidth)),0});
+                                                                                                                   ^
+../src/Algorithm.h:25:2: error: 'make_heap' is not a member of 'std'
+  std::make_heap(starList.begin(), starList.end(), [](const Star &a, const Star &b) {return a.starDistance2Centre > b.starDistance2Centre; });
+  ^
+In file included from ../src/main.cc:8:0:
+../src/Algorithm.h: In function 'StarPattern getStarPattern(std::vector<Star>&, int)':
+../src/Algorithm.h:36:2: error: 'pop_heap' is not a member of 'std'
+  std::pop_heap(starList.begin(), starList.end(), [](const Star &a, const Star &b) {return a.starDistance2Centre > b.starDistance2Centre; });
+  ^
+../src/Algorithm.h:39:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < starList.size(); ++i) {
+                                    ^
+../src/Algorithm.h:42:2: error: 'make_heap' is not a member of 'std'
+  std::make_heap(starList.begin(), starList.end(), [](const Star &a, const Star &b) {return a.starDistance2StarRef > b.starDistance2StarRef; });
+  ^
+../src/Algorithm.h:52:3: error: 'pop_heap' is not a member of 'std'
+   std::pop_heap(starList.begin(), starList.end(), [](const Star &a, const Star &b) {return a.starDistance2StarRef > b.starDistance2StarRef; });
+   ^
+make: *** [src/main.o] Error 1
+12:43:49 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+In file included from ../src/main.cc:8:0:
+../src/Algorithm.h: In function 'std::vector<Star> chooseStarRef(int*, int*, unsigned int, int, int)':
+../src/Algorithm.h:25:2: error: 'make_heap' is not a member of 'std'
+  std::make_heap(starList.begin(), starList.end(), [](const Star &a, const Star &b) {return a.starDistance2Centre > b.starDistance2Centre; });
+  ^
+In file included from ../src/main.cc:8:0:
+../src/Algorithm.h: In function 'StarPattern getStarPattern(std::vector<Star>&, int)':
+../src/Algorithm.h:36:2: error: 'pop_heap' is not a member of 'std'
+  std::pop_heap(starList.begin(), starList.end(), [](const Star &a, const Star &b) {return a.starDistance2Centre > b.starDistance2Centre; });
+  ^
+../src/Algorithm.h:39:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < starList.size(); ++i) {
+                                    ^
+../src/Algorithm.h:42:2: error: 'make_heap' is not a member of 'std'
+  std::make_heap(starList.begin(), starList.end(), [](const Star &a, const Star &b) {return a.starDistance2StarRef > b.starDistance2StarRef; });
+  ^
+../src/Algorithm.h:52:3: error: 'pop_heap' is not a member of 'std'
+   std::pop_heap(starList.begin(), starList.end(), [](const Star &a, const Star &b) {return a.starDistance2StarRef > b.starDistance2StarRef; });
+   ^
+make: *** [src/main.o] Error 1
+12:44:09 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+In file included from ../src/main.cc:8:0:
+../src/Algorithm.h: In function 'StarPattern getStarPattern(std::vector<Star>&, int)':
+../src/Algorithm.h:40:36: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for (int i = 0; i < starList.size(); ++i) {
+                                    ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504752	1051228	  33056	1589036	 183f2c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:44:25 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504752	1051228	  33056	1589036	 183f2c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:44:33 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504752	1051228	  33056	1589036	 183f2c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:45:17 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:43:49: error: 'FOV' was not declared in this scope
+  StarPattern sPattern = getStarPattern(starList,FOV);
+                                                 ^
+../src/main.cc:43:14: warning: unused variable 'sPattern' [-Wunused-variable]
+  StarPattern sPattern = getStarPattern(starList,FOV);
+              ^
+make: *** [src/main.o] Error 1
+12:45:30 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:14: warning: variable 'sPattern' set but not used [-Wunused-but-set-variable]
+  StarPattern sPattern = getStarPattern(starList,FOV);
+              ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504816	1051228	  33056	1589100	 183f6c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:45:45 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:14: warning: variable 'sPattern' set but not used [-Wunused-but-set-variable]
+  StarPattern sPattern = getStarPattern(starList,FOV);
+              ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504816	1051228	  33056	1589100	 183f6c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:46:38 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:47:2: error: 'cout' was not declared in this scope
+  cout << sPattern.d1 << ' ' << sPattern.d2 << ' ' << sPattern.d3;
+  ^
+../src/main.cc:47:2: note: suggested alternative:
+In file included from ../src/main.cc:9:0:
+d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\iostream:61:18: note:   'std::cout'
+   extern ostream cout;  /// Linked to standard output
+                  ^
+make: *** [src/main.o] Error 1
+12:46:51 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:47:2: error: 'cout' was not declared in this scope
+  cout << sPattern.N << ' ' << sPattern.d1 << ' ' << sPattern.d2 << ' ' << sPattern.d3;
+  ^
+../src/main.cc:47:2: note: suggested alternative:
+In file included from ../src/main.cc:9:0:
+d:\xilinx\sdk\2014.4\gnu\arm\nt\arm-xilinx-eabi\include\c++\4.8.3\iostream:61:18: note:   'std::cout'
+   extern ostream cout;  /// Linked to standard output
+                  ^
+make: *** [src/main.o] Error 1
+12:46:56 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504944	1051228	  33056	1589228	 183fec	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:47:19 **** Incremental Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:47:21 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+12:48:28 **** Incremental Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:48:29 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+12:48:53 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504944	1051228	  33056	1589228	 183fec	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:49:06 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504952	1051228	  33056	1589236	 183ff4	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:49:11 **** Incremental Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:49:12 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+12:49:45 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:14: warning: variable 'sPattern' set but not used [-Wunused-but-set-variable]
+  StarPattern sPattern = getStarPattern(starList,FOV);
+              ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504816	1051228	  33056	1589100	 183f6c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:49:56 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:47:14: error: 'xilprintf' was not declared in this scope
+  xilprintf("");
+              ^
+make: *** [src/main.o] Error 1
+12:50:03 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:47:19: error: 'xilprintf' was not declared in this scope
+  xilprintf(" \r\n");
+                   ^
+make: *** [src/main.o] Error 1
+12:50:58 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:47:19: error: 'xilprintf' was not declared in this scope
+  xilprintf(" \r\n");
+                   ^
+make: *** [src/main.o] Error 1
+12:51:28 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:14: warning: variable 'sPattern' set but not used [-Wunused-but-set-variable]
+  StarPattern sPattern = getStarPattern(starList,FOV);
+              ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504824	1051228	  33056	1589108	 183f74	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:51:48 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:47:23: error: 'N' was not declared in this scope
+  xil_printf("%d\r\n", N);
+                       ^
+make: *** [src/main.o] Error 1
+12:51:56 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504824	1051228	  33056	1589108	 183f74	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:52:01 **** Incremental Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:52:02 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+12:52:46 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504824	1051228	  33056	1589108	 183f74	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:52:59 **** Incremental Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:53:00 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+12:53:21 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:14: warning: variable 'sPattern' set but not used [-Wunused-but-set-variable]
+  StarPattern sPattern = getStarPattern(starList,FOV);
+              ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504816	1051228	  33056	1589100	 183f6c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:53:29 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:14: warning: variable 'sPattern' set but not used [-Wunused-but-set-variable]
+  StarPattern sPattern = getStarPattern(starList,FOV);
+              ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504816	1051228	  33056	1589100	 183f6c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:53:35 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:14: warning: variable 'sPattern' set but not used [-Wunused-but-set-variable]
+  StarPattern sPattern = getStarPattern(starList,FOV);
+              ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504816	1051228	  33056	1589100	 183f6c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:53:38 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:14: warning: variable 'sPattern' set but not used [-Wunused-but-set-variable]
+  StarPattern sPattern = getStarPattern(starList,FOV);
+              ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504816	1051228	  33056	1589100	 183f6c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+12:53:58 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+12:54:05 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+13:18:32 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:14: warning: variable 'sPattern' set but not used [-Wunused-but-set-variable]
+  StarPattern sPattern = getStarPattern(starList,FOV);
+              ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504816	1051228	  33056	1589100	 183f6c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:19:47 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:14: warning: variable 'sPattern' set but not used [-Wunused-but-set-variable]
+  StarPattern sPattern = getStarPattern(starList,FOV);
+              ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504816	1051228	  33056	1589100	 183f6c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:20:31 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504824	1051228	  33056	1589108	 183f74	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:20:37 **** Incremental Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+13:20:39 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+13:21:43 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504824	1051228	  33056	1589108	 183f74	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:21:47 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504824	1051228	  33056	1589108	 183f74	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:21:50 **** Incremental Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+13:21:51 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+13:22:22 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504832	1051228	  33056	1589116	 183f7c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:24:56 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504832	1051228	  33056	1589116	 183f7c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:25:05 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504896	1051228	  33056	1589180	 183fbc	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:25:16 **** Incremental Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+13:25:17 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+13:26:17 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504896	1051228	  33056	1589180	 183fbc	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:28:42 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < starList.size(); ++i) {
+                                   ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504960	1051228	  33056	1589244	 183ffc	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:28:50 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:35: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  for(int i = 0; i < starList.size(); ++i) {
+                                   ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504960	1051228	  33056	1589244	 183ffc	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:28:59 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504960	1051228	  33056	1589244	 183ffc	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:29:16 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:46:20: error: 'class std::vector<Star>' has no member named 'X'
+   cout << starList.X << >
+                    ^
+../src/main.cc:46:25: error: expected primary-expression before '>' token
+   cout << starList.X << >
+                         ^
+../src/main.cc:47:2: error: expected primary-expression before '}' token
+  }
+  ^
+../src/main.cc:47:2: error: expected ';' before '}' token
+make: *** [src/main.o] Error 1
+13:30:17 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:46:98: error: expected ';' before 'starList'
+   cout << starList[i].X << ' ' << starList[i].Y << ' ' << starList[i].starDistance2Centre << ' ' starList[i].starDistance2StarRef << endl;
+                                                                                                  ^
+make: *** [src/main.o] Error 1
+13:30:20 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 505216	1051228	  33056	1589500	 1840fc	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:30:24 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 505216	1051228	  33056	1589500	 1840fc	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:30:44 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 505216	1051228	  33056	1589500	 1840fc	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:30:49 **** Incremental Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+13:30:49 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+13:32:20 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 505216	1051228	  33056	1589500	 1840fc	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+13:32:23 **** Incremental Build of configuration Debug for project StarTracking ****
+make all 
+make: Nothing to be done for `all'.
+13:32:24 **** Incremental Build of configuration Debug for project CCLabelling ****
+make all 
+make: Nothing to be done for `all'.
+13:33:08 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:14: warning: variable 'sPattern' set but not used [-Wunused-but-set-variable]
+  StarPattern sPattern = getStarPattern(starList,FOV);
+              ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504816	1051228	  33056	1589100	 183f6c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '

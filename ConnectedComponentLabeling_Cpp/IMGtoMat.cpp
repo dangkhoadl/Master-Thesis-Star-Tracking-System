@@ -18,11 +18,17 @@ vector<unsigned> read(std::ifstream &fileIn) {
 }
 
 
-
+#define IMG_HEIGHT 512
+#define IMG_WIDTH 512
 void write(std::ofstream &fileOut, const vector<unsigned> &data) {
-	fileOut << "unsigned IMG[IMG_HEIGHT * IMG_WIDTH] = { ";
+	fileOut << "#ifndef IMAGE_H_" << endl;
+	fileOut << "#define IMAGE_H_" << endl << endl;
+	fileOut << "#define IMG_HEIGHT " << IMG_HEIGHT << endl;
+	fileOut << "#define IMG_WIDTH " << IMG_WIDTH << endl;
+	fileOut << "unsigned inputIMG[IMG_HEIGHT * IMG_WIDTH] = { ";
 	for (int i = 0; i < data.size(); ++i)
 		i == data.size() - 1 ? fileOut << data[i] << " };" : fileOut << data[i] << ", ";
+	fileOut << endl << endl << "#endif" << endl;
 }
 
 int main(int agrc, char *argv[]) {
@@ -42,7 +48,7 @@ int main(int agrc, char *argv[]) {
 		fileIn.close();
 
 		//Process
-		
+
 
 		//Output
 		const std::string outputFileName(argv[2]);

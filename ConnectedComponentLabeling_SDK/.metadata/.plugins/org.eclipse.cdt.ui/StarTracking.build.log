@@ -1,0 +1,25 @@
+13:33:08 **** Auto Build of configuration Debug for project StarTracking ****
+make all 
+'Building file: ../src/main.cc'
+'Invoking: ARM g++ compiler'
+arm-xilinx-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -std=c++11 -I../../CCLabelling_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.d" -o "src/main.o" "../src/main.cc"
+../src/main.cc: In function 'int main()':
+../src/main.cc:45:14: warning: variable 'sPattern' set but not used [-Wunused-but-set-variable]
+  StarPattern sPattern = getStarPattern(starList,FOV);
+              ^
+'Finished building: ../src/main.cc'
+' '
+'Building target: StarTracking.elf'
+'Invoking: ARM g++ linker'
+arm-xilinx-eabi-g++ -Wl,-T -Wl,../src/lscript.ld -L../../CCLabelling_bsp/ps7_cortexa9_0/lib -o "StarTracking.elf"  ./src/AxiTimerHelper.o ./src/main.o ./src/platform.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+'Finished building target: StarTracking.elf'
+' '
+'Invoking: ARM Print Size'
+arm-xilinx-eabi-size StarTracking.elf  |tee "StarTracking.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+ 504816	1051228	  33056	1589100	 183f6c	StarTracking.elf
+'Finished building: StarTracking.elf.size'
+' '
+
+13:33:11 Build Finished (took 3s.144ms)
+
