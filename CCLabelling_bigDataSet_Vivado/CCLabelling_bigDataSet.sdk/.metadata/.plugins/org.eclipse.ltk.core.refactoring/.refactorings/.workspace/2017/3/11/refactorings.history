@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;CCLabelling/src/main.cc&apos;" deleteContents="false" description="Delete resource &apos;CCLabelling/src/main.cc&apos;" element1="/CCLabelling/src/main.cc" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1489658116428"/>
-</session>
