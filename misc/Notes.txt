@@ -6,3 +6,7 @@
 - HW error
 	+ delete the .elf file
 		Project/Properties/ RunDebug Setting
+
+-std::bad_alloc
+	+ Increase heap and stack size in linker script: lscript.ld
+	

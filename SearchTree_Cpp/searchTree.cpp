@@ -1,66 +1,11 @@
-//#define LINUX
-#define DEBUG
-
-#ifdef LINUX
-#include <bits/stdc++.h>
-#endif
-
-#ifndef LINUX
-#ifdef _MSC_VER
-#define _CRT_SECURE_NO_WARNINGS
-#endif
-
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <bitset>
 #include <iostream>
-#include <fstream>
-#include <streambuf>
-#include <istream>
 #include <vector>
-#include <list>
-#include <forward_list>
-#include <string>
-#include <map>
-#include <algorithm>
-#include <functional>
-#include <numeric>
-#include <stack>
-#include <queue>
-#include <set>
-#include <iomanip>
-#include <sstream>
-#include <cmath>
-#include <time.h>
-#include <random>
-#include <unordered_map>
-#include <unordered_set>
-#include <bitset>
-#include <utility>
-#include <climits>
-#include <cassert>
-#include <istream>
-#include <random>
-#include <iterator>
 #include <memory>
-#include <cctype>
-#endif
-using namespace std;
+#include <algorithm>
+#include <fstream>
+#include <sstream>
 
-#ifdef DEBUG
-#define for_(start,end,step) for(int _ = start; _ < (int)end; _ += step) // [start, end)
-#define for__(start,end,step) for(int __ = start; __ < (int)end; __ += step) // [start, end)
-#define pr(X) { cerr << #X << " = " << (X) << endl; }
-#define pr_(X) { cerr << #X << " = " << (X) << " ; "; }
-#define pra(A, start, end) { cerr << #A << '[' << start << ',' << (end - 1) << "] = "; for_(start, end, 1) cerr << A[_] << ' '; cerr << endl; }
-#define pra_(A, start, end) { cerr << #A << '[' << start << ',' << (end - 1) << "] = "; for_(start, end, 1) cerr << A[_] << ' '; cerr << " ; "; }
-#define prai(A, start, end) { cerr << #A << '[' << start << ',' << (end - 1) << "] = "; for_(start, end, 1) cerr << '[' << _ << ']' << A[_] << ' '; cerr << endl; }
-#define prai_(A, start, end) { cerr << #A << '[' << start << ',' << (end - 1) << "] = "; for_(start, end, 1) cerr << '[' << _ << ']' << A[_] << ' '; cerr << " ; "; }
-#define pra2(A, start1, end1, start2, end2) {for_(start1, end1, 1) {for__(start2, end2, 1) cerr << '[' << _ << "]["  << __ << ']' << A[_][__] << ' '; cerr << endl;} }
-#endif 
-
-/*******************************************************************************************/
+/**************************************** DATASTRUCT ***************************************************/
 struct dataStruct {
 	int N;
 	int d1;
@@ -68,19 +13,38 @@ struct dataStruct {
 	int d3;
 	int id;
 };
-vector<dataStruct> database1;
-
-
-void readInput1(std::ifstream &fileIn) {
+/***************************************** SEARCH 1 **************************************************/
+std::vector<dataStruct> readInput(std::ifstream &fileIn) {
+	std::vector<dataStruct> database;
 	std::string line;
 	while (std::getline(fileIn, line)) {
 		std::stringstream lineStream(line);
 		int Nt, d1t, d2t, d3t, idt;
 		lineStream >> Nt >> d1t >> d2t >> d3t >> idt;
-		database1.push_back({ Nt,d1t,d2t,d3t,idt });
+		database.push_back({ Nt,d1t,d2t,d3t,idt });
 	}
+	return database;
+}
+int searchLin(std::vector<dataStruct> database, int tor, int N, int D1, int D2, int D3) {
+	int error = 999;
+	int cid = -1;
+	for (int i = 0; i < database.size(); ++i) {
+		if (database[i].N >= N - tor && database[i].N <= N + tor &&
+			database[i].d1 >= D1 - tor && database[i].d1 <= D1 + tor &&
+			database[i].d2 >= D2 - tor && database[i].d2 <= D2 + tor &&
+			database[i].d3 >= D3 - tor && database[i].d3 <= D3 + tor)
+		{
+			int temp = (N - database[i].N) * (N - database[i].N) + (D1 - database[i].d1) * (D1 - database[i].d1) + (D2 - database[i].d2) * (D2 - database[i].d2) + (D3 - database[i].d3) * (D3 - database[i].d3);
+			if (error > temp) {
+				error = temp;
+				cid = database[i].id;
+			}
+		}
+	}
+	return cid;
 }
 
+/******************************************* SEARCH 2 ************************************************/
 class Node;
 typedef std::shared_ptr<Node> NodePtr;
 class Node {
@@ -118,7 +82,7 @@ public:
 		return pt->children_[it];
 	}
 
-	friend int searchPattern(const NodePtr &root,int N, int d1, int d2, int d3) {
+	friend int searchPattern(const NodePtr &root, int N, int d1, int d2, int d3) {
 		NodePtr ptr = root;
 
 		//N
@@ -148,75 +112,65 @@ public:
 		ptr = root->moveToChild(ptr, it - ptr->children_.begin());
 		return ptr->children_.back()->key_;
 	}
-};
 
+	friend int searchTolerance(const NodePtr &root, int tor, int N, int D1, int D2, int D3) {
+		std::vector<dataStruct> resid;
+		for (int n = N - tor; n <= N + tor; ++n)
+			for (int d1 = D1 - tor; d1 <= D1 + tor; ++d1)
+				for (int d2 = D2 - tor; d2 <= D2 + tor; ++d2)
+					for (int d3 = D3 - tor; d3 <= D3 + tor; ++d3) {
+						int res = searchPattern(root, n, d1, d2, d3);
+						if (res != -1)
+							resid.push_back({ n,d1,d2,d3,res });
+					}
+		if (resid.size() == 0)
+			return -1;
 
-int searchTolerance(const NodePtr &root, int tor, int N, int D1, int D2, int D3) {
-	vector<dataStruct> resid;
-	for(int n = N-tor; n <= N + tor; ++n)
-		for (int d1 = D1 - tor; d1 <= D1 + tor; ++d1)
-			for (int d2 = D2 - tor; d2 <= D2 + tor; ++d2)
-				for (int d3 = D3 - tor; d3 <= D3 + tor; ++d3) {
-					int res = searchPattern(root, n, d1, d2, d3);
-					if (res != -1)
-						resid.push_back({n,d1,d2,d3,res});
-				}
-	if(resid.size() == 0)
-		return -1;
-
-	int error = 999;
-	int cid = resid[0].id;
-	for (int i = 0; i < resid.size(); ++i) {
-		int temp = (N - resid[i].N) * (N - resid[i].N) + (D1 - resid[i].d1) * (D1 - resid[i].d1) + (D2 - resid[i].d2) * (D2 - resid[i].d2) + (D3 - resid[i].d3) * (D3 - resid[i].d3);
-		if (error > temp) {
-			error = temp;
-			cid = resid[i].id;
+		int error = 999;
+		int cid = resid[0].id;
+		for (int i = 0; i < resid.size(); ++i) {
+			int temp = (N - resid[i].N) * (N - resid[i].N) + (D1 - resid[i].d1) * (D1 - resid[i].d1) + (D2 - resid[i].d2) * (D2 - resid[i].d2) + (D3 - resid[i].d3) * (D3 - resid[i].d3);
+			if (error > temp) {
+				error = temp;
+				cid = resid[i].id;
+			}
 		}
+		return cid;
 	}
-	return cid;
-}
-
-NodePtr readInput2(std::ifstream &fileIn) {
+};
+NodePtr buildTree(const std::vector<dataStruct> &database) {
 	//Init tree
 	NodePtr root(new Node(0));
 
-	std::string line;
-	while (std::getline(fileIn, line)) {
-		std::stringstream lineStream(line);
-		int Nt, d1t, d2t, d3t, idt;
-		lineStream >> Nt >> d1t >> d2t >> d3t >> idt;
-
+	for(int i = 0; i < database.size(); ++i) {
 		NodePtr ptr = root;
 
 		//Insert N
-		size_t it = root->insert(Nt, ptr);
+		size_t it = root->insert(database[i].N, ptr);
 		ptr = root->moveToChild(ptr, it);
 
 		//Insert d1
-		it = root->insert(d1t, ptr);
+		it = root->insert(database[i].d1, ptr);
 		ptr = root->moveToChild(ptr, it);
 
 		//Insert d2
-		it = root->insert(d2t, ptr);
+		it = root->insert(database[i].d2, ptr);
 		ptr = root->moveToChild(ptr, it);
 
 		//Insert d3
-		it = root->insert(d3t, ptr);
+		it = root->insert(database[i].d3, ptr);
 		ptr = root->moveToChild(ptr, it);
 
 		//Insert id
-		it = root->insert(idt, ptr);
+		it = root->insert(database[i].id, ptr);
 	}
 	return root;
 }
 
+
 int main(int agrc, char *argv[]) {
-#ifdef DEBUG
-	freopen("..\\Debug\\Cerr.txt", "w", stderr);
-	cerr << fixed << setprecision(6);
-#endif
 	if (agrc == 3) {
-		//Input
+		//1
 		const std::string inputFileName(argv[1]);
 		std::ifstream fileIn;
 		fileIn.open(inputFileName);
@@ -225,12 +179,15 @@ int main(int agrc, char *argv[]) {
 			printf("File does not exist !!!\n");
 			return 0;
 		}
-		//Read
-		NodePtr root = readInput2(fileIn);
+		std::vector<dataStruct> database = readInput(fileIn);
 		fileIn.close();
 
-		//Process
-		cout << searchTolerance(root, 4, 13, 25, 40, 56);
+		NodePtr root = buildTree(database);
+		
+		std::cout << searchLin(database, 5, 12, 16, 42, 43) << std::endl;
+		std::cout << searchTolerance(root, 5, 12, 16, 42, 43);
+
+
 	}
 	else {
 		const char* inputProgram(argv[0]);
