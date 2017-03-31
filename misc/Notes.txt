@@ -9,4 +9,5 @@
 
 -std::bad_alloc
 	+ Increase heap and stack size in linker script: lscript.ld
+		0x50000, 0x50000
 	

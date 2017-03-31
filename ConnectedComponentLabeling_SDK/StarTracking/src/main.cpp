@@ -11,41 +11,49 @@
 #include "StarPatternDatabase.h"
 
 #define FOV 256
-#define TOLERANCE 1
+#define TOLERANCE 5
 
 int main() {
+	//Timer
+	AxiTimerHelper timer;
+
+	//Init board
 	init_platform();
 
 	//Initialize
 	init_core();
+	
 	XCclabel_EnableAutoRestart(&cCLabel);
-
-	//Timer
-	AxiTimerHelper timer;
+	
 
 	/********************************************** CC Labeling SW ****************************************************************/
 	timer.startTimer();
 	u32 centroidCountSW = softwareCCLabel(inputIMG, XSW, YSW);
 	timer.stopTimer();
 	double swCCLabeltime = timer.getElapsedTimerInSeconds();
+	
 
 	/********************************************** CC Labeling HW ****************************************************************/
 	//Set parameters
 	XCclabel_Set_imgHeight(&cCLabel, IMG_HEIGHT);
 	XCclabel_Set_imgWidth(&cCLabel, IMG_WIDTH);
-
+	
 	//Flush the cache of the buffers
+	timer.startTimer();
 	Xil_DCacheFlushRange((u32)inputIMG, IMG_HEIGHT * IMG_WIDTH * sizeof(int));
-
+	
 	//Send data to IP core
 	XAxiDma_SimpleTransfer(&axiDMA, (u32)inputIMG, IMG_HEIGHT * IMG_WIDTH * sizeof(int), XAXIDMA_DMA_TO_DEVICE);
-
+	timer.stopTimer();
+	double dmatrans = timer.getElapsedTimerInSeconds();
+	
 	//Start IP core
 	XCclabel_Start(&cCLabel);
-
+	
 	// Wait until it's done
 	timer.startTimer();
 	while(!XCclabel_IsDone(&cCLabel));
+	
 	timer.stopTimer();
 	double hwCCLabeltime = timer.getElapsedTimerInSeconds();
 
@@ -53,8 +61,9 @@ int main() {
 	u32 centroidCountHW = XCclabel_Get_return(&cCLabel);
 
 	/********************************************** Algorithm ****************************************************************/
+	
 	timer.startTimer();
-	std::vector<Star> starList = chooseStarRef(XHW, YHW, centroidCountHW, IMG_HEIGHT, IMG_WIDTH);
+	std::vector<Star> starList = chooseStarRef(XHW, XHW, centroidCountHW, IMG_HEIGHT, IMG_WIDTH);
 	timer.stopTimer();
 	double chooseStarRefTime = timer.getElapsedTimerInSeconds();
 
@@ -97,6 +106,7 @@ int main() {
 
 	xil_printf("--------------- Runtime --------------- \r\n");
 	xil_printf("Build tree runtime: %d us\r\n", (unsigned)(buildTreeTime * 1000000));
+	xil_printf("DMA transfer time: %d us\r\n", (unsigned)(dmatrans * 1000000));
 	xil_printf("CCLAbel SW runtime: %d us -- HW runtime: %d us\r\n", (unsigned)(swCCLabeltime * 1000000), (unsigned)(hwCCLabeltime * 1000000));
 	xil_printf("Choose reference star runtime: %d us\r\n", (unsigned)(chooseStarRefTime * 1000000));
 	xil_printf("Find the star pattern runtime: %d us\r\n", (unsigned)(getStarPatternTime * 1000000));
@@ -105,5 +115,7 @@ int main() {
 	xil_printf("---------- !!! SUCESS !!! ----------\r\n");
 
 	cleanup_platform();
+
+
 	return 0;
 }

@@ -1,6 +1,6 @@
-16:40:41 **** Incremental Build of configuration Debug for project CCLabelling ****
+16:38:54 **** Incremental Build of configuration Debug for project CCLabelling ****
 make all 
 make: Nothing to be done for `all'.
 
-16:40:41 Build Finished (took 124ms)
+16:38:54 Build Finished (took 143ms)
 

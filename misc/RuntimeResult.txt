@@ -1,0 +1,69 @@
+Tree:
+	Build tree: 34229 us
+	Search per entry: 155 us
+Non-tree:
+	Search per entry: 245 us
+
+512 * 512 (avg)
+HW-SW:
+	Init IP core: 6 us
+	Stream data to DMA: 2460 us
+	Centroid: 3719 us
+	Choose Star ref: 54 us
+	Find the star pattern: 30 us
+	Pattern matching (with tree database): 83 us
+		Total: 6352 us
+SW:
+	Centroid: 17688 us
+	Choose Star ref: 54 us
+	Find the star pattern: 30 us
+	Pattern matching (with tree database): 83 us
+		Total: 17855
+
+512 * 512 (Worst case)
+HW-SW:
+	Init IP core: 6 us
+	Stream data to DMA: 2485 us
+	Centroid: 3806 us
+	Choose Star ref: 145 us
+	Find the star pattern: 109 us
+	Pattern matching (with tree database): 155 us
+		Total: 6706 us
+SW:
+	Centroid: 18061 us
+	Choose Star ref: 105 us
+	Find the star pattern: 109 us
+	Pattern matching (with tree database): 155 us
+		Total: 18430
+
+1024*1024 (avg)
+	HW-SW:
+	Init IP core: 6 us
+	Stream data to DMA: 9834 us
+	Centroid: 3543 us
+	Choose Star ref: 63 us
+	Find the star pattern: 54 us
+	Pattern matching (with tree database): 136 us
+		Total: 13636 us
+SW:
+	Centroid: 70527 us
+	Choose Star ref: 63 us
+	Find the star pattern: 54 us
+	Pattern matching (with tree database): 136 us
+		Total: 70780 us
+
+1024*1024 (Worstcase)
+	HW-SW:
+	Init IP core: 6 us
+	Stream data to DMA: 9838 us
+	Centroid: 3598 us
+	Choose Star ref: 108 us
+	Find the star pattern: 88 us
+	Pattern matching (with tree database): 155 us
+		Total: 13793 us
+SW:
+	Centroid: 70561 us
+	Choose Star ref: 108 us
+	Find the star pattern: 88 us
+	Pattern matching (with tree database): 155 us
+		Total: 70912 us

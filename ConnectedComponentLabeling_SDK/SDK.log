@@ -185,3 +185,246 @@
 16:39:30 INFO  : Processor reset is completed for ps7_cortexa9_0
 16:40:47 INFO  : Processor reset is completed for ps7_cortexa9_0
 16:42:28 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+11:27:47 INFO  : Processing command line option -hwspec D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper.hdf.
+11:27:50 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+11:27:51 INFO  : Launching XSDB server: xsdb.bat -s D:/Xilinx/SDK/2014.4/scripts/xsdb/xsdb/xsdb-server.tcl 2450
+11:29:25 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:35:44 INFO  : ps7_init is completed.
+11:35:44 INFO  : ps7_post_config is completed.
+11:35:44 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:37:58 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:38:29 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:40:10 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:40:34 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:44:14 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:48:24 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:48:55 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:49:45 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:50:26 INFO  : Processor reset is completed for ps7_cortexa9_0
+12:04:41 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+11:16:49 INFO  : Processing command line option -hwspec D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper.hdf.
+11:16:53 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+11:16:53 INFO  : Launching XSDB server: xsdb.bat -s D:/Xilinx/SDK/2014.4/scripts/xsdb/xsdb/xsdb-server.tcl 2450
+11:18:16 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:22:10 INFO  : ps7_init is completed.
+11:22:10 INFO  : ps7_post_config is completed.
+11:22:11 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:22:28 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:23:29 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+11:23:40 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doProcessorReset(TM.java:991)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:502)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:584)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:293)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+11:24:01 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:24:37 INFO  : ps7_init is completed.
+11:24:37 INFO  : ps7_post_config is completed.
+11:24:37 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:26:44 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+11:26:49 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Unable to Stop Processor. System could be in unknown state.
+                     Please reset the system
+Unknown Error Occured
+    
+
+	at com.xilinx.sdk.targetmanager.internal.TM.stop(TM.java:753)
+	at com.xilinx.sdk.targetmanager.internal.CPURunSession.terminate(CPURunSession.java:27)
+	at com.xilinx.sdk.targetmanager.internal.TM.terminateCurrentLaunch(TM.java:801)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.debugApplication(XilinxAppLaunchConfigurationDelegate.java:653)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:295)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+11:27:15 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+11:27:17 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: No Active System
+
+	at com.xilinx.sdk.targetmanager.internal.TM.stop(TM.java:744)
+	at com.xilinx.sdk.targetmanager.internal.CPURunSession.terminate(CPURunSession.java:27)
+	at com.xilinx.sdk.targetmanager.internal.TM.terminateCurrentLaunch(TM.java:801)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:564)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:293)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+11:27:30 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:27:48 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+11:27:54 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: No Active System
+
+	at com.xilinx.sdk.targetmanager.internal.TM.stop(TM.java:744)
+	at com.xilinx.sdk.targetmanager.internal.CPURunSession.terminate(CPURunSession.java:27)
+	at com.xilinx.sdk.targetmanager.internal.TM.terminateCurrentLaunch(TM.java:801)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:564)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:293)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+11:28:25 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:28:34 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+11:29:14 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:29:26 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+11:29:29 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: No Active System
+
+	at com.xilinx.sdk.targetmanager.internal.TM.stop(TM.java:744)
+	at com.xilinx.sdk.targetmanager.internal.CPURunSession.terminate(CPURunSession.java:27)
+	at com.xilinx.sdk.targetmanager.internal.TM.terminateCurrentLaunch(TM.java:801)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:564)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:293)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+11:30:40 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:30:49 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+11:30:59 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: No Active System
+
+	at com.xilinx.sdk.targetmanager.internal.TM.stop(TM.java:744)
+	at com.xilinx.sdk.targetmanager.internal.CPURunSession.terminate(CPURunSession.java:27)
+	at com.xilinx.sdk.targetmanager.internal.TM.terminateCurrentLaunch(TM.java:801)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:564)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:293)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+11:31:05 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+11:31:54 INFO  : Processing command line option -hwspec D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper.hdf.
+11:31:55 INFO  : Checking for hwspec changes in the project design_1_wrapper_hw_platform_0.
+11:31:56 INFO  : Launching XSDB server: xsdb.bat -s D:/Xilinx/SDK/2014.4/scripts/xsdb/xsdb/xsdb-server.tcl 2450
+11:32:16 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:32:25 INFO  : ps7_init is completed.
+11:32:25 INFO  : ps7_post_config is completed.
+11:32:25 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:33:53 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:35:12 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:38:13 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+11:38:29 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doProcessorReset(TM.java:991)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:502)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:584)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:293)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+11:38:57 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:39:05 INFO  : ps7_init is completed.
+11:39:05 INFO  : ps7_post_config is completed.
+11:39:05 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:39:38 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:40:10 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+11:40:19 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doProcessorReset(TM.java:991)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:502)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:584)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:293)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+11:41:40 ERROR : Unexpected error while launching program.
+java.lang.RuntimeException: Error in Resetting Target
+
+    Could not stop the processor after reset
+
+
+	at com.xilinx.sdk.targetmanager.internal.TM.doProcessorReset(TM.java:991)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runTargetSetup(XilinxAppLaunchConfigurationDelegate.java:502)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.runApplication(XilinxAppLaunchConfigurationDelegate.java:584)
+	at com.xilinx.sdk.debug.core.XilinxAppLaunchConfigurationDelegate.launch(XilinxAppLaunchConfigurationDelegate.java:293)
+	at com.xilinx.sdk.debug.ui.XilinxAppLaunchDelegateWrapper.launch(XilinxAppLaunchDelegateWrapper.java:31)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+11:41:52 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:45:03 INFO  : ps7_init is completed.
+11:45:03 INFO  : ps7_post_config is completed.
+11:45:03 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:49:13 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:49:28 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:50:51 INFO  : ps7_init is completed.
+11:50:51 INFO  : ps7_post_config is completed.
+11:50:51 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:53:17 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:53:28 INFO  : ps7_init is completed.
+11:53:28 INFO  : ps7_post_config is completed.
+11:53:29 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:55:32 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:55:45 INFO  : ps7_init is completed.
+11:55:46 INFO  : ps7_post_config is completed.
+11:55:46 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:57:17 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:57:26 INFO  : ps7_init is completed.
+11:57:26 INFO  : ps7_post_config is completed.
+11:57:26 INFO  : Processor reset is completed for ps7_cortexa9_0
+11:59:01 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+11:59:20 INFO  : ps7_init is completed.
+11:59:20 INFO  : ps7_post_config is completed.
+11:59:20 INFO  : Processor reset is completed for ps7_cortexa9_0
+12:02:24 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+12:02:35 INFO  : ps7_init is completed.
+12:02:35 INFO  : ps7_post_config is completed.
+12:02:35 INFO  : Processor reset is completed for ps7_cortexa9_0
+12:15:22 INFO  : Processor reset is completed for ps7_cortexa9_0
+12:17:09 INFO  : Processor reset is completed for ps7_cortexa9_0
+12:23:44 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+12:23:57 INFO  : ps7_init is completed.
+12:23:57 INFO  : ps7_post_config is completed.
+12:23:58 INFO  : Processor reset is completed for ps7_cortexa9_0
+12:52:56 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+12:55:09 INFO  : Processor reset is completed for ps7_cortexa9_0
+14:48:03 INFO  : Processor reset is completed for ps7_cortexa9_0
+15:15:01 INFO  : Processor reset is completed for ps7_cortexa9_0
+15:15:26 INFO  : ps7_cortexa9_0 Processor is in use. Please stop existing Run or Debug sessions before launching.
+15:15:32 INFO  : Processor reset is completed for ps7_cortexa9_0
+15:16:12 INFO  : FPGA configured successfully with bitstream "D:/zedboard_projects/CCLabelling_bigDataSet/CCLabelling_bigDataSet.sdk/design_1_wrapper_hw_platform_0/design_1_wrapper.bit"
+15:17:40 INFO  : ps7_init is completed.
+15:17:40 INFO  : ps7_post_config is completed.
+15:17:40 INFO  : Processor reset is completed for ps7_cortexa9_0
+16:07:37 INFO  : Processor reset is completed for ps7_cortexa9_0
+16:10:28 INFO  : Processor reset is completed for ps7_cortexa9_0
+16:33:56 INFO  : Processor reset is completed for ps7_cortexa9_0
+16:39:00 INFO  : Processor reset is completed for ps7_cortexa9_0

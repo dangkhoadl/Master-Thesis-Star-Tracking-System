@@ -256,6 +256,7 @@ int main() {
 	// Wait until it's done
 	timer.startTimer();
 	while(!XCclabel_IsDone(&cCLabel));
+
 	timer.stopTimer();
 	double HWtime = timer.getElapsedTimerInSeconds();
 

@@ -5,14 +5,12 @@
 // Declare 32-bit integer with side-channel (Includes TLAST signal)
 typedef ap_axis<32,2,5,6> intSdCh;
 
-#define MAX_IMG_HEIGHT 1024
-#define MAX_IMG_WIDTH 1024
 #define MAXTHPIXEL 1024
 #define THRESHOLD 70
 #define MAX 999
-#define MAX_STAR_DATA_SIZE 40
-#define MAX_SET_SIZE 40
-#define MAX_CENTROID_DATA 40
+#define MAX_STAR_DATA_SIZE 120
+#define MAX_SET_SIZE 120
+#define MAX_CENTROID_DATA 120
 
 int Image[MAXTHPIXEL];
 int mark[MAXTHPIXEL];

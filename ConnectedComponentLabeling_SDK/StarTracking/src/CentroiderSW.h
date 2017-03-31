@@ -6,9 +6,9 @@
 
 #define THRESHOLD 70
 #define MAX 999
-#define MAX_STAR_DATA_SIZE 40
-#define MAX_SET_SIZE 40
-#define MAX_CENTROID_DATA 40
+#define MAX_STAR_DATA_SIZE 100
+#define MAX_SET_SIZE 100
+#define MAX_CENTROID_DATA 100
 
 unsigned lbImage[IMG_HEIGHT * IMG_WIDTH];
 unsigned set[MAX_SET_SIZE];
@@ -115,7 +115,7 @@ unsigned calCentroid(unsigned setCount, int X[MAX_CENTROID_DATA], int Y[MAX_CENT
 	unsigned i = 0;
 	unsigned root = 0;
 	unsigned centroidDataCount = 0;
-
+	
 	for (i = 1; i < setCount; ++i) {
 		if (set[i] != i) {
 			root = find(i);
@@ -125,7 +125,7 @@ unsigned calCentroid(unsigned setCount, int X[MAX_CENTROID_DATA], int Y[MAX_CENT
 			status[i] = false;
 		}
 	}
-
+	
 	//cal
 	for (i = 1; i < setCount; ++i) {
 		if (status[i] == true) {
