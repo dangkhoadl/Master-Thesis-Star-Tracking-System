@@ -64,6 +64,6 @@ SW:
 SW:
 	Centroid: 70561 us
 	Choose Star ref: 108 us
-	Find the star pattern: 88 us
+	Find the star pattern: 115 us
 	Pattern matching (with tree database): 155 us
-		Total: 70912 us
+		Total: 70939 us
