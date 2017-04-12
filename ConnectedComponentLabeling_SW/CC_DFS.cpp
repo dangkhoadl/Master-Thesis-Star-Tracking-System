@@ -97,8 +97,8 @@ typedef vector<vector<int>> vvi;
 #define THRESHOLD 70
 #define MAX 9999
 
-vvi Image(IMG_HEIGHT, vi(IMG_WIDTH));
-vvi checkIMG(IMG_HEIGHT, vi(IMG_WIDTH, 0));
+vvi Image(IMG_HEIGHT + 2, vi(IMG_WIDTH + 2));
+vvi checkIMG(IMG_HEIGHT + 2, vi(IMG_WIDTH + 2, 0));
 const vii searchDir = { { 0,0 },{ -1,-1 },{ -1,0 },{ -1,1 },{ 0,-1 },{ 0,1 },{ 1,-1 },{ 1,0 },{ 1,1 } };
 
 struct starDataS {
@@ -114,7 +114,7 @@ vector<starDataS> starData;
 void readImage() {
 	for_i(0, IMG_HEIGHT, 1)
 		for_j(0, IMG_WIDTH, 1)
-			cin >> Image[i][j];
+		cin >> Image[i][j];
 }
 
 void dfs(int x, int y, starDataS &star) {
@@ -132,22 +132,22 @@ void dfs(int x, int y, starDataS &star) {
 }
 
 void centroid() {
-	for_i(0, IMG_HEIGHT, 1)
-		for_j(0, IMG_WIDTH, 1) {
-			if (Image[i][j] >= THRESHOLD && checkIMG[i][j] != 1) {
-				starDataS star = { 0,0,0,0,0,0 };
-				dfs(i, j, star);
-				star.centreX = round((float)star.sumX / star.totalIntesity);
-				star.centreY = round((float)star.sumY / star.totalIntesity);
-				starData.pb(star);
-			}
-			checkIMG[i][j] = 1;
+	for_i(0, IMG_HEIGHT + 2, 1)
+		for_j(0, IMG_WIDTH + 2, 1) {
+		if (Image[i][j] >= THRESHOLD && checkIMG[i][j] != 1) {
+			starDataS star = { 0,0,0,0,0,0 };
+			dfs(i, j, star);
+			star.centreX = round((float)star.sumX / star.totalIntesity);
+			star.centreY = round((float)star.sumY / star.totalIntesity);
+			starData.pb(star);
+		}
+		checkIMG[i][j] = 1;
 	}
 }
 
 void printResult() {
 	for_i(0, sz(starData), 1)
-		printf("Star[%lld]: x = %lld, y = %lld\n", i+1, starData[i].centreX, starData[i].centreY);
+		printf("Star[%lld]: x = %lld, y = %lld\n", i + 1, starData[i].centreX, starData[i].centreY);
 
 	int minA = MAX;
 	int maxA = 0;

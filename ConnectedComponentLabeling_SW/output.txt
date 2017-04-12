@@ -1,10 +1,10 @@
-star[1]: x = 54, y = 285
-star[2]: x = 86, y = 408
-star[3]: x = 184, y = 395
-star[4]: x = 197, y = 492
-star[5]: x = 320, y = 289
-star[6]: x = 375, y = 247
-star[7]: x = 382, y = 268
-star[8]: x = 455, y = 157
-star[9]: x = 498, y = 252
+star[1]: x = 55, y = 286
+star[2]: x = 87, y = 409
+star[3]: x = 185, y = 396
+star[4]: x = 198, y = 493
+star[5]: x = 321, y = 290
+star[6]: x = 376, y = 248
+star[7]: x = 383, y = 269
+star[8]: x = 456, y = 158
+star[9]: x = 499, y = 253
 Min area = 16, Max area = 20, Average area = 18

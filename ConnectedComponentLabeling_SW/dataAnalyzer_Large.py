@@ -28,14 +28,16 @@ def clearVal():
     Image[:] = []
     checkIMG[:] = []
     starData[:] = []
+    for i  in range (IMG_HEIGHT+2):
+        checkIMG.append([0 for j in range(IMG_WIDTH+2)])
 
 
 def readIMG(fileName):
     fil = open(fileName, 'r')
-    for i  in range (IMG_HEIGHT):
-        checkIMG.append([0 for j in range(IMG_WIDTH)])
+    Image.append([0 for j in range(IMG_WIDTH+2)])
     for line in fil:
-        Image.append([int(float(x)) for x in line.split()])
+        Image.append([0] + [int(float(x)) for x in line.split()] + [0])
+    Image.append([0 for j in range(IMG_WIDTH+2)])
     fil.close()
 
 
@@ -53,8 +55,8 @@ def dfs(x,y,star):
 
 
 def centroid():
-    for i in range(0, IMG_HEIGHT, 1):
-        for j in range (0, IMG_WIDTH, 1):
+    for i in range(0, IMG_HEIGHT+2, 1):
+        for j in range (0, IMG_WIDTH+2, 1):
             if Image[i][j] >= THRESHOLD and checkIMG[i][j] != 1:
                 star = starDataS(0,0,0,0,0,0)
                 dfs(i, j, star)
