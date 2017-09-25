@@ -3,7 +3,7 @@ import sys
 import math
 sys.stdout = open('A_output.txt', 'w')
 
-#------------------------------------- FUNCTIONS ---------------------------------------------------------------#
+#------------------------------------- PARAMETERS ---------------------------------------------------------------#
 IMG_HEIGHT = 512
 IMG_WIDTH = 512
 THRESHOLD = 70
@@ -11,7 +11,7 @@ MAX = 9999
 
 Image = []
 checkIMG = []
-searchDir = [ [0,0],[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1] ];
+searchDir = [ [0,0],[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1] ]
 
 class starDataS:
     def __init__(self,totalIntensity, area, sumX, sumY, centreX, centreY):
@@ -66,27 +66,40 @@ def centroid():
             checkIMG[i][j] = 1;
 
 
-def minMax(v):
+NumStarDistribution = {}
+StarAreaDistribution = {}
+def analyze():
+    # number of stars in 1 IMG distribution
+    if len(starData) in NumStarDistribution:
+        NumStarDistribution[len(starData)] += 1
+    else:
+        NumStarDistribution[len(starData)] = 1
+    # star area
     for starD in starData:
-        v[0] = min(starD.area, v[0])
-        v[1] = max(starD.area, v[1])
-        v[2] += starD.area
-    v[3] += len(starData)
+        if starD.area in StarAreaDistribution:
+            StarAreaDistribution[starD.area] += 1
+        else:
+            StarAreaDistribution[starD.area] = 1
 
 
 def solve():
-    minA = MAX
-    maxA = 0
-    totalIntensity = 0
-    totalStars = 0
-    res = [minA, maxA, totalIntensity, totalStars]
     for i in range(1,71,1):
         for j in range(179):
             clearVal()
             readIMG("IMG_" + str(i) + '_' + str(j) + ".bin")
             centroid()
-            minMax(res)
-    print("Min area = " + str(res[0]) + ", Max area = " + str(res[1]) + ", Average area = " + str(int(round(res[2] / res[3]))))
+            analyze()
+    ####### print #####################
+    print(NumStarDistribution)
+    print(StarAreaDistribution)
+
+    print("Number of Stars in 1 Image distribution")
+    for it in NumStarDistribution:
+        print(str(it) + '\t' + str(NumStarDistribution[it]))
+
+    print("Star Area Distribution")
+    for it in StarAreaDistribution:
+        print(str(it) + '\t' + str(StarAreaDistribution[it]))
 
 
 ##############################################################################################
