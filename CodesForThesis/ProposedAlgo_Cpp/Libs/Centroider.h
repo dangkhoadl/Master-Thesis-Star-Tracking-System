@@ -1,21 +1,22 @@
 #pragma once
 #include <vector>
 #include <iostream>
+#include <cmath>
 #include <algorithm>
 
 struct Star {
-	int X;
-	int Y;
-	int area;
-	float starDistance2Centre;
-	float starDistance2StarRef;
+    int X;
+    int Y;
+    int area;
+    float starDistance2Centre;
+    float starDistance2StarRef;
 };
 
 struct StarData {
-	int sumOfXproduct;
-	int sumOfYproduct;
-	int sum;
-	int area;
+    int sumOfXproduct;
+    int sumOfYproduct;
+    int sum;
+    int area;
 };
 
 std::vector<Star> centroider(const std::vector<std::vector<int>> &IMG, int levelThreshold,int areaThreshold, int &numberOfStar);
