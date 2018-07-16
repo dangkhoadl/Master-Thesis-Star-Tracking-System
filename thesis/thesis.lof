@@ -1,0 +1,59 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Star tracker hardwares}}{3}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Commercial star trackers}}{3}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Stages of star tracking algorithm}}{6}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Stars projection onto a 2D image plane}}{7}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Centroid of stars in an image}}{7}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Star clusters represented in a 2D image plane}}{8}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Liebe star pattern}}{10}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Pyramid star pattern}}{11}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Geometric Voting star pattern}}{13}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Star Identification Algorithm with Optimized database star pattern}}{15}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces A star pattern database tree-styled structure}}{16}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A 4-input logic implemented by a Look up table (LUT)\cite {Coursera}}}{18}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces FPGA Routing Architecture\cite {Coursera}}}{19}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces FPGA Development Process Design Flow\cite {Coursera}}}{19}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Xilinx Spartan-3AN Family Architecture\cite {spartan}}}{21}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces An ASIC board}}{22}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces An ARM embedded processor}}{23}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces PS and PL connected through AXI}}{24}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces A Zedboard Programmable System on Chip}}{25}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Module partitioning\cite {Zynqbook}}}{26}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Profiling steps}}{27}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Star tracking algorithm submodules partitioned.}}{27}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Profiling result.}}{28}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Thresholding separates star cluster pixels and background pixels}}{29}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Star clusters represented as a connected-components problem}}{31}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Left and above pixels of the current considering pixel.}}{32}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces one-pass scan algorithm applied to label 2-star clusters - 1}}{32}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces one-pass scan algorithm applied to label 2-star clusters - 2}}{33}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces one-pass scan algorithm applied to label 2-star clusters - 3}}{33}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces one-pass scan algorithm applied to label 2-star clusters - 4}}{34}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces one-pass scan algorithm applied to label 2-star clusters - 5}}{34}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces IP core design purpose}}{35}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Stream an image into a pixel stream}}{36}
+\contentsline {figure}{\numberline {3.23}{\ignorespaces IP core submodules}}{36}
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Get above and left pixel functions}}{37}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Stream processing submodule}}{37}
+\contentsline {figure}{\numberline {3.26}{\ignorespaces centroid calculating submodule}}{38}
+\contentsline {figure}{\numberline {3.27}{\ignorespaces The complete IP core module}}{38}
+\contentsline {figure}{\numberline {3.28}{\ignorespaces Distances from the centre of the image to all stars}}{39}
+\contentsline {figure}{\numberline {3.29}{\ignorespaces Distances from the reference star to its neighbors}}{40}
+\contentsline {figure}{\numberline {3.30}{\ignorespaces Star pattern matching}}{41}
+\contentsline {figure}{\numberline {3.31}{\ignorespaces Star pattern matching with tolerance}}{41}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Hardware design diagram}}{43}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Hardware design block}}{43}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Hardware resource consumption}}{44}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Power consumption summary}}{45}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Power consumption by components}}{45}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Number of stars in one image distribution}}{46}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Star area distribution}}{47}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Software runtime}}{48}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Software-Hardware co-processing runtime}}{49}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Software runtime}}{51}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Hardware – Software Co-processing runtime}}{52}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Runtime comparison}}{53}
+\addvspace {10\p@ }

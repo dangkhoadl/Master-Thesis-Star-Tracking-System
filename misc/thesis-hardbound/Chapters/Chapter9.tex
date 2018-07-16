@@ -1,0 +1,76 @@
+\chapter{Conclusion \& Future Work}
+\label{chap:conclusion}
+
+\lhead{Chapter 9. \emph{Conclusion \& Future Work}}
+
+\section{Conclusion}
+In this thesis, we have discussed the wide range of our contributions in remote sensing for varied applications. We mainly focused our attention on the analysis of clouds in satellite communication links. As Singapore is a geographically small land region, conventional techniques using satellite images are not conducive for study. The images obtained from satellites suffer from poor spatial and temporal resolutions. Therefore, we have presented a new paradigm in understanding the earth's atmosphere---using ground-based sky cameras to better analyze clouds for different applications. These cameras, popularly known as Whole Sky Imagers (WSIs) offer a compelling alternative. In this thesis, we have presented several models of our custom-built sky cameras. Our designed sky camera models have lower cost, better image resolution, and higher flexibility as compared to the commercially available sky cameras.
+
+The sky cameras capture the sky/cloud scene at regular intervals of time, and archives the captured images for further analysis. One of the fundamental problems in cloud imaging is the \emph{successful} detection of cloud pixels in these images. This is a non-trivial task, as clouds are non-rigid in shape, and do not conform to any particular shape or size. The \emph{color} of clouds is generally used as the most discriminatory feature. In this thesis, we have provided a systematic analysis of the different color channels that are frequently used for cloud recognition. We have identified the \emph{best} color channels that can be used for subsequent analysis. Furthermore, the conventional sky/cloud image segmentation algorithms are generally binary in nature, i.e.\ each pixel is assigned either \emph{sky} or \emph{cloud} label. In this thesis, we have proposed a probabilistic cloud segmentation approach, wherein each pixel is assigned a probability to be categorized in cloud category. 
+
+For the purpose of regular weather monitoring, the various meteorological institutes around the world regularly report cloud types in its meteorological reports. Such classifications are generally done manually, which is of course, cumbersome and time-consuming. In this thesis, we attempt to provide a complete framework for a multi-class classification of cloud types. Our framework has the best classification performance as compared to the other benchmarking algorithms. We systematically integrate the \emph{color} and \emph{texture} cues of cloud for better performance. 
+
+In addition to ground-based sky cameras, different meteorological sensors continually record the various weather parameters of the earth's atmosphere. However, these devices are point-measurement devices, i.e.\ these devices only record measurements for a particular point location of the earth's atmosphere. Sky cameras equipped with wide-angle lenses, on the other hand, provide remote sensing analysts better insights on the evolution of clouds over a period of time. In this thesis, we have analyzed the information from sky cameras and other sensors to provide deeper insights in solar energy generation. We have also used sky cameras to predict future location of clouds and to detect the onset of precipitation. These applications greatly help in the field of solar and renewable energy forecasting. 
+
+Finally, we discussed our work on estimating the base height of a cloud mass, using a pair of (or multiple) sky cameras. We used stereoscopic scene flow techniques to estimate cloud-base height, and verified its accuracy using computer-generated images. We have also provided deeper insights in the localization performance of an \emph{intruder}~\footnote{This is in reference to the famous art-gallery problem as described in Chapter~\ref{chap:localize}.} in a multi-camera setup with noisy camera poses. 
+
+
+\section{Future Work}
+This thesis explored varied aspects of cloud imaging using ground-based sky cameras. While it solved most of the fundamental problems, it also helped us in generating future research proposals. In this section, we will briefly mention some of the intended future works.
+
+In this thesis, we described the design of three models of ground-based sky cameras. These imagers consists of a Digital Single-Lens Reflex (DSLR) camera equipped with a fish-eye lens. We are now interested to design a miniature model using a regular smart-phone. With the rapid development in the imaging system of hand-phones, it seems a plausible alternative to perform our task of cloud imaging using smart-phones. The smart-phone application will be involved in capturing images at regular intervals of time, and will be sent to the server for archival and further processing. 
+
+The conventional approach consists in segmenting the cloud image into binary labels---sky and cloud. In this thesis, we have provided a probabilistic segmentation approach wherein we employ a \emph{soft} thresholding approach. In the future work, we aim to generate the ground-truth database with probabilistic labels. We will perform the manual labeling via crowd-sourcing experiments, wherein several cloud experts will manually label the pixels. This will help us to assign a probability ground-truth map for the sky/cloud images. 
+
+In this thesis, we deal primarily with daytime images captured by our sky camera. However, nighttime cloud imaging is also essential in certain applications, such as continuous weather analysis and satellite communication. Nighttime sky/cloud images are darker and noisier, and thus harder to analyze. Currently, we use a superpixel-based segmentation technique~\footnote{The source code of our nighttime cloud segmentation is available online at \url{https://github.com/Soumyabrata/nighttime-imaging}.} to detect cloud in nighttime images. In the future, we plan to extend our cloud categorization and cloud localization for nighttime images as well.
+
+In addition to these visible-light imaging techniques, we are also interested to explore further in Near-Infra-Red (NIR) techniques. Such imaging techniques are very important in our current application and has immense potential in capturing sharper and clearer images of sky/cloud hemisphere. Our current work on cloud detection and its classification can be extended to these near-infrared cloud images for better results. Fredembach and S{\"u}sstrunk demonstrated in their recent work~\cite{near_infrared} that the haze disappears in near-infrared capture of an outdoor scene as compared to an image captured by a conventional RGB image. This is because of a physical phenomenon called Rayleigh scattering. Small atmospheric particles present in the air scatter incident light with varying degree. Because of Rayleigh scattering, the component of light having the least wavelength gets scattered the most; and thus provides a bluish color to the sky. However, near-infrared is less scattered as compared to its visible counterparts and renders the sky darker. Clouds however do not change its behavior of light scattering because of its bigger particle size which is referred as Mie scattering. 
+
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{haze_disappear}
+\caption[Illustration to show the benefits of near-IR capture in cloud imaging.]{On the left, a conventional RGB image. On the right, a near-IR capture of the same scene. The haze has disappeared, revealing a sharper, cleaner, picture~\cite{near_infrared}.\label{fig:haze_disappear}}
+\end{center}
+\end{figure}
+
+On top of ground-based imaging, satellite images also provide us interesting perspectives of the upper layer of cloud. In this thesis, our focus was not intended on satellite images as its spatial and temporal resolution were not conducive for our application of cloud attenuation and solar energy forecasting. These high resolution requirements are very strong in satellite imaging. No mission is generally designed for monitoring of small areas, during airborne sensing. However, satellite such as MODIS can offer us interesting insights on the cloud top phenomenon, at the expense of lower resolutions. MODIS stands for Moderate-Resolution Imaging Spectroradiometer. It is a 36 spectral band imaging instrument embedded in two satellites: Terra and Aqua. Its medium resolution ($250$ to $1000$m) allows a large swath, and thus a high revisit time. For the region of Singapore, the two satellites acquire images twice a day. It is a good compromise for our applications, and a good choice for this comparison. The National Aeronautics and Space Administration (NASA) organizes the MODIS data in levels, collections and products. The product is most interesting, as it represents the information stored in a dataset. We plan to use four products, that are frequently used by remote sensing analysts:
+
+\begin{description} 
+\item[MOD02] \emph{Level-1B Calibrated Geolocation Data Set} Stores the calibrated radiance for the $36$ bands of data, in $W/(m^{2}\cdot um \cdot sr)$, the reflectance and some quality indicators.
+\item[MOD05] \emph{Total Precipitable Water} Contains daytime column water-vapor amount using the near-infrared and infrared channel. It is not used in the image part, but provides information on radio-wave attenuation for another part of this project.
+\item[MOD06] \emph{Cloud Product} Only available for the 1km resolution. It uses the visible, NIR, and Thermal Infra-Red (IR) bands. Contains cloud temperature, cloud pressure, particle phase and radius for the top of the cloud.
+\item[MOD35] \emph{Cloud Mask} stores two bits that indicate the status of a pixel: \texttt{Confident} \texttt{Clear}, \texttt{Probably Clear}, \texttt{Uncertain}, \texttt{Cloudy}. It uses $19$ bands to decide, and the decision tree for each pixel is included for the $250$m and $1$km resolution.
+\end{description}
+
+In our future work, we intend to compare such cloud mask of MODIS data with ground-based sky cameras. It may not be possible to match individual clouds as sky camera is an upward-looking device, whereas MODIS is a downward-looking device. However, it will provide us additional information about cloud top height and other related phenomenon. 
+
+Finally, we also intend to explore solar energy harvesting, with the aid of ground-based sky cameras. The prospect of solar energy generation is good in a tropical country like Singapore. But this generation is intermittent and variable because of the presence of clouds that blocks direct solar radiation. The effect of clouds on solar energy generation have been described in detail in Chapter~\ref{chap:solar} of this thesis. In our future work, we plan to develop a Photovoltaic (PV) energy forecast system based on automatic cloud coverage and cloud tracking.  
+
+\textbf{Closing note:} This thesis ends here---we believe that our work on imaging the earth's atmosphere can assist the research community in a myriad range of applications. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

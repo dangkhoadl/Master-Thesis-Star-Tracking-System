@@ -1,0 +1,122 @@
+\chapter{Literature Review}
+\label{chap:litreview}
+
+\lhead{Chapter 2. \emph{Literature Review}}
+In this chapter, we provide a thorough literature review of the various aspects of this thesis. As mentioned in the previous chapter, this thesis involves the use of camera(s) to understand a scene better, and learn important cues of its surroundings. In most cases, we apply our proposed algorithms and frameworks in the context of cloud imaging using ground-based whole sky imagers. In this chapter, we describe the existing works of this particular field. We attempt to identify a few existing research gaps in the literature and bridge most of them by proposing state-of-the-algorithms and best practices. 
+
+\section{Ground-based Imaging Instrument}
+\label{sec:lit-wsi}
+Satellite images are commonly used to monitor the earth and analyze its various phenomena. They provide remote sensing analysts with accurate information about various earth's events. Satellite images are available in different spatial and temporal resolutions and also across various ranges of the electromagnetic spectrum, including visible, near- and far-infrared regions. For example, multi-temporal satellite images are extensively used for monitoring forest canopy changes~\cite{forest} or evaluating sea ice concentrations~\cite{ice2008}. 
+
+The presence of clouds plays a very important role in the analysis of satellite images. NASA's Ice, Cloud, and land Elevation Satellite (ICESat) has demonstrated that $70\%$ of the world's atmosphere is covered with clouds~\cite{NASA-cloud}. Therefore, there has been renewed interest amongst the remote sensing community to further study clouds and their effects on the earth. 
+
+Satellite images are a good starting point for monitoring the earth's atmosphere. However, they have either high temporal resolution (e.g.\ geostationary satellites) or high spatial resolution (e.g.\ low-orbit satellites), but never both. In many applications like solar energy production~\cite{solar_irr_pred}, local weather prediction, tracking contrails at high altitudes~\cite{contrail_WSI}, studying aerosol properties~\cite{fuse_AOD}, attenuation of communication signals~\cite{cloud_model_compare,radiosonde2014}, we need data with high spatial \emph{and} temporal resolution. This is why ground-based sky imagers have become popular and are now widely used in such applications. The ready availability of high-resolution cameras at a low cost facilitated the development of various models of sky imagers. These sky cameras are popularly known as Whole Sky Imagers (WSIs), as they capture the whole sky scene with its wide-angled lens. In geographical small countries like Singapore, ground-based whole sky imagers offer remote sensing analysts a fantastic alternative, as compared to satellite images. These sky cameras have high temporal and spatial resolutions. However, conventional sky cameras are expensive, have limited flexibilities and low image resolutions. We address this in Chapter~\ref{chap:wsi}, and present custom-built sky cameras.
+
+A WSI consists of an imaging system placed inside a weather-proof enclosure that captures the sky at user-defined intervals. A number of WSI models have been developed over the years. 
+
+\begin{table}[htb]
+\footnotesize
+\centering
+\begin{tabular}{ p{1.7in}|p{1.8in}|l|p{1in} }
+\hline 
+\textbf{Application}  & \textbf{Organization} & \textbf{Country} &  \textbf{WSI Model}  \\
+\hline
+Air traffic control~\cite{infrared_UK} & Campbell Scientific Ltd. & United Kingdom & IR NEC TS9230  \\   
+Cloud characterization~\cite{sky_imager2008}& Atmospheric Physics Group & Spain & GFAT All-sky imager\\ 
+Cloud classification~\cite{Sylvio} & Brazilian Institute for Space Research & Brazil & TSI-440\\
+Cloud classification~\cite{Kazantzidis2012} & Laboratory of Atmospheric Physics & Greece & Canon IXUS II with FOV $180^{\circ}$   \\ 
+Cloud macrophysical properties~\cite{Long} & Pacific Northwest National Laboratory & United States & Hemispheric Sky Imager\\ 
+Cloud track wind data monitoring~\cite{synerg} & Laboratoire de M\'et\'eorologie Dynamique & France & Nikon D100 with FOV $63^{\circ}$\\ 
+Convection~\cite{orograph2007}& Creighton University & United States & Digital Camera   \\ 
+Radiation balance~\cite{uwe2000}& Lindenberg Meteorological Observatory & Germany & VIS/NIR 7   \\  
+Solar power forecasting~\cite{Ghonima2012}& Solar Resource Assessment \& Forecasting Laboratory & United States & TSI-440 \\ 
+Weather monitoring~\cite{TSI880} & Pacific Northwest National Laboratory & United States & TSI-880\\ 
+Weather reporting~\cite{how_weather}& Ecole Polytechnique F\'ed\'erale de Lausanne & Switzerland & Panorama Camera\\ 
+\hline  
+\end{tabular}
+\caption{Overview of various ground-based whole sky imagers and their intended applications.}
+\label{tab:diff-database}
+\end{table}
+
+A commercial WSI (\mbox{TSI-440}, \mbox{TSI-880}) manufactured by Yankee Environmental Systems (YES) is used by many researchers~\cite{Long,Souza,Ghonima2012}. Owing to the high cost and limited flexibility of commercial sky imagers, many research groups have built their own WSI models \cite{Sylvio,sky_imager2008,Kazantzidis2012,synerg,orograph2007,uwe2000,infrared_UK,how_weather}. For example, the Scripps Institution of Oceanography at the University of California San Diego has been developing and using WSIs as part of their work for many years~\cite{WSI_UCSD}. Table~\ref{tab:diff-database} provides an overview of the types of ground-based sky cameras used by various organizations around the world, and their primary applications. 
+
+These ground-based sky cameras capture images at regular intervals of time, and stores them in local or remote server. The captured sky/cloud images are subsequently analyzed for various applications. The segmentation of clouds from these images is one of the fundamental tasks---existing works on cloud detection are discussed in the subsequent Section~\ref{sec:lit-segment} of this chapter.
+
+\section{Image Segmentation}
+\label{sec:lit-segment}
+Segmentation is one of the first steps in sky/cloud image analysis. It remains a challenging task because of the non-rigid, feature-less, and poorly-defined structure of clouds. Also, the shape of clouds also changes continuously over time. Thus, classical image segmentation approaches based on shape priors~\cite{wrapper_Jain} are not suitable. Furthermore, the wide range of lighting conditions (direct sunlight to completely covered skies) adds to the difficulty. 
+
+As color is the most discriminating feature in sky/cloud images, most works in the literature use color for cloud segmentation. Long et al.\ \cite{Long} showed that the ratio of red and blue channels from RGB color space is a good candidate for segmentation and tuned corresponding thresholds to create binary masks. Calb{\'{o}} and Sabburg~\cite{Calbo2008} use the same ($R/B$) ratio to derive statistical features (mean, standard deviation, entropy etc.) of the clouds and subsequently classify the sky/cloud images into different cloud types.
+Heinle et al.\ \cite{Heinle2010} exploited the difference of red and blue channels for successful detection and subsequent labeling of pixels. Liu et al.\ \cite{LiuSP2015} also used the difference of red and blue channels in their superpixel-based cloud segmentation framework. Souza et al.\ \cite{Souza} used the Saturation (S) channel for calculating cloud coverage. Mantelli-Neto et al. \cite{Sylvio} investigated the locus of cloud pixels in the RGB color model. Li et al.\ \cite{Li2011} proposed cloud detection using an adaptive threshold technique in the normalized blue/red channel. Yuan et al.\ \cite{BOW-cloud} proposed a cloud detection framework using superpixel classification of image features.
+ 
+In these existing methods of the current literature for cloud segmentation, the selection of color models and channels has not been studied systematically. Many existing approaches~\cite{Calbo2008,Heinle2010,LiuSP2015,Li2011,LiuGC2015} use combinations of red and blue channels, which is a sensible choice, because the sky is predominantly blue due to the Rayleigh scattering of light at shorter wavelengths. However, we are not aware of any experimental analysis presented regarding the efficacy of these color channels in sky/cloud image segmentation. Furthermore, all of the above methods rely on manually-defined parameters and case-based decisions for segmentation. These make the methods somewhat ad-hoc and prone to errors. Finally, most of them assign binary labels by design, which further reduces their flexibility and robustness. We address this limitation in Chapter~\ref{chap:colorchannels}, and propose a probabilistic color-based image segmentation algorithm in Chapter~\ref{chap:segmentation}.
+
+The successful detection of clouds in sky/cloud images is also helpful for its classification into various cloud types. Such cloud-type recognition tasks are generally done manually. However, a few approaches have been recently developed for such tasks---we discuss them in the next Section~\ref{sec:lit-classify} of this chapter.
+
+
+\section{Image Type Recognition}
+\label{sec:lit-classify}
+
+For varied applications viz.\ aviation, weather prediction, and solar energy, clouds are continuously monitored by experts from meteorological institutes. In most cases, cloud observation is done manually by the experts. Cloud experts from the meteorological institutes observe these clouds to better understand the atmospheric phenomenon; and classify the clouds into various categories as identified by World Meteorological Organization (WMO)~\cite{WMO_guide}. They report the different cloud parameters such as cloud type, cloud base height, cloud coverage regularly. These observations are performed manually by cloud experts who have received extensive training in this field. Though accurate, such manual observations are highly expensive and cumbersome. Therefore, it is necessary to employ automatic cloud classification algorithms which are systematic and less expensive as compared to its human counterpart. 
+
+Automatic cloud type recognition is done primarily from satellite or ground-based sky cameras. Traditionally, satellite images were mostly used for such tasks. However, these images suffer from low temporal and spatial resolutions, and thus cannot be used in geographically small countries like Singapore. Cloud formation and the weather conditions are highly localized in such countries. Therefore, we use images from WSIs for automatic cloud classification task. 
+
+The WMO recommends a genera-based classification~\cite{WMO_guide}, which defines how to classify cloud patches into various categories based on their shape, structure, transparency, arrangement inside the cloud, texture, color, and height of their base. For example, cumulus clouds are puffy in shape and are regularly patterned; stratus clouds are mostly featureless, and are characterized by their transparent, whitish veil appearance; nimbostratus clouds are rain clouds, having thick dark appearance; and so on. Although clouds do not exhibit \emph{strong} image-based features, we can still exploit the color and texture of the cloud to extract discriminatory cues.
+
+In the literature, several features were developed for automatic cloud type recognition. Some of the earlier methods used co-occurrence and auto-correlation matrices~\cite{singh2005}, Fourier transformation in classifying pre-defined sky conditions~\cite{Calbo2008}. Heinle et al.~\cite{Heinle2010} extracts several statistical features from pre-defined sky conditions and uses k-nearest neighbor classifier during the classification step. In order to exploit the textural information of the clouds, classical texture descriptors such as Scale-Invariant Feature Transform (SIFT)~\cite{SIFT} and Local Binary Patterns (LBP)~\cite{cloud_LBP} have been also exploited. Considering simplicity and efficiency, LBP and its variants have been used extensively~\cite{Liu2013,Zhang2016}. However, they cannot be an ideal technique in cloud classification task because of the inherent varying illumination conditions and dependency on camera parameters. Liu et al.\ \cite{Liu2012} has proposed a descriptor called Illumination-invariant Completed Local Ternary Pattern (ICLTP) for cloud classification tasks. 
+
+Most of the existing approaches in the literature use a combination of color and texture features, which make sense, as different cloud types can be categorized mainly based on these discriminatory cues. However, there is no rigorous experimental analysis on the efficacy of these features for such multi-class classification framework. We provide a systematic evaluation of different cloud features in Chapter~\ref{chap:classification}, and propose a complete framework for cloud type recognition in Singapore.
+
+
+
+In most cases, collocated meteorological sensors are also present with sky cameras. Such scenario provides us ample opportunities to establish the connections between them. Weather sensors are point-devices that collects data for a particular point on the earth's surface. On the other hand, sky cameras equipped with wide-angled lenses provide us more information about the evolution of cloud. This motivates us to identify a few research problems and motivate us to develop techniques for a few intended applications---we will discuss such related works in the next Section~\ref{sec:lit-sensor} of this chapter.
+
+\section{Meteorological Sensors \& Cameras}
+\label{sec:lit-sensor}
+In addition to ground-based sky cameras, the other meteorological sensors measuring solar radiation, precipitation, wind speed are used in tandem to provide a holistic analysis of various phenomena in earth's atmosphere. Ground-based meteorological sensors are mainly point devices that measures and records the various weather parameters at a particular location on earth's surface. However, collocated sky cameras can provide us more information about the evolution of clouds over a period of time. Therefore, it helps us to use these sky camera images to estimate and/or predict some of the weather parameters. It greatly helps the remote sensing analysts for application areas such as solar energy generation and study of cloud attenuation. 
+
+Firstly, meteorological sensors and cameras were extensively used in the field of solar energy generation. These sensors provide useful information about clouds---it is necessary as clouds have a significant impact on solar energy generation. The clouds intermittently block the sun and significantly reduce the solar irradiance reaching solar panels. A short-term forecast of the solar irradiance is needed for the grid operators to mitigate the effects of a power generation ramp-down. The daily variations in temperature, pressure and humidity, coupled with clear-sky model of solar radiation were used in the literature to estimate the instantaneous solar radiation. Several attempts have been done to estimate the solar radiation from general meteorological measurements viz.\ temperature, humidity and precipitation~\cite{HSmodel,DCmodel,BCmodel,Huntmodel}. These existing models aim to provide global solar radiation using different sensors. Recently, with the development of low-cost photogrammetric techniques, sky cameras are being deployed for such purposes. Alonso-Montesinos and Batlles used sky cameras to quantify the total solar radiation~\cite{alonso2015}. However, it could not model the sharp short-term variations of solar radiation.
+
+
+
+Secondly, sky cameras can also be used to identify the onset of precipitation. In the literature, rainfall onset is studied mainly using long-term climate data. Rainfall measurements from weather stations are analyzed to detect hidden patterns, and subsequently used to predict the onset of precipitation~\cite{Farahmand2014}. Precipitation radar is also used to measure tropical rainfall with high accuracy~\cite{TRMM2002}. However, these studies are based on long-term rain forecasting. Recently, sky cameras have been used to estimate the clear sky intensity distribution~\cite{Nou2015}. To the best of our knowledge, no prior work have used sky cameras to detect rainfall onset. 
+
+And finally, sky cameras are regularly used to detect and predict future location of clouds. Cloud tracking is an essential task in the field of solar energy generation and forecasting. Traditionally, cloud tracking has been performed from satellite images for accurate weather prediction. Pioneer work of tracking involved detecting optical flow patterns in satellite images~\cite{trackingpioneer}. These flow patterns are useful to detect the evolution of several weather patterns. This can be seen in \cite{Sieglaff13}, where Sieglaff et al.\ fused data from satellites images, radar, and numerical models to understand the evolution of convective clouds. Very recently, estimation of cloud motion from sky cameras has been used in solar irradiance forecasting~\cite{Chow15,Chauvin2016}. This seamless cooperation of sensor data from various sources helps in creating robust frameworks and best practices for numerous applications. This is comparatively a new development in remote sensing, as most of the existing works are based on long-term climate statistics. We aim to complement such studies and establish new methodologies using sky cameras---more details are discussed later in Chapter~\ref{chap:solar} of this thesis. 
+
+Such application areas of solar energy forecasting also require a fair estimate of base height of cloud mass, along with predicting its future location. Most of the existing works use a pair of (or multiple) sky cameras for reconstructing cloud base. We discuss these existing works in the last Section~\ref{sec:lit-3D} of this chapter.
+
+\section{Stereo Reconstruction}
+\label{sec:lit-3D}
+Estimating the precise localization of clouds in the atmosphere is required for several applications. The energy production of solar panels greatly depends on solar irradiance. Due to its intermittency, operators need a precise short-term forecast of the cloud coverage above solar panels to take preventive actions before a ramp-down. Similarly, air-to-ground or air-to-air communications through the atmosphere suffer from attenuation due to rain, clouds, atmospheric particles, and water vapor~\cite{site_diversity}. Accurate information about cloud formations along the signal path is key to better understanding these phenomena. 
+
+Several works in the literature have tried to address this task. Allmen and Kegelmeyer~\cite{allmen} compute cloud base height from a pair of whole sky imagers using correlation of images rectified by a pseudo-cartesian transformation and optical flow fields along successive images. Seiz et al.\ \cite{seiz} match points extracted  with F\"orstner and Harris operators from two different cameras with fish-eye lenses. They use least-squares matching and introduce a hierarchical pyramid-based approach based. Kassianov et al.\ \cite{kassianov} compute the overlapping area between two images from a pair of ground-based imagers using a merit function. They derive the height of the clouds from the size of this overlapping area, which results in one value per image pair. Peng et al.\ \cite{peng} use three total sky imagers for 3D cloud detection and tracking. They assume clouds have only planar motion vectors and define an objective function to be maximized based on both motion tracking and height estimation.
+
+The concept of 3D scene flow is also widely used for such purposes. It was first introduced by Vedula et al.\ \cite{vedula1999three}. Popular methods for computing scene flow include Huguet and Devernay~\cite{Huguet07}, who couple optical flow and dense stereo matching via partial differential equations; Li and Sclaroff~\cite{Li200875}, who introduce probability distributions for optical flow and disparity; and Cech et al.\ \cite{cech}, who reduce the computational complexity using seed growing.
+
+Reconstructing the base height of a cloud mass using stereo cameras is a challenging task. Conventional stereo reconstruction algorithms do not work well in these cases, as clouds are generally non-rigid and do not exhibit strong features. In our study, we propose a framework based on 3D scene flow technique to estimate cloud base height. In Chapter~\ref{chap:localize} of this thesis, we also analyze the localization performance in a multi-camera setup with finite pixel-width dimension.
+
+\section{Summary}
+In this chapter, we have presented an overview of the existing works of cloud imaging for various remote sensing applications. The detection of clouds in the sky/cloud images is one of the fundamental tasks in this field. Furthermore, for the purpose of weather monitoring and other applications, it is also necessary to classify the clouds into various types. Other tasks such as correlating images with weather sensors and reconstructing cloud-base height are necessary to understand the different phenomenon of the earth's atmosphere. In this chapter, we have identified the short-comings in the existing methods for these specific tasks. In the following chapters of this thesis, we will explore the contributions of our work in extensive details. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,431 @@
+\chapter{Color Space Analysis for Cloud Detection}
+\label{chap:colorchannels}
+
+\lhead{Chapter 4. \emph{Color Space Analysis for Cloud Detection}}
+
+\section{Introduction}
+
+The most fundamental problem in cloud imaging is the successful detection of clouds in the captured sky/cloud images. The detection of clouds from sky images is challenging as clouds do not possess any definite structure, contour, shape, or size. As a result, color has been used as the predominant feature for sky/cloud segmentation. Numerous techniques based on different color models and spectral wavelengths have been proposed in the literature to solve this problem. However, the selection of color models and channels in the existing algorithms seem ad-hoc in manner, without systematic analysis or comparison.  This chapter aims to address this issue by providing a structured review and evaluation of color models for the segmentation of sky/cloud images.  For this purpose, we make use of several tools and techniques. Our comprehensive analysis is able to clearly identify the most suitable color models and components for the analysis of cloud/sky images. The analysis in this chapter is limited to Low-Dynamic-Range (LDR) images only.
+
+\section{Outline of Our Contribution}
+
+The main novel contributions of this chapter include: 
+
+\begin{itemize}
+\item Structured and systematic analysis of various color channels in sky/cloud images using various statistical tools such as color distribution characteristics, principal component analysis (PCA), rough-set based feature selection and clustering methods;
+\item Proposal of a rough-set based method that can accurately assess the efficiency of different color channels for cloud segmentation. To the best of our knowledge, our proposed approach is the first that uses rough set theory for color channel selection in visible-light images. 
+\end{itemize}
+
+
+The rest of this chapter is organized as follows. Section~\ref{sec:colorchannels} describes the different color spaces and components that are used for detection of clouds in ground-based sky/cloud images. We introduce the different statistical tools in Section~\ref{sec:approachtools} that are exploited to identify the most discriminatory color channels. In Section~\ref{sec:rset-approach}, we propose a rough-set based color channel selection method. Experimental results are discussed and analyzed in Section~\ref{sec:chap4-exp}. Finally, Section~\ref{sec:chap4-conclude} concludes this chapter. 
+
+
+\section{Color Models for Sky/Cloud Images}
+\label{sec:colorchannels}
+
+In the literature, several techniques based on different color models have been proposed for sky/cloud segmentation. Long et al.\  \cite{Long} use the ratio of red and blue channels ($R/B$) to detect clouds using appropriate threshold values. Calb{\'{o}} and Sabburg~\cite{Calbo2008} use the same ($R/B$) ratio to derive statistical features (mean, standard deviation, entropy etc.) of the clouds and subsequently classify the sky/cloud images into different cloud types. Heinle et al.\ \cite{Heinle2010} utilize a k-nearest-neighbor classifier using the difference of red and blue channels ($R-B$) to classify cloud types. Souza-Echer et al.\ \cite{Souza} choose saturation for the estimation of cloud coverage. Mantelli-Neto et al.\ \cite{Sylvio} classify clouds by exploiting the locus of pixels in the RGB color model. Most recently, Li et al.\ use a normalized difference of blue and red channels ($\frac{B-R}{B+R}$~\cite{Li2011} for cloud detection.
+
+The choices of color models employed in existing literature are based on empirical observations about the color distributions of cloud and sky pixels.  However, there exists no systematic analysis to determine the most suitable color channel(s) for this purpose. The purpose of this chapter is to present a unified approach in the analysis of sky/cloud images using different color channels and to identify the color channels with the best results~\footnote{The source code of our color channel analysis on sky/cloud images is available online at \url{https://github.com/Soumyabrata/color-channels}.}.
+
+We consider the following color spaces and components for analysis (see Table~\ref{ps}): $RGB$, $HSV$, $YIQ$, CIE $L^{*}a^{*}b^{*}$, three forms of red-blue combinations ($R/B$, $R-B$, $\frac{B-R}{B+R}$), and chroma $C=\mbox{max}(R,G,B)-\mbox{min}(R,G,B)$. In addition to the color channels $c_{1-9}$ and $c_{13-16}$ used in the existing literature, we also include $c_{10-12}$ and $c_{16}$, as separating chromatic and achromatic information may prove beneficial for sky/cloud image segmentation. All the color channels are normalized.
+
+\begin{table}[htbp]
+\normalsize
+\centering
+\setlength{\tabcolsep}{4pt} % default: 6pt
+\begin{tabular}{c|c||c|c||c|c||c|c||c|c||c|c}
+  \hline
+  $c_{1}$ & R & $c_{4}$ & H & $c_{7}$ & Y & $c_{10}$ & $L^{*}$ & $c_{13}$ & $R/B$ & $c_{16}$ & $C$\\
+  $c_{2}$ & G & $c_{5}$ & S & $c_{8}$ & I & $c_{11}$ & $a^{*}$ & $c_{14}$ & $R-B$& $ $ & $ $\\
+  $c_{3}$ & B & $c_{6}$ & V & $c_{9}$ & Q & $c_{12}$ & $b^{*}$ & $c_{15}$ & $\frac{B-R}{B+R}$ & $ $ & $ $\\
+  \hline
+\end{tabular}
+\caption{Color spaces and components used for analysis.}
+\label{ps}
+\end{table}
+
+Figure~\ref{fig:objective} illustrates the $16$ color channels of a sample sky/cloud image. 
+
+\begin{figure}[htbp]
+\centering
+\makebox[0.1\textwidth][c]{\hspace{-1mm}\tiny{Input Image}}
+\makebox[0.1\textwidth][c]{$c_1$}
+\makebox[0.1\textwidth][c]{$c_2$}
+\makebox[0.1\textwidth][c]{$c_3$}
+\makebox[0.1\textwidth][c]{$c_4$}
+\makebox[0.1\textwidth][c]{$c_5$}
+\makebox[0.1\textwidth][c]{$c_6$}
+\makebox[0.1\textwidth][c]{$c_7$}
+\makebox[0.1\textwidth][c]{$c_8$}\\    
+\vspace{0.5mm}
+\includegraphics[width=0.1\textwidth]{B1.pdf}
+\includegraphics[width=0.1\textwidth]{c1.pdf}
+\includegraphics[width=0.1\textwidth]{c2.pdf} 
+\includegraphics[width=0.1\textwidth]{c3.pdf}   
+\includegraphics[width=0.1\textwidth]{C4-inv.pdf}
+\includegraphics[width=0.1\textwidth]{C5-inv.pdf}
+\includegraphics[width=0.1\textwidth]{c6.pdf}
+\includegraphics[width=0.1\textwidth]{c7.pdf}
+\includegraphics[width=0.1\textwidth]{c8.pdf}\\
+\vspace{1mm}
+\includegraphics[width=0.1\textwidth]{B1_GT.pdf}
+\includegraphics[width=0.1\textwidth]{C9-inv.pdf}
+\includegraphics[width=0.1\textwidth]{c10.pdf}
+\includegraphics[width=0.1\textwidth]{c11.pdf} 
+\includegraphics[width=0.1\textwidth]{c12.pdf}
+\includegraphics[width=0.1\textwidth]{c13.pdf}
+\includegraphics[width=0.1\textwidth]{c14.pdf}
+\includegraphics[width=0.1\textwidth]{C15-inv.pdf}
+\includegraphics[width=0.1\textwidth]{C16-inv.pdf}\\
+\makebox[0.1\textwidth][c]{\hspace{-2mm}\tiny{Ground Truth}}
+\makebox[0.1\textwidth][c]{$c_9$}
+\makebox[0.1\textwidth][c]{$c_{10}$}
+\makebox[0.1\textwidth][c]{$c_{11}$}
+\makebox[0.1\textwidth][c]{$c_{12}$}
+\makebox[0.1\textwidth][c]{$c_{13}$}
+\makebox[0.1\textwidth][c]{$c_{14}$}
+\makebox[0.1\textwidth][c]{$c_{15}$}
+\makebox[0.1\textwidth][c]{$c_{16}$}
+\caption[Visual representation of $16$ color channels for a sample sky/cloud image.]{Sample image and segmentation mask from the HYTA database~\cite{Li2011}, together with the $16$ color channels from Table~\ref{ps} (the color maps for $c_4$, $c_5$, $c_9$, $c_{15}$, and $c_{16}$ are inverted such that cloud pixels always have a lighter shade than sky pixels).}
+\label{fig:objective}
+\end{figure}
+
+
+\section{Approach and Tools}
+\label{sec:approachtools}
+\subsection{Color Distribution}
+\label{sec:PBI}
+Since we are essentially trying to distinguish between two classes of pixels (sky and clouds), a color model with a bimodal distribution can facilitate this task.  Color components with a high degree of bimodality are not only good candidates for determining the number of clusters in a sample image, but can also be used to decide whether or not the sample image requires segmentation in the first place. Pearson's Bimodality Index (PBI) is a popular statistic to evaluate the bimodal behavior quantitatively~\cite{pearson}. It is defined as:
+
+\begin{equation}
+\label{eq:pbi_defn}
+\mbox{PBI}= b_2-b_1,
+\end{equation}
+where $b_{2}$ is the kurtosis and $b_{1}$ is the square of skewness.  A PBI value close to $1$ indicates a highly bimodal distribution.
+
+
+\subsection{Principal Component Analysis}
+\label{sec:PCA}
+We use the Principal Component Analysis (PCA) to (a) check the correlation and similarity between different color components, and (b) determine those color components that capture the greatest variance.  
+
+The PCA is computed as follows.  Let us assume a sample image $\textbf{X}_{i}$ of dimension $m \times n$ pixels from a set of $N$ images ($i=1,...,N$).  Each color channel of the sample image is reshaped into a straight vector $\textbf{c}_{j}$ of dimensions $mn \times 1$. These column vectors are stacked alongside each other to form a matrix $\hat{\textbf{X}_{i}}$ of dimensions $mn \times 16$:
+\begin{equation}
+\label{eq:eq1}
+\hat{\textbf{X}_{i}}=[\textbf{c}_{1}, \textbf{c}_{2},..,\textbf{c}_{j}..,\textbf{c}_{16}] ; j=1,...,16
+\end{equation}
+
+The ranges of these $16$ color channels are different and need to be normalized so that no color channel is under- or over-represented in the PCA analysis. Each of the $16$ color channels is normalized using its mean and standard deviation across all the images in the dataset, thereby generating the new image representation $\ddot{\textbf{X}_{i}}$ with zero mean and unit variance:
+
+\begin{equation}
+\label{eq:eq3}
+\ddot{\textbf{X}_{i}}= [\frac{\textbf{c}_{1}-\bar{c_{1}}}{\sigma_{c_{1}}}, \frac{\textbf{c}_{2}-\bar{c_{2}}}{\sigma_{c_{2}}},..,\frac{\textbf{c}_{j}-\bar{c_{j}}}{\sigma_{c_{j}}},..,\frac{\textbf{c}_{16}-\bar{c_{16}}}{\sigma_{c_{16}}}],
+\end{equation}
+
+where $\bar{c_{j}}$ and $\sigma_{c_{j}}$ are the mean value and standard deviation of the $j$-th color channel. 
+
+Subsequently the covariance matrix $\textbf{M}_{i}$ is computed for each of the $\ddot{\textbf{X}_{i}}$. Let the eigenvector $\textbf{e}_{ij}$ and eigenvalue $\lambda_{ij}$ ($j=1,...,16$) be obtained from the eigenvalue decomposition of the matrix $\textbf{M}_{i}$. For the $i^\textrm{th}$ image, the eigenvectors $\textbf{e}_{ij}$ corresponding to the largest eigenvalues $\lambda_{ij}$ encompass an orthonormal vector subspace. The eigenvectors and eigenvalues are calculated to project the multi-dimensional vector space into lower dimensions and to reveal the underlying relationship amongst them. 
+
+\subsection{Discrimination Threshold}
+\label{sec:bimodality}
+In addition to principal component analysis, we also use the Receiver Operating Characteristics (ROC) curve~\cite{ROC_main,microarray-ROC} to identify the important color components in sky/cloud image segmentation. The ROC curve represents the fraction of true positives and false positives samples in the sky/cloud binary classification problem for varying values of discrimination threshold. The area between this ROC curve and the random classifier slope is widely used as a measure for the discriminatory performance in a classification framework. 
+
+We consider the set of $16$ color components and compute the area under the ROC curve for each, which is subsequently used to identify the best color components for sky/cloud segmentation.
+
+\subsection{Clustering}
+\label{sec:cloudcluster}
+For clustering the sky/cloud images, we employ the fuzzy c-means algorithm~\cite{Bezdek,Jawahar} to assign probabilities of cloud detection to the set of pixels of the input image. The algorithm for the effective segmentation of clouds from the sky/cloud images employs the minimization of the following objective function:
+
+\begin{equation}
+\label{eq:eq4}
+J = \sum\limits_{n_c=1}^{2} \sum\limits_{l=1}^{mn} p(\mathbf{x}_{f})^{\tau}d(\mathbf{x}_{f},\mathbf{v}_{r}),
+\end{equation}
+
+where $\tau$ is called the fuzziness index which controls the degree of fuzziness during the clustering process, and $n_c$ is the number of clusters. In our experiments, we set $\tau=2$ and $n_c=2$ clusters (binary segmentation). The term $d(\mathbf{x}_{f},\mathbf{v}_{n_c})$ denotes the 2D Euclidean norm between the input feature vector $\mathbf{x}_{f}$ and the cluster centers $\mathbf{v}_{n_c}$. Both $\mathbf{v}_{1}$ and $\mathbf{v}_{2}$ are vectors of dimension $o$, where $o$ can take any positive integer number.
+
+\subsection{Kullback-Leibler Divergence}
+Information-theoretic measures like Kullback-Leibler (KL) distance or divergence are also widely used for band selection purposes, especially in hyperspectral imaging~\cite{InfoTheory_TGRS}. This distance can be interpreted as the amount of dissimilarity of the color channel from the ground truth. In other words, a higher distance indicates an unfavorable color channel for cloud segmentation. Therefore, we also compute the KL-divergence of the color channels from the binary ground truth images.
+
+In this section, we introduced the various statistical tools for a systematic analysis of color channels. However, these techniques had certain shortcomings with regards to ranking color channels according to their relevance for cloud detection. In the subsequent section, we will propose a \emph{rough-set} based approach that provides better results. 
+
+\section{Rough Set Based Color Channel Selection}
+\label{sec:rset-approach}
+Classical rough sets~\cite{Pawlak92} are an approximation of conventional sets in set theory. In a scenario where it is difficult to define the boundaries of a conventional set, rough set theory provides a set of mathematical tools to  define them in a approximate way. It facilitates an objective analysis in a data-driven system which is vague, uncertain and incomplete. Here we first explain the related terminologies of rough sets, and subsequently define the use of rough sets for visible-light images.
+
+\subsection{Rough Set Theory}
+In rough sets, information is expressed in the form of a \emph{decision table}. We define a decision table $\mathcal{L}$ such that each row represents an observation, and each column is an attribute from attribute set  $\mathcal{A}$. This non-empty set of observations is usually referred to as the \emph{universe} $\mathcal{U}$.
+Formally, for each entry in the decision table, we define the function $f$ that maps attribute $\mathcal{A}$ to value domain $\mathcal{V}$, $f: \mathcal{U} \times \mathcal{A} \rightarrow \mathcal{V}$.
+
+Any reduct $\mathcal{P}$ from the set of attributes $\mathcal{A}$ satisfies the indiscernibility (or  equivalence) relation IND($\mathcal{P}$). For any reduct $\mathcal{P} \in \mathcal{A}$, the $\mathcal{P}$-indiscernibility relation is defined as:
+
+\begin{align}
+\label{eq:p-ind}
+\mbox{IND}(\mathcal{P}) = \{(x_s,x_t) \in \mathcal{U}^2 | \forall a \in \mathcal{P}, f(x_s,a) = f(x_t,a)\},
+\end{align}
+
+where $x_s$ and $x_t$ are two observations from the universe $\mathcal{U}$, and $a$ is an element from set $\mathcal{P}$. This indicates that $x_s$ and $x_t$ are indiscernable based on the attribute $\mathcal{P}$, as the value function $f$ assigns both $x_s$ and $x_t$ to the same value. This partition of $\mathcal{U}$ generated by IND($\mathcal{P}$) is denoted as:
+
+\begin{align}
+\label{eq:p-part}
+\mathcal{U}/\mbox{IND}(\mathcal{P}) = \{[x_s]_{\mathcal{P}} | x_s \in \mathcal{U}\}.
+\end{align}
+
+Let $\mathcal{X}$ be a set of observations from the universe $\mathcal{U}$. Rough set theory asks the question: how can we express this conventional set $\mathcal{X}$, using only the information in attribute set $\mathcal{P}$? In general, there is no precise answer, and therefore approximations are generated. They are defined by their corresponding $\mathcal{P}$-\emph{lower}- and $\mathcal{P}$-\emph{upper}-approximations as:
+
+
+\begin{subequations}
+\label{eq:low-upp}
+\begin{equation}
+\underline{\mathcal{P}}(\mathcal{X}) = \cup \{[x_s] | [x_s] \subseteq \mathcal{X}\},
+\end{equation}    
+\begin{equation}
+\overline{\mathcal{P}}(\mathcal{X}) = \cup \{[x_s] | [x_s] \cap \mathcal{X} \neq \phi\}.
+\end{equation}
+\end{subequations}
+
+The observations in the lower approximation set $\underline{\mathcal{P}}(\mathcal{X})$ are the definite members of $\mathcal{X}$, also called the \emph{positive} region $\mbox{POS}(\mathcal{X})$. On the other hand, $\overline{\mathcal{P}}(\mathcal{X})$ represents the upper approximation of the set. It denotes the possible members of $\mathcal{X}$, based on the knowledge in the decision table. 
+We illustrate this in Fig.\ref{fig:rs-illus}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\hspace{0.8cm}
+\begin{scope}[xshift=1cm]
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.5\textwidth]{rd-fig.pdf}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        \draw[->,black,dashed](0.6,0.75) -- (1.1,0.75) node[anchor=west,black] {$\overline{\mathcal{P}}(\mathcal{X})$};
+        \draw[->,black,dashed](0.63,0.49) -- (1.1,0.49) node[anchor=west,black] {$\mathcal{X}$};
+        \draw[->,black,dashed](0.53,0.3) -- (1.1,0.3) node[anchor=west,black] {$\underline{\mathcal{P}}(\mathcal{X})$};
+    \end{scope}
+\end{scope}
+\end{tikzpicture}
+\caption[Pictoral illustration of different rough-set terminology.]{Illustration of a typical rough set, which approximates a conventional set (depicted in blue). Each individual grid depicts a partition of the universe generated by an equivalence relation. The union of all such partitions indicated with solid green borders (definite members) represents the \emph{lower approximation}; while the dotted red borders (possible members) represent the \emph{upper approximation}.}
+\label{fig:rs-illus}
+\end{figure}
+
+Let us assume that the attribute set $\mathcal{A}$ consists of both condition and decision attributes $\mathcal{C}$ and $\mathcal{D}$ respectively, such that $\mathcal{A} = \mathcal{C} \cup \mathcal{D}$. The \emph{relevance} criterion is defined as the dependence between $\mathcal{C}$ and $\mathcal{D}$, and can be expressed as:
+
+\begin{align}
+\label{eq:rel-defn}
+\gamma_\mathcal{C}(\mathcal{D}) = \frac{|\mbox{POS}_\mathcal{C}(\mathcal{D})|}{|\mathcal{U}|},
+\end{align}
+
+where |$\cdot$| denotes the cardinality of the set. This dependence value is an important measure to identify the most discriminate attribute from set $\mathcal{A}$. The value of $\gamma_\mathcal{C}(\mathcal{D})$ ranges between $0$ and $1$, where $0$ indicates independence and $1$ indicates $\mathcal{D}$ fully depends on $\mathcal{C}$.
+
+
+\subsection{Proposed Rough-Set Based Selection Method}
+We now describe the problem of color channel selection using rough set terminology and propose our algorithm for this purpose~\footnote{The source code of our proposed rough-set based algorithm is available online at \url{https://github.com/Soumyabrata/rough-sets}.}. The main benefit of using rough set theory is that it provides a systematic method to approximate the segmentation ground truth, with the highest degree of approximation. Moreover, no prior information about the data is needed for the analysis.
+
+We consider $16$ color channels in our analysis, as shown in Table~\ref{ps} and  illustrated in Fig.~\ref{fig:objective}.  We utilize rough set theory to identify the most \emph{informative} color channel(s) (a.k.a.\ reducts) from these $16$. 
+
+Suppose that $\mathcal{U}_i$ is a non-empty finite universe of pixel observations for a single sky/cloud image $\mathbf{X}_i$ from the image dataset $\mathcal{T}=\{\mathbf{X}_1,\mathbf{X}_2, \ldots, \mathbf{X}_N\}$. We assume that $\mathbf{Y}_{i}$ is the binary ground-truth image of the sample image $\mathbf{X}_{i}$. 
+We define $\mathcal{A}_i$ as the set of its corresponding vectorized color channels \{$\mathbf{c}_1$, $\mathbf{c}_2$, \ldots, $\mathbf{c}_{16}$\} for a particular image $\mathbf{X}_i$, along with the vectorized decision attribute $\mathbf{y}_i$. These $16$ color channels are called condition attribute sets, and one ground truth vectorized image is the decision attribute set from the family of attributes $\mathcal{A}_i$. 
+
+We define a decision table $\mathcal{L}_i$ such that each row represents a pixel, and each column represents an attribute. 
+Thus, for a single image $\mathbf{X}_i$, the function $f$ assigns a value $v_i^{kj}$ in the value domain to each variable-attribute pair ($q_k$,$a_j$), where $q_k$ is the $k$-th pixel value of the image and $a_z$ is the $z$-th attribute from the set $\mathcal{A}_i$. For the sake of brevity, we will drop the index $i$ in the subsequent discussions of this chapter.
+
+Our objective is to characterize the ground-truth image $\mathbf{y}$ from the knowledge of the reduct $\mathcal{P}$. We define the reduct $\mathcal{P}$ as the subset of condition attribute sets $\mathcal{C}$.
+
+We are interested in identifying the most discriminative color channel that is strongly dependent on the sky/cloud decision attribute $\mathbf{y}$. This dependence on a particular color channel is measured by the corresponding \emph{relevance} criterion of the color channels. Color channels with a high relevance value are better candidates for sky/cloud segmentation.
+
+In analogy to Eq.~(\ref{eq:rel-defn}), we define the relevance criterion $\gamma_j$ for each color channel $\mathbf{c}_j$, which indicates the dependence between ground truth $\mathbf{y}$ and color channels:
+
+\begin{align}
+\label{eq:rel}
+\gamma_j = \frac{|\mbox{POS}(\mathbf{y})|}{|\mathcal{U}|}.
+\end{align}
+
+For image $\mathbf{X}_i \in {\rm I\!R}^{m \times n}$, we generate the decision table $\mathcal{L}_i \in {\rm I\!R}^{mn \times 17}$. Each row of the decision table $\mathcal{L}_i$ corresponds to a pixel. The first $16$ columns represent the color channels, and the $17^\mathrm{th}$ column corresponds to the ground truth label. We generate $16$ distinct partitions from this decision table using the knowledge of the ground truth labels. Subsequently, the corresponding lower approximations of $16$ color channels are generated using Eq.~(\ref{eq:low-upp}). In fact, this lower-approximation set is the union of all partitions (generated by the equivalence relation) that are possible members of the \emph{cloud} label. Next, we compute the relevance value $\gamma_j$ of all color channels for the image $\mathbf{X}_i$ using Eq.~(\ref{eq:rel}). 
+
+We perform this for all images of dataset $\mathcal{T}$. Finally, we compute the average relevance $\overline{\gamma}_j$ of each color channel across all the images. The color channel with the maximum average relevance value $\overline{\gamma}_j$ is the best amongst all color channels under consideration.
+
+\section{Experiments}
+\label{sec:chap4-exp}
+\subsection{Dataset}
+\label{sec:introduceHYTA}
+In order to analyze the various statistical approaches and check the efficacy of our proposed color channel selection algorithm, we conduct experiments on a publicly available sky/cloud image database called HYTA~\cite{Li2011}. 
+
+It consists of $32$ distinct images with different sky/cloud conditions along with their binary ground-truth segmentation masks. These images are collected from two main sources, namely ground-based sky cameras located at Beijing and Conghua, China. These sky cameras were developed by the Institute of Atmospheric Sounding at the Chinese Academy of Meteorological Sciences. The obtained images are stored in \emph{JPEG} format. No radiometric calibration data are available for this dataset. Additionally, several images found on the Internet from other cameras and locations are included. The ground truth segmentation masks of each of the images are generated using a Voronoi polygonal region generator. The images in HYTA\footnote{In this thesis, the dataset name and its associated algorithm are referred as HYTA interchangeably.} are of various dimensions; the average is $682 \times 512$ pixels. A few sample images of HYTA along with their ground truth are shown in Fig.\ \ref{fig:sample_HYTA}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=1in]{B1.pdf}\hspace{0.5mm}
+\includegraphics[height=1in]{B8.pdf}\hspace{0.5mm}
+\includegraphics[height=1in]{C5.pdf}\hspace{0.5mm}
+\includegraphics[height=1in]{U2.pdf}\\\vspace{1mm}
+\includegraphics[height=1in]{B1_GT.pdf}\hspace{0.5mm}
+\includegraphics[height=1in]{B8_GT.pdf}\hspace{0.5mm}
+\includegraphics[height=1in]{C5_GT.pdf}\hspace{0.5mm}
+\includegraphics[height=1in]{U2_GT.pdf}
+\caption[Sample images from the HYTA database along with corresponding sky/cloud segmentation ground truths.]{Sample images from the HYTA database (top row) along with corresponding sky/cloud segmentation ground truth (bottom row).}
+\label{fig:sample_HYTA}
+\end{figure}
+
+
+
+\subsection{Distribution Bimodality}
+The segmentation of input image into two classes (sky and clouds) becomes easier for those color channels which exhibit higher bimodality. The bimodal behavior of a color channel for the concatenated distribution is measured using PBI as described in Section~\ref{sec:PBI}.  The results are summarized in Table~\ref{PBI16}. Out of the 16 color channels, $c_{5}$ (S), $c_{1}$ (R), and $c_{13}$ ($R/B$) have the lowest PBI and thus exhibit the most bimodal distributions, indicating that the segmentation of images into two distinct classes should work well in these color channels.
+
+\begin{table}[H]
+\normalsize
+\centering
+\setlength{\tabcolsep}{3pt} % default: 6pt
+\begin{tabular}{c|c||c|c||c|c||c|c||c|c||c|c}
+  \hline
+  $c_{1}$ & \textbf{2.24} & $c_{4}$ & 3.11 & $c_{7}$ & 2.71 & $c_{10}$ & 2.86 & $c_{13}$ & \textbf{2.27} & $c_{16}$ & 4.27\\
+  $c_{2}$ & 2.83 & $c_{5}$ & \textbf{1.94} & $c_{8}$ & 3.98 & $c_{11}$ & 8.85 & $c_{14}$ & 4.43 & $ $ & $ $\\
+  $c_{3}$ & 3.25 & $c_{6}$ & 3.26 & $c_{9}$ & 5.96 & $c_{12}$ & 4.59 & $c_{15}$ & 2.92 & $ $ & $ $\\
+  \hline
+\end{tabular}
+\caption[PBI values for all color channels.]{PBI values for all color channels. The most bimodal channels are highlighted in bold.}
+\label{PBI16}
+\end{table}
+
+
+\subsection{Principal Component Analysis}
+The distribution of the amount of variance captured by the principal components is shown in Fig.~\ref{fig:pca16_stefan}. The combination of first and second principal components capture a large majority ($95.4$\%) of variance in the input data across the individual images, and over $90$\% for the entire database.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.75\columnwidth]{pca_stefan_conc.pdf}
+\caption[Distribution of the variance across the principal components for all images of the HYTA database.]{Distribution of the variance across the principal components for all images of the HYTA database. The separate bar on the right shows the variance distribution for the concatenation of all images of the entire database.
+\label{fig:pca16_stefan}}
+\end{figure}
+
+Table~\ref{table:PCA-table} shows the variance captured by each principal component for the concatenated distributions. We observe that the first two principal components capture a large part of the variance across all the images, namely $85.6\%$ of the total variance. 
+
+\begin{table}[htb]
+\normalsize
+\centering
+\setlength{\tabcolsep}{3pt} 
+\begin{tabular}{c||c|c|c|c|c|c}
+  \hline
+  \textbf{Database} & $\mathbf{1^{st}}$ & $\mathbf{2^{nd}}$ & $\mathbf{3^{rd}}$ & $\mathbf{4^{th}}$ & $\mathbf{5^{th}}$ & $\mathbf{6^{th}}$ \\
+  \hline
+  HYTA & $60.8\%$ & $24.8\%$ & $7.86\%$ & $5.11\%$ & $0.84\%$ & $0.36\%$ \\
+  \hline
+\end{tabular}
+\caption{Percentage of variance captured across different principal components for HYTA database.}
+\label{table:PCA-table}
+\end{table}
+
+
+In order to find the most significant vector for the detection of clouds, the contributing effect of the individual variables on the primary principal component axis is analyzed. Every  color channel has different loading factors on the most important principal component axis, and consequently each of them has a different contribution to the common variance captured in the corresponding data matrix $\ddot{\textbf{X}_{i}}$. These individual loading factors are essentially the projections of the input vectors (color channels) on the principal components. The significant color channels in terms of relative contribution to the first principal component axis are $c_{13}$ ($R/B$), $c_{15}$ ($\frac{B-R}{B+R}$, and $c_{5}$ ($S$).
+
+Extending our analysis to finding the most significant pair of color channels, we need to understand a pair's cumulative contribution to the common variance. The sum of the squares of the corresponding loading factors for different color channels in the concatenated distribution represents the cumulative common variance captured by the pair. The pairs that have the highest cumulative loading on the first principal component are $c_{13}$-$c_{15}$, $c_{5}$-$c_{13}$, and $c_{5}$-$c_{15}$.
+
+Another aspect to consider is the orthogonality between the individual color channels. For this purpose, we compute the triangular area enclosed by two given input vectors (color channels) projected on the plane spanned by the first and second principal components. There are ${{16}\choose{2}}=120$ combinations of two color channels. The triangular area for all unique cases is shown in Fig.~\ref{fig:area_grid_v7}, where the brightness of each square represents the area captured by the corresponding pair.  As expected, certain color channel pairs (the dark patches) are highly correlated, for example the green channel ($c_2$) with most luma channels ($c_7$, $c_{10}$), the various $R$-$B$ combinations ($c_{13-15}$) with one another, and so on.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{area_combo2}
+\caption[Distribution of triangular area enclosed by two given color channels projected on the plane spanned by the first and second principal components.]{Distribution of area \emph{AOB} for all input vector pairs, where \emph{OA} and \emph{OB} are two color channels. The brightness of each square represents the area captured by the corresponding pair.}
+\label{fig:area_grid_v7}
+\end{figure}
+
+
+\subsection{Rough-set Based Relevance Scores}
+
+In our proposed rough set based method, we measure the dependency of each color channel and report its corresponding average relevance value $\overline{\gamma}$ across all images of HYTA. Table~\ref{tab:rel-val} summarizes the results. We observe that certain color channels viz.\ $c_{15}$ ($\frac{B-R}{B+R}$), $c_{13}$ ($\frac{R}{B}$), $c_5$ ($S$) have higher relevance scores as compared to others, making these color channels  favorable candidates for sky/cloud image segmentation.
+On the other hand, color channels $c_{11}$ ($a^{*}$) and $c_4$ ($H$) have low relevance scores, indicating that these color channels contribute less to the decision attribute for (non-) cloud pixels. Therefore, the latter color channels are not conducive for sky/cloud segmentation. 
+
+\begin{table}[htbp]
+\normalsize
+\centering
+\begin{tabular}{ r | c || c | c || c | c || c | c|| c | c ||c | l }
+\hline
+$c_{1}$ & 0.70 & $c_{4}$ & 0.46 & $c_{7}$ & 0.72 & $c_{10}$ & 0.66 & $c_{13}$ & \textbf{0.84} & $c_{16}$ & 0.66\\
+$c_{2}$ & 0.66 & $c_{5}$ & \textbf{0.82} & $c_{8}$ & 0.78 & $c_{11}$ & 0.33 & $c_{14}$ & 0.69 & $ $ & $ $\\
+$c_{3}$ & 0.58 & $c_{6}$ & 0.58 & $c_{9}$ & 0.69 & $c_{12}$ & 0.61 & $c_{15}$ & \textbf{0.84} & $ $ & $ $\\
+\hline
+\end{tabular}
+\caption[Average relevance value across all images of the HYTA database.]{Average relevance value across all images of the HYTA database. The most relevant color channels are highlighted in bold.}
+\label{tab:rel-val}
+\end{table}
+
+\subsection{Cloud Classification Performance}
+In this section, we evaluate the discriminative power of each of the $16$ color channels with respect to the cloud classification task. The performance results of the $16$ color channels will help us to benchmark our proposed rough-set based method and other statistical benchmarking measures.
+
+We follow a supervised learning approach and train a Support Vector Machine (SVM) to validate our findings. We use each of the $16$ color channels separately as candidate feature vectors and train $16$ different SVMs. The trained SVMs are then used for sky/cloud pixel classification in order to check the efficacy of respective color channels in the classification task. We randomly  segregate the HYTA dataset into $15$ training images and $17$ test images. 
+
+For an objective evaluation of our algorithm, we report the F-score and Accuracy. Suppose $TP$, $FP$, $TN$, and $FN$ denote the True Positives, False Positives, True Negatives, and False Negatives, respectively, in this binary classification task. Accuracy is defined as the ratio of pixels that are correctly classified, $(TP + TN)/(TP + TN + FP + FN)$. The F-score, a popular metric in a binary classification problems, is defined as the harmonic mean of Precision $= TP/(TP + FP)$ and Recall $= TP/(TP + FN)$.
+
+Figure~\ref{fig:boxplots} shows the binary classification results for each of the $16$ color channels, computed over $50$ different random selections of training and test sets. 
+
+\begin{figure}[htbp]
+\centering
+\subfloat[Accuracy]{\includegraphics[height=0.36\textwidth]{accuracy_HYTA.pdf}}
+\hspace{0.1in}
+\subfloat[F-score]{\includegraphics[height=0.36\textwidth]{fs_HYTA.pdf}}
+\caption[Average accuracy and F-score values for $16$ color channels across all image of HYTA database.]{(a) Accuracy and (b) F-scores for $16$ color channels for all images in the HYTA database. For each box, the central red line indicates the median, the top and bottom edges correspond to $25^\textrm{th}$ and $75^\textrm{th}$ percentiles, and the whiskers represent the extreme data points.}
+\label{fig:boxplots}
+\end{figure}
+
+We observe from Fig.~\ref{fig:boxplots} that color channels $c_{15}$ ($\frac{B-R}{B+R}$) and $c_5$ ($S$) have relatively higher accuracy and smaller variation as compared to the other color channels. Conversely, color channels $c_{11}$ ($a^*$) and $c_4$ ($H$) score poorly in terms of accuracy. Therefore, each color channel has different discriminative power to classify sky and cloud pixels from ground-based images. This ranking of color channels in terms of their classification performance serves as the ground-truth to verify the efficacy of different color channel selection algorithms. 
+
+\subsection{Benchmarking}
+In this section, we will benchmark our proposed rough-set based method and other color channel selection methods with the accuracy measures of the color channels. 
+
+We check the correlation of the average accuracy scores for all the color channels with the normalized scores obtained from different approaches. Table~\ref{tab:RS_corr_results} shows the correlation coefficients of these approaches with the average classification accuracy of the color channels. Our proposed method using rough sets achieves the highest correlation.
+
+\begin{table}[htbp]
+\normalsize
+\centering
+\begin{tabular}{lc}
+\hline
+\textbf{Methods} & \textbf{Correlation} ($r$) \\
+\hline 
+Proposed approach & $0.84$ ($\uparrow$)\\
+Bimodality & $-0.58$ ($\downarrow$)\\
+Loading factors & $0.57$ ($\uparrow$)\\
+ROC curve & $0.78$ ($\uparrow$) \\
+Kullback-Leibler divergence & $0.12$ ($\downarrow$) \\
+\hline
+\end{tabular}
+\caption[Correlation of cloud classification accuracy with ranking scores obtained using different methods.]{Correlation of cloud classification accuracy with ranking scores obtained using different methods. The \mbox{$\uparrow$ (or $\downarrow$)} indicates if \mbox{higher (or lower)} magnitude signifies better performance.}
+\label{tab:RS_corr_results}
+\end{table}
+
+Figure~\ref{fig:corr} shows the respective scatter plots. The correlation coefficient is highest ($r=0.84$) for our proposed algorithm. From Fig.~\ref{fig:corr}(a), we can clearly see that color channels $c_5$ ($S$) and $c_{15}$ ($\frac{B-R}{B+R}$) are better candidates for sky/cloud classification. Similarly, color channels $c_{11}$  and $c_4$ with lower relevance scores are poor candidates. Figure~\ref{fig:corr}(b) also reveals that $c_5$ and $c_{15}$ are conducive color channels as their PBI values are closer to $1$. Similar results can be drawn from Fig.~\ref{fig:corr}(c), where favorable color channels $c_5$ and $c_{15}$ have comparatively lower KL-divergence values, and color channel $c_4$ has the highest KL-distance. However, the order of ranking for the other color channels is poor, leading to a low correlation value ($r=0.12$). 
+
+\begin{figure}[htbp]
+\centering
+\subfloat[Relevance]{\includegraphics[height=4.2cm]{FigA.pdf}}
+\subfloat[Bimodality]{\includegraphics[height=4.2cm]{FigB.pdf}}
+\subfloat[Kullback-Leibler distance]{\includegraphics[height=4.2cm]{FigC.pdf}}
+\caption[Scatter plot between average accuracy and different benchmarking measures, while ranking the different color channels.]{Scatter plot between average accuracy and (a) relevance ($r=0.84$), (b) bimodality ($r=-0.57$), and (c) Kullback-Leibler distance ($r=0.12$) for all $16$ color channels (cf.\ Table~\ref{tab:corr_results}). Our proposed approach using relevance scores  achieves the highest correlation when ranking the color channels with respect to their segmentation performance.} 
+\label{fig:corr}
+\end{figure}
+
+From these results, we observe that the relevance criterion has the highest correlation with the cloud segmentation accuracy among all methods. Therefore we conclude that our proposed rough set based color channel selection algorithm is useful to rank  color channels and identify suitable ones for image segmentation. We also note that certain color channels viz.\ $c_5$ and $c_{15}$ always perform best in all three benchmarking methods. Conversely, color channels $c_4$ and $c_{11}$ rank lower than others. Visual inspection of these color channels confirms these findings (cf.\ Fig.~\ref{fig:objective}). 
+
+\section{Discussion}
+We discussed the performance of the different statistical tools and our proposed rough-set based selection method; and identified the most appropriate color channels for cloud detection. However, we used a \emph{single} color channel in our analysis - and identified the color channels that are conducive for detection. In this section, we explore the possibilities of using multiple channels for this purpose.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.75\textwidth]{fscore_grid_CR2.pdf}
+\caption[F-score values of $16$ color channels for 1D and 2D clustering cases.]{F-Scores for all unique cases of 1D (along the diagonal) and 2D clustering, represented on a brightness scale.  The highest F-Scores for 1D (dotted frames) and 2D cases (bold frames) are indicated numerically.
+\label{fig:2d_result}}
+\end{figure}
+
+As described in Section~\ref{sec:cloudcluster}, we perform fuzzy c-means clustering using the varied existing color channels. There are $16$ color channels for $1$D clustering.  In a similar manner, there are ${{16}\choose{2}}$ unique color channel combinations for $2$D-clustering. Their performance is illustrated in Fig.~\ref{fig:2d_result} in an upper-triangular grid, where the intensity of a particular grid denotes the F-score of that particular color channel pair. Similarly, the diagonal elements represent the F-scores of the corresponding $1$D color channels. Since the ground truth provided by the HYTA database are binary images consisting of two classes, namely sky and cloud, we convert the probabilistic distribution of cloud pixels $p(\textbf{x}_{f})$ (cf.\ Section~\ref{sec:cloudcluster}) to a binary image by thresholding, i.e.\ a pixel having a probability of cloud $>50\%$ is assigned to a cloud pixel and others to sky pixels.
+
+
+The most promising color channels for $1$D-clustering are $c_{13}$ ($R/B$), $c_{15}$ ($\frac{B-R}{B+R}$), and $c_{5}$ ($S$) with high precision, recall, and F-scores.  For $2$D, the best combinations include $c_5$-$c_8$, $c_8$-$c_{13}$, and $c_8$-$c_{15}$ ($c_8$ is the in-phase component of the \emph{YIQ} color model and it represents essentially another variety of red-blue difference), with several other close contenders. However, there is hardly any performance gain from using two color components rather than just one. Therefore, for the task of cloud detection, a single color channel (if chosen carefully) can have optimal performance, in comparison to computationally-expensive multiple color channels. 
+
+\section{Conclusions}
+\label{sec:chap4-conclude}
+In this chapter, we have presented a systematic analysis of color spaces and components for detection of clouds in sky/cloud images. We analyzed using a variety of statistical tools and methods: distribution bimodality, PCA, clustering and KL divergence.  Experimental evaluation with a cloud segmentation database yields consistent results across analysis methods. Additionally, we proposed a rough-set based method that provides the best correlation results with the performance measures of the color channels. Also, we observed that clustering results obtained using the best $1$D color channels or $2$D color channel pairs (including red-blue combinations $R/B$ and $\frac{B-R}{B+R}$, saturation $S$, or in-phase component $I$) are on par with each other. Future works involve the use of these identified color channels for several tasks. 
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,212 @@
+\chapter*{\centering Notations}
+
+\lhead{Notations}
+
+\begin{longtable}[l]{p{80pt}p{320pt}}
+
+% Greek symbols
+$\alpha$ & Stem angle of sun-blocker based WAHRSIS measured from the east direction. \\
+$\tilde{\alpha}$ & Membership constant used in assigning seeds of HDR radiance map. \\
+$\beta$ & Angle of incidence of light in a fish-eye lens system. \\
+$\gamma(.)$ & Relevance criterion of an attribute set in rough-set terminology.\\
+$\bar{\gamma}(.)$ & Average relevance value of an attribute set across all images of the dataset.\\
+$(\delta_1^{\hat{i}},\delta_2^{\hat{i}},\ldots,\delta_{\hat{n}}^{\hat{i}})$ & Offset angles (w.r.t. view angle $\Theta^{\hat{i}}$) contained by $\hat{n}$-pixels to the camera center for the $\hat{i}$-th camera.\\
+$\Delta t_m$ & Time shift.\\
+$\Delta x$, $\Delta y$ & Spatial shift in x- and y- coordinates in an image plane.\\
+$\Delta \hat{x_c}$ and $\Delta \hat{y_c}$ & Translation of camera along X- and Y- axes of a multi-camera setup.\\
+$\sigma_{\Delta \hat{x_c}}^2$ and $\sigma_{\Delta \hat{y_c}}^2$ & Variance of translation of camera along X- and Y- axes of a multi-camera setup.\\
+$\epsilon_1, \epsilon_2,\ldots$ & Coefficients in a higher-order polynomial fitting function. \\
+$\eta$ & Learning rate for gradient ascent algorithm. \\
+$\Gamma$ & Day angle (measured in radians).\\
+$\lambda$ & Eigen value. \\
+$\Lambda$ & Wavelength of light. \\
+$\mu$ & Weighting parameter in the graph-cut framework. \\
+$\boldsymbol{\mu}$ & Mean vector of the multivariate gaussian distribution of noisy camera poses in multi-camera setup. \\
+$\omega_1$ & Angle of rotation around the $z$ axis to align two imagers.\\
+$\omega_2$ & Angle of rotation around the $y$ axis to align two imagers.\\
+$\Phi(\mathbf{p}')$ & Re-projection function. \\
+$\psi$ & Solar zenith angle (measured in degrees). \\
+$\Psi$ & Multivariate gaussian distribution involving the camera poses to model the noisy camera poses in the multi-camera setup. \\
+$\sigma_{c_{j}}$ & Standard deviation of $j$-th color channel. \\
+$\hat{\sigma}$ & Scale of the filter in the filter set. \\
+$\sigma_\Theta^2$ & Variance of view angle in the multi-camera setup.\\
+$\sigma_{\Delta \hat{x_c}}$ & Variance of camera position in the X-direction in the multi-camera setup.\\
+$\sigma_{\Delta \hat{y_c}}$ & Variance of camera position in the Y-direction in the multi-camera setup.\\
+$\mathbf{\Sigma}$ & Covariance matrix of the multivariate gaussian distribution of noisy camera poses in multi-camera setup. \\
+$\tau$ & Fuzziness index in clustering process. \\
+$\hat{\tau}$ & Number of cycles inside the gaussian envelope of the filter set. \\
+$\theta$ & Angle made by the \emph{intruder} $\mathbf{p}$ with the global x-axis in the multi-camera setup.\\
+$(\theta_1^{\hat{i}},\theta_2^{\hat{i}},\ldots,\theta_{\hat{n}}^{\hat{i}})$ & Angles contained by $\hat{n}$-pixels to the camera center for the $\hat{i}$-th camera.\\ 
+$\tilde{\theta}$ & Arm angle of sun-blocker based WAHRSIS measured from the horizon.\\
+$\Theta^{\hat{i}}$ & View angle of $\hat{i}$-th camera w.r.t. global X-axis.\\ 
+$\bar{\Theta}$ & Mean value of view angle of the camera in the multi-camera setup.\\
+$\varepsilon$ & Elevation angle of the ray from sun to WAHRSIS camera.\\
+$\xi$ & Azimuth angle of the ray from sun to WAHRSIS camera.\\
+
+
+
+
+
+
+
+
+
+
+
+
+% Smaller case letters
+$a$ & Element from set $\mathcal{P}$.\\
+$\hat{a}(\cdot)$ & Geometrical lower bound in multivariate distribution for the multi-camera setup.\\
+$a_z$ & Represents the $z$-th attribute from the set $\mathcal{A}$.\\
+$a_1, a_2,\ldots$ & Individual weather station data points. \\
+$\hat{b}(\cdot)$ & Geometrical upper bound in multivariate distribution for the multi-camera setup.\\
+$b_{1}$ & Measure of square of skewness.\\
+$b_{2}$ & Measure of kurtosis. \\
+$\mathbf{c}$ & Weight vectors of $\mathbf{Y}$. \\
+$c_1, c_2,\ldots,c_{16}$ & Set of $16$ color channels for analysis of ground-based images.\\
+$\textbf{c}_{1}, \textbf{c}_{2}, \ldots, \textbf{c}_{16}$ & Vectorised set of the $16$ color channels $c_1, c_2,\ldots,c_{16}$ with dimensions $mn \times 1$.\\
+$\bar{c_{j}}$ & Mean value of $j$-th color channel. \\
+$d_n$ & Day number of the year. \\
+$\mathbf{e}$ & Eigen vector. \\
+$e_t$ & Exposure time of the camera measured in seconds. \\
+$f(\cdot)$ & Mapping function. \\
+$\bar{f}$ & Focal length of the lens in the imaging system.\\
+$f_s$ & Aperture number of the lens in the imaging system.\\
+$h_{\hat{j}}^{\mbox{class}}$ & Histogram of textons for a cloud category of training images. \\
+$h_{\hat{j}}^{\mbox{test}}$ & Histogram of textons for a cloud category of testing images. \\
+$i$ & Index of the set of images. \\
+$\hat{i}$ & Index of the set of cameras in a multi-camera setup. \\
+$j$ & Index of the set of color channels. \\
+$\hat{j}$ & Index of the set of cloud categories. \\
+$k$ & Number of color channels in a subset of color channels. \\
+$l$ & Index of the vectorised form of an image.\\
+$l_1, l_2,\ldots$ & Individual luminance data points for corresponding weather station points. \\
+$m$ & Row size of a sample image. \\
+$n$ & Column size of a sample image. \\
+$\tilde{n}$ & Number of cameras in the multi-camera setup.\\
+$\hat{n}$ & Total number of pixels in the finite-dimensional camera.\\
+$n_c$ & Number of clusters used in fuzzy clustering process. \\
+$n_f$ & Number of filters in the filter bank.\\
+$n_t$ & Number of textons generated from k-means clustering.\\
+$o$ & Dimension of cluster center vectors $\mathbf{v}_{1}$ and $\mathbf{v}_{2}$. \\
+$p$ & Joint multivariate normal cumulative probability values for all the $\hat{i}$ cameras. \\
+$p^1, p^2,\ldots$ & Individual multivariate normal cumulative probability values for all the $\hat{i}$ cameras. \\
+$\mathbf{p}$ & Reconstruction point in multi-camera setup (also referred as \emph{intruder} in the art-gallery problem). \\
+$\mathbf{p}^{*}$ & Optimal reconstruction point. \\
+$\bar{p}$ & Total number of cloud categories. \\
+$\tilde{p}$ & Sample pixel in the image $\mathbf{Z}_i$. \\
+$\tilde{q}$ & Neighboring pixel of $\tilde{p}$ in the image $\mathbf{Z}_i$. \\
+$\mathbf{q}$ & Center of the \emph{active pixel} in the multi-camera setup. \\
+$\bar{q}$ & Total number of images in each cloud category. \\
+$q_k$ & Represents the $k$-th pixel value of the image. \\
+$r$ & Radius on the image plane in a fish-eye lens system. \\
+$\hat{r}$ & 2D Euclidean distance between the camera location and any sample point ($\hat{x}$,$\hat{y}$) in the XY-plane (=$\lVert (\hat{x},\hat{y}) , (\hat{x}_c^{\hat{i}},\hat{y}_c^{\hat{i}}) \rVert$).\\
+$\bar{s}$ & Index of the sampled pixel in an $RGB$ image. \\
+$s$,$t$ & Sample indexes of observations from the universe set $\mathcal{U}$. \\
+$\mathbf{t}$ & Random initialization point in ${\rm I\!R}^{2}$ used in the gradient ascent algorithm for computation of $F(\cdot)$.\\
+$t_m$ & Current observation time. \\
+$t_s$ & Total number of sampled points in the hemispheric sampling process. \\
+$u_x, u_y$ & Optical flow vectors in x- and y- direction. \\
+$\mathbf{w}$ & Weight vectors of $\mathbf{X}$. \\
+$\mathbf{v}_{n_c}$ & The $n_c$ cluster centers.\\
+$x$, $y$ & Sample x- and y- image coordinate. \\
+$\hat{x}^{\hat{i}}_c$,$\hat{y}^{\hat{i}}_c$	& Location of $\hat{i}$-th camera in the XY-plane of a multi-camera setup.\\
+$x_m$, $x_n$ & Two sample observations from universe $\mathcal{U}$ in rough set terminology. \\
+$\mathbf{x}^{f}$ & Vectorised form of feature matrix $\mathbf{X}^{f}$. \\
+$z$ & Index of the set of attributes in attribute set $\mathcal{A}$. \\
+$\bar{\mathbf{z}}$ & Vectorized form of the gray-scale image $\bar{\mathbf{Z}}$. \\
+$\bar{\mathbf{z}}_m$ & Mean value of the vectorized image $\bar{\mathbf{z}}$.\\
+$\bar{\mathbf{z}}_d$ & Median value of the vectorized image $\bar{\mathbf{z}}$.\\
+$\bar{\mathbf{z}}_v$ & Standard deviation value of the vectorized image $\bar{\mathbf{z}}$.\\
+$\bar{\mathbf{z}}_w$ & Skewness value of the vectorized image $\bar{\mathbf{z}}$.\\
+$\bar{\mathbf{z}}_k$ & Kurtosis value of the vectorized image $\bar{\mathbf{z}}$.\\
+
+
+
+
+
+
+
+
+
+
+% Upper case letters
+$\mathcal{A}$ & Set of attributes in rough-set terminology. \\
+$A_{\tilde{p}}$ & Data cost for an individual pixel $\tilde{p}$ in a graph-cut framework. \\
+$\mathbf{B}$ & Regression coefficient matrix. \\
+$B_{\tilde{p},\tilde{q}}$ & Interaction cost between two neighboring pixels $\tilde{p}$ and $\tilde{q}$ in a small neighborhood. \\
+$\mathcal{C}$ & Set of condition attributes in rough-set terminology. \\
+$\mathbf{C}^{T}$ & A matrix of regression coefficients. \\
+$\mathcal{D}$ & Set of decision attributes in rough-set terminology. \\
+$E$ & Segmentation score for graph-cut algorithm. \\
+$E_0$ & Intensity of the emitted light. \\
+$\mathbf{E}_{i}$ & Residual matrix corresponding to feature matrix $\mathbf{X}^{f}_{i}$. \\
+$E_k$ & Eccentricity correction factor for earth. \\
+$E_s$ & Intensity of the scattered light. \\
+$F(\cdot)$ & multivariate normal cumulative probability for a single camera in the multi-camera setup.\\
+$\mathbf{F}_{i}$ & Residual matrix corresponding to binary image $\mathbf{Y}_{i}$. \\
+$\mathcal{F}_1, \mathcal{F}_2,\ldots,\mathcal{F}_{n_f}$ & Set of filters in the filter bank.\\
+$G(\cdot)$ & Objective function to optimize the multi-variate distribution in the multi-camera setup.\\
+$G_c$ & Global Horizontal Irradiance of the sun at the earth's surface. \\
+$\mathbf{H}_{i}$ & Residual matrix corresponding to latent matrix $\mathbf{U}_{i}$. \\
+$\mathcal{H}_i$ & HDR radiance map generated from the set of low-, mid- and high-LDR images. \\
+$HSV$ & Hue, Saturation and Value color channel model comprising hue ($H$), saturation ($S$) and value ($V$) color channels. \\
+$I$ & Clearness Luminance Index. \\
+$I_c$ & Critical Clearness Luminance Index. \\
+$I_{s}$ & ISO sensitivity of the camera. \\
+$I_{sc}$ & Solar irradiance constant ($1366.1$ Watt/$\mbox{m}^2$). \\
+$\mathcal{I}$ & Intruder in a 2D search space in a multi-camera setup.\\ 
+$IHS$ & Intensity, Hue, and Saturation color model. \\
+$J$ & Objective function used during fuzzy-clustering process. \\
+$K_c$ & Calibration constant to map scene luminance and pixel brightness.\\
+$L_w$ & Calculated luminance of a pixel in a fish-eye lens during vignetting modeling. \\
+$\mathcal{L}$ & Decision table in rough-set terminology. \\
+$\mathcal{L}_c$ & Clear-sky luminance. \\
+$\mathcal{L}_m$ & Measured luminance from sky/cloud image. \\
+$\mathcal{L}_r$ & Relative luminance. \\
+$\mathcal{L}_s$ & Scene luminance. \\
+$L_{\tilde{p}}$ & Binary label of the pixel $\tilde{p}$. \\
+$L_{1}$, $L_{2}$, $L_{3}$, $L_{4}$  & Measurement lengths of the different parts of sun-blocker based WAHRSIS model. \\
+$L^{*}a^{*}b^{*}$ & Color space comprising lightness ($L$) and color-opponent dimensions ($a^{*}$ and $b^{*}$). \\
+$\mathbf{M}_i$  & Covariance matrix of the normalized matrix $\ddot{\mathbf{X}_{i}}$. \\
+$N$ & Total number of images in a dataset. \\
+$\mathcal{N}$ & Average luminance value of sampled pixels during hemispheric sampling. \\
+$\tilde{\mathcal{N}}$ & Small neighborhood region. \\
+$\mathcal{P}$ & Subset of attributes from attribute set $\mathcal{A}$.\\
+$\underline{\mathcal{P}}(.)$ & Lower approximation of a conventional set.\\
+$\overline{\mathcal{P}}(.)$ & Upper approximation of a conventional set.\\
+$\mathbf{P}_{i}$ & Loading matrix corresponding to feature matrix $\mathbf{X}^{f}_{i}$. \\
+$\mathbf{Q}_{i}$ & Loading matrix corresponding to binary image $\mathbf{Y}_{i}$. \\
+$R_1$, $R_2$ & Two random floating points used during cosine weighted hemispheric sampling.\\
+$\mathcal{R}$ & Red--blue ratio channel $R/B$ extracted from $\mathbf{Z}$, where $\mathcal{R} \in {\rm I\!\mathbf{R}}^{m \times n}$.\\
+$\tilde{\mathcal{R}}$ & Red--blue ratio channel $(B-R)/(B+R)$ extracted from $\mathbf{Z}$, where $\tilde{\mathcal{R}} \in {\rm I\!\mathbf{R}}^{m \times n}$.\\
+$RGB$ & Red, Green and Blue color channel model comprising red ($R$), green ($G$) and blue ($B$) color channels. \\
+$\mathbf{S}$ & Set of cameras in the multi-camera setup (also referred as \emph{guards} in the art gallery problem). \\
+$\mathcal{S}$ & Solar radiation measured by the weather station. \\
+$\hat{\mathcal{S}}$ & Search space in point localization task of a multi-camera setup.\\ 
+$\mathcal{T}$ & Dataset consisting of a set of images. \\
+$\mathbf{T}_{i}$ & Extracted latent matrix corresponding to binary image $\mathbf{Y}_{i}$. \\
+$\mathcal{U}$ & Universe with set of observations in rough-set terminology. \\
+$\mathbf{U}_{i}$ & Extracted latent matrix corresponding to feature matrix $\mathbf{X}^{f}_{i}$. \\
+$\mathcal{V}$ & Value domain in rough set terminology. \\
+$\mathcal{X}$ & Set of observations from the universe $\mathcal{U}$. \\
+$\mathbf{X}_{i}$ & Sample image of dimension $m \times n$ from a dataset consisting of \emph{N} images ($i=1,2,...,N$), where $\mathbf{X}_{i} \in {\rm I\!R}^{m \times n}$. \\
+$\mathbf{X}^{f}_{i}$ & Feature matrix obtained from the sample image $\mathbf{X}_{i}$, where $\mathbf{X}^{f} \in {\rm I\!R}^{m \times n}$. \\
+$\hat{\textbf{X}_{i}}$ & Fat matrix obtained from the sample image $\mathbf{X}_{i}$ using all $16$ color channels. \\
+$\ddot{\mathbf{X}_{i}}$ & Normalized form of $\hat{\textbf{X}_{i}}$ with its corresponding mean and standard deviation. \\
+$Y_{\bar{s}}$ & Mean brightness value of the $\bar{s}$ pixel in an $RGB$ image. \\
+$Y_{\bar{s}}'$ & Non-linearly corrected mean brightness value of the $\bar{s}$ pixel in an $RGB$ image. \\
+$\mathbf{Y}_{i}$ & Binary ground-truth image of the sample image $\mathbf{X}_{i}$, where $\mathbf{Y}_{i} \in {\rm I\!R}^{m \times n}$.\\
+$YIQ$ & Luma and chrominance color channel, where $Y$ is luminance and $I$ and $Q$ represents in- and quadrature-phase of chrominance information.\\
+$\mathbf{Z}_{i}$ & Sample image of dimension $m \times n \times 3$ from a dataset consisting of \emph{N} images ($i=1,2,...,N$), where $\mathbf{Z}_{i} \in {\rm I\!R}^{m \times n \times 3}$. \\
+$\bar{\mathbf{Z}}_i$ & Gray-scale channel image of the sample image $\mathbf{Z}_{i}$, where $\overline{\mathbf{Z}}_i \in {\rm I\!R}^{m \times n}$.\\
+$\mathbf{Z}_i^{R}$ & Red channel image of the sample image $\mathbf{Z}_{i}$, where $\mathbf{Z}_i^{R} \in {\rm I\!R}^{m \times n}$.\\
+$\mathbf{Z}_i^{G}$ & Green channel image of the sample image $\mathbf{Z}_{i}$, where $\mathbf{Z}_i^{G} \in {\rm I\!R}^{m \times n}$.\\
+$\mathbf{Z}_i^{B}$ & Blue channel image of the sample image $\mathbf{Z}_{i}$, where $\mathbf{Z}_i^{B} \in {\rm I\!R}^{m \times n}$.\\
+$\mathbf{Z}_i^{L}$ & Low-exposure LDR image, where $\mathbf{Z}_i^{L} \in {\rm I\!R}^{m \times n \times 3}$.\\
+$\mathbf{Z}_i^{M}$ & Mid-exposure LDR image, where $\mathbf{Z}_i^{M} \in {\rm I\!R}^{m \times n \times 3}$.\\
+$\mathbf{Z}_i^{H}$ & High-exposure LDR image, where $\mathbf{Z}_i^{H} \in {\rm I\!R}^{m \times n \times 3}$.\\
+
+\end{longtable}
+
+

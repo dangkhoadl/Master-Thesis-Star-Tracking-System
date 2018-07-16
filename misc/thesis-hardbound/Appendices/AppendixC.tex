@@ -1,0 +1,22 @@
+% Appendix C
+
+\chapter{Derivation of Normalization Factor} % Main appendix title
+\label{append:solarestimation} % For referencing this appendix elsewhere, use \ref{append:motor}
+
+\lhead{Appendix C. \emph{Derivation of Normalization Factor}} % This is for the header on each page - perhaps a shortened title
+
+
+Let us suppose that $a_1$, $a_2$, \ldots, $a_{\bar{t}}$ be the weather station records for $\bar{t}$ number of time stamps. The luminance values computed for each of the corresponding weather station points are represented by ${l}_1$, ${l}_2$, \ldots, ${l}_{\bar{t}}$. We attempt to estimate the conversion factor $x$, such that the objective function $f(x)$ representing the inter-sample distances between weather station and computed luminance value is minimized.
+
+We represent objective function $f(x)$ as:
+
+\noindent
+\begin{align*}
+   f(x) &= (xl_1 - a_1)^2 + (xl_2 - a_2)^2 + \ldots + (xl_{\bar{t}} - a_{\bar{t}})^2 & \\
+              &= \sum_{i=1}^{\bar{t}} (xl_i - a_i)^2
+\end{align*}
+
+We equate $f'(x)$ to $0$, and the normalization factor $x$ is found as $x = \frac{\sum_{i=1}^{\bar{t}} a_{i}l_{i} }{\sum_{i=1}^{\bar{t}} l_i^2}$.
+
+
+

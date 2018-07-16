@@ -25,7 +25,7 @@ star_generated=zeros(test,test);
 for RA = 1 :1: 360 
     for DEC = -89:1:89
         % Generate sky image at predetermined attitude
-        cd('D:\\Dropbox\\DangKhoa\\CEE_Cache\\StarTrackingProject\\StarSimulation_Matlab');
+        cd('D:\\Dropbox\DangKhoa\\CEE_Cache\\GitHub\\StarTrackingProject\\StarSimulation_Matlab');
         C = Convert_Axis_2_AttitudeMatrix(RA,DEC,angle);
         [ R_camera_to_earth,star_matrix,I]= Plot_sky_images( C, FOV, img_height, img_width, pixelsize);
         %figure(1);
@@ -39,7 +39,7 @@ for RA = 1 :1: 360
                I(i,j) =  round(temp * 255);
            end
         end
-        baseFileName = sprintf('D:\\Dropbox\\DangKhoa\\CEE_Cache\\StarTrackingProject\\StarSimulation_Matlab\\TestPattern\\IMG_%d_%d.bin',RA,DEC+89);
+        baseFileName = sprintf('.\\TestPattern\\IMG_%d_%d.bin',RA,DEC+89);
         dlmwrite(baseFileName,I,'delimiter',' ');
         % Store number of star generated every test
         star_generated(RA,DEC+91) = size(star_matrix,1); 

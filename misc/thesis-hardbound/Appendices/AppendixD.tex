@@ -1,0 +1,598 @@
+% Appendix D
+\chapter{Computation of Geometrical Bounds in a Multi-camera Setup} % Main appendix title
+\label{append:multicamera} % For referencing this appendix elsewhere, use \ref{append:motor}
+
+
+
+\lhead{Appendix D. \emph{Computation of Geometrical Bounds}} % This is for the header on each page - perhaps a shortened title
+
+We formulate the geometrical limits for other scenarios as well. %, with noise in X co-ordinate of the camera positions.
+
+% Part 1
+\section{Noise in X- coordinate}
+ 
+\subsection{Scenario - II}
+
+\subsubsection{Upper Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.7\textwidth,bb=0 0 600 600]{X-2a.pdf}
+\captionof{figure}{Determination of upper bound for the translation of camera in X-direction (Scenario II).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-2in}
+\begin{equation*}
+\centering
+\begin{aligned}
+ZC_x = r\cos(\theta) \\
+Z'C_y = r\sin(\theta) \\
+ZC_x = \frac{r\sin(\theta)}{\tan(\theta_5)}\\
+Z'Z = \frac{r\sin(\theta)}{\tan(\theta_5)} - r\cos(\theta)\\
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+
+\subsubsection{Lower Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.9\textwidth,bb=0 0 600 600]{X-2b.pdf} 
+\captionof{figure}{Determination of lower bound for the translation of camera in X-direction (Scenario II).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-2in}
+\begin{equation*}
+\centering
+\begin{aligned}
+ZC_x = r\cos(\theta) \\
+ZC_y =  C_{x}C = r\sin(\theta) \\
+Z'C_x =\frac{r\sin(\theta)}{\tan(\theta_4)}\\
+Z'Z = \frac{r\sin(\theta)}{\tan(\theta_4)} - r\cos(\theta)\\
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+Therefore, the two geometrical bounds - lower and upper are $-(\frac{r\sin(\theta)}{\tan(\theta_4)} - r\cos(\theta))$ and $-(\frac{r\sin(\theta)}{\tan(\theta_5)} - r\cos(\theta))$ respectively.
+
+
+\subsection{Scenario - III}
+
+\subsubsection{Upper Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.65\textwidth,bb=0 0 600 600]{X-3a.pdf} 
+\captionof{figure}{Determination of upper bound for the translation of camera in X-direction (Scenario III).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-2in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\sin(180-\theta) = \frac{CC_x}{CZ}\\
+\implies CC_x = r\sin(\theta) \\ \\
+\tan(\theta_5) = \frac{CC_x}{Z'C_x}\\
+\implies Z'C_x = \frac{r\sin(\theta)}{\tan(\theta_5)}\\\\
+\cos(180-\theta) = \frac{C_{x}Z}{CZ}\\
+\implies C_{x}Z = -r\cos(\theta)\\ \\
+Z'Z = \frac{r\sin(\theta)}{\tan(\theta_5)} + r\cos(\theta)
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+\subsubsection{Lower Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.65\textwidth,bb=0 0 600 600]{X-3b.pdf} 
+\captionof{figure}{Determination of upper bound for the translation of camera in X-direction (Scenario III).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-2in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\sin(180-\theta) = \frac{CC_x}{CZ}\\
+\implies CC_x = r\sin(\theta) \\ \\
+\tan(\theta_4) = \frac{CC_x}{Z'C_x}\\
+\implies Z'C_x = \frac{r\sin(\theta)}{\tan(\theta_4)}\\\\
+\cos(180-\theta) = \frac{C_{x}Z}{CZ}\\
+\implies C_{x}Z = -r\cos(\theta)\\ \\
+Z'Z = \frac{r\sin(\theta)}{\tan(\theta_4)} + r\cos(\theta)
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+Therefore, the two geometrical limits - lower and upper are given by $-(\frac{r\sin(\theta)}{\tan(\theta_4)} + r\cos(\theta))$ and $-(\frac{r\sin(\theta)}{\tan(\theta_5)} + r\cos(\theta))$ respectively.
+
+\subsection{Scenario - IV}
+In this scenario, \emph{no} possible translation of camera in X-direction can contain the point in the active region. Therefore, the probability of a point to belong to active region is \emph{null}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.45\textwidth,bb=0 0 600 600]{X-4.pdf} 
+\caption{Probability is $0$ for the translation of camera in X-direction (Scenario IV).}
+\label{fig:SWIM-images}
+\end{figure}
+
+
+\subsection{Scenario - V}
+In this scenario, \emph{no} possible translation of camera in X-direction can contain the point in the active region. Therefore, the probability of a point to belong to active region is \emph{null}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.45\textwidth,bb=0 0 600 600]{X-5.pdf} 
+\caption{Probability is $0$ for the translation of camera in X-direction (Scenario V).}
+\label{fig:SWIM-images}
+\end{figure}
+
+
+
+\subsection{Scenario - VI}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.65\textwidth,bb=0 0 600 600]{X-6a.pdf}
+\captionof{figure}{Determination of lower bound for the translation of camera in X-direction (Scenario VI).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-2in}
+\begin{equation*}
+\centering
+\begin{aligned}
+ZC_x = r\cos(\theta) \\
+ZC_y = r\sin(\theta) \\
+Z'C_x = \frac{r\sin(\theta)}{\tan(\theta_4)}\\
+ZZ' = r\cos(\theta) - \frac{r\sin(\theta)}{\tan(\theta_4)}
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+\subsubsection{Upper Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.65\textwidth,bb=0 0 600 600]{X-6b.pdf} 
+\captionof{figure}{Determination of upper bound for the translation of camera in X-direction (Scenario VI).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-2in}
+\begin{equation*}
+\centering
+\begin{aligned}
+ZC_x = r\cos(\theta) \\
+ZC_y = r\sin(\theta) \\
+Z'C_x = \frac{r\sin(\theta)}{\tan(\theta_5)}\\
+ZZ' = r\cos(\theta) - \frac{r\sin(\theta)}{\tan(\theta_5)}
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+Therefore, the two geometrical limits - lower and upper are $+(r\cos(\theta) - \frac{r\sin(\theta)}{\tan(\theta_4)})$ and $r\cos(\theta) - \frac{r\sin(\theta)}{\tan(\theta_5)}$ respectively.
+
+
+% Part 2
+\section{Noise in Y- coordinate}
+
+\subsection{Scenario - II}
+
+\subsubsection{Lower Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.65\textwidth,bb=0 0 600 600]{Y-2a.pdf}  
+\captionof{figure}{Determination of lower bound for the translation of camera in Y-direction (Scenario II).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-2in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\cos(90-\theta)=\frac{C_{y}Z}{CZ}\\
+\implies C_{y}Z=r\sin(\theta)\\
+\sin(90-\theta) = \frac{C_{y}C}{CZ}\\
+\implies C_{y}C = r\cos(\theta)\\
+\tan(90-\theta_5) = \frac{C_{y}C}{C_{y}Z'}\\
+\implies C_{y}Z' = \frac{r\cos(\theta)}{\cot(\theta_5)}\\
+ZZ' =  r\sin(\theta) - \frac{r\cos(\theta)}{\cot(\theta_5)}
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+\subsubsection{Upper Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.65\textwidth,bb=0 0 600 600]{Y-2b.pdf}  
+\captionof{figure}{Determination of upper bound for the translation of camera in Y-direction (Scenario II).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-2in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\cos(90-\theta)=\frac{C_{y}P}{CP}\\
+\implies C_{y}P=r\sin(\theta)\\
+\sin(90-\theta) = \frac{C_{y}C}{CP}\\
+\implies C_{y}C = r\cos(\theta)\\
+\tan(90-\theta_4) = \frac{C_{y}C}{C_{y}P'}\\
+\implies C_{y}P' = \frac{r\cos(\theta)}{\cot(\theta_4)}\\
+PP' =  r\sin(\theta) - \frac{r\cos(\theta)}{\cot(\theta_4)}
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+
+
+\subsection{Scenario - III}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth,bb=0 0 600 600]{Y-3.pdf} 
+	\caption{Probability of the point C is $0$ for the translation of camera in Y-direction (Scenario III).}
+	\label{fig:SWIM-images}
+\end{figure}
+
+
+\subsection{Scenario - IV}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth,bb=0 0 600 600]{Y-4.pdf} 
+	\caption{Probability of the point C is $0$ for the translation of camera in Y-direction (Scenario IV).}
+	\label{fig:SWIM-images}
+\end{figure}
+
+
+\subsection{Scenario - V}
+
+\subsubsection{Lower Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.55\textwidth,bb=0 0 600 600]{Y-5a.pdf}  
+\captionof{figure}{Determination of lower bound for the translation of camera in Y-direction (Scenario V).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-2in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\alpha = 90 - (360 - \theta)\\
+\implies \alpha = \theta - 270 \\
+\sin(\alpha) = \frac{CC_y}{CP}\\
+CC_y = r\sin(\theta - 270)\\
+\cos(\alpha) = \frac{PC_y}{CP}\\
+\implies PC_y = r\cos(\theta - 270)\\
+\tan(90 - \theta_5) = \frac{CC_y}{C_{y}P'}\\
+\implies C_{y}P' = \frac{r\sin(\theta - 270)}{\cot(\theta_4)}\\
+PP' = r\cos(\theta - 270) +  \frac{r\sin(\theta - 270)}{\cot(\theta_4)}
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+
+
+\subsubsection{Upper Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.55\textwidth,bb=0 0 600 600]{Y-5b.pdf}  
+\captionof{figure}{Determination of upper bound for the translation of camera in Y-direction (Scenario V).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-2in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\alpha = 90 - (360 - \theta)\\
+\implies \alpha = \theta - 270 \\
+\sin(\alpha) = \frac{CC_y}{CP}\\
+CC_y = r\sin(\theta - 270)\\
+\cos(\alpha) = \frac{PC_y}{CP}\\
+\implies PC_y = r\cos(\theta - 270)\\
+\tan(90 - \theta_4) = \frac{CC_y}{C_{y}P'}\\
+\implies C_{y}P' = \frac{r\sin(\theta - 270)}{\cot(\theta_4)}\\
+PP' = r\cos(\theta - 270) +  \frac{r\sin(\theta - 270)}{\cot(\theta_4)}
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+
+\subsection{Scenario - VI}
+
+\subsubsection{Upper Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.55\textwidth,bb=0 0 600 600]{Y-6a.pdf}  
+\captionof{figure}{Determination of upper bound for the translation of camera in Y-direction (Scenario VI).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-2in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\cos(90-\theta)=\frac{C_{y}P}{CP}\\
+\implies C_{y}P=r\sin(\theta)\\
+\sin(90-\theta) = \frac{C_{y}C}{CP}\\
+\implies C_{y}C = r\cos(\theta)\\
+\tan(90-\theta_4) = \frac{C_{y}C}{C_{y}P'}\\
+\implies C_{y}P' = \frac{r\cos(\theta)}{\cot(\theta_4)}\\
+PP' = \frac{r\cos(\theta)}{\cot(\theta_4)} - r\sin(\theta)
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+
+
+\subsubsection{Lower Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.75\textwidth]{demo3.pdf}   
+\captionof{figure}{Determination of lower bound for the translation of camera in Y-direction (Scenario VI).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-2in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\cos(90-\theta)=\frac{C_{y}P}{CP}\\
+\implies C_{y}P=r\sin(\theta)\\
+\sin(90-\theta) = \frac{C_{y}C}{CP}\\
+\implies C_{y}C = r\cos(\theta)\\
+\tan(90-\theta_5) = \frac{C_{y}C}{C_{y}P'}\\
+\implies C_{y}P' = \frac{r\cos(\theta)}{\cot(\theta_5)}\\
+PP' = \frac{r\cos(\theta)}{\cot(\theta_5)} - r\sin(\theta)
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+
+
+
+% Part 3
+\section{Noise in view angle}
+
+\subsection{Scenario - II}
+
+\subsubsection{Lower Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.9\textwidth]{theta-2a.pdf}   
+\captionof{figure}{Determination of lower bound of view angle for the rotation of camera (Scenario II).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-1in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\theta_5^{'} = \theta_5 + (\theta - \theta_5)\\
+\Theta + \delta_5 = \theta \\
+\implies \Theta = \theta - \delta_5
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+
+
+
+
+\subsubsection{Upper Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.85\textwidth]{theta-2b.pdf}   
+\captionof{figure}{Determination of upper bound of view angle for the rotation of camera (Scenario II).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-1in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\theta_5^{'} = \theta_5 + (\theta - \theta_4)\\
+\Theta + \delta_5 = \theta_5 + (\theta - \theta_4)\\
+\implies \Theta = \theta_5 + (\theta - \theta_4) - \delta_5
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+
+\subsection{Scenario - III}
+
+\subsubsection{Lower Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.85\textwidth]{theta-3a.pdf}  
+\captionof{figure}{Determination of lower bound of view angle for the rotation of camera (Scenario III).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-1in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\theta_5^{'} = \theta_5 + (\theta - \theta_5)\\
+\Theta + \delta_5 = \theta \\
+\implies \Theta = \theta - \delta_5
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+
+\subsubsection{Upper Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.85\textwidth]{theta-3b.pdf}  
+\captionof{figure}{Determination of upper bound of view angle for the rotation of camera (Scenario III).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-1in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\theta_5^{'} = \theta_5 + (\theta - \theta_4)\\
+\Theta + \delta_5 = \theta_5 + (\theta - \theta_4)\\
+\implies \Theta = \theta_5 + (\theta - \theta_4) - \delta_5
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+
+
+
+
+\subsection{Scenario - IV}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{theta-4.pdf} 
+	\caption{Probability of the point C is $0$ for the rotation of camera (Scenario IV).}
+	\label{fig:SWIM-images}
+\end{figure}
+
+
+
+\subsection{Scenario - V}
+
+\subsubsection{Upper Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.85\textwidth]{theta-5a.pdf} 
+\captionof{figure}{Determination of upper bound of view angle for the rotation of camera (Scenario V).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-1in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\theta_4^{'} = \theta_4 - (\theta_4 + 360 -\theta)\\
+\implies \theta_4^{'} = \theta - 360 \\
+\Theta + \delta_4 = \theta - 360 \\
+\implies \Theta = \theta - 360 - \delta_4
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+
+
+\subsubsection{Lower Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.85\textwidth]{theta-5b.pdf} 
+\captionof{figure}{Determination of lower bound of view angle for the rotation of camera (Scenario V).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-1in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\theta_4^{'} = \theta_4 - (\theta_5 + 360 -\theta)\\
+\implies \theta_4^{'} = \theta_4 - \theta_5 - 360 + \theta \\
+\Theta + \delta_4 = \theta_4 - \theta_5 - 360 + \theta \\
+\implies \Theta = \theta_4 - \theta_5 - 360 + \theta - \delta_4 
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+
+
+
+\subsection{Scenario - VI}
+
+\subsubsection{Upper Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.85\textwidth]{theta-6a.pdf}  
+\captionof{figure}{Determination of upper bound of view angle for the rotation of camera (Scenario VI).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-1in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\theta_4^{'} = \theta_4 - (\theta_4 - \theta)\\
+\Theta + \delta_4 = \theta \\
+\implies \Theta = \theta - \delta_4
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+
+
+
+
+
+\subsubsection{Lower Bound}
+
+\begin{minipage}[t]{0.5\textwidth}
+\includegraphics[width=0.85\textwidth]{theta-6b.pdf}  
+\captionof{figure}{Determination of lower bound of view angle for the rotation of camera (Scenario VI).}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\vspace{-1in}
+\begin{equation*}
+\centering
+\begin{aligned}
+\theta_4^{'} = \theta_4 - (\theta_5 - \theta)\\
+\Theta + \delta_4 = \theta_4 - \theta_5 + \theta\\
+\implies \Theta = \theta_4 - \theta_5 + \theta - \delta_4
+\end{aligned}
+\end{equation*}
+\end{minipage}
+
+
+
+

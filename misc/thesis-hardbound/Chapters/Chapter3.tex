@@ -1,0 +1,431 @@
+\chapter{Whole Sky Imager}
+\label{chap:wsi}
+
+\lhead{Chapter 3. \emph{Whole Sky Imager}}
+
+\section{Introduction}
+Whole sky imagers are becoming popular amongst the research community for a variety of applications and domains, such as aviation, weather prediction, and solar energy. The resulting images are of higher resolution than what can be obtained from satellites. Furthermore, the upwards pointing nature of the camera makes it easy to capture low-altitude clouds. Therefore, they provide a useful complement to satellite images.
+
+Several models of automatic whole sky imagers have been developed at the Scripps Institute of Oceanography, University of California, San Diego, with cloud detection in mind~\cite{WSI-history}. Yankee Environmental Systems commercialize the \emph{TSI-880}, which is used by many institutions~\cite{Long,Souza}. Those imagers provide a good starting point for cloud analysis, but their design and fabrication is controlled by a company, making specialized adaptations hard or impossible. Besides, those devices are expensive (around 30,000-35,000~US\$ for the \emph{TSI-880}) and use very low image resolution ($352\times288$)capturing devices. Those limitations encouraged us to build our own.
+
+In this chapter, we propose three novel designs of a whole sky imager called \textbf{WAHRSIS} (Wide Angle High-Resolution Sky Imaging System). The first version of WAHRSIS consists of a sun-blocker that reduces the sun glare in the captured images. It uses mostly off-the-shelf components which are available on the market for an overall price of around 2,500~US\$. A simple overall design allows a home-made mounting of the various parts. The resulting images are of high resolution and can be used for various applications. In addition to this sun-blocked based design of WAHRSIS, we also propose two additional compact models of WAHRSIS. These compact models uses High-Dynamic-Range-Imaging (HDRI) techniques to reduce sun glare in captured images. The designs of these sky cameras are specifically catered to hot and humid weather conditions of Singapore. The hermetically sealed enclosure needs to operate at permissible temperature and humidity levels for proper functioning of the several electronic items, housed inside the enclosure.
+
+\section{Outline of Our Contribution}
+
+The main novel contributions of this chapter include: 
+
+\begin{itemize}
+\item Design of low-cost, flexible and high resolution ground-based sky cameras;
+\item Framework for spatial-, color- and luminance- calibration of sky cameras;
+\end{itemize}
+
+
+The rest of this chapter is organized as follows. We describe the general design of our imaging infrastructure in Section~\ref{sec:gen-design}. Section~\ref{sec:WSI-design} describes the mechanical designs of its three models: sun-blocker based model, actively-cooled model and passively-cooled model. We describe the various calibration processes in Section~\ref{sec:WSI-calibration}. Finally, the uses of HDRI imaging techniques are introduced in Section~\ref{sec:HDR-WAHRSIS}. Section~\ref{sec:WSI-conclude} concludes the chapter. 
+
+\section{General Design of WAHRSIS} 
+\label{sec:gen-design}
+Our WAHRSIS system essentially consists of a hermetically sealed box, a workstation and an imaging system. The sealed box is necessary to protect its different internal components from the outdoor weather conditions. It consists of a temperature and humidity control module, that helps in maintaining the internal working conditions of WAHRSIS. It also comprises a micro-computer that helps in controlling the various components of the sky imager. Different models of WAHRSIS have various sun-glare control mechanisms. The entire sky imaging system is connected to a remote server, that helps in archiving the captured images. A general system design of WAHRSIS is shown in Fig.~\ref{fig:sysDesign}.  
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[clip,trim={0.3cm 2cm 0 0},width=0.8\textwidth]{systemDiagram.pdf}
+\caption[General design of WAHRSIS.]{General design of WAHRSIS. The camera, workstation and the sealed mechanical box is used in real-time image acquisition, whereas offline image processing and visualization are performed in the remote server.\label{fig:sysDesign}}
+\end{center}
+\end{figure}
+
+The WAHRSIS system captures images at regular intervals of time. This creates enormous amount of image data. Therefore, a centralized and an efficient storage system is required. We have thus setup a server for this purpose, as shown in Fig.~\ref{fig:serverclient}. It currently stores the sky images, as well as the weather station, radiosonde, human observation, ceilometer and weather radar measurements. Three WAHRSIS models and three weather stations are located at Nanyang Technological University, which are sending their measurements to this server in real time. The radiosonde data is retrieved twice a day from the website of the \emph{Department of Atmospheric Science (University of Wyoming)}.\footnote{\url{http://weather.uwyo.edu/upperair/sounding.html}.} 
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[clip,trim={0.3cm 2.6cm 0 0},width=0.75\textwidth]{serverClient.pdf}
+\caption[Server-client setup in WAHRSIS.]{Server and client setup for data storage and visualization.\label{fig:serverclient}}
+\end{center}
+\end{figure}
+
+\section{WAHRSIS Design} 
+\label{sec:WSI-design}
+In this section, we describe the mechanical designs of three WAHRSISs. The sun-blocker based WAHRSIS model consists of a sun-tracking blob that tracks the position of sun over the period of the entire day. This helps in reducing the glare of the sun in the captured images. However, most part of the captured images get occluded by the sun-blocker. The other models of WAHRSIS do not use a sun-blocker in its design. Instead, it uses HDRI techniques to reduce sun-glare in the images. More details on the advantages of HDRI can be found in Section~\ref{sec:HDR-WAHRSIS}. The design of the various models of the sky cameras are kept as simple as possible. This is because we use off-the-shelf components to build the sky imagers, and it can be easily replicated by other enthusiasts, as a part of engineering design project~\footnote{The design of our sky camera is recently featured in `H.\ Godrich, Students' Design Project Series: Sharing Experiences [SP Education], IEEE Signal Processing Magazine, Jan 2017' as a part of student project series.}~\footnote{A tutorial to build the WAHRSIS Sky Imager with automated cloud coverage estimation is available online at \url{https://github.com/Soumyabrata/DIY-sky-imager}.}.
+
+\subsection{Sun-blocker based WAHRSIS Model} 
+\subsubsection{Components} 
+\label{sec:components}
+
+Figure~\ref{fig:MechDesgn} shows a drawing of the sun-blocker based WAHRSIS. Its main components are the following:
+\begin{itemize}
+\item The \emph{sun-blocker} occludes the light coming directly from the sun and thus reduces the glare in the circumsolar region of the captured image. It is composed of a main arm, which is rotated around the outside of the box by a motor. A polystyrene ball is fixed on top of a stem, which is attached to the main arm via a second motor rotating along the other axis. Details about estimating the position of sun at a particular location on earth are described in Appendix~\ref{append:sunposition}.
+\item An \emph{Arduino board} controls the two motors of the sun blocker. The algorithm is briefly explained in the Appendix~\ref{append:motor}.
+\item \emph{Outer casing:} A hermetically-sealed box prevents moisture and dirt from affecting the internal components. It contains a transparent dome at the top in which the fish-eye lens of the camera is positioned.
+\item The \emph{camera and lens} is discussed in more detail in Section \ref{sec:camera} below.
+\end{itemize}
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{SkelDesgn2.pdf}
+ \caption{Schematic drawing of WAHRSIS.\label{fig:MechDesgn}}
+\end{center}
+\end{figure}
+
+The device operates autonomously. However, some periodic manual maintenance interventions may be needed occasionally, for example to prevent the wear and tear of the motor gears. We have currently built and installed this on the roof-top of our university building. Table~\ref{cost} details all the components and their respective prices at the time of purchase.
+
+\begin{table}[htbp]
+\centering
+\begin{scriptsize}
+    \begin{tabular}{ | l | r |}
+    \hline
+    \textbf{Items} & \textbf{Cost (in US\$)} \\ \hline
+    Arduino Mega & 90 \\ \hline
+    Arduino Mega 2560-control board	& 60 \\ \hline
+    Bipolar 5.18:1 Planetary Gearbox Stepper & 25 \\ \hline
+    Bipolar 99.55:1 Planetary Gearbox Stepper & 35 \\ \hline
+    Stepper Motor Driver & 20 \\ \hline
+    Real Time Clock & 15 \\ \hline
+    Big Easy Stepper Motor Driver & 30 \\ \hline
+    12 V DC Power Supply & 50 \\ \hline
+    Base Hard plastic or Acrylic (Water-proof housing) & 120 \\ \hline
+    Plastic Dome & 25 \\ \hline
+    Metal Arm & 50 \\ \hline
+    Sun Blocker & 5 \\ \hline
+    Cables and accessories & 40 \\ \hline
+    Sigma 4.5 mm F2.8 EX DC HSM Circular Fisheye Lens & 950\\ \hline
+    Canon EOS Rebel T3i (600D) camera body & 360 \\ \hline
+    Alteration for near-infrared sensitivity & 300 \\ \hline
+    Built-in laptop & 350 \\ \hline
+    \textbf{Total Cost} & \textbf{2525} \\ \hline
+    \end{tabular}
+    \caption{Cost analysis for all the components of WAHRSIS.}
+    \label{cost}
+\end{scriptsize}
+\end{table}
+
+\subsubsection{Imaging System} 
+\label{sec:camera}
+The imaging system of WAHRSIS consists of a \emph{Canon EOS Rebel T3i} (a.k.a.~\emph{EOS 600D}) camera body and a \emph{Sigma 4.5mm F2.8 EX DC HSM} Circular Fisheye Lens with a field of view of $180$ degrees. It captures images with a resolution of $5184 \times 3456$ pixels. Due to the lens design and sensor size, the entire scene is captured within a circle with a diameter of approximately $2950$ pixels (see Figure \ref{fig:wb}). A custom program running on the built-in laptop uses the \emph{Canon Digital Camera SDK} to control the camera. Images can be automatically captured at regular time intervals, and the camera settings can be adjusted as needed.
+
+The sensor of a typical digital camera absorbs near-infrared light quite effectively, so much that there is an infra-red blocking filter behind the lens. We had this filter physically removed and replaced by a piece of glass, which passes all wavelengths. The reasoning is that near-infrared light is less susceptible to attenuation due to haze~\cite{schaul2009color}, which is a common phenomenon in the atmosphere and especially around large cities. Haze consists of small particles in suspension in the air. Those have a scattering effect on the light whose incidence is modeled by Rayleigh's law, meaning that the intensity of the scattered light $E_s \sim E_0/\Lambda^4$, where $E_0$ is the intensity of the emitted light, and $\Lambda$ the wavelength of the light. We can thus reduce this effect by considering longer wavelengths, such as the ones in near-infrared. This model is however only valid for particles whose size is smaller than $\Lambda/10$. Most cloud consist of larger particles; their resulting scattering effect obeys Mie's law, which is wavelength-independent. For this reason, we expect our modified camera to provide us sharper images of cloud formations.
+
+The sun-blocker-based WAHRSIS model provides us high resolution images of the sky scene. However, a significant portion of the captured image is occluded by the sun-blocker. In the subsequent sections, we present two models of WAHRSIS, that do not use sun-blocker in their designs. Instead, it uses HDRI techniques to reduce sun-glare in the captured images. More details about HDRI can be found later in Section~\ref{sec:HDR-WAHRSIS} of this chapter.
+
+\subsection{Actively-cooled WAHRSIS Model} 
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{scope}[xshift=1.5cm]
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.7\textwidth]{W3-open}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        \draw[->,black,dashed](0.3,0.9) -- (1.1,0.9) node[anchor=west,black] {(a)};
+        \draw[->,black,dashed](0.8,0.77) -- (1.1,0.77) node[anchor=west,black] {(b)};
+        \draw[->,black,dashed](0.1,0.6) -- (1.1,0.6) node[anchor=west,black] {(c)};
+        \draw[->,black,dashed](0.2,0.3) -- (1.1,0.3) node[anchor=west,black] {(e)};
+        \draw[->,black,dashed](0.8,0.45) -- (1.1,0.45) node[anchor=west,black] {(d)};
+    \end{scope}
+\end{scope}
+\end{tikzpicture}%
+\caption[Actively-cooled WAHRSIS design along with its different components.]{Actively-cooled WAHRSIS design. (a) DSLR camera, (b) dome, (c) ODROID board, (d) casing, (e) thermoelectric cooler with fans.}
+\label{fig:W3-design}
+\end{figure}
+
+The actively-cooled WAHRSIS model consists of a hermetically-sealed plastic box with sunlight-reflecting paint on it, as shown in Fig.~\ref{fig:W3-design}. A thermoelectric Peltier cooler is placed at the bottom of the casing. When electricity is provided, the side facing inside the box gets cold while the outside face gets hot. Fans are placed at both sides to dissipate the cold or heat produced. The on-board computer controls the cooler operation using temperature and humidity sensors. 
+
+
+
+
+
+\subsection{Passively-cooled WAHRSIS Model} 
+The passively-cooled WAHRSIS model consists of a ventilated casing made of galvanized steel, as shown in Fig.~\ref{fig:version2}. This material reflects the sun light well and prevents rusting and corrosion. Ventilation grids are placed on each side, allowing ambient air to flow inside while preventing rainwater from entering. A metallic sheet is placed a few centimeters on top of the box, along with the transparent dome for the camera lens. The air in between acts as insulator, which protects the case from being heated by direct sunlight. We refer this model as passively-cooled model, as we use only ambient air and ventilation to maintain its internal temperature and humidity, without using any external cooling devices. 
+
+\begin{figure}[htb]
+\centering
+\begin{tikzpicture}
+\hspace{0.8cm}
+\begin{scope}[xshift=1cm]
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[width=0.7\textwidth]{WSI4}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        \draw[->,black,dashed](0.5,0.85) -- (1.1,0.85) node[anchor=west,black] {(a)};
+        \draw[->,black,dashed](0.8,0.77) -- (1.1,0.77) node[anchor=west,black] {(b)};
+        \draw[->,black,dashed](0.4,0.25) -- (1.1,0.25) node[anchor=west,black] {(c)};
+        \draw[->,black,dashed](0.65,0.1) -- (1.1,0.1) node[anchor=west,black] {(d)};
+    \end{scope}
+\end{scope}
+\end{tikzpicture}
+\caption[Passively-cooled WAHRSIS design along with its different components.]{Passively-cooled WAHRSIS design. (a) Dome, (b) shelter, (c) air vent cover, (d) casing. }
+\label{fig:version2}
+\end{figure}
+
+
+\section{WAHRSIS Calibration} 
+\label{sec:WSI-calibration}
+The images captured by WAHRSIS are of high resolution and capture the full sky hemisphere. However, the scene appears distorted by the fish-eye lens, and the colors are not rendered correctly due to the alteration for near-infrared sensitivity. Various calibration stages are thus required~\footnote{The source code of the various calibration processes for our sky camera WAHRSIS is available online at \url{https://github.com/Soumyabrata/WAHRSIS}.}. We discuss geometric calibration, white balancing and vignetting correction for our WAHRSIS models.
+
+\subsection{White Balancing}
+\label{sec:white_balancing}
+The camera of sun-blocker based WAHRSIS is sensitive to near-infrared light and thus sees beyond the visible spectrum. Color calibration in the traditional sense is less meaningful for our camera, because it is sensitive to both visible and near-infrared light. However, white balancing is still necessary, as we will explain here.
+
+The sensitivity of the various channels depends on the Bayer filter in front of the sensor. It is known that the red pixels show more near-infrared leakage than the blue or green ones. The automatic white balance settings were engineered for a non modified camera. As a result, images captured under an automatic white balance mode appear reddish, as shown in Fig.~\ref{fig:auto}. Fortunately, our camera also provides a custom mode. It relies on a known white patch in the scene, for which the camera computes the incident light intensity quantization parameters to render this patch white in the captured picture. The resulting image after custom white balancing looks visually plausible, as is shown in Fig.~\ref{fig:custom}.
+
+\begin{figure}[htb]
+\centering
+\subfloat[\emph{Auto}\label{fig:auto}]{\includegraphics[height=0.27\textwidth]{wb1auto.pdf}}
+\subfloat[\emph{Custom}\label{fig:custom}]{\includegraphics[height=0.27\textwidth]{wb8custom.pdf}}
+\caption{Captured images using automatic and custom white balance settings.}\label{fig:wb}
+\end{figure}
+
+Without white balancing, the red channel of our camera is prone to over-saturation and color clipping due to the additional near-infrared light reaching the sensor. The red channel of Fig.~\ref{fig:auto} contains 24.5\% of clipped values (i.e. where $R=255$), whereas the same channel in Fig.~\ref{fig:custom} contains only 0.7\% of them. This shows the importance of the custom white balancing, which manages to compensate quite well for the near-infrared alteration.
+
+The other models of WAHRIS do not use near-infrared sensitive lenses in its design. Therefore, we perform no color calibration on the actively-cooled- and passively-cooled- model of WAHRSIS.
+
+\subsubsection{Chromatic Aberration} 
+\label{sec:chromatic_aberration}
+
+The refractive index of lenses is wavelength-dependent. This means that light rays from different parts of the spectrum converge at different points on the sensor. Chromatic aberration refers to the color distortions introduced to the image as a result of this phenomenon. Since the camera of sun-blocker based WAHRSIS is sensitive to near-infrared, a larger part of the light spectrum is captured by the sensor, making the device more prone to this issue. Figure~\ref{fig:example_chrom_aberr} shows chromatic aberration on an image captured by the camera.
+
+
+\begin{figure}[htb]
+\centering
+\subfloat[Example of chromatic aberration. Notice the green and magenta artifacts at the edges of the squares.\label{fig:example_chrom_aberr}]{\includegraphics[height=0.35\textwidth]{example_chrom_aberr.pdf}}
+\quad 
+\subfloat[Difference between the calibration function of each color channel and the grayscale calibration function.\label{fig:difference_RGB}]{\includegraphics[height=0.35\textwidth]{difference_RGB.pdf}}
+\caption{Example of chromatic aberration and calibration function}
+\end{figure}
+
+
+The calibration process described in the previous section uses grayscale images. In order to obtain more accurate calibration functions, we apply the same process on each of the red, green, and blue channels individually. As shown in Fig.~\ref{fig:difference_RGB}, we observe small differences in the resulting calibration functions, especially for the red channel. Visually, there is a striking difference in the color of the building for grayscale- and color-channel-specific- based calibration method. We show it in Fig.~\ref{fig:proj}.
+
+\begin{figure}[htb]
+\centering
+\subfloat[Grayscale calibration.\label{fig:projBw}]{\includegraphics[width=0.35\textwidth]{undistort_result.pdf}}
+\quad 
+\subfloat[Color-channel-specific calibration.\label{fig:projDiffChannels}]{\includegraphics[width=0.35\textwidth]{undistort_result_chromm.pdf}}
+\caption[Illustration to show the advantages of color-channel-specific calibration as compared to grayscale calibration.]{Section of an image taken with WAHRSIS that was rectified using grayscale (left) and color-channel-specific (right) calibration. The chromatic aberration in the right image is much less noticeable.}
+\label{fig:proj}
+\end{figure}
+
+\subsection{Geometric Calibration} 
+\label{sec:geometrical_calib}
+A geometric calibration of the capturing device needs to be performed in order to obtain a precise model of the distortion introduced by the imaging system, which in our case includes the fish-eye lens and the dome~\cite{HUOJuan}. This consists of determining the intrinsic parameters of the camera, which relates the pixel coordinates with their 3D correspondences in a camera coordinate system. On the other hand, extrinsic parameters express the translations and rotations required to use other 3D world coordinate systems, such as the ones span by the checkerboard borders. Intrinsic parameters give all the information needed to relate each pixel of a resulting image with the azimuth and elevation angles of the incident light ray and vice-versa, which is essential to be able to measure the physical extent of clouds.
+
+\subsubsection{Fisheye Lens Calibration Background} 
+\label{sec:rel_studies}
+The modeling of a typical (non-fisheye) camera uses the pinhole model. However, this is not applicable to our case because of the very wide capturing angle. A schematic representation of the refraction of an incident ray in a fisheye lens is shown in Fig.~\ref{fig:Fig6}. Most common approaches relate the incident angle ($\beta$) with the radius on the image plane ($r$) and the focal length ($\bar{f}$), assuming that the process is independent of the azimuth angle.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{Fig6_v2.pdf}
+\caption{Schematic representation of object space and image plane\label{fig:Fig6}}
+\end{center}
+\end{figure}
+
+Several theoretical models relating those two values exist:
+
+\begin{itemize}
+\item Stereographic projection: $r=2\bar{f}\tan(\beta/2)$
+\item Equidistance projection: $r=\bar{f}\beta$
+\item Equisolid angle projection: $r=2\bar{f}\sin(\beta/2)$
+\item Orthogonal projection: $r=\bar{f}\sin(\beta)$
+\item Perspective projection: $r=\bar{f}\tan(\beta)$
+\end{itemize}
+
+Fisheye lens manufacturers usually claim to obey one of those, but those equations cannot be exactly matched in practice. However, they can be approximated by a polynomial due to the Taylor series theory. Some of the calibration techniques make use of this, as it easily allows a slight deviation from the projection equation. Two polynomial functions can also be used to cope with possible radial and tangential distortions caused by the lens. 
+
+Most calibration techniques use a checker-board with a known pattern. Shah et al.~\cite{shah1996intrinsic} introduce a calibration method where such a polynomial is used. Furthermore, they model radial and tangential distortions. The optical center of the camera has to be found using a low power laser beam, which is cumbersome in practice. Bakstein et al.~\cite{bakstein2002panoramic} use a spherical retina model, but do not provide any extrinsic parameter estimation technique and use cylindrical patterns. Sturm et al.~\cite{sturm2004generic} introduce a very generic model, where a camera is described by the coordinates of a set of rays and a mapping between those and the image pixels. However the authors experienced difficulties with a fish-eye lens, especially on the side view.  Kannala et al.~\cite{Kannala_calib} use polynomials to describe the calibration and the radial and tangential distortions, but they also assume that the positions of the pattern on the checker-board are known.  Finally, Scaramuzza et al.~\cite{scaramuzza2006toolbox} provide an algorithm estimating both intrinsic camera parameters and the extrinsic parameters describing the positions of the checker-board. They provide a full \emph{MATLAB} implementation of their method, making it the easiest to use.  We have chosen to use this method and enhanced it for our needs.
+
+\subsubsection{Calibration Method} 
+\label{sec:calibration_method}
+The calibration toolbox proposed by Scaramuzza et al.~\cite{scaramuzza2006toolbox} takes as input a number of images containing a known checker-board pattern. The first step is corner detection, which is performed by the toolbox. User interaction is required when the automatic detection algorithm fails. Those points are then used to find the parameters by a least-squares linear minimization, followed by a non-linear refinement with a maximum likelihood criterion. The toolbox uses a polynomial to model the ray refraction as well as a $2 \times 2$ matrix transformation and a translation to cope with small axis misalignment and the digitizing process. The intrinsic parameters thus consist of both the coefficients of the polynomial as well as the values of the matrix and the translation parameters, which describe the position of the center of the image.
+
+Figure~\ref{fig:calibration_images} shows a sample of the images we used for the calibration.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.23\textwidth]{grid1.pdf}
+\includegraphics[width=0.23\textwidth]{grid2.pdf}
+\includegraphics[width=0.23\textwidth]{grid3.pdf}
+\includegraphics[width=0.23\textwidth]{grid4.pdf}
+\caption{Sample of the checker-board images used for the calibration\label{fig:calibration_images}}
+\end{center}
+\end{figure}
+
+The toolbox also outputs the re-projection errors, i.e. the difference between the original point location computed during the corner detection and the one resulting from the estimated parameters. This is done on the same images as the ones used for the parameter estimation. However we noticed that the returned errors do not necessarily relate the quality of the calibration, as the re-projection sometimes looks more accurate than the corner detection or the user input in estimating the coordinates of a grid corner. Furthermore, we would like to estimate a general error which does not only rely on the location of the checker-boards in the images used for the fitting. We also observed that the choice of the input images has a significant influence on the output of the algorithm. We thus modified the calibration process in the following way: we randomly split our captured checker-board images into a training set of $10$ images and a validation set of $6$ images. We compute the parameters using the training set and the re-projection error using the validation set. We repeat this process $50$ times with different randomized splits and finally consider the parameters leading to the smallest error on the validation set as the most accurate one. In this way we can reduce the uncertainty of the whole process. 
+
+\begin{figure}[htbp]
+\centering
+\subfloat[Relationship between the incident angle of a light ray and the corresponding distance from the image center.\label{fig:calibration_results}]{\includegraphics[width=0.47\textwidth]{result_with_projections.pdf}}
+\hspace{0.2cm}
+\subfloat[Difference between equisolid model and our imaging system.\label{fig:diff_model_calib}]{\includegraphics[width=0.47\textwidth]{calibration_error.pdf}}
+\caption{Result of the calibration process compared to the various theoretical projection models.}
+\end{figure}
+
+Our fish-eye lens (\emph{Sigma 4.5mm F2.8 EX DC HSM}) was designed by the manufacturer to follow the equisolid projection for visible light, but may be less accurate for the near-infrared spectrum. There is also a transparent dome on top of the camera lens, which may have an additional refracting effect on the incident rays. The toolbox models the calibration function as a polynomial and can thus incorporate these effects when fitting the coefficients.  We have set the maximum degree of the polynomial to $4$, as advised by the authors of the toolbox. We indeed noticed a bigger re-projection error with smaller degrees. However when the maximum degree is set to a higher number, the values of the coefficients of the degrees higher than $4$ are almost zero.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{reprojection_error_bw_no_equisolid.pdf}
+\caption[Re-projection errors as a function of the distance to the image center.]{Re-projection errors as a function of the distance to the image center (crosses: raw data; line: moving average).\label{fig:reprojection_error_bw}}
+\end{center}
+\end{figure}
+
+Figure~\ref{fig:calibration_results} shows the result of the resulting calibration compared to the various theoretical projection models. Figure \ref{fig:diff_model_calib} shows the distance in pixels between our estimated calibration parameters and the various projection models. We see that we reach a distance of more than $16$ pixels for angles around $40$ degrees. We also find that the maximum viewing angle of the whole device is $178.7$ degrees, slightly less than hemispheric.
+
+
+Figure~\ref{fig:reprojection_error_bw} shows the re-projection error for all the points of the grids in the validation set. A moving average with a window of $50$ pixels is also shown. The average re-projection error for our model is $3.87$ pixels. We can see a minor increase of the error with distance from the image center (and thus the elevation angle of the incident ray).
+
+
+
+
+
+\subsection{Vignetting Correction}
+\label{sec:intensity}
+
+Vignetting refers to a darkening toward the corners of the image which is introduced during the capturing process. It has several origins. Natural vignetting is due to the incident light rays reaching the camera sensors with varying angles. It is commonly modeled by the cosine fourth law of the angle at which the light ray strikes the image sensor. The camera of WAHRSIS is particularly prone to this effect due to its wide angle. Optical vignetting describes the shading caused by the lens cylinder itself, blocking part of the off-axis incident light. This is aperture-dependant~\footnote{\url{http://toothwalker.org/optics/vignetting.html}}.
+
+In most cases, it is difficult to model such vignetting function using the cosine forth law. It is however approximated by a higher-order polynomial function with respect to the radial distance of the fish eye image. We denote this radial distance as $r$, as introduced previously in Section~\ref{sec:geometrical_calib}. In a perfectly calibrated imaging system, the image center coincides exactly with vignetting center. However, in practice, there is a mismatch between the two.
+
+Suppose the vignetting luminance of a pixel in a fish-eye lens image is denoted by $L_w$. In \cite{d2007radiometric}, d\`{}Angelo parameterized this luminance $L_w$ with respect to radial distance $r$ using a sixth-order polynomial: 
+
+\[L_w = \epsilon_1 r^6 + \epsilon_2 r^4 + \epsilon_3 r^2 + 1\],
+
+where $\epsilon_1, \epsilon_2, \ldots$ are the polynomial fitting coefficients. 
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{integrating_sphere.pdf}
+\caption{Image captured inside the integrating sphere.\label{fig:sphere}}
+\end{center}
+\end{figure}
+
+In order to analyze such vignetting phenomenon in our WAHRSIS system, we use an integrating sphere for our experiments. It consists of a large sphere, whose interior surface is made of a diffuse white reflective coating, resulting in a uniform light source over the whole surface. A Light-Emitting Diode (LED) light source as well as the camera are placed inside. Figure~\ref{fig:sphere} shows an image captured inside this sphere. Notice the higher brightness at the center. This image has been taken with the biggest available aperture ($\bar{f}/2.8$) and constitutes the worst case with regards to vignetting. Smaller aperture values will result in less significant distortions.
+
+We plot the luminance value of the pixels in the fish-eye lens ($L_w$) with respect to the radius ($r$) of the image center~\footnote{For the sake of simplicity, we assume that the vignetting center and image center coincides in our system.}. Figure~\ref{fig:pro_distance} shows the luminance of the pixels inside the lens circle as a function of the distance from the image center. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.7\textwidth]{vig_distance.pdf}
+\caption[Luminance as a function of the distance from the image center.]{Luminance as a function of the distance from the image center. The red line is the fitting equation $ L_w = -1.365 \times 10^{-5} r^2 - 0.004006 r + 235.8 $.}
+\label{fig:pro_distance}
+\end{figure}
+
+We observe that the luminance of an uniformly-lit scene is perceived differently at different radial distances of the image. The luminance is highest near the center, and it radially drops off with increasing distance. We fit a second-degree polynomial function between the two. We obtain the fitting equation as:
+
+\[L_w = \epsilon_1 r^2 + \epsilon_2 r + \epsilon_3 \],
+
+where $\epsilon_1 = -1.365 \times 10^{-5}$, $\epsilon_2 = -0.004006$ and $\epsilon_3 = 235.8$ are the corresponding polynomial fitting constants. 
+
+In order to correct the luminance values, we normalize the obtained luminance values and then take their inverse. We fit a moving average and use this result as a radius dependent correction coefficient, as shown in Fig.~\ref{fig:coefficients}. We repeat this process for each aperture setting.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.7\textwidth]{vig_correction.pdf}
+\caption{Correction coefficients in red and scatter plot of all the values in blue.}
+\label{fig:coefficients}
+\end{figure}
+
+In this section, we discussed the various calibration processes that we perform in our WAHRSIS system. In the subsequent section, we will see how HDRI techniques can help in reducing sun-glare in (two of) our sky-camera models, and significantly simplify post-processing techniques. 
+
+\section{High Dynamic Range Imaging} 
+\label{sec:HDR-WAHRSIS}
+The conventional cameras cannot capture and render a wide range of the luminosity of a scene. On a typical sunny and clear day, it is difficult to capture the entire luminance range of the sky scene using a conventional camera. The region around sun has a luminous intensity several orders of magnitude higher than other parts of the scene. The ratio between the largest and the smallest luminance value of a scene is referred to as its Dynamic Range (DR). Typical cameras can only capture a Low Dynamic Range (LDR) image. Therefore, we use the exposure bracketing option of our cameras to capture three pictures at $0$, $-2$ and $-4$ exposure value (EV) in quick succession. The aperture remains fixed across all captured images, while the shutter speed automatically adapts to match the appropriate exposure. Figure~\ref{fig:ldr-input} shows an example of the captured images at varying exposure levels. 
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.3\textwidth]{wahrsis4-high}\hspace{0.5mm}    
+\includegraphics[width=0.3\textwidth]{wahrsis4-med}\hspace{0.5mm} 
+\includegraphics[width=0.3\textwidth]{wahrsis4-low}\hspace{0.5mm}\\
+\makebox[0.3\textwidth][c]{(a)}
+\makebox[0.3\textwidth][c]{(b)}
+\makebox[0.3\textwidth][c]{(c)}
+\caption[Example of three LDR images captured by sky camera.]{Example of three images captured by the camera at varying exposure levels and shutter speeds. (a) 0 EV, 1/400 sec. (b) -2 EV, 1/1600 sec. (c) -4 EV, 1/4000 sec.}
+\label{fig:ldr-input}
+\end{figure}
+
+These LDR images are then fused together to generate a High-Dynamic-Range (HDR) image. A detailed discussion on the generation of HDR image is found in the subsequent section. 
+
+\subsection{HDR Image Generation}
+\label{sec:HDR-discuss}
+
+The different LDR images can be fused together into a single, high-dynamic-range radiance map. As their exposure times are known, we can compute the camera response curve of the imaging system using samples obtained from the different LDR images~\footnote{The source code to generate the camera response curve and other HDR imaging techniques are available online at \url{https://github.com/Soumyabrata/HDRCaptures}.}. We use Debevec and Malik's algorithm~\cite{DebevecHDR} to recover HDR radiance map from LDR images. This is shown in Fig.~\ref{fig:response-RGB}. The dynamic range of the resulting HDR radiance map is $15$ bits, which represents a significant improvement over the $8$-bit  LDR images. 
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.55\textwidth]{exp-contri.pdf}
+\caption{Response curve of the HDRI system, computed from three LDR images with different exposure settings.
+}
+\label{fig:response-RGB}
+\end{center}
+\end{figure}
+
+
+This generated HDR radiance map cannot be viewed directly on a conventional LDR display. Therefore, we tone-map the HDR radiance map into a conventional $8$-bit LDR image using contrast-limited adaptive histogram equalization (CLAHE)~\cite{CLAHE}. We use CLAHE for this application because it involves a logarithmic transformation of the higher DR radiance map to a lower $8$-bit display. This produces a perceptually recognizable image, because response of human eye to light is also logarithmic. This operation compresses the dynamic range by preserving the details in the image. Figure~\ref{fig:tonemapped} shows an example of a tone-mapped image.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{wahrsis4-tonemapped}
+\caption{Tone-mapped image computed with the pictures shown in Fig. \ref{fig:ldr-input}}
+\label{fig:tonemapped}
+\end{figure}
+
+
+
+\subsection{Introducing HDRI techniques in sky cameras}
+The actively-cooled and the passively-cooled WAHRSIS models do not have a physical sun blocking mechanism. Instead, we use HDRI techniques to reduce the over-exposure resulting from sun glare. This avoids occlusions from the sun-blocker and its support structure in the captured images (which significantly complicate subsequent computer vision tasks), while at the same time keeping the number of saturated pixels in the circumsolar region to a minimum. 
+
+The imaging system of these WAHRSIS models consists of the same imaging system as compared to our sun-blocker based WAHRSIS model. These imagers use an ODROID-C1 single board computer; with its 1.5 GHz processor and 1 GB RAM, this board is powerful enough to perform on-board image processing tasks. 
+
+We perform the HDR fusion and tone-mapping on a server that collects the images from all our WSIs. Since we have three imagers capturing one frame every $2$ minutes, we need algorithms which are computationally efficient. 
+In that context, we use the GPU implementation of Aky\"uz \cite{akyuz2012high}. It relies on the OpenGL API to perform the entire HDR pipeline on the GPU. Computing a $18$ megapixels HDR image and its tone-mapped version takes less than 7 seconds, compared to a few minutes with standard CPU algorithms. 
+
+For storage efficiency, we use the \emph{JPEG-XT} format~\cite{jpegxt} to compress our HDR images\footnote{We use the reference software source code available at \url{https://jpeg.org/jpegxt/software.html}}. \emph{JPEG-XT} is an extension of \emph{JPEG} currently being developed for HDR images. The tone-mapped version is stored as a standard \emph{JPEG} image, while the inverse tone-mapping operation is added to the file as metadata. This allows for the HDR radiance map to be decoded.  Using \emph{JPEG-XT} at a quality level of $90$\%, we obtain a file size of about $8$~MB. The \emph{JPEG-XT} format is used to store the HDR images. An important advantage of \emph{JPEG-XT} format is that it is backward compatible to the popular \emph{JPEG} compression technique. It consists of a base layer that is compatible with the legacy systems and an extension layer that provides the full dynamic range. This represents a significant improvement compared to the common \emph{RGBE} format, which uses $50$MB per image by storing every pixel with one byte per color channel and one byte as a shared exponent.
+
+We use such HDR imaging techniques instead of using RAW images. There are compelling trade-offs in choosing either HDR or RAW images. HDR images uses a set of Low Dynamic Range (LDR) images to compute the HDR radiance map; and we can access the 0EV LDR image which is needed for subsequent analysis. The size of an LDR image is approximately 2-3MB per image. On the other hand, the entire dynamic range of the sky scene can be captured using a single RAW image. However, the size of a conventional RAW image is approximately 18MB per image. Therefore, because of operational issues, we have chosen to use exposure bracketed LDR images, instead of capturing in RAW mode. In the future designs, we can consider using only RAW mode while capturing the sky/cloud images. In the upcoming Chapter~\ref{chap:segmentation} of this thesis, we discuss how HDRI techniques can improve cloud segmentation algorithms, especially around circumsolar region.
+
+
+As a final comparison, we compare the images obtained from the different models of our sky camera. 
+Figure~\ref{fig:sun-blocking}(c) shows the resulting image, along with those obtained from a sky imager with a mechanical sun blocker and a normal single-exposure image. In order to visualize the efficacy of our proposed approach, we zoom-in on the circumsolar region in each of the three images to look at the amount of detail visible around the sun. Although the sun-blocker is effective at reducing sun glare, the occlusion is significant. Without a sun-blocker, the number of saturated pixels is very high in a normal single-exposure image. Fusing multiple exposures into an HDR image is indeed a good solution for minimizing the effects of over-exposure.
+
+
+\begin{figure}[htb]
+\begin{center}
+\subfloat[With sun blocker]{\includegraphics[height=0.32\columnwidth]{IB-rect.pdf}}
+\subfloat[Auto exposure]{\includegraphics[height=0.32\columnwidth]{J1-rect.pdf}}
+\subfloat[With HDR imaging]{\includegraphics[height=0.32\columnwidth]{TM-rect.pdf}}\\
+\vspace{-2.5mm}
+\subfloat{\includegraphics[height=0.33\columnwidth]{IB-mask.pdf}}
+\subfloat{\includegraphics[height=0.33\columnwidth]{auto-mask.pdf}}
+\subfloat{\includegraphics[height=0.33\columnwidth]{HDR-mask.pdf}}
+\caption[Effect of sun glare with different strategies for sun occlusion.]{Effect of sun glare with different strategies.  The white rectangle outlines the circumsolar region, which is enlarged in the bottom row. Saturated pixels are shown in pink.
+\label{fig:sun-blocking}}
+\end{center}
+\end{figure}
+
+Unlike our sky imagers, the commercial sky imagers have a low image resolution of $352\times288$. Moreover, the total cost is high too (US\$30-35K). Also, no HDRI techniques are present in the commercial imager. We employ HDRI techniques in our imager, that helps us in building more compact versions of sky cameras.
+A more detailed discussion on HDRI techniques, and how they solve cloud segmentation problems in circumsolar region will be discussed later in this thesis in Chapter~\ref{chap:segmentation}. Most of our works are performed in LDR images, unless otherwise stated.
+
+
+\section{Conclusions} 
+\label{sec:WSI-conclude}
+In this chapter, we have presented WAHRSIS - a new custom-built whole sky imager. Its advantages are low cost and simple design. We presented three models of WAHRSIS: sun-blocker based model, actively-cooled model and passively-cooled model. We described its components and the calibration of its imaging system. Our imager provides high resolution images of the whole sky hemisphere, which can be useful for many various applications, as indicated in the subsequent chapters.
+
+Unlike our sun-blocker based model, the remaining two models does not use a mechanical sun blocker. Instead, they rely on the fusion of multiple exposures to create a high-dynamic-range image and minimize over-saturation of pixels near the circumsolar region. Table~\ref{tab:diff-WAHRSIS} summarizes the various characteristics of the different models of WAHRSIS.
+
+\begin{table}[htb]
+\small
+\centering
+\begin{tabular}{ |l|p{3cm}|p{3cm}|p{3cm}| }
+\hline 
+WAHRSIS Properties  & \textbf{Sun-blocker model} &  \textbf{Actively-cooled model} & \textbf{Passively-cooled model} \\
+\hline \hline
+Glare reduction method & Sun blocker & HDRI & HDRI  \\ \hline
+Occlusion severity & Moderate & Nil & Nil \\ \hline 
+Weatherability  & Limited & Good & Good \\ \hline
+Portability  & Limited & Good  & Good \\ \hline
+Image resolution  & High & High  & High \\ \hline 
+Total cost (in US\$)& \$2525  & \$1895 & \$1769  \\ \hline
+\end{tabular}
+\caption{Comparison of the different WAHRSIS models.}
+\label{tab:diff-WAHRSIS}
+\end{table}
+
+We use the captured images for sky/cloud segmentation and classification into different cloud types. Moreover, we deploy multiple sky cameras in order to estimate cloud base height. 
+
+ 
+

@@ -1,0 +1,21 @@
+%% Copyright (C) 2011 by Marco Daniel
+\ProvidesPackage{nobibprint}[2011/10/12 v0.1 nobibprint]
+\RequirePackage{etoolbox}
+\RequirePackage{xkeyval}
+\define@boolkey{nobibprint.sty}[nobib@]{hide}{}
+\ExecuteOptionsX{hide=true}
+\ProcessOptionsX
+\newsavebox\nobib@tempbox
+\ifnobib@hide
+   \AtBeginDocument{%
+     \let\nobib@bibliography@orig\bibliography
+     \def\bibliography#1{%
+        \savebox\nobib@tempbox{%
+           \parbox{\linewidth}{%
+              \nobib@bibliography@orig{#1}%
+            }%
+        }%
+      }%
+   }
+\fi
+\endinput

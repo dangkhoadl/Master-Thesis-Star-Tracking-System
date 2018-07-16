@@ -1,0 +1,100 @@
+\chapter{Introduction}
+\label{chap:intro}
+
+\definecolor{Light}{gray}{.95}
+\newcommand\tab[1][0.5cm]{\hspace*{#1}}
+
+\lhead{Chapter 1. \emph{Introduction}}
+
+\section{Background and Motivation}
+
+The study of clouds in the earth's atmosphere is becoming popular amongst the remote sensing community for a variety of applications and domains---aviation, weather prediction, and solar energy. Furthermore, ground-to-satellite or ground-to-air communication signals suffer from substantial attenuation because of clouds in the atmosphere. Rain, clouds, atmospheric particles, and water vapor along the signal path affect communication links in various ways. 
+
+Sky pictures are commonly used in the analysis and prediction of signal attenuation due to clouds. Imaging the cloud in the atmosphere can be performed in different ways. Satellite imagery~\cite{PALSAR,sat_reg} and aerial photographs~\cite{air1} are popular in particular for large-scale surveys; airborne light detection and ranging (LiDAR) data are extensively used for aerial surveys~\cite{LIDAR1}. However, these techniques rarely provide sufficient temporal and/or spatial resolution for localized and short-term cloud analysis over a particular area. This is where ground-based whole sky imagers (WSIs) offer a compelling alternative~\cite{WAHRSIS}. The images obtained from these devices provide high-resolution data about local cloud formation, movement, and other atmospheric phenomena. 
+
+With the rapid advancement in photogrammetric techniques, high resolution cameras are now extensively used for almost all applications. The existence of ubiquitous cameras around us generate a huge amount of data, which can be effectively used to solve most of the fundamental problems in the field of remote sensing. Extracting valuable information from the huge amount of image data by detecting and analyzing the various entities in these images is challenging. In this thesis, we attempt to answer some of the fundamental questions in the cloud imaging by connecting the remote sensing and computer vision communities. 
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{cloud_att_demo_v2.pdf}
+\caption[Illustration of cloud attenuation in satellite communication links.]{Attenuation: The effects of the atmosphere on signal transmitted from geo-stationary satellites. The rain, cloud and the other atmospheric particles contributes a noise signature that ultimately degrades the fidelity of the satellite signals. Image is archived from NASA, Glenn Research Center.
+\label{fig:cloud_att}}
+\end{center}
+\end{figure}
+
+Our objective is to use whole sky imagers to provide an analysis of the effect of clouds in signal strength attenuation during satellite and military communications. Satellite communication links suffer from appreciable attenuation in the space to ground communication because of the rain, cloud, atmospheric particles, water vapor particles in its signal path~\cite{site_diversity,GammaDrop}. Figure~\ref{fig:cloud_att} shows a satellite slant path which is affected by propagation impairments. The images obtained from the whole sky imagers will help us to detect and identify different type of clouds, analyze the small-scale movement which will subsequently help us in deriving a model for signal attenuation of satellite and air-to-ground communication links.
+
+We aim to understand the effects of clouds on communications using ground-based whole sky imagers. These ground-based devices capture the entire sky at regular intervals of time. The resulting images are of higher resolution than what can be obtained from satellites, and the upwards pointing nature of the camera makes it easy to capture low-lying clouds.
+
+The objectives of this thesis can be clearly defined as:
+\begin{itemize}
+\item To design and build low-cost and high image resolution sky cameras.
+\item To identify the best color channels for cloud detection.
+\item To propose a color-based image segmentation algorithm.
+\item To classify cloud types into various categories, as identified by World Meteorological Organization (WMO).
+\item To estimate various weather parameters using ground-based sky imagers.
+\item To analyze point localization error in a multi-camera set-up and to localize cloud base using stereo cameras.
+\end{itemize}
+The current approaches for such problems lack a systematic analysis, proper benchmarking in public databases and better performance. Therefore, we have identified these problems and propose the following solutions for these various tasks.
+
+We present the design of the first low-cost, high image resolution sky camera designed for tropical countries like Singapore. We name our imagers \textbf{WAHRSIS}, that stands for \textbf{W}ide \textbf{A}ngle \textbf{H}igh \textbf{R}esolution \textbf{S}ky \textbf{I}maging \textbf{S}ystem. We present three models of WAHRSIS.
+
+Using several statistical tools viz.\ Principal Component Analysis (PCA), bimodality analysis and clustering techniques, we present a structured and systematic analysis of the various existing color channels. We propose a rough-set based color channel selection method that accurately estimates the efficiency of different color channels for cloud detection. Our method is the first that employs rough-set based techniques to solve this problem of color channel selection. Such rough-set methods provide us with mathematical tools to define the \emph{approximate} ground-truth maps of sky/cloud images.
+
+We introduce the first large-scale, publicly available sky/cloud image database with manually annotated segmentation masks. We refer to this database as \textbf{SWIMSEG}: \textbf{S}ingapore \textbf{W}hole sky \textbf{IM}aging \textbf{SEG}mentation database. Unlike the conventional binary segmentation algorithms, we propose a probabilistic segmentation method. In our method, instead of \emph{hard} labeling, we assign a \emph{probability} to a pixel to belong to cloud category. We also benchmark with the state-of-the-art cloud segmentation algorithms. 
+
+We also propose a robust cloud classification framework for identifying and recognizing cloud types in tropical regions like Singapore. We propose a filter-bank based cloud classification framework that systematically integrates both \emph{color} and \emph{texture} cues of sky/cloud images, and benchmark with other existing algorithms. We also release the first large-scale cloud categorization database to the research community. We refer to this database as \textbf{SWIMCAT}, that stands for \textbf{S}ingapore \textbf{W}hole sky \textbf{IM}aging \textbf{CAT}egories database.
+
+We propose a model to estimate the instantaneous solar radiation from the corresponding ground-based sky/cloud images. Extensive benchmarking w.r.t.\ other existing solar estimation algorithms show the efficacy of our approach. We also propose a method to detect the onset of precipitation from sky/cloud images. Finally, we present a methodology to perform short-term cloud forecasts using optical flow techniques.
+
+Finally, we present a localization algorithm in a multiple-camera setup, under the assumption of error-free matching and noisy camera poses. We benchmark our algorithm with other state-of-the-art point localization algorithms. We present a framework for estimating the cloud-base height, using a pair of sky cameras.
+
+
+\section{Thesis Outline \& Main Contributions}
+\forceindent \textbf{Chapter~\ref{chap:intro}: Introduction} \tab We discuss the objectives and motivation of the thesis in this chapter. We also describe the outline of the thesis, and briefly highlight the main contributions which were offered throughout this thesis.
+
+\textbf{Chapter~\ref{chap:litreview}: Literature Review} \tab In this chapter, we provide a thorough literature review of the various aspects of this thesis. We give a general account of the current state-of-the-art practices, and also aim to identify a few research gaps in the current literature. 
+
+\textbf{Chapter~\ref{chap:wsi}: Whole Sky Imager} \tab The central theme of this thesis involves the use of high-resolution, ground-based sky imagers for continuous monitoring of the earth's atmosphere. Unlike conventional satellite images, ground-based sky cameras have high temporal and spatial resolutions. In this chapter, we discuss the methodology for spatial-, color- and luminance- calibration for our custom-built, low-cost sky imagers. Moreover, the images captured by regular sky cameras are often saturated because of the direct glare from the sun. In this chapter, we show how High Dynamic Range Imaging (HDRI) techniques can solve this problem of over-saturation. 
+
+
+
+\textbf{Chapter~\ref{chap:colorchannels}: Color Spaces and Components} \tab Our ground-based imagers called WAHRSIS (cf.\ Chapter~\ref{chap:wsi}) captures the images of the atmosphere at regular intervals of time, and stores the captured images in a server. The first task of cloud analysis is to accurately detect the cloud pixels in sky/cloud images. This is an extremely challenging task, as clouds are non-rigid and do not have specific shape or size. Therefore, \emph{color} is used as the most discriminatory feature for cloud detection. This chapter deals with a structured review of the various color spaces and components that are generally used in cloud analyis.
+
+
+\textbf{Chapter~\ref{chap:segmentation}: Color-based Image Segmentation} \tab A structured and systematic analysis of the various color channels of sky/cloud images assist us in identifying the most discriminatory color channels. In this chapter, we use the identified discriminatory color channel and discuss the approach of our color-based image segmentation algorithm. 
+
+
+
+\textbf{Chapter~\ref{chap:classification}: Texture-based Image Classification} \tab One of the important tasks after successful cloud detection, is to identify and categorize the different cloud types. In this chapter, we deal with multi-class classification of sky/cloud image patches. We perform a systematic analysis of various image features that were designed specifically for this task. 
+
+
+\textbf{Chapter~\ref{chap:solar}: Weather Parameters Estimation from Images} \tab In the previous chapters, we discussed our proposed methodology to perform color-based segmentation and texture-based classification on sky/cloud images. In this chapter, we discuss about the impact of clouds on solar and renewable energy generation. In tropical regions like Singapore, the weather phenomenon is highly localized and clouds often block the sun. This greatly impacts the incoming solar radiation falling on the earth's surface. Therefore, the generated solar energy drops drastically in a short span of time. Such scenarios are not conducive for Photo Voltaic (PV) power generation. It is extremely difficult to model these sharp variations of the incoming solar radiation. In this chapter, we analyze the impact of clouds on such incoming solar radiation and also discuss our current works on cloud tracking and detecting rainfall onset.
+
+
+\textbf{Chapter~\ref{chap:localize}: 3D Scene Analysis Using Multiple Cameras} The earlier chapters deal with the study and analysis of images, captured from a single camera. In this chapter, we extend our discussion to the task of scene analysis using multiple cameras. The first part of this chapter deals with the introduction of a novel localization algorithm in the setup of multiple cameras, having finite pixel dimension and noisy camera poses. The remaining part of this chapter discusses a practical application of point localization task. We use scene flow techniques on stereo images captured by ground-based sky cameras to localize cloud mass. 
+
+
+\textbf{Chapter~\ref{chap:conclusion}: Conclusion \& Future Work} \tab We conclude the thesis in this chapter. Future works using ground-based sky camera are also discussed. Following this chapter, we provide a detailed list of the various notations that were used throughout this thesis, for easy reference. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,261 @@
+\documentclass[reqno,12pt,oneside]{book} % For e-report
+%\documentclass[reqno,12pt,twoside]{book} % For printing
+
+\newtheorem{theorem}{Theorem}
+\usepackage{longtable}
+\usepackage[english]{babel}
+\usepackage{fancyhdr}
+\usepackage{float} \restylefloat{figure} %defines H option for floats
+\usepackage{color}   %May be necessary if you want to color links
+\usepackage{setspace}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true, %set true if you want colored links
+    linktoc=all,     %set to all if you want both sections and subsections linked
+    linkcolor=black,  %choose some color if you want links to stand out
+    citecolor=blue,
+    urlcolor=blue,
+}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\renewcommand\floatpagefraction{.99}
+\renewcommand\dblfloatpagefraction{.95}
+\usepackage{graphicx}
+\graphicspath{{Figures/}}
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{setspace} %\singlespacing 
+\onehalfspacing
+\usepackage{fixltx2e}
+\usepackage{epstopdf}
+\usepackage{rotating}
+\usepackage{resizegather}
+\usepackage{lscape}
+\setlength{\textfloatsep}{1mm}
+\setlength{\floatsep}{1mm}
+\usepackage{bm} %defines \bm for bold greek letters, i.e. $\bm{\alpha}$
+\usepackage{cite}
+\usepackage{url}
+\usepackage[small]{caption}
+\usepackage{subfig} %should come after caption package if given, can't be used with caption2, defines subfloat
+\usepackage{array} %More formatting options for array and tabular environments
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\usepackage{amsmath}   % From the American Mathematical Society
+% A popular package that provides many helpful commands
+% for dealing with mathematics. Note that the AMSmath
+% package sets \interdisplaylinepenalty to 10000 thus
+% preventing page breaks from occurring within multiline
+% equations. Use:
+\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks
+% as IEEEtran.cls normally does. amsmath.sty is already
+% installed on most LaTeX systems. The latest version
+% and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+\usepackage{amsfonts}
+\usepackage[T1]{fontenc} % For less than and greater than sign
+\usepackage{subfloat}
+\usepackage{tikz}
+\usepackage{afterpage}
+\usepackage{lipsum}
+\long\def\symbolfootnote[#1]#2{\begingroup\def\thefootnote{\fnsymbol{footnote}}
+\footnote[#1]{#2}\endgroup}
+ 
+ 
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{stackengine}
+\usepackage{wrapfig} % For wrapping figure with text.
+\usepackage{algpseudocode} % For algorithm 
+\usepackage{algorithm,algpseudocode} 
+
+% To hide the references section.
+%\usepackage[hide=true]{nobibprint}
+
+\newcolumntype{L}{>{\centering\arraybackslash}m{8mm}} % Used for Table in cloud classification chapter
+
+     
+\definecolor{orange}{rgb}{0.96, 0.52, 0.08}    
+
+\newcommand{\forceindent}{\leavevmode{\parindent=1.5em\indent}}
+
+% Addition ends here----------------------
+
+\usepackage{nomencl}
+
+      
+\begin{document}
+
+\frontmatter
+\pagestyle{plain}
+
+
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\begin{center}
+ 
+
+
+
+
+
+
+\textsc{{\Large \bfseries 2D and 3D Image Analysis and Its Application to Sky/Cloud Imaging}}\vspace{0.4cm} % Thesis title
+
+ 
+\vspace{4cm} 
+ 
+\textsc{\Large \bfseries Soumyabrata Dev}\\[0.5cm]
+
+\vspace{5cm} 
+
+\vfill 
+
+\large {School of Electrical \& Electronic Engineering}\\[0.5cm]
+
+\vspace{1cm} 
+
+\normalsize{A thesis submitted to the Nanyang Technological University\\ in partial fulfillment of the requirement for the degree of\\ 
+Doctor of Philosophy}\\[0.3cm] % University requirement text
+
+ 
+{\large \textbf{2017}}\\[4cm] % Date
+ 
+
+\end{center}
+\end{titlepage}
+
+
+\cleardoublepage
+\input{Misc/ack}
+\addcontentsline{toc}{chapter}{Acknowledgment}
+
+
+\input{Misc/abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+
+
+
+
+\clearpage
+
+\pagestyle{fancy}
+\fancyhf{}
+\afterpage{\cfoot{\thepage}}    %Forces page number in every line
+
+\cleardoublepage
+\lhead{\emph{Contents}}
+\tableofcontents
+\addcontentsline{toc}{chapter}{Contents}
+
+
+\cleardoublepage
+\lhead{\emph{List of Figures}}
+\listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename}
+
+
+\cleardoublepage
+\lhead{\emph{List of Tables}}
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+\clearpage
+
+
+\cleardoublepage
+
+\input{Misc/abbreviations}
+\addcontentsline{toc}{chapter}{Abbreviations}
+\clearpage
+
+
+\mainmatter %[This indicates page number will start now]
+
+
+%INCLUDE THE CHAPTERS HERE
+\input{Chapters/Chapter1}
+\clearpage
+
+\input{Chapters/Chapter2}
+\clearpage
+
+\input{Chapters/Chapter3}
+\clearpage
+
+\input{Chapters/Chapter4}
+\clearpage
+
+\input{Chapters/Chapter5}
+\clearpage
+
+\input{Chapters/Chapter6}
+\clearpage
+
+\input{Chapters/Chapter7}
+\clearpage
+
+\input{Chapters/Chapter8}
+\clearpage
+
+\input{Chapters/Chapter9}
+\clearpage
+
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+% Suppressing the counter to not show sections and sub-sections.
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+ 
+\input{Appendices/AppendixA}
+\input{Appendices/AppendixB}
+\input{Appendices/AppendixC}
+\input{Appendices/AppendixD}
+
+% Setting the counter back on track!
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+
+\backmatter
+
+\cleardoublepage
+
+
+\input{Misc/notations}
+\addcontentsline{toc}{chapter}{Notations}
+\clearpage
+
+
+\input{Misc/pubs}
+\addcontentsline{toc}{chapter}{Author's Publications}
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\label{Bibliography}
+\small
+\begin{singlespace}
+\lhead{\emph{Bibliography}}
+\bibliographystyle{IEEEbib}
+\bibliography{./References/longforms,./References/references}	
+\end{singlespace}
+
+
+
+\end{document}

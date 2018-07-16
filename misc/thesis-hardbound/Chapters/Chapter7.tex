@@ -1,0 +1,469 @@
+\chapter{Weather Parameters Estimation from Images}
+\label{chap:solar}
+
+\lhead{Chapter 7. \emph{Weather Parameters Estimation from Images}}
+In the previous chapters, we have described our proposed frameworks for cloud segmentation and cloud-type recognition. In this chapter, we extend our analysis of sky/cloud images to the field of solar and renewable energy. Here, we describe how clouds impact the generation of solar energy; and we propose a model to estimate the solar irradiance using whole sky imagers. We derive a model for estimating the solar irradiance using pictures taken by those imagers. Unlike pyranometers, these sky images contain information about the cloud coverage and can be used to derive cloud movement. An accurate estimation of the solar irradiance using solely those images is thus a first step towards short-term solar energy generation forecasting, as cloud movement can also be derived from them. We derive and validate our model using pyranometers co-located with our whole sky imagers. Our method shows a significant improvement in estimating strong short-term variations. As intended applications, we also discuss our current ongoing works on cloud tracking and detecting rainfall onset from sky images. 
+
+\section{Introduction}
+Localized and short-term forecasting of cloud movements is an on-going research topic. Optical flow techniques can be used to generate forecasted images using two anterior frames. Our proposed method is thus a first step towards solar irradiance forecasting, as the input data used to estimate the irradiance is the same as the one used to forecast the sky condition.
+
+The accurate estimation of solar energy is a challenging task, as clouds greatly impact the total irradiance received on the earth's surface in an intermittent fashion. In the event of clouds covering the sun for a short time, there is a sharp decline of the produced solar energy. Therefore, it is of utmost importance to model the incoming solar radiation accurately. In this chapter, we ask this fundamental question: in what ways can the rapid fluctuations of the solar irradiance be best captured? We use ground-based sky cameras to estimate the solar irradiance.
+
+The analysis of clouds and several other atmospheric phenomenon is traditionally done using satellite images. The most widely used satellite data is from Moderate-resolution Imaging Spectroradiometer (MODIS), which is on board the Terra and Aqua satellites. They provide a large-scale view of the cloud dynamics and various atmospheric phenomenons. The data from this satellite on-board instruments are usually available only twice in a day. This is useful for a macro-analysis of cloud formation at a particular location on the earth's surface. One of the illustrative examples of such satellite data is the HelioClim-1 database from Global
+Earth Observation System of Systems (GEOSS). It provides hourly and daily average of surface solar radiation received at ground level~\cite{HelioClim2014}. Ouarda et al.\ in~\cite{SEVIRI2016} assessed the solar irradiance from six thermal channels obtained from SEVIRI instrument. However these information are temporal and spatial averages. Solar energy applications requires knowledge of the solar irradiance at specific locations and at every time through the day. Therefore, images obtained from satellite are not conducive for such analysis, especially in geographical small countries like Singapore where the cloud formation is highly localized. We discussed the advantages of using sky cameras in detail earlier in Chapter~\ref{chap:wsi} of this thesis. 
+
+\section{Outline of Our Contribution}
+In this chapter, we use images obtained from Whole Sky Imagers (WSIs) to accurately model the fluctuations of the solar radiation~\footnote{The source code of our proposed methodology to estimate solar irradiance from circumsolar region of the sky/cloud images is available online at \url{https://github.com/Soumyabrata/solar-irradiance-estimation}.}. There are several advantages of using a WSI to estimate solar irradiance, instead of using a pyranometer. Common weather stations generally use a solar sensor that measures the total solar irradiance. It is a point-source device providing information for a particular location. We do not have access to the cloud macrophysical properties, and its evolution over time. On the other hand, the wide-angle view of ground-based sky camera provide us extensive information of the sky. We can track a cloud mass over successive image frames, and also predict its future location. In this chapter, we attempt to solve the fundamental problem of modeling solar irradiance from sky images. This will also help in solar energy forecasting, which is useful in photovoltaic (PV) systems~\cite{solar_PV}.
+
+The main contributions of this chapter compared to existing works in the literature include:
+
+\begin{itemize}
+\item A robust framework to accurately estimate and track the rapid fluctuations of solar irradiance; 
+\item A proposal of a solar irradiance model using ground-based sky camera images, with an extensive benchmarking of our proposed model with other solar irradiance estimation models;
+\item A methodology to use whole sky images to detect the onset of precipitation; and
+\item A proposed approach to perform short-term prediction of localized cloud motion using ground-based sky images.
+\end{itemize}
+
+The rest of the chapter is organized as follows. In Section~\ref{sec:data}, we briefly discuss our experimental setup comprising whole sky imagers and weather stations. Our proposed model of estimating the solar radiations along with its rapid fluctuations are described in detail in Section~\ref{sec:model-solar}. In Section~\ref{sec:comparemodels}, we benchmark our proposed methodology with other existing solar estimation models. However, our proposed method suffers from a few disadvantages. We identify those drawbacks and suggest solutions to address them; these are discussed in detail in Section~\ref{sec:solar-discuss}. In this chapter, we also identify two intended applications of using whole sky images in the field of solar energy generation. In Section~\ref{sec:rainfallonset}, we discuss how the luminance of whole sky images can be used to indicate the onset of precipitation. Finally, in Section~\ref{sec:trackclouds}, we discuss our methodology of using optical flow techniques to perform short-term cloud forecasting. Section~\ref{sec:chap7-conclude} concludes this chapter. 
+
+\section{Data Collection}
+\label{sec:data}
+Our experimental setup consists of weather stations and ground-based WSIs. These devices are collocated at the rooftop of our university building ($1.34^{\circ}$N, $103.68^{\circ}$E). These devices continuously capture the various meteorological data, and archive them for subsequent analysis. 
+
+The pyranometer reads the instantaneous solar irradiance reaching the sensor at any instant of time. This constitutes both the direct and diffuse components of solar radiation. On a typical day, the solar radiation can fluctuate significantly in a short span of time, which is quite different from the ideal cosine response. If we examine the solar radiation readings on the $7$th of December $2015$ (cf.\ Fig.~\ref{fig:fluctuation_example}), we observe that the recorded solar radiation falls drastically from $758$ Watt/$\mbox{m}^2$ at $10$:$30$, to $283$ Watt/$\mbox{m}^2$ at $10$:$32$, and then rises again to $714$ Watt/$\mbox{m}^2$ at $10$:$34$. We observe two rapid fluctuations within a span of a few minutes.
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[height=0.28\textwidth]{sun1.png}\hspace{-1mm}
+\includegraphics[height=0.28\textwidth]{sun2.png}\hspace{-1mm}
+\includegraphics[height=0.28\textwidth]{sun3.png}\\
+\makebox[0.3\textwidth][c]{\small 10:30 (758 W/$\mbox{m}^2$)}
+\makebox[0.3\textwidth][c]{\small 10:32 (283 W/$\mbox{m}^2$)}
+\makebox[0.3\textwidth][c]{\small 10:34 (714 W/$\mbox{m}^2$)}
+\caption[Impact of clouds on direct solar irradiance.]{Consecutive images captured over an interval of $4$ minutes on $7$ December, $2015$. The amount of total solar radiation recorded by the weather station is shown in parentheses. The sun is obscured by clouds at $10$:$32$, resulting in a sudden dip in solar radiation.
+\label{fig:fluctuation_example}}
+\end{center}
+\end{figure}
+
+The images captured using Wide Angle High Resolution Sky Imaging System (WAHRSIS) at the corresponding time instants are shown in Fig.~\ref{fig:fluctuation_example}. It becomes clear that the fluctuation in solar radiation is due to clouds obscuring the sun from view. Assuming the diffuse component of solar radiation to be almost constant at these three instants of the day, the fluctuations in solar radiation recording are primarily because of the direct irradiance component. Therefore, the clouds in the vicinity of sun have the highest impact on recorded solar radiation.
+
+In ~\cite{ursi2017}, we study the impact of clouds on total solar irradiance reaching the earth's surface. We define the difference between measured solar irradiance and clear-sky irradiance as the Cloud Radiative Effect (CRE). We analyze the relationship between measured solar irradiance and computed cloud coverage value. Extensive  results on a set of $6365$ images show that  higher cloud coverage leads to larger cloud radiative effect~\footnote{The source code of our study on cloud radiative effect using sky cameras is available online at \url{https://github.com/Soumyabrata/cloud-radiative-effect}.}.
+
+\subsection{Whole Sky Imager (WSI)}
+Commercial WSIs are available in the market. However, those imagers have high cost, low image resolution, and less flexibility in operation. In Chapter~\ref{chap:wsi}, we have discussed the design of our custom-built, low-cost, and high-resolution sky imagers. We refer these imagers as WAHRSIS, that stands for Wide Angle High Resolution Sky Imaging System~\cite{WAHRSIS}. Over the years, we have built several versions of WAHRSIS~\cite{WAHRSIS,IGARSS2015a}. They are now deployed at several rooftops of our university campus, capturing images of the sky at intervals of $2$ minutes. We use these images to estimate the total solar radiation. 
+
+\subsection{Weather Station}
+In addition to the sky imagers, we have also installed collocated weather stations. We use \emph{Davis Instruments 7440 Weather Vantage Pro} for our recordings. It measures rainfall, total solar radiation, temperature and pressure at intervals of $1$ minute. The resolution of the tipping-bucket rain gauge is $0.2$ mm/tip.
+
+It also includes a solar pyranometer measuring the total solar irradiance flux density in Watt/$\mbox{m}^2$. This consists of both direct and diffused solar irradiance component. The solar sensor integrates the solar irradiance across all angles, and provide the net solar irradiance. On a clear day with no occluding clouds, the solar sensor ideally follows a typical cosine response. The solar sensor reading is highest during noon when the incident angle of sun rays is at the minimum, whilst the reading is low during morning and evening hours.
+
+The solar radiation on a clear sky can be modeled using the solar zenith angle, and earth's eccentricity. Several clear sky models have been developed for various regions. The best clear-sky model for Singapore is provided by Yang et al.\ \cite{dazhi2012estimation}. The clear-sky Global Horizontal Irradiance (GHI) $G_c$ is modeled as: 
+
+\begin{align}
+G_c = 0.8277E_{k}I_{sc}(\cos\psi)^{1.3644}e^{-0.0013\times(90-\psi)},
+\end{align}
+
+where $E_k$ is the eccentricity correction factor for earth, $I_{sc}$ is the solar irradiance constant ($1366.1$Watt/$\mbox{m}^2$), and $\psi$ is the solar zenith angle (measured in degrees). The factor $E_k$ is calculated as:
+
+\begin{equation*}
+\begin{aligned}
+\label{eq:E0value}
+E_k = 1.00011 + 0.034221\cos(\Gamma) + 0.001280\sin(\Gamma) + \\0.000719\cos(2\Gamma) + 0.000077\sin(2\Gamma),
+\end{aligned}
+\end{equation*}
+
+where $\Gamma = 2\pi(d_n-1)/365$ is the day angle (measured in radians) and $d_n$ is the day number of the year. 
+
+As an illustration, we show the clear-sky radiation for the 1st of September 2016 in Fig.~\ref{fig:Cos_response}. The actual solar radiance measured by our weather station is also plotted. We also show the deviation of the measured solar radiation from the clear-sky model. We observe that there are extremely rapid fluctuations in the measured readings. These rapid fluctuations are caused by the incoming clouds that obstruct the sun from direct view. Such information about the cloud profile and its formation cannot be obtained from a point-source solar recording. Therefore, we aim to model these rapid fluctuations in the measured solar radiation from wide-angle images captured by our sky cameras.
+
+\begin{figure}[htb]
+\centering
+\subfloat[Measured solar radiation along with clear-sky model.]{\includegraphics[width=0.85\textwidth]{2016WS.pdf}\label{fig:2016WS}}\\ 
+\subfloat[Percentage deviation of solar radiation from clear sky data.]{\includegraphics[width=0.85\textwidth]{2016_diff.pdf}\label{fig:2016diff}}
+\caption[Measured solar radiation, and its deviation from the clear-sky model over a day.]{Solar radiation measurements on the 1st of September 2016. Note the rapid fluctuations of high magnitude in the measured solar radiation recording.}
+\label{fig:Cos_response}
+\end{figure}
+
+\section{Modeling Solar Irradiance}
+\label{sec:model-solar}
+This section details our model for computing the solar irradiance from images captured by a whole sky imager. We sample pixels using a cosine weighted hemispheric sampling to simulate the behavior of a pyranometer based on the fisheye camera lens. We then compute the relative luminance using the image capturing parameters, after gamma correction. We finally derive a linear regressor to scale the computed luminance to match measured irradiance values.
+
+\subsection{Cosine-weighted hemispheric sampling}
+The behavior of our fisheye lens with focal length $\bar{f}$ is modeled by the equisolid equation $r=2\bar{f} \sin(\beta/2)$, relating the distance ($r$) of any pixel from the center of the image to its incident light ray elevation angle ($\beta$). This allows to project a captured image on a unit hemisphere, as shown in Fig.~\ref{fig:sampling3D}. 
+
+\begin{figure}[htb]
+\centering
+\subfloat[Projection on a hemisphere of the original image]{\includegraphics[width = 1.8in]{JSTARS-sampled-empty-noborder}\label{fig:sampling3D}}\ 
+\subfloat[Cosine hemispheric sampling of the hemisphere with origin on the top]{\includegraphics[width = 1.8in]{JSTARS-sampled-noborder}\label{fig:sampling3Dsam}}\ 
+\subfloat[Applying a rotation matrix to center at the sun location]{\includegraphics[width = 1.8in]{JSTARS-sampled-sun-noborder}\label{fig:sampling3Drot}}\\
+\subfloat[Original image with detected sun location in red]{\includegraphics[width = 1.8in]{JSTARS-sun-noborder}}\ 
+\subfloat[Projection on the image of the sampled points]{\includegraphics[width = 1.8in]{JSTARS-sampled-image-noborder}}\ 
+\subfloat[Projection on the image of the rotated sampled points]{\includegraphics[width = 1.8in]{JSTARS-rotated-noborder}}\ 
+\caption{Cosine weighted hemispheric sampling process used to select the pixels used for solar irradiance estimation.}
+\label{fig:sampling}
+\end{figure}
+
+The solar irradiance is composed of a direct component relating the sun light reaching the earth without interference, as well as diffuse and reflected components. Given the high resolution of our images, we consider randomly sampled pixel locations on the hemisphere as input to the luminance computation. We follow a cosine weighted hemispheric distribution function, the center of which is at the location of the sun. This is because clouds in the circumsolar region have the highest impact on the total solar irradiance received on the earth's surface. We provide more emphasis to the clouds around the sun, as compared to those near the horizon.
+
+The first step is to compute the sampled locations from the top of the unit hemispheric dome. Each of the locations are computed as follows, using two random floating points $R_1$ and $R_2$ as input, where $(0 \leq R_1, R_2 \leq 1)$: %between 0 and 1 
+\[\phi = 2\pi R_1,\ \beta = \arccos(\sqrt{R_2})\]
+\begin{equation}
+     \begin{bmatrix}
+         x \\
+         y \\
+         z
+        \end{bmatrix}=\begin{bmatrix}
+         \sin(\beta)\cdot \cos(\phi) \\
+         \sin(\beta)\cdot \sin(\phi) \\
+         \cos(\beta)
+        \end{bmatrix}
+  \end{equation}
+
+
+
+This is represented in Fig.~\ref{fig:sampling3Dsam}. 
+
+The second step is to detect the location of the sun using a thresholding method. This is needed to align the center of the previously computed distribution (i.e.\ top of the hemispheric dome) to the actual sun location in the unit sphere. We choose a threshold of $240$ in the red channel $R$ of the $RGB$ captured image, and compute the centroid of the largest area above the threshold~\footnote{We experimentally calculated this threshold and the process is described in ~\cite{IGARSS16_calib}}. We then compute the rotation matrix transforming the z-axis unit vector to the unit vector pointing towards the sky. We apply this rotation to all the sampled points, resulting in Fig.~\ref{fig:sampling3Drot}.
+
+This means that the amount of sampled points in a region of the hemisphere is proportional to the cosine of the angle between the sun direction and the direction to that region. We experimentally concluded that this achieves a good balance between all irradiance components. We thus consider the pixel values of $5000$ points sampled using this method as input for the irradiance estimation.
+
+\subsection{Relative Luminance Calculation}
+
+For each of the $\bar{s}$ sampled pixels in the $RGB$ image, we compute its brightness value using the following formula~\footnote{following SMPTE Recommended Practice 177}:
+\[Y_{\bar{s}} = 0.2126\cdot R_{\bar{s}}  + 0.7152\cdot G_{\bar{s}} + 0.0722\cdot B_{\bar{s}}\]
+
+The JPEG compression format encodes images after applying a gamma correction. This non-linearity mimics the behavior of the human eye. This needs to be reversed in order to compute the luminance. In our case, we use a non-linear correction factor of $2.2$, which is most commonly used in imaging systems~\cite{Poynton03}. We thus apply the following formula, assuming pixel values normalized between $0$ and $255$:
+\[Y_{\bar{s}}' = 255{(Y_{\bar{s}}/255)}^{2.2}\]
+
+Unlike the conventional approach, we perform this non-linear correction stage directly on the brightness values, instead of employing to the individual red-, green- and blue- channels. We then average the pixel values across all the $\bar{s}$ sampled points in the image, and denote it by $\mathcal{N}$. This pixel value given by $\mathcal{N} = (1/{t_s})\sum_{i=1}^{t_s} Y_{\bar{s}}'$, denotes the average luminance value of the sampled points from the image, where $t_s$ is the total number of sampled points in the hemispheric sampling process. 
+
+However, each image of the sky camera is captured with varying camera parameters viz.\ ISO, F-number and shutter speed. These camera parameters can be read from the image metadata, and are useful to estimate the scene luminance. The amount of brightness of the sampled points $\mathcal{N}$, is proportional to the number of photons hitting the camera sensor. This relationship between scene luminance and pixel brightness~\cite{hiscocks2011measuring} can be modeled using the camera parameters as:
+
+\[\mathcal{N} = K_c \left( \frac{e_t\cdot {I_s}}{f_s^2}\right) \mathcal{L}_s\]
+
+where $\mathcal{N}$ is the pixel value, $K_c$ is a calibration constant, $e_t$ the exposure time in seconds, $f_s$ the aperture number, $I_s$ the ISO sensitivity and $\mathcal{L}_s$ the luminance of the scene.
+
+We can thus compute the relative luminance $\mathcal{L}_r$ using the following:
+\[\mathcal{L}_r = \mathcal{N} \left( \frac{f_s^2}{e_t\cdot {I_s}}\right)\]
+
+\subsection{Modeling Irradiance from Luminance Values}
+Using our hemispheric sampling and relative luminance computation, we therefore have one relative luminance value $\mathcal{L}_r$ per image. We propose our model using this relative luminance value to estimate the solar radiation. The usual sunrise time in Singapore is between $6$:$40$ am and $7$:$05$ am, and sunset time is approximately between $6$:$50$ pm and $7$:$10$ pm\footnote{\url{http://www.nea.gov.sg/weather-climate/forecasts}}. Therefore, we consider images captured in the time interval of $7$:$00$ am till $7$:$00$ pm. We use our ground-based whole sky images captured during the time period from January $2016$ till August $2016$ to model the solar radiation. The solar irradiance is computed as the flux of radiant energy per unit area normal to the direction of flow. The first step in estimating irradiance from the luminance is thus to cosine weight it according to its direction of flow. We weight our measurements according to the solar zenith angle $\psi$. 
+
+The modeled luminance $\mathcal{L}_m$ is expressed as: 
+
+\begin{equation*}
+\mathcal{L}_m = \mathcal{L}_r(\cos\psi)
+\end{equation*}
+
+Let us assume that the actual solar radiation recorded by the weather station be $\mathcal{S}$. We check the nearest weather station measurement, for all the images captured by WAHRSIS between April $2016$ till December $2016$. Figure~\ref{fig:solar_model} shows the scatter plot between the image luminance and solar radiation. The majority of the data follows a linear relationship between the two. However, it deviates from linearity for higher values of luminance. This is mainly because of the fact that the mapping between scene luminance and obtained pixel value in the camera sensor becomes non-linear for large luminances. A more detailed discussion on this is provided in Section~\ref{sec:solar-discuss}.
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{proposedmodel2.png}
+\caption[Proposed linear regressor model to estimate solar irradiance from sky images.]{Model of the solar radiation using the image luminance computed with our proposed framework. We observe that it deviates from linearity at higher luminance values. \label{fig:solar_model}}
+\end{center}
+\end{figure}
+
+We use a linear regressor to model the measured solar radiation $\mathcal{S}$ from the image luminance $\mathcal{L}_m$. This is based on our assumption that the mapping from scene luminance to pixel values in the captured image is linear. Thus, we model solar radiation as: $\mathcal{S} = a\times{\mathcal{L}}_m + b$. The values of $a$ and $b$ are derived as $0.0138$ and $-39.896$ respectively for our data. Therefore, our proposed model for estimating solar irradiance is:
+
+\begin{align}
+\label{eq:propmodel}
+\mathcal{S} = 0.0138\times{\mathcal{L}}_m - 39.896.
+\end{align}
+
+This model is derived specifically for equatorial region like Singapore, and the regression constants are based on our WAHRSIS sky imaging system. However, these values need to be fine-tuned while applying our methodology for other regions and different imaging system.
+
+\subsection{Performance Comparison and Validation}
+\label{sec:comparemodels}
+In this section, we evaluate the accuracy of our proposed model. The model is derived based on WAHRSIS images captured 
+from January to August $2016$. We also use these images to evaluate the accuracy of our proposed model. Furthermore, we benchmark our algorithm with other existing solar radiation estimation models.
+
+\subsubsection{Evaluation}
+
+One of the main advantages of our approach is that all rapid fluctuations of solar radiation can be accurately tracked from the image luminance. We illustrate this by providing the measured solar readings of 01-Sep-2016 in Fig.~\ref{fig:tracksun}. The clear-sky model follows a cosine response and is shown in black; whereas the measured solar recordings is shown in red. We normalize our computed luminance in a manner that matches the measured solar readings. We multiply each data points of the luminance with a conversion factor, such that the distance between corresponding inter-samples of luminance and weather station is minimized (cf.\ Appendix~\ref{append:solarestimation} for details). We observe that our computed luminance from the whole-sky image and the measured solar radiation closely follows each other. We emphasize here that it is an important contribution to successfully track the rapid solar fluctuations. Unlike other solar estimation models based on meteorological sensor data, our proposed model can successfully estimate the \emph{peaks} and \emph{troughs} of solar readings accurately. 
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.95\textwidth]{example-proposeddash.pdf}
+\caption[Solar radiation and image luminance follows each other closely over the entire period of the day.]{We show the measured weather station data (in red), and the clear sky radiation (in black) as on 01-Sep-2016. We observe that the image luminance normalized w.r.t. the measured solar radiation, follows the measured readings closely. The sampling interval between two measurements is $2$ minutes.
+\label{fig:tracksun}}
+\end{figure}
+
+Using our proposed methodology, we compute the luminance of all the captured images. We use Eq.~\ref{eq:propmodel}, and estimate the corresponding solar radiation values. The actual ones are recorded in the collocated weather station. These recordings serve as the ground-truth measurements. Figure~\ref{fig:HOD} shows the histogram of difference between the estimated and actual solar radiation. We observe that the estimated solar radiation do not deviate much from the actual solar radiation. It is clear that $47.9\%$ of data points are concentrated in the range [$-100$,$+100$] Watt/$\mbox{m}^2$.
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{diff_hist2.pdf}
+\caption{Histogram of difference between estimated and actual solar radiation. We observe that most of the data are concentrated in the $0$-bin. 
+\label{fig:HOD}}
+\end{center}
+\end{figure}
+
+\subsubsection{Benchmarking Techniques}
+We benchmark our proposed approach with other existing solar estimation models. To the best of our knowledge, currently, there are no proposed models to estimate short-term fluctuations of solar irradiance from ground-based images. However, most remote sensing analysts have been using other meteorological sensor data eg.\ daily temperature, humidity, rainfall and dew point temperature to estimate daily solar irradiance. One of the pioneer work was done by Hargreaves and Samani~\cite{HSmodel}, who proposed a model based on daily temperature variations. Donatelli and Campbell~\cite{DCmodel} improved the model by including clear sky transitivity as one of the factors. On the other hand, Bristow and Campbell~\cite{BCmodel} also proposed a new model of solar radiation estimation, by including the atmospheric transmission coefficient. Subsequently, Hunt et al.~\cite{Huntmodel} showed that the solar estimation model can be further improved by incorporating the daily precipitation data in the model. We benchmark our proposed approach with these different existing models. 
+
+We calculate the Root Mean Square Error (RMSE) of the estimated solar radiation and Spearman's rank correlation coefficient as the evaluation metrics. The RMSE of an estimation algorithm represents the standard deviation of the actual and estimated solar radiation values. Table~\ref{tab:corr_results} shows the RMSE values of our proposed algorithm with the other existing benchmarking algorithms. Our proposed approach performs the best. We also evaluate the spearman correlation coefficients of the different benchmarking algorithms, since this is a non-parametric measure to find the relationship between measured and estimated solar radiation. This does not assume that the underlying dataset are derived from a normal distribution. We report the correlation values in Table~\ref{tab:corr_results}. Our proposed approach has also the highest correlation amongst all methods. 
+
+\begin{table}[htb]
+\normalsize
+\centering
+\begin{tabular}{l|c|c}
+\hline
+\textbf{Methods} & \textbf{RMSE} (Watt/$\mbox{m}^2$) & \textbf{Correlation}\\
+\hline 
+Proposed approach & 178.27 & 0.86\\
+Hargreaves and Samani & 982.35 & 0.67\\
+Bristow and Campbell & 318.07 & 0.68\\
+Donatelli and Campbell & 324.48 & 0.67\\
+Hunt et al.\ & 922.66  & 0.65\\
+\hline
+\end{tabular}
+\caption[Benchmarking of our proposed approach with other solar radiation estimation models.]{Benchmarking of our proposed approach with other solar radiation estimation models. All correlation values have p-value equal to $0$.}
+\label{tab:corr_results}
+\end{table}
+
+Table~\ref{tab:corr_results} explains the results where the training and testing set of images are identical, and all images are considered for evaluation. We are also interested to check if our proposed model can generalize well with random samples of our captured sky camera images. We choose a random selection of images as the training set, and fit our linear regressor on these selected training images. The RMSE values are then calculated on these training images. We perform this analysis for varying percentage of training images. Each experiment is performed $100$ times to remove any selection bias. Figure~\ref{fig:train_test}(a) shows the results on training images. We observe that the variation of the RMSE values gradually decreases, as we increase the number of training images. Moreover, we also check the variation of RMSE values when the testing images are not identical as training images. Once we choose a random selection of images as training set, the remaining images are considered as the testing set. We show the RMSE results on such images in Fig~\ref{fig:train_test}(b). As expected, the variation of RMSE values increases with higher percentage of training images. The linear regressor model overfits the data, and provides higher variation in the error when tested on a fewer testing images. However, the average RMSE does not vary much in all cases. Therefore, our proposed model is free from selection bias, and generalizes well with random selection of training and testing images.
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.48\textwidth]{training}
+\includegraphics[width=0.48\textwidth]{testing}\\
+\makebox[0.4\textwidth][c]{(a) Training images}
+\makebox[0.4\textwidth][c]{(b) Testing images}
+\caption[Effect of the percentage of training and testing images on the RMSE of proposed model.]{Effect of the percentage of training images on RMSE values. The lower and upper end of each box represents the $25^{th}$ and $75^{th}$ percentile of the data, and the red line represents the median value. Each experiment is conducted $100$ times with a random choice of training and testing sets. \label{fig:train_test}}
+\end{center}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.95\textwidth]{diffmodelsdash.pdf}
+\caption[Comparison of several solar estimation models amongst each other.]{Comparison amongst different benchmarking solar estimation models, along with clear sky model and measured solar radiation on 01-Sep-2016. We observe most of the existing algorithms fail to capture the rapid fluctuations of the measured solar radiation. 
+\label{fig:othermodels}}
+\end{figure}
+
+As a final comparison, we illustrate the various benchmarking models in Fig.~\ref{fig:othermodels}. Unfortunately, most of these algorithms fail to capture the short-term variations of the actual solar radiation. 
+
+We represent the scatter plot between the measured solar radiation and estimated solar radiation for the different benchmarking algorithms in Fig.~\ref{fig:scatter-other}. We observe that there is no strong correlation for most of these existing algorithms. This is because meteorological sensor data alone, with no cloud information cannot determine the sharp fluctuations of the solar radiation. 
+This is an important limitation of these models, which we attempt to address in this chapter. Our model based on sky images have additional information about cloud movement and its evolution, which is the fundamental reason behind rapid solar radiation fluctuations. In our proposed model, most of these short-term variations are captured properly as shown in Fig.~\ref{fig:tracksun}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.4\textwidth]{scatterHS.png}
+\includegraphics[width=0.4\textwidth]{scatterBC.png}\\
+\makebox[0.4\textwidth][c]{\small{(a) Hargreaves and Samani}}
+\makebox[0.4\textwidth][c]{\small{(b) Bristow and Campbell}}\\
+\includegraphics[width=0.4\textwidth]{scatterDC.png}
+\includegraphics[width=0.4\textwidth]{scatterHunt.png}\\
+\makebox[0.4\textwidth][c]{\small{(c) Donatelli and Campbell}}
+\makebox[0.4\textwidth][c]{\small{(d) Hunt et al.}}
+\caption{Scatter plot between measured solar radiation and estimated solar radiation for the benchmarking algorithms. 
+\label{fig:scatter-other}}
+\end{figure}
+
+\subsection{Discussion}
+\label{sec:solar-discuss}
+Our proposed approach can estimate the solar radiation accurately with the least root mean square error, as compared to other models. The main advantage of our approach is that it can be used on predicted images as well, opening the potential for short term solar irradiance forecasting, which is needed in the solar energy field. 
+
+However, it suffers from a few drawbacks. In this section, we highlight them and suggest techniques to address them. Firstly, we use \emph{JPEG} images instead of uncompressed \emph{RAW} images for the computation of scene luminance. The \emph{JPEG} compression algorithm introduces non-linearities in the pixel values and our proposed model thus deviates from a linear relationship. In Fig.~\ref{fig:solar_model}, we have demonstrated the obtained relationship between actual solar radiation and the estimated image luminance from our sky camera images. We observe that the relationship is linear for low luminance values (or low solar radiation). However, it deviates from non-linearity at higher luminance values (or higher solar radiation). We can generate more consistent results by using only \emph{RAW} format images. Nevertheless, we still use \emph{JPEG} images, as \emph{JPEG} images have a significantly smaller size and less perceptible distortion in image quality, as compared to other lossy compression techniques. We capture images at an interval of $2$ minutes -- this amounts to an incredibly huge dataset of RAW images. Therefore, we stick to capture images in JPEG mode because of operational use. This assumption is practical from an operational point of view. On the other hand, uncompressed \emph{RAW} images have large file size and it is impossible to capture and store \emph{RAW} images at short capturing intervals due to the induced latency. 
+
+Secondly, our captured images have a wide range of camera settings with varying shutter speed, ISO and aperture values. This is disadvantageous because the relationship between pixel value and camera aperture value becomes non-linear for larger F-numbers. The relationship deviates from linearity above F $4.0$~\cite{hiscocks2011measuring}.  Figure~\ref{fig:fn_dist} depicts the wide range of F-numbers in the captured images used in deriving our proposed model. We observe that a significant percentage of images have large F-numbers, where the non-linearity sets in. In our future work, we intend to use an integrating sphere to calibrate our camera to varying levels of scene brightness.
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{dist_fnumber2.pdf}
+\caption{Distribution of F-number of the WAHRSIS images that are used to derive the proposed model.
+\label{fig:fn_dist}}
+\end{center}
+\end{figure}
+
+Hence, we are able to estimate the sharp short-term variations of solar radiation, which significantly improves the state-of-the-art. This approach is of interest in the solar energy field, because these variations cause a sudden decrease in the electricity generation from solar panels. Short-term predictions of such ramp-downs are needed to maintain the stability of the power grid. Combining our solar irradiance estimation approach with cloud movement tracking in the input images could ultimately lead to better irradiance predictions. This approach of using whole sky imagers in the field of solar radiation has other applications as well. 
+
+A correct estimation of solar radiation from sky images can also assist us in devising an alternative manner to detect the onset of precipitation. This is because, \emph{dark clouds} (clouds with low luminance value) generally occur before a rainfall event, and is a good indication of rainfall onset. We discuss this in detail in the subsequent Section~\ref{sec:rainfallonset}. 
+
+\section{Detecting Rainfall Onset from Sky Cameras}
+\label{sec:rainfallonset}
+In this section, we discuss how sky images can be used effectively for the detection of rainfall onset. These images contain additional information about cloud coverage and movement and are therefore useful for accurate rainfall nowcast. We validate our results using rain gauge measurement recordings and achieve an accuracy of $89$\% for correct detection of rainfall onset.  
+
+\subsection{Impact of Precipitation}
+We observed that the luminance of the image in the circumsolar region (region around the sun) and the measured solar radiation from the weather station are correlated. Therefore, we can define the empirical luminance of the clear sky from the theoretical clear-sky model (cf.\ Eq.~\ref{eq:propmodel}), based on the relationship between solar irradiance and image luminance. We define this estimated luminance of a cropped image around the sun as the \emph{clear-sky luminance}, denoted by $\mathcal{L}_c$. In other words, it measures the luminous intensity per second around the sun observed by our camera sensor, in the event of a clear sky.
+
+In addition to clear-sky luminance, we also calculate the luminance of the whole sky image denoted by $\mathcal{L}_m$. We crop a square of dimension $2000 \times 2000$ pixels from the image to exclude the occlusions and neighboring buildings. The average luminance of the cropped image is $\mathcal{L}_m$.
+
+Figure~\ref{fig:example} shows the luminance value of the images captured across different times of the day for a typical day in December. We also calculate the clear-sky luminance and plot it in Fig.~\ref{fig:example}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\textwidth]{image_solar2.pdf}
+\caption[Effect of the onset of rainfall on the measured luminance from sky camera.]{We illustrate the measured luminance and clear-sky luminance for the $11^\mathrm{th}$ of December 2015. The primary y-axis shows the normalized luminance value, and the secondary y-axis measures the rainfall rate (measured in mm/hour). We also show the corresponding sky images captured by our sky camera at three distinct times -- before, during and after the rain event.} 
+\label{fig:example}
+\end{figure} 
+
+We observe that the measured luminance value sharply decreases with the onset of rainfall. The luminance continues to remain low during the entire duration of the rainfall. It gradually increases after the precipitation event. We verify this by referring to the corresponding sky images captured by our WSI at different time instants. The sun is visible in the first image captured at 12:54 (before the rain event), when we record a normalized luminance of $0.7$. The second image captured at 14:07 (during the rain event) has dark clouds, with a much lower normalized luminance of $0.02$. Finally, the third image captured at 16:00 (after the rain event) shows a clearer sky condition, and the normalized luminance is $0.58$. Therefore, we observe that the onset of precipitation reduces the luminance measured in the sky images compared to the clear-sky luminance. 
+
+\subsection{Methodology \& Results}
+In this section, we describe our methodology to detect precipitation from sky camera images. The measured luminance value deviates from the ideal luminance value (corresponding to clear sky) during a rainfall event. We use this deviation from clear sky luminance as a measure to indicate rainfall onset.
+
+We define Clearness Luminance Index ($I$) as the ratio of measured luminance ($\mathcal{L}_m$) value to the clear-sky luminance ($\mathcal{L}_c$) value, $I = \mathcal{L}_m/\mathcal{L}_c$. 
+
+In case of overcast condition, the obtained Clearness Luminance Index $I$ is low. On the other hand, $I$ equals unity during ideal clear-sky cases. We evaluate the values of $I$ for a longer period of time, namely the entire month of December 2015. Figure~\ref{fig:CLIvalues} shows the relationship between index $I$ of the captured images and its corresponding distance from the nearest rain event (measured in minutes). 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\textwidth]{ratioluminance2.pdf}
+\caption[Trend of Clearness Luminance Index ($I$) w.r.t. proximity of rainfall onset.]{Trend of Clearness Luminance Index ($I$) before and after precipitation measured for all days in December $2015$. The value of $I$ gradually decreases as it approaches rainfall onset, and then gradually increases again. } 
+\label{fig:CLIvalues}
+\end{figure}
+
+From Fig.~\ref{fig:CLIvalues}, we observe that the index value gradually decreases as it approaches a rain event, and reaches a minimum during rainfall. Post rain event, the clearness luminance index gradually increases with the passage of time. The trend roughly follows a V-shaped curve.
+
+\subsubsection{Critical Clearness Luminance Index}
+In this section, we define a threshold in $I$ to detect the onset of rainfall as the Critical Clearness Luminance Index ($I_c$). The criterion for rainfall detection proposed here is as follows: if the measured index $I$ decreases below the critical $I_c$, there is an indication of precipitation. 
+
+We consider all the images captured in December $2015$. We use rainfall recorded by the collocated weather station as ground truth measurements. We classify each of the weather station measurements into \emph{rain} and \emph{non-rain} events, based on the rain gauge measurements. We also check the corresponding WSI images captured at the same time, and calculate their index $I$. The entire set of images in our dataset are segregated into two categories. The first category comprises those images that are within $\pm 15$ minutes of a rain event, including the images captured during the rain event. The rest of the images are considered in the second category.
+
+Figure~\ref{fig:cdf} plots the Cumulative Distribution Plot (CDF) of clearness luminance index of images within and outside the time window of $\pm 15$ minutes. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\textwidth]{cdfcombined.pdf}
+\caption[CDF plots of Clearness Luminance Index of images within and outside $\pm 15$ minutes of rain event.]{CDF plots of Clearness Luminance Index of images within and outside $\pm 15$ minutes of rain event. Each point in the graph denotes the percentage of time the clearness index $I$ is less than its corresponding value.} 
+\label{fig:cdf}
+\end{figure}
+
+The motivation of classifying the images into two categories (within and outside $\pm 15$ minutes interval) is to analyze the impact of precipitation on the image luminance $\mathcal{L}_m$.
+From Fig.~\ref{fig:cdf}, we observe that images within $\pm 15$ minutes interval of rain event have a much lower luminance index than those images further from a rain event. This is intuitive as dark cumulus clouds appear before a rainfall, and they often persist for a brief period after the rainfall event. Furthermore, dark clouds are generally not present on non-rainy days.
+
+\subsubsection{Operating Characteristics (OC) Curve}
+In this section, we are interested in determining the critical clearness luminance index ($I_c$). For this purpose, we calculate the operating characteristics (OC), which shows the percentage of time for images within $\pm 15$ minutes of rain event against those  outside $\pm 15$ minutes of rain event. We vary the value of $I_c$ from $0.01$ to $0.2$, in steps of $0.01$. The resulting OC curve is shown in Fig.~\ref{fig:roc}.
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.8\textwidth]{roc.pdf}
+\caption[Operating Characteristics (OC) curve generated by varying the critical clearness luminance index ($I_c$).]{Operating Characteristics (OC) curve generated by varying the critical clearness luminance index ($I_c$). The \emph{elbow} in the plot (shown in red) is our chosen $I_c$.} 
+\label{fig:roc}
+\end{figure}
+
+We observe a sharp transition at $I_c = 0.08$. This is generally referred as the \emph{elbow} of the OC curve, and is chosen as the operating point as it has the best performance. 
+We check the corresponding percentage of time for this critical threshold ($I_c$) of $0.08$. We observe that the images within $\pm 15$ minutes of rain events have a clearness index below the critical threshold for $89.41\%$ of time. On the other hand, only $13.13\%$ of time images outside the time window have a clearness index below the critical threshold. 
+Therefore, $I_c=0.08$ can be used as the threshold for the clearness index for estimating the onset of rainfall. However, this threshold is derived for a tropical region like Singapore. This value may need to be adjusted when applying this model to other regions or using different sky imagers.
+
+\subsection{Summary}
+In this section, we have discussed how ground-based sky cameras can be effectively used to detect rainfall onset. We defined a Clearness Luminance Index that measures the deviation of estimated luminance from the clear-sky luminance. We have proposed a critical clearness luminance index that indicates the onset of precipitation. Extensive results on a month of sky images and weather station recordings show the efficacy of our proposed approach. In the future, we plan to verify these results over longer periods.
+
+\section{Short-term Cloud Tracking Using Sky Images}
+\label{sec:trackclouds}
+In addition to detecting rainfall onset, we also use sky images to perform short-term forecasting of cloud images. This is useful for solar energy forecasting. We use two successive frames to compute optical flow and predict the future location of clouds. We achieve good prediction accuracy for a lead time of up to $5$ minutes.
+
+\subsection{Methodology}
+In this section, we first give a general formulation of the optical flow technique and then describe how it is applied to our problem.
+
+\subsubsection{Optical Flow Formulation}
+Optical flow is based on the brightness constancy constraint, which states that pixels of an image sequence do not change value, but only shift position over time. Let's define a pixel intensity at image coordinates $(x,y)$ and time $t_m$ by $\mathbf{X}(x,y,t_m)$. Under this condition, this intensity would have moved by $(\Delta x, \Delta y)$ after a time $\Delta t_m$:
+\[\mathbf{X}(x,y,t_m) = \mathbf{X}(x + \Delta x, y + \Delta y, t_m + \Delta t_m).\]
+
+Using a first order Taylor series expansion, the optical flow equations can be derived \cite{fleet2006optical}:
+\[\frac{\partial \mathbf{X}}{\partial x}u_x + \frac{\partial \mathbf{X}}{\partial y}u_y + \frac{\partial \mathbf{X}}{\partial t_m} = 0,\]
+where $(u_x, u_y)$ is the optical flow (or velocity), and $\frac{\partial \mathbf{X}}{\partial x}$, $\frac{\partial \mathbf{X}}{\partial y}$ and $\frac{\partial \mathbf{X}}{\partial t_m}$ are the derivatives of the image in the $x$, $y$, and $t_m$ dimensions.
+
+This equation cannot be solved analytically, as it has two unknowns. This is known as the \emph{aperture problem}. In order to solve it, two main approaches exists:
+
+\begin{itemize}
+\item Local methods state that the optical flow vectors are constant within some neighborhood and thus increase the number of equations to solve for the same optical flow vector. A typical example is the Lucas-Kanade method \cite{lucas1981iterative}.
+\item Global methods assume that the optical flow vector distribution should be smooth across the spatial and temporal axes. They mimimize a global energy function in order to reduce large optical flow gradients. A famous algorithm is the Horn-Schunck method \cite{horn1981determining}.
+\end{itemize}
+
+We use the implementation~\footnote{Available at \url{https://people.csail.mit.edu/celiu/OpticalFlow/}} from~\cite{liu2009beyond}, which is based on a combination of both local and global approaches, following the method proposed in~\cite{bruhn2005lucas}.
+
+
+\subsubsection{Cloud Tracking}
+We use two image frames taken at times $t_m-2$ minutes and $t_m$, and compute the translational vectors in both $x$ and $y$ direction of the images, using the method mentioned above. We rely on the assumption that clouds do not significantly change between image frames. The optical flow vectors estimate the direction and orientation of the moving clouds, assuming an affine transformation between two frames. The algorithm provides a dense result, i.e.\ a velocity vector is associated to every pixel coordinate in the input image.
+
+\begin{figure}[htb]
+\centering
+\subfloat[Frame at time $t_m-2$ minutes]{\includegraphics[height=0.33\textwidth]{Picture1.png}}
+\hspace{2mm}
+\subfloat[Frame at time $t_m$]{\includegraphics[height=0.33\textwidth]{Picture2.png}}
+\caption{Ratio channels of two successive image frames.}\label{fig:ratioimage}
+\end{figure}
+
+Since we are interested in tracking the detailed cloud shape, it is important to use a color space which provide a good separation of clouds and sky. We use a variant of the ratio of red and blue color channels of the image. In an earlier chapter, we have analyzed various color channels and concluded that $(B-R)/(B+R)$ is the most discriminatory color channel, where $B$ and $R$ indicate the blue and red color channels respectively.
+
+As an illustration, we show the ratio channel of two successive image frames in Fig.~\ref{fig:ratioimage}. We observe that there is a clear contrast in this channel. These ratio channels are used to estimate the flow field of clouds.
+
+
+
+Using the images in Fig.~\ref{fig:ratioimage}, we obtain the horizontal and vertical translations of each of the pixels, which can be combined into a vector field. We show them in Fig.~\ref{fig:vectorflow}, plotted in terms of pixels/minute. This provides an idea about the relative speed and direction of each of the pixels between the two frames.
+
+\begin{figure}[htb]
+\begin{center}
+\stackunder[5pt]{\includegraphics[height=0.3\textwidth]{Picture3.png}}{\small (a) Horizontal translation}
+\includegraphics[width=0.08\textwidth]{Picture4.png}
+\stackunder[5pt]{\includegraphics[height=0.3\textwidth]{Picture5.png}}{\small (b) Vertical translation}
+\caption[Horizontal and vertical translation of pixels between two successive sky/cloud image frames.]{Horizontal and vertical translation of pixels between Frame 1 and Frame 2. The color map represents the speed in pixels/minute units.
+\label{fig:vectorflow}}
+\end{center}
+\end{figure}
+
+\begin{figure}[htb]
+\begin{center}
+\subfloat[Frame at time $t_m-2$ minutes]{\includegraphics[trim={4cm 1cm 4cm 1cm}, clip, height=0.15\textwidth]{tm2-img}}\,
+\subfloat[Frame at time $t_m$]{\includegraphics[trim={4cm 1cm 4cm 1cm}, clip, height=0.15\textwidth]{t0-img}}\\
+\vspace{-4mm}
+\subfloat[Actual Frame at time $t_m+2$ minutes]{\includegraphics[trim={4cm 1cm 4cm 1cm}, clip, height=0.15\textwidth]{act-tp2-img.pdf}}\,
+\subfloat[Binary of (c)]{\includegraphics[trim={4cm 1cm 4cm 1cm}, clip, height=0.15\textwidth]{act-tp2-map.pdf}}\,
+\subfloat[Predicted Frame at time $t_m+2$ minutes]{\includegraphics[trim={4cm 1cm 4cm 1cm}, clip, height=0.15\textwidth]{pre-tp2-img.pdf}}\,
+\subfloat[Binary of (e)]{\includegraphics[trim={4cm 1cm 4cm 1cm}, clip, height=0.15\textwidth]{pre-tp2-map.pdf}}\\
+\vspace{-4mm}
+\subfloat[Actual Frame at time $t_m+4$ minutes]{\includegraphics[trim={4cm 1cm 4cm 1cm}, clip, height=0.15\textwidth]{act-tp4-img.pdf}}\,
+\subfloat[Binary of (g)]{\includegraphics[trim={4cm 1cm 4cm 1cm}, clip, height=0.15\textwidth]{act-tp4-map.pdf}}\,
+\subfloat[Predicted Frame at time $t_m+4$ minutes]{\includegraphics[trim={4cm 1cm 4cm 1cm}, clip, height=0.15\textwidth]{pre-tp4-img.pdf}}\,
+\subfloat[Binary of (i)]{\includegraphics[trim={4cm 1cm 4cm 1cm}, clip, height=0.15\textwidth]{pre-tp4-map.pdf}}
+\caption[Prediction of sky/cloud image for a sample day with a lead time of $2$ and $4$ minutes. ]{Prediction of sky/cloud image on 16 April 2015 with a lead time of $2$ and $4$ minutes. The prediction accuracy is $83.44\%$ for a lead time of $2$ minutes, and $72.37\%$ for a lead time of $4$ minutes. The binary images are generated using our sky/cloud segmentation algorithm described in Chapter~\ref{chap:segmentation}.
+\label{fig:example1}}
+\end{center}
+\end{figure}
+
+
+\subsubsection{Cloud Motion Prediction}
+
+We can now use the above information to predict future frames. The vector fields are applied individually to each of the red, green, and blue channels of the image.
+
+Clouds have an ill-defined shape, and can change their shape and size very quickly. However, even though the underlying assumptions do not exactly match this reality, they work well to track clouds for short lead times, as is the case in many other optical flow problems.
+
+For higher lead times, we use the actual frame at time $t_m$ and predicted frame at time $t_m+2$ minutes to predict the frame at time $t_m+4$ minutes. Similarly, we use the  predicted frame at time $t_m+2$ minutes and the predicted frame at $t_m+4$ minutes, to predict the frame at time $t_m+6$ minutes, and so on. At every stage, we use the previous two frames (actual or predicted), to compute the subsequent frame. This works well under the assumption that the clouds do not \emph{significantly} change their shape and location for the given lead time. 
+
+
+\subsection{Results \& Discussions}
+
+We now evaluate the forecasting accuracy of our methodology. For this purpose, we compute the binary sky/cloud image of the forecasted image using our cloud detection algorithm as described in Chapter~\ref{chap:segmentation}. We then compare it with the binary image computed from the original image. The accuracy is then calculated as the percentage of correctly classified pixels (sky or cloud) in the predicted binary image, as compared to the actual binary image. 
+
+We compute the prediction accuracy of our cloud tracking algorithm for a typical day in April 2015 and present our results for different lead times. Figure~\ref{fig:LT} shows the performance of our cloud tracking algorithm for different lead times.  We observe that prediction accuracy is good for short lead times, but gradually decreases as lead times become larger. This makes sense as clouds generally move quite fast, and can change shape between image frames.  Furthermore, the error obtained in the intermediate forecast image is cascaded to future images.
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{leadtime_cut2}
+\caption{Comparison of prediction accuracy percentage with different lead times.}
+\label{fig:LT}
+\end{center}
+\end{figure}
+
+We provide a few illustrative examples of our prediction accuracy upto $4$ minutes. Figure~\ref{fig:example1} shows the output of our algorithm with a lead time of upto $4$ minutes, in intervals of $2$ minutes. We use the frame at time $t_m-2$ minutes and the frame at time $t$ as the input images of our proposed approach to predict the frame at time $t_m+2$ minutes. We show the actual and predicted images along with their corresponding binary images. The accuracy achieved with our algorithm is $83.44\%$. We then use the frame at $t_m$ minutes along with the predicted image at $t_m+2$ minutes to predict the frame at $t_m+4$ minutes. The accuracy is still good (around $72.37\%$) given the higher lead time. However, we observe for higher lead times, the predicted image gets progressively more distorted as compared to its actual image, and artifacts appear. This happens because the error incurred in the previous lead times gets cascaded to future frames, as clouds significantly changes in shape over a relatively short period of time. After 10 minutes, the clouds have moved significantly, and there is little correlation between frames. These predictions are only based on images capturing a small area of the sky, and better long-term predictions would only possible at a larger scale and a lower level of detail.
+
+\subsection{Summary}
+In this section, we have discussed about our methodology to track cloud movement across successive image frames from sky cameras. It is based on optical flow and performs well for lead times of a few minutes. The accuracy gradually decreases for larger lead times. Our proposed approach is intended mainly for the short-term prediction of cloud movements, as we perform a localized analysis of cloud motion. We also show how the luminance of images captured by our sky camera can be used to detect the onset of precipitation. In our future work, we plan to use other meteorological data, such as wind sensors, to further increase the prediction accuracy.
+
+
+\section{Conclusion}
+\label{sec:chap7-conclude}
+In this chapter, we presented a method for estimating solar irradiance using the luminance of images taken by a whole sky imager. We are able to estimate the sharp short-term variations, which significantly improves the state-of-the-art. This approach is of interest in the solar energy field, because these variations cause a sudden decrease in the electricity generation from solar panels. Short-term predictions of such ramp-downs are needed to maintain the stability of the power grid. Combining our solar irradiance estimation approach with cloud movement tracking in the input images could ultimately lead to better irradiance predictions.
+
+
+
+
+
+
+
+
+
+

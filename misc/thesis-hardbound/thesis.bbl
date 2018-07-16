@@ -1,0 +1,782 @@
+\begin{thebibliography}{100}
+
+\bibitem{PALSAR}
+T.~Shiraishi, T.~Motohka, R.B. Thapa, M.~Watanabe, and M.~Shimada,
+\newblock ``Comparative assessment of supervised classifiers for land use-land
+  cover classification in a tropical region using time-series {PALSAR} mosaic
+  data,''
+\newblock {\em IEEE Journal of Selected Topics in Applied Earth Observations
+  and Remote Sensing}, vol. 7, no. 4, pp. 1186--1199, Apr. 2014.
+
+\bibitem{sat_reg}
+I-H. Lee and M.T. Mahmood,
+\newblock ``Robust registration of cloudy satellite images using two-step
+  segmentation,''
+\newblock {\em IEEE Geoscience and Remote Sensing Letters}, vol. 12, no. 5, pp.
+  1121--1125, May 2015.
+
+\bibitem{air1}
+Q.~Zhang and C.~Xiao,
+\newblock ``Cloud detection of {RGB} color aerial photographs by progressive
+  refinement scheme,''
+\newblock {\em IEEE Transactions on Geoscience and Remote Sensing}, vol. 52,
+  no. 11, pp. 7264--7275, Nov. 2014.
+
+\bibitem{LIDAR1}
+Y.~Chen, L.~Cheng, M.~Li, J.~Wang, L.~Tong, and K.~Yang,
+\newblock ``Multiscale grid method for detection and reconstruction of building
+  roofs from airborne {LiDAR} data,''
+\newblock {\em IEEE Journal of Selected Topics in Applied Earth Observations
+  and Remote Sensing}, vol. 7, no. 10, pp. 4081--4094, Oct. 2014.
+
+\bibitem{WAHRSIS}
+S.~Dev, F.~M. Savoy, Y.~H. Lee, and S.~Winkler,
+\newblock ``{WAHRSIS}: A low-cost, high-resolution whole sky imager with
+  near-infrared capabilities,''
+\newblock in {\em Proc. IS\&T/SPIE Infrared Imaging Systems}, 2014.
+
+\bibitem{site_diversity}
+J.~X. Yeo, Y.~H. Lee, and J.~T. Ong,
+\newblock ``Performance of site diversity investigated through {RADAR} derived
+  results,''
+\newblock {\em IEEE Transactions on Antennas and Propagation}, vol. 59, no. 10,
+  pp. 3890--3898, Oct. 2011.
+
+\bibitem{GammaDrop}
+L.~S. Kumar, Y.~H. Lee, and J.~T. Ong,
+\newblock ``Truncated gamma drop size distribution models for rain attenuation
+  in singapore,''
+\newblock {\em IEEE Transactions on Antennas and Propagation}, vol. 58, no. 4,
+  pp. 1325--1335, Apr. 2010.
+
+\bibitem{forest}
+J.~B. Collins and C.~E. Woodcock,
+\newblock ``An assessment of several linear change detection techniques for
+  mapping forest mortality using multitemporal landsat {TM} data,''
+\newblock {\em Remote Sensing of Environment}, vol. 56, no. 1, pp. 66--77, Apr.
+  1996.
+
+\bibitem{ice2008}
+H.~Lee and H.~Han,
+\newblock ``Evaluation of {SSM/I} and {AMSR-E} sea ice concentrations in the
+  antarctic spring using {KOMPSAT-1 EOC} images,''
+\newblock {\em IEEE Transactions on Geoscience and Remote Sensing}, vol. 46,
+  no. 7, pp. 1905--1912, July 2008.
+
+\bibitem{NASA-cloud}
+D.~Wylie, E.~Eloranta, J.~D. Spinhirne, and S.~P. Palm,
+\newblock ``A comparison of cloud cover statistics from the {GLAS Lidar} with
+  {HIRS},''
+\newblock {\em Journal of Climate}, vol. 20, no. 19, pp. 4968--4981, Oct. 2007.
+
+\bibitem{solar_irr_pred}
+C-L Fua and H-Y Cheng,
+\newblock ``Predicting solar irradiance with all-sky image features via
+  regression,''
+\newblock {\em Solar Energy}, vol. 97, pp. 537--550, Nov. 2013.
+
+\bibitem{contrail_WSI}
+U.~Schumann, R.~Hempel, H.~Flentje, M.~Garhammer, K.~Graf, S.~Kox, H.~Losslein,
+  and B.~Mayer,
+\newblock ``Contrail study with ground-based cameras,''
+\newblock {\em Atmospheric Measurement Techniques}, vol. 6, no. 12, pp.
+  3597--3612, Dec. 2013.
+
+\bibitem{fuse_AOD}
+A.~Chatterjee, A.~M. Michalak, R.~A. Kahn, S.~R. Paradise, A.~J. Braverman, and
+  C.~E. Miller,
+\newblock ``A geostatistical data fusion technique for merging remote sensing
+  and ground-based observations of aerosol optical thickness,''
+\newblock {\em Journal of Geophysical Research}, vol. 115, no. D20, pp.
+  n/a--n/a, Oct. 2010.
+
+\bibitem{cloud_model_compare}
+F.~Yuan, Y.~H. Lee, and Y.~S. Meng,
+\newblock ``Comparison of cloud models for propagation studies in {Ka-band}
+  satellite applications,''
+\newblock in {\em Proc. IEEE International Symposium on Antennas and
+  Propagation}, 2014, pp. 383--384.
+
+\bibitem{radiosonde2014}
+F.~Yuan, Y.~H. Lee, and Y.~S. Meng,
+\newblock ``Comparison of radio-sounding profiles for cloud attenuation
+  analysis in the tropical region,''
+\newblock in {\em Proc. IEEE International Symposium on Antennas and
+  Propagation}, 2014, pp. 259--260.
+
+\bibitem{infrared_UK}
+E.~Rumi, D.~Kerr, J.~M. Coupland, A.~P. Sandford, and M.~J. Brettle,
+\newblock ``Automated cloud classification using a ground based infra-red
+  camera and texture analysis techniques,''
+\newblock in {\em Proc. SPIE 8890, Remote Sensing of Clouds and the Atmosphere
+  XVIII}, 2013.
+
+\bibitem{sky_imager2008}
+A.~Cazorla, F.~J. Olmo, and L.~Alados-Arboledas,
+\newblock ``Development of a sky imager for cloud cover assessment,''
+\newblock {\em Journal of the Optical Society of America A}, vol. 25, no. 1,
+  pp. 29--39, Aug. 2008.
+
+\bibitem{Sylvio}
+S.~L. Mantelli-Neto, A.~von Wangenheim, E.~B. Pereira, and E.~Comunello,
+\newblock ``The use of {Euclidean} geometric distance on {RGB} color space for
+  the classification of sky and cloud patterns,''
+\newblock {\em Journal of Atmospheric and Oceanic Technology}, vol. 27, no. 9,
+  pp. 1504--1517, Sept. 2010.
+
+\bibitem{Kazantzidis2012}
+A.~Kazantzidis, P.~Tzoumanikas, A.~F. Bais, S.~Fotopoulos, and G.~Economou,
+\newblock ``Cloud detection and classification with the use of whole-sky
+  ground-based images,''
+\newblock {\em Atmospheric Research}, vol. 113, pp. 80--88, Sept. 2012.
+
+\bibitem{Long}
+C.~N. Long, J.~M. Sabburg, J.~Calb\'{o}, and D.~Pages,
+\newblock ``Retrieving cloud characteristics from ground-based daytime color
+  all-sky images,''
+\newblock {\em Journal of Atmospheric and Oceanic Technology}, vol. 23, no. 5,
+  pp. 633--652, May 2006.
+
+\bibitem{synerg}
+F.~Abdi, H.~R. Khalesifard, and P.~H. Falmant,
+\newblock ``Small scale cloud dynamics as studied by synergism of time lapsed
+  digital camera and elastic {LIDAR},''
+\newblock in {\em Proc. International Laser Radar Conference}, 2006.
+
+\bibitem{orograph2007}
+J.~A. Zehnder, J.~Hu, and A.~Razdan,
+\newblock ``A stereo photogrammetric technique applied to orographic
+  convection,''
+\newblock {\em Monthly Weather Review}, vol. 135, no. 6, pp. 2265--2277, June
+  2007.
+
+\bibitem{uwe2000}
+U.~Feister, J.~Shields, M.~Karr, R.~Johnson, K.~Dehne, and M.~Woldt,
+\newblock ``Ground-based cloud images and sky radiances in the visible and near
+  infrared region from whole sky imager measurements,''
+\newblock in {\em Proc. Climate Monitoring Satellite Application Facility
+  Training Workshop}, 2000.
+
+\bibitem{Ghonima2012}
+M.~S. Ghonima, B.~Urquhart, C.~W. Chow, J.~E. Shields, A.~Cazorla, and
+  J.~Kleissl,
+\newblock ``A method for cloud detection and opacity classification based on
+  ground based sky imagery,''
+\newblock {\em Atmospheric Measurement Techniques}, vol. 5, no. 11, pp.
+  2881--2892, Nov. 2012.
+
+\bibitem{TSI880}
+C.~N. Long, D.~W. Slater, and T.~Tooman,
+\newblock ``Total sky imager ({TSI}) model 880 status and testing results,''
+\newblock Tech. {R}ep. DOE/SC-ARM/TR-006, Atmospheric Radiation Measurement
+  (ARM), 2001.
+
+\bibitem{how_weather}
+Z.~Chen, Y.~Feng, A.~Lindner, G.~Barrenetxea, and M.~Vetterli,
+\newblock ``How is the weather: Automatic inference from images,''
+\newblock in {\em Proc. International Conference on Image Processing (ICIP)},
+  2012, pp. 1853--1856.
+
+\bibitem{Souza}
+M.~P. Souza-Echer, E.~B. Pereira, L.~S. Bins, and M.~A.~R. Andrade,
+\newblock ``A simple method for the assessment of the cloud cover state in
+  high-latitude regions by a ground-based digital camera,''
+\newblock {\em Journal of Atmospheric and Oceanic Technology}, vol. 23, no. 3,
+  pp. 437--447, Mar. 2006.
+
+\bibitem{WSI_UCSD}
+J.~E. Shields, M.~E. Karr, R.~W. Johnson, and A.~R. Burden,
+\newblock ``Day/night whole sky imagers for 24-h cloud and sky assessment:
+  history and overview,''
+\newblock {\em Applied Optics}, vol. 52, no. 8, pp. 1605--1616, Mar. 2013.
+
+\bibitem{wrapper_Jain}
+M.~E. Farmer and A.~K. Jain,
+\newblock ``A wrapper-based approach to image segmentation and
+  classification,''
+\newblock {\em IEEE Transactions on Image Processing}, vol. 14, no. 12, pp.
+  2060--2072, Dec. 2005.
+
+\bibitem{Calbo2008}
+J.~Calb\'{o} and J.~Sabburg,
+\newblock ``Feature extraction from whole-sky ground-based images for
+  cloud-type recognition,''
+\newblock {\em Journal of Atmospheric and Oceanic Technology}, vol. 25, no. 1,
+  pp. 3--14, Jan. 2008.
+
+\bibitem{Heinle2010}
+A.~Heinle, A.~Macke, and A.~Srivastav,
+\newblock ``Automatic cloud classification of whole sky images,''
+\newblock {\em Atmospheric Measurement Techniques}, vol. 3, no. 3, pp.
+  557--567, 2010.
+
+\bibitem{LiuSP2015}
+S.~Liu, L.~Zhang, Z.~Zhang, C.~Wang, and B.~Xiao,
+\newblock ``Automatic cloud detection for all-sky images using superpixel
+  segmentation,''
+\newblock {\em IEEE Geoscience and Remote Sensing Letters}, vol. 12, no. 2, pp.
+  354--358, Feb. 2015.
+
+\bibitem{Li2011}
+Q.~Li, W.~Lu, and J.~Yang,
+\newblock ``A hybrid thresholding algorithm for cloud detection on ground-based
+  color images,''
+\newblock {\em Journal of Atmospheric and Oceanic Technology}, vol. 28, no. 10,
+  pp. 1286--1296, Oct. 2011.
+
+\bibitem{BOW-cloud}
+Y.~Yuan and X.~Hu,
+\newblock ``Bag-of-words and object-based classification for cloud extraction
+  from satellite imagery,''
+\newblock {\em IEEE Journal of Selected Topics in Applied Earth Observations
+  and Remote Sensing}, vol. 8, no. 8, pp. 4197 -- 4205, Aug. 2015.
+
+\bibitem{LiuGC2015}
+S.~Liu, Z.~Zhang, B.~Xiao, and X.~Cao,
+\newblock ``Ground-based cloud detection using automatic graph cut,''
+\newblock {\em IEEE Geoscience and Remote Sensing Letters}, vol. 12, no. 6, pp.
+  1342--1346, June 2015.
+
+\bibitem{WMO_guide}
+World~Meteorological Organization,
+\newblock {\em International Cloud Atlas}, vol.~1,
+\newblock 1975.
+
+\bibitem{singh2005}
+M.~Singh and M.~Glennen,
+\newblock ``Automated ground-based cloud recognition,''
+\newblock {\em Pattern Analysis and Applications}, vol. 8, no. 3, pp. 258--271,
+  Oct. 2005.
+
+\bibitem{SIFT}
+D.~G. Lowe,
+\newblock ``Object recognition from local scale-invariant features,''
+\newblock in {\em Proc. International Conference on Computer Vision (ICCV)},
+  1999, pp. 1150--1157.
+
+\bibitem{cloud_LBP}
+H.-Y. Cheng and C.-C. Yu,
+\newblock ``Block-based cloud classification with statistical features and
+  distribution of local texture features,''
+\newblock {\em Atmospheric Measurement Techniques}, vol. 8, no. 3, pp.
+  1173--1182, Mar. 2015.
+
+\bibitem{Liu2013}
+S.~Liu, C.~Wang, B.~Xiao, Z.~Zhang, and Y.~Shao,
+\newblock ``Salient local binary pattern for ground-based cloud
+  classification,''
+\newblock {\em Acta Meteorologica Sinica}, vol. 27, no. 2, pp. 211--220, Apr.
+  2013.
+
+\bibitem{Zhang2016}
+Z.~Zhang, Y.~Zhang, and S.~Liu,
+\newblock {\em Ground-Based Cloud Classification Using Pyramid Salient {LBP}},
+  pp. 595--601,
+\newblock Springer Berlin Heidelberg, 2016.
+
+\bibitem{Liu2012}
+S.~Liu, C.~Wang, B.~Xiao, Z.~Zhang, and Y.~Shao,
+\newblock ``Illumination-invariant completed {LTP} descriptor for cloud
+  classification,''
+\newblock in {\em Proc. 5th International Congress on Image and Signal
+  Processing (CISP)}, 2012, pp. 449--453.
+
+\bibitem{HSmodel}
+G.~H. Hargreaves and Z.~A. Samani,
+\newblock ``Reference crop evapotranspiration from temperature,''
+\newblock {\em Applied engineering in agriculture}, vol. 1, no. 2, pp. 96--99,
+  Jan. 1985.
+
+\bibitem{DCmodel}
+M.~Donatelli and G.~S. Campbell,
+\newblock ``A simple model to estimate global solar radiation,''
+\newblock in {\em Proc. 5th European society of agronomy congress}, 1998, pp.
+  133--134.
+
+\bibitem{BCmodel}
+K.~L. Bristow and G.~S. Campbell,
+\newblock ``On the relationship between incoming solar radiation and daily
+  maximum and minimum temperature,''
+\newblock {\em Agricultural and forest meteorology}, vol. 31, no. 2, pp.
+  159--166, May 1984.
+
+\bibitem{Huntmodel}
+L.~A. Hunt, L.~Kuchar, and C.~J. Swanton,
+\newblock ``Estimation of solar radiation for use in crop modelling,''
+\newblock {\em Agricultural and Forest Meteorology}, vol. 91, no. 3, pp.
+  293--300, June 1998.
+
+\bibitem{alonso2015}
+J.~Alonso-Montesinos and F.~J. Batlles,
+\newblock ``The use of a sky camera for solar radiation estimation based on
+  digital image processing,''
+\newblock {\em Energy}, vol. 90, Part 1, pp. 377--386, Oct. 2015.
+
+\bibitem{Farahmand2014}
+A.~Farahmand, A.~AghaKouchak, and J.~Teixeira,
+\newblock ``A vantage from space can detect earlier drought onset: An approach
+  using relative humidity,''
+\newblock Tech. {R}ep., Nature Scientific Reports, 2015.
+
+\bibitem{TRMM2002}
+J.~Li and K.~Nakamura,
+\newblock ``Characteristics of the mirror image of precipitation observed by
+  the {TRMM} precipitation radar,''
+\newblock {\em Journal of Atmospheric and Oceanic Technology}, vol. 19, no. 2,
+  pp. 145--158, Feb. 2002.
+
+\bibitem{Nou2015}
+J.~Nou, R.~Chauvin, S.~Thil, J.~Eynard, and S.~Grieu,
+\newblock ``Clear-sky irradiance model for real-time sky imager application,''
+\newblock {\em Energy Procedia}, vol. 69, pp. 1999--2008, May 2015.
+
+\bibitem{trackingpioneer}
+W.~P. Menzel,
+\newblock ``Cloud tracking with satellite imagery: From the pioneering work of
+  {Ted Fujita} to the present,''
+\newblock {\em Bulletin of the American Meteorological Society}, vol. 82, no.
+  1, pp. 33--47, Jan. 2001.
+
+\bibitem{Sieglaff13}
+J.~M. Sieglaff, D.~C. Hartung, W.~F. Feltz, L.~M. Cronce, and V.~Lakshmanan,
+\newblock ``A satellite-based convective cloud object tracking and multipurpose
+  data fusion tool with application to developing convection,''
+\newblock {\em Journal of Atmospheric and Oceanic Technology}, vol. 30, no. 3,
+  pp. 510--525, Mar. 2013.
+
+\bibitem{Chow15}
+C.~W. Chow, S.~Belongie, and J.~Kleissl,
+\newblock ``Cloud motion and stability estimation for intra-hour solar
+  forecasting,''
+\newblock {\em Solar Energy}, vol. 115, pp. 645--655, May 2015.
+
+\bibitem{Chauvin2016}
+R.~Chauvin, J.~Nou, S.~Thil, and S.~Grieu,
+\newblock ``Cloud motion estimation using a sky imager,''
+\newblock {\em AIP Conference Proceedings}, vol. 1734, no. 1, pp. 150003, May
+  2016.
+
+\bibitem{allmen}
+M.~C. Allmen and W.~P.~Kegelmeyer Jr.,
+\newblock ``The computation of cloud-base height from paired whole-sky imaging
+  cameras,''
+\newblock {\em Journal of Atmospheric and Oceanic Technology}, vol. 13, no. 1,
+  pp. 97--113, February 1996.
+
+\bibitem{seiz}
+G.~Seiz, E.~P. Baltsavias, and A.~Gruen,
+\newblock ``Cloud mapping from the ground: Use of photogrammetric methods,''
+\newblock {\em Photogrammetric Engineering and Remote Sensing}, vol. 68, no. 9,
+  pp. 941--951, September 2002.
+
+\bibitem{kassianov}
+E.~Kassianov, C.~N. Long, and J.~Christy,
+\newblock ``Cloud-base-height estimation from paired ground-based hemispherical
+  observations,''
+\newblock {\em Journal of Applied Meteorology}, vol. 44, no. 8, pp. 1221--1233,
+  August 2005.
+
+\bibitem{peng}
+Z.~Peng, S.~Yoo, D.~Yu, D.~Huang, P.~Kalb, and J.~Heiser,
+\newblock ``{3D} cloud detection and tracking for solar forecast using multiple
+  sky imagers,''
+\newblock in {\em Proc. ACM Symposium on Applied Computing}, 2014.
+
+\bibitem{vedula1999three}
+S.~Vedula, S.~Baker, P.~Rander, R.~Collins, and T.~Kanade,
+\newblock ``Three-dimensional scene flow,''
+\newblock in {\em Proc. International Conference on Computer Vision (ICCV)},
+  1999.
+
+\bibitem{Huguet07}
+F.~Huguet and F.~Devernay,
+\newblock ``A variational method for scene flow estimation from stereo
+  sequences,''
+\newblock in {\em Proc. International Conference on Computer Vision (ICCV)},
+  2007.
+
+\bibitem{Li200875}
+R.~Li and S.~Sclaroff,
+\newblock ``Multi-scale {3D} scene flow from binocular stereo sequences,''
+\newblock {\em Computer Vision and Image Understanding}, vol. 110, no. 1, pp.
+  75--90, April 2008.
+
+\bibitem{cech}
+J.~Cech, J.~Sanchez-Riera, and R.~Horaud,
+\newblock ``Scene flow estimation by growing correspondence seeds,''
+\newblock in {\em Proc. Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, 2011.
+
+\bibitem{WSI-history}
+J.~E. Shields, M.~E. Karr, R.~W. Johnson, and A.~R. Burden,
+\newblock ``Day/night whole sky imagers for 24-h cloud and sky assessment:
+  history and overview,''
+\newblock {\em Applied Optics}, vol. 52, no. 8, pp. 1605--1616, Mar. 2013.
+
+\bibitem{schaul2009color}
+L.~Schaul, C.~Fredembach, and S.~S{\"u}sstrunk,
+\newblock ``Color image dehazing using the near-infrared,''
+\newblock in {\em Proc. International Conference on Image Processing (ICIP)},
+  2009, pp. 1629--1632.
+
+\bibitem{HUOJuan}
+H.~Juan and L.~Da-Ren,
+\newblock ``Calibration and validation of an all-sky imager,''
+\newblock {\em Atmospheric and Oceanic Science Letters}, vol. 2, no. 4, pp.
+  220--223, July 2009.
+
+\bibitem{shah1996intrinsic}
+S.~Shah and J.~K. Aggarwal,
+\newblock ``Intrinsic parameter calibration procedure for a (high-distortion)
+  fish-eye lens camera with distortion model and accuracy estimation,''
+\newblock {\em Pattern Recognition}, vol. 29, no. 11, pp. 1775--1788, Nov.
+  1996.
+
+\bibitem{bakstein2002panoramic}
+H.~Bakstein and T.~Pajdla,
+\newblock ``Panoramic mosaicing with a 180 field of view lens,''
+\newblock in {\em Proc. Third Workshop on Omnidirectional Vision}, 2002, pp.
+  60--67.
+
+\bibitem{sturm2004generic}
+P.~Sturm and S.~Ramalingam,
+\newblock ``A generic concept for camera calibration,''
+\newblock in {\em Proc. European Conference on Computer Vision (ECCV)}, 2004,
+  pp. 1--13.
+
+\bibitem{Kannala_calib}
+J.~Kannala and S.~Brandt,
+\newblock ``A generic camera calibration method for fish-eye lenses,''
+\newblock in {\em Proc. International Conference on Pattern Recognition
+  (ICPR)}, 2004, pp. 10--13.
+
+\bibitem{scaramuzza2006toolbox}
+D.~Scaramuzza, A.~Martinelli, and R.~Siegwart,
+\newblock ``A toolbox for easily calibrating omnidirectional cameras,''
+\newblock in {\em Proc. IEEE/RSJ International Conference on Intelligent Robots
+  and Systems}, 2006, pp. 5695--5701.
+
+\bibitem{d2007radiometric}
+P.~d\`{}Angelo,
+\newblock ``Radiometric alignment and vignetting calibration,''
+\newblock in {\em Proc. Camera Calibration Methods for Computer Vision
+  Systems}, 2007.
+
+\bibitem{DebevecHDR}
+P.~E. Debevec and J.~Malik,
+\newblock ``Recovering high dynamic range radiance maps from photographs,''
+\newblock in {\em Proc. 24th Annual Conference on Computer Graphics and
+  Interactive Techniques}, 1997, pp. 369--378.
+
+\bibitem{CLAHE}
+K.~Zuiderveld,
+\newblock ``Graphics gems {IV},''
+\newblock pp. 474--485. Academic Press Professional, Inc., 1994.
+
+\bibitem{akyuz2012high}
+A.~O. Aky{\"u}z,
+\newblock ``High dynamic range imaging pipeline on the {GPU},''
+\newblock {\em Journal of Real-Time Image Processing}, vol. 10, no. 2, pp.
+  273--287, June 2015.
+
+\bibitem{jpegxt}
+T.~Richter,
+\newblock ``On the standardization of the {JPEG XT} image compression,''
+\newblock in {\em Proc. Picture Coding Symposium (PCS)}, 2013, pp. 37--40.
+
+\bibitem{pearson}
+T.~R. Knapp,
+\newblock ``Bimodality revisited,''
+\newblock {\em Journal of Modern Applied Statistical Methods}, vol. 6, no. 1,
+  pp. 3, 2007.
+
+\bibitem{ROC_main}
+T.~Fawcett,
+\newblock ``An introduction to {ROC} analysis,''
+\newblock {\em Pattern Recognition Letters}, vol. 27, no. 8, pp. 861 -- 874,
+  June 2006.
+
+\bibitem{microarray-ROC}
+H.~Mamitsuka,
+\newblock ``Selecting features in microarray classification using {ROC}
+  curves,''
+\newblock {\em Pattern Recognition}, vol. 39, no. 12, pp. 2393 -- 2404, Dec.
+  2006.
+
+\bibitem{Bezdek}
+J.~C. Bezdek, R.~Ehrlich, and W.~Full,
+\newblock ``{FCM}: The fuzzy c-means clustering algorithm,''
+\newblock {\em Computers \& Geosciences}, vol. 10, no. 2-3, pp. 191--203, 1984.
+
+\bibitem{Jawahar}
+C.~V. Jawahar, P.~K. Biswas, and A.~K. Ray,
+\newblock ``Investigations on fuzzy thresholding based on fuzzy clustering,''
+\newblock {\em Pattern Recognition}, vol. 30, no. 10, pp. 1605--1613, Oct.
+  1997.
+
+\bibitem{InfoTheory_TGRS}
+A.~Mart{\'i}nez-Us{\'o}, F.~Pla, J.~M. Sotoca, and P.~Garc{\'i}a-Sevilla,
+\newblock ``Clustering-based hyperspectral band selection using information
+  measures,''
+\newblock {\em IEEE Transactions on Geoscience and Remote Sensing}, vol. 45,
+  no. 12, pp. 4158--4171, Dec. 2007.
+
+\bibitem{Pawlak92}
+Z.~Pawlak,
+\newblock {\em Rough Sets: Theoretical Aspects of Reasoning About Data},
+\newblock Kluwer Academic Publishers, 1992.
+
+\bibitem{ICIP2015a}
+S.~Dev, Y.~H. Lee, and S.~Winkler,
+\newblock ``Multi-level semantic labeling of sky/cloud images,''
+\newblock in {\em Proc. International Conference on Image Processing (ICIP)},
+  2015, pp. 636--640.
+
+\bibitem{SIMPLS}
+S.~de~Jong,
+\newblock ``{SIMPLS}: An alternative approach to partial least squares
+  regression,''
+\newblock {\em Chemometrics and Intelligent Laboratory Systems}, vol. 18, no.
+  3, pp. 251--263, Mar. 1993.
+
+\bibitem{Manne1987}
+R.~Manne,
+\newblock ``Analysis of two partial-least-squares algorithms for multivariate
+  calibration,''
+\newblock {\em Chemometrics and Intelligent Laboratory Systems}, vol. 2, no.
+  1-3, pp. 187--197, Aug. 1987.
+
+\bibitem{ICIP1_2014}
+S.~Dev, Y.~H. Lee, and S.~Winkler,
+\newblock ``Systematic study of color spaces and components for the
+  segmentation of sky/cloud images,''
+\newblock in {\em Proc. International Conference on Image Processing (ICIP)},
+  2014, pp. 5102--5106.
+
+\bibitem{SLIC}
+R.~Achanta, A.~Shaji, K.~Smith, A.~Lucchi, P.~Fua, and S.~Sustrunk,
+\newblock ``{SLIC} superpixels compared to state-of-the-art superpixel
+  methods,''
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  vol. 34, no. 11, pp. 2274--2282, Nov. 2012.
+
+\bibitem{DBSCAN}
+M.~Ester, H-P. Kriegel, J.~Sander, and X.~Xu,
+\newblock ``A density-based algorithm for discovering clusters in large spatial
+  databases with noise,''
+\newblock in {\em Proc. Second International Conference on Knowledge Discovery
+  and Data Mining}, 1996, pp. 226--231.
+
+\bibitem{LBP_PAMI}
+T.~Ojala, M.~Pietikainen, and T.~Maenpaa,
+\newblock ``Multiresolution gray-scale and rotation invariant texture
+  classification with local binary patterns,''
+\newblock {\em IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  vol. 24, no. 7, pp. 971--987, July 2002.
+
+\bibitem{colorhist-CVPR}
+C.~L. Novak and S.~A. Shafer,
+\newblock ``Anatomy of a color histogram,''
+\newblock in {\em Proc. Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, 1992, pp. 599--605.
+
+\bibitem{Schmid_CVPR}
+C.~Schmid,
+\newblock ``Constructing models for content-based image retrieval,''
+\newblock in {\em Proc. Conference on Computer Vision and Pattern Recognition
+  (CVPR)}, 2001, pp. II--39--II--45 vol.2.
+
+\bibitem{Liu_AGC}
+S.~Liu, Z.~Zhang, B.~Xiao, and X.~Cao,
+\newblock ``Ground-based cloud detection using automatic graph cut,''
+\newblock {\em IEEE Geoscience and Remote Sensing Letters}, vol. 12, no. 6, pp.
+  1342--1346, June 2015.
+
+\bibitem{Otsu79}
+N.~Otsu,
+\newblock ``A threshold selection method from gray-level histograms,''
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics}, vol. 9, no.
+  1, pp. 62--66, Jan. 1979.
+
+\bibitem{Boykov_ICCV}
+Y.Y. Boykov and M.-P. Jolly,
+\newblock ``Interactive graph cuts for optimal boundary \& region segmentation
+  of objects in {N-D} images,''
+\newblock in {\em Proc. International Conference on Computer Vision (ICCV)},
+  2001, pp. 105--112 vol.1.
+
+\bibitem{satellite03}
+C.~I. Christodoulou, S.~C. Michaelides, and C.~S. Pattichis,
+\newblock ``Multifeature texture analysis for the classification of clouds in
+  satellite imagery,''
+\newblock {\em IEEE Transactions on Geoscience and Remote Sensing}, vol. 41,
+  no. 11, pp. 2662--2668, Nov. 2003.
+
+\bibitem{Haralick73}
+R.~M. Haralick, K.~Shanmugam, and I.~Dinstein,
+\newblock ``Textural features for image classification,''
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics}, vol. SMC-3,
+  no. 6, pp. 610--621, Nov. 1973.
+
+\bibitem{Weszka76}
+J.~S. Weszka, C.~R. Dyer, and A.~Rosenfeld,
+\newblock ``A comparative study of texture measures for terrain
+  classification,''
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics}, vol. SMC-6,
+  no. 4, pp. 269--285, Apr. 1976.
+
+\bibitem{Wu92}
+C.-M. Wu, Y.-C. Chen, and K.-S. Hsieh,
+\newblock ``Texture features for classification of ultrasonic liver images,''
+\newblock {\em IEEE Transactions on Medical Imaging}, vol. 11, no. 2, pp.
+  141--152, June 1992.
+
+\bibitem{Liu16}
+S.~Liu and Z.~Zhang,
+\newblock ``Learning group patterns for ground-based cloud classification in
+  wireless sensor networks,''
+\newblock {\em EURASIP Journal on Wireless Communications and Networking}, vol.
+  2016, no. 1, pp. 1--6, Mar. 2016.
+
+\bibitem{Wu15SIFT}
+Z.~Wu, X.~Xu, M.~Xia, M.~Ma, and L.~Li,
+\newblock ``Ground-based vision cloud image classification based on extreme
+  learning machine,''
+\newblock {\em The Open Cybernetics \& Systemics Journal}, vol. 9, pp.
+  2877--2885, Nov. 2015.
+
+\bibitem{varma_ziss2005}
+M.~Varma and A.~Zisserman,
+\newblock ``A statistical approach to texture classification from single
+  images,''
+\newblock {\em International Journal of Computer Vision}, vol. 62, no. 1-2, pp.
+  61--81, April-May 2005.
+
+\bibitem{Sun2009}
+F.~Sun and J.~He,
+\newblock ``The remote-sensing image segmentation using textons in the
+  normalized cuts framework,''
+\newblock in {\em Proc. International Conference on Mechatronics and Automation
+  (ICMA)}, 2009, pp. 1877--1881.
+
+\bibitem{bur2006}
+G.~Burghouts and J.~Geusebroek,
+\newblock ``Color textons for texture recognition,''
+\newblock in {\em Proc. British Machine Vision Conference (BMVC)}, 2006, pp.
+  1099--1108.
+
+\bibitem{ICIP2015b}
+S.~Dev, Y.~H. Lee, and S.~Winkler,
+\newblock ``Categorization of cloud image patches using an improved
+  texton-based approach,''
+\newblock in {\em Proc. International Conference on Image Processing (ICIP)},
+  2015, pp. 422--426.
+
+\bibitem{HelioClim2014}
+M.~Lef\`{e}vre, P.~Blanc, B.~Espinar, B.~Gschwind, L.~M\'{e}nard, T.~Ranchin,
+  L.~Wald, L.~Saboret, C.~Thomas, and E.~Wey,
+\newblock ``The {HelioClim-1} database of daily solar radiation at earth
+  surface: An example of the benefits of geoss data-core,''
+\newblock {\em IEEE Journal of Selected Topics in Applied Earth Observations
+  and Remote Sensing}, vol. 7, no. 5, pp. 1745--1753, May 2014.
+
+\bibitem{SEVIRI2016}
+T.~B. M.~J. Ouarda, C.~Charron, P.~R. Marpu, and F.~Chebana,
+\newblock ``The generalized additive model for the assessment of the direct,
+  diffuse, and global solar irradiances using {SEVIRI} images, with application
+  to the {UAE},''
+\newblock {\em IEEE Journal of Selected Topics in Applied Earth Observations
+  and Remote Sensing}, vol. 9, no. 4, pp. 1553--1566, Apr. 2016.
+
+\bibitem{solar_PV}
+E.~Lorenz, J.~Hurka, D.~Heinemann, and H.~G. Beyer,
+\newblock ``Irradiance forecasting for the power prediction of grid-connected
+  photovoltaic systems,''
+\newblock {\em IEEE Journal of Selected Topics in Applied Earth Observations
+  and Remote Sensing}, vol. 2, no. 1, pp. 2--10, Mar. 2009.
+
+\bibitem{ursi2017}
+S.~Dev, S.~Manandhar, F.~Yuan, Y.~H. Lee, and S.~Winkler,
+\newblock ``Cloud radiative effect study using sky camera,''
+\newblock in {\em Proc. IEEE AP-S Symposium on Antennas and Propagation and
+  USNC-URSI Radio Science Meeting}, 2077.
+
+\bibitem{IGARSS2015a}
+S.~Dev, F.~M. Savoy, Y.~H. Lee, and S.~Winkler,
+\newblock ``Design of low-cost, compact and weather-proof whole sky imagers for
+  {High-Dynamic-Range} captures,''
+\newblock in {\em Proc. International Geoscience and Remote Sensing Symposium
+  (IGARSS)}, 2015, pp. 5359--5362.
+
+\bibitem{dazhi2012estimation}
+D.~Yang, P.~Jirutitijaroen, and W.~M. Walsh,
+\newblock ``The estimation of clear sky global horizontal irradiance at the
+  equator,''
+\newblock {\em Energy Procedia}, vol. 25, pp. 141--148, Dec. 2012.
+
+\bibitem{IGARSS16_calib}
+F.~M. Savoy, S.~Dev, Y.~H. Lee, and S.~Winkler,
+\newblock ``Geo-referencing and stereo calibration of ground-based whole sky
+  imagers using the sun trajectory,''
+\newblock in {\em Proc. International Geoscience and Remote Sensing Symposium
+  (IGARSS)}, 2016, pp. 7473--7476.
+
+\bibitem{Poynton03}
+C.~Poynton,
+\newblock {\em Digital Video and {HDTV} Algorithms and Interfaces},
+\newblock Morgan Kaufmann Publishers Inc., 2003.
+
+\bibitem{hiscocks2011measuring}
+P.~D. Hiscocks and P.~Eng,
+\newblock ``Measuring luminance with a digital camera,''
+\newblock {\em Syscomp Electronic Design Limited}, 2011.
+
+\bibitem{fleet2006optical}
+D.~Fleet and Y.~Weiss,
+\newblock ``Optical flow estimation,''
+\newblock in {\em Handbook of mathematical models in computer vision}, pp.
+  237--257. Springer, 2006.
+
+\bibitem{lucas1981iterative}
+B.~D. Lucas and T.~Kanade,
+\newblock ``An iterative image registration technique with an application to
+  stereo vision.,''
+\newblock in {\em Proc. 7th International Joint Conference on Artificial
+  Intelligence (IJCAI)}, 1981, vol.~2, pp. 674--679.
+
+\bibitem{horn1981determining}
+B.~K.~P. Horn and B.~G. Schunck,
+\newblock ``Determining optical flow,''
+\newblock {\em Artificial Intelligence}, vol. 17, no. 1, pp. 185--203, Aug.
+  1981.
+
+\bibitem{liu2009beyond}
+C.~Liu,
+\newblock {\em Beyond Pixels: Exploring New Representations and Applications
+  for Motion Analysis},
+\newblock Ph.D. thesis, Massachusetts Institute of Technology (MIT), 2009.
+
+\bibitem{bruhn2005lucas}
+A.~Bruhn, J.~Weickert, and C.~Schn{\"o}rr,
+\newblock ``{Lucas/Kanade} meets {Horn/Schunck}: Combining local and global
+  optic flow methods,''
+\newblock {\em International Journal of Computer Vision}, vol. 61, no. 3, pp.
+  211--231, 2005.
+
+\bibitem{SHARP}
+A.~Ghasemi, A.~J. Scholefield, and M.~Vetterli,
+\newblock ``Consistent and optimal triangulation: Analysis and algorithms,''
+\newblock Tech. {R}ep., Institute of Electrical and Electronics Engineers,
+  2016.
+
+\bibitem{near_infrared}
+C.~Fredembach and S.~S{\"u}sstrunk,
+\newblock ``Colouring the near-infrared,''
+\newblock in {\em Proc. Color and Imaging Conference}, 2008, pp. 176--182.
+
+\bibitem{SPA}
+I.~Reda and A.~Andreas,
+\newblock ``Solar position algorithm for solar radiation applications,''
+\newblock {\em Solar energy}, vol. 76, no. 5, pp. 577--589, 2004.
+
+\end{thebibliography}

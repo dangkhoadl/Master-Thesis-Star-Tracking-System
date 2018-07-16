@@ -26,7 +26,7 @@ c2= R_camera_to_earth(2,:);
 c3= R_camera_to_earth(3,:);
 
 %% Read star coordinates in Earth reference frame from star catalog
-file_path='D:\\Dropbox\\DangKhoa\\CEE_Cache\\StarTrackingProject\\StarSimulation_Matlab\\SKY2000_Magnitude5_doublestar.txt';
+file_path='D:\\Dropbox\\DangKhoa\\CEE_Cache\\GitHub\\StarTrackingProject\\StarSimulation_Matlab\\SKY2000_Magnitude5_doublestar.txt';
 [SKYMAP_No,star_RA,star_DEC,star_MAG]= textread(file_path,'%d %f %f %f');
 
 % Si is coordiante of star in Earth reference frame, 

@@ -1,0 +1,17 @@
+\addcontentsline{toc}{chapter}{Abstract}
+\begin{center}
+	\textbf{\large Abstract}
+\end{center}
+
+\begin{center}
+	\textbf{Implementation of An Autonomous Star Recognition Algorithm using Hardware-Software Co-Processing Approach} \\
+	\emph{By Dang Le Dang Khoa}
+\end{center}
+
+\noindent There are various types of Attitude Determination sensors such as sun sensors, magnetometer, RF beacon but only Star Trackers can achieve the accuracy to arc seconds. A Star Tracker is an embedded system mounted on a spacecraft comprised by an Image sensor and a Computer. It helps determine the attitude of the satellite based on an Autonomous Star Recognition Algorithm. The Star Sensor would take an image of stars at its current position, and then the star pattern recognition algorithms would extract features to construct a pattern from the images. This pattern then is compared with a prebuilt Star Pattern Database (SPD) to return the Star Identity of a star in the Image. This star identity is an important part to determine the attitude of the satellite. \\
+
+\noindent To implement the Algorithm on a specific hardware, the computing system must be appropriately chosen. Programmable System-on-chip (PSoC) is a technology that replaces the traditional ASIC (Application Specific Integrated Circuit) by an FPGA (known as Programmable Logics) combined with an Embedded Processor (known as the Processing system), integrated memories, a variety of peripherals to form an embedded computing system. The Programmable Logic is ideal for implementing high-speed logic, arithmetic and accelerating subsystems while the Processing System supports software routines and Operating systems. Based on this property, an algorithm can be partitioned into submodules to be co-processed by the hardware-software combination. \\
+
+\noindent The goal of this research is to partition and profile a Star Recognition Algorithm then implement these modules on both the Processing System (Software) and the Programmable Logics (Hardware) to analyze the Algorithm implementation regarding Performance, Area of Implementation, Power Consumption. \\
+
+\noindent \textbf{Keywords}: Star tracker, Star pattern recognition, Star recognition, Algorithms, Attitude determination, Embedded System, Programmable System on Chip (PSoC).

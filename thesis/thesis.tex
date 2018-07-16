@@ -1,0 +1,73 @@
+
+\documentclass[dvips,a4paper,12pt]{report}
+\usepackage{thesis}
+
+\begin{document}
+	\pagenumbering{roman}
+	
+	\thispagestyle{empty}
+
+	% Cover
+	\begin{center}
+		
+		\begin{figure}
+			\centering
+			\vspace{2mm}
+			\includegraphics[scale=0.6]{images/NTU_logo.eps}
+				\label{fig:NTU_Logo}
+		\end{figure}
+		
+		\vspace{5.0cm}
+		\textbf{\Large \MakeUppercase{IMPLEMENTATION OF AN AUTONOMOUS STAR RECOGNITION ALGORITHM USING HARDWARE-SOFTWARE CO-PROCESSING APPROACH}}
+		
+		\vspace{\fill}
+		
+		\textbf{\MakeUppercase{DANG LE DANG KHOA}} \\
+		\textbf{\MakeUppercase{G1500337L}} \\
+		
+		\vspace{\fill}
+		
+		\textbf{SCHOOL OF ELECTRICAL AND ELECTRONICS ENGINEERING}
+		
+		\textbf{2018}
+		
+	\end{center}
+	
+	\newpage
+	
+	\clearpage
+	\setcounter{page}{1}
+	
+	% Title
+	\thesistitle
+	{\MakeUppercase{IMPLEMENTATION OF AN AUTONOMOUS STAR RECOGNITION ALGORITHM USING HARDWARE-SOFTWARE CO-PROCESSING APPROACH}}
+	{\MakeUppercase{DANG LE DANG KHOA}}
+	{Master of Engineering}
+	{School of Electrical and Electronics Engineering}
+	{\emph{2018}}
+	
+	% Forewords
+	\include{1_foreword/abstract}	% Abstracts
+	\include{1_foreword/ack}		% Acknowledgements
+	\include{1_foreword/contents}	% List of Contents
+	\include{1_foreword/tables}		% List of tables
+	\include{1_foreword/figures}	% List of figures
+	
+	% Chapters
+	\pagenumbering{arabic}
+	\include{2_chapters/chap1}
+	\include{2_chapters/chap2}
+	\include{2_chapters/chap3}
+	\include{2_chapters/chap4}
+	\include{2_chapters/chap5}
+
+	% Bibliography
+	\include{3_bibliography/bib}
+	
+	% Appendix
+	% If you have no appendices, remove the following two lines.
+	% If you have more appdences, add them as necessary.
+	% \appendix
+	% \include{4_appendix/apdxa}
+	
+\end{document}

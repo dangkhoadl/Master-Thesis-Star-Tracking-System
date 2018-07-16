@@ -1,0 +1,271 @@
+% Chapter 4
+\chapter{Experimental Results}
+\label{chap:result}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Section 4.1
+\section{Hardware design}
+
+\subsection{Components and Design Flow}
+
+The hardware components shown in Figure~\ref{fig:4_1} includes:
+\begin{itemize}
+    \item Processing system.
+    \item Centroiding IP core.
+    \item Direct Memory Access controlling system.
+    \item BRAM
+    \item Hardware timer
+    \item Interrupt controller
+\end{itemize}
+
+% Figure 4.1
+\ntuepsfig[width=\textwidth]{4_1}{Hardware design diagram}
+
+\noindent \textbf{Data path} \\
+\noindent The pixel data are streamed directly into memory by DMA module. The IP core is designed for centroiding processing the algorithm as soon as the first pixel data arrived. After the centroiding algorithm finishing, the IP core store the results of centroiding algorithm into BRAM and informs the PS by an interrupt signal. PS then takes the results from BRAM and process other stages. The data path is implemented through AXI. \\
+
+\noindent \textbf{Control signals} \\
+\noindent The PS and PL side communicate through an interrupt controller. The interrupt controller informs the PS if the centroiding algorithm or hardware timer has finished, informs the DMA controller if the memory is full, the DMA controller then flush the old data to free the memory. BRAM controller is a dual channel BRAM which is readable from PS side and writable from PL side. \\
+
+% Figure 4.2
+\ntuepsfig[width=\textwidth]{4_2}{Hardware design block}
+
+\noindent The graph~\ref{fig:4_3} shows the percentage of hardware resources used over available resources from the zedboard. We still have more spare resources of the FPGA for other tasks.
+
+% Table 4.1
+\begin{ntutab}{|c|c|c|c|}{resource}{Hardware resource consumption}
+    \hline
+    \textbf{Resource} & \textbf{Used} & \textbf{Available} & \textbf{Percentage (\%)} \\
+    \hline
+    BRAM\_18K & 17 & 280 & 6.07 \\
+    \hline
+    DSP48E & 20 & 220 & 9.09 \\
+    \hline
+    FlipFlops & 9278 & 106400 & 8.72 \\
+    \hline
+    Lookup Tables & 13387 & 53200 & 25.16 \\
+    \hline
+\end{ntutab}
+
+% Figure 4.3
+\ntuepsfig[width=\textwidth]{4_3}{Hardware resource consumption}
+
+\newpage \subsection{Power Analysis}
+
+\begin{ntutab}{|c|c|}{environment}{Environment condition}
+    \hline
+    \textbf{Condition} & \textbf{value} \\
+    \hline
+    Ambient temperature &  \\
+    \hline
+    Airflow & 250 LFM \\
+    \hline
+    heat sink & medium \\
+    \hline
+    board temperature & $25.0^oC$ \\
+    \hline
+\end{ntutab}
+
+\ntuepsfig[width=\textwidth]{power_sum}{Power consumption summary}
+
+\ntuepsfig[width=\textwidth]{power}{Power consumption by components}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Section 4.2
+\section{Runtime experiments}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Star data analysis}
+
+\noindent The main factors affect the runtime of the designed system are:
+\begin{itemize}
+    \item Image resolution
+    \item Number of stars in one image
+    \item Star area (in pixels) of one star
+\end{itemize}
+
+The images simulated are based on the SSAO star catalog and the standard ESO star map. Randomized distribution false stars are added to each image. For each resolution dataset, we have 12530 simulated images. \\
+
+% Figure 4.4
+\ntuepsfig[scale=1.0]{4_4}{Number of stars in one image distribution}
+
+% Figure 4.5
+\ntuepsfig[scale=1.0]{4_5}{Star area distribution}
+
+\noindent The algorithm runtime performance is then compared between the implementation run on the embedded processor and the application executed on software-hardware co-processing strategy.
+
+%%%%%%%%%
+% subsubsection 4.2.2.1
+\newpage \subsection{512x512 dataset}
+
+The star tracker is configured as Table~\ref{tab:4_2}
+
+% Table 4.2
+\begin{ntutab}{|c|c|}{4_2}{Star tracker configuration}
+    \hline
+    \textbf{Parameters} & \textbf{Value} \\
+    \hline
+    Field of View (FOV) & J2000 \\
+    \hline
+    Inertial frame & 8.0 degrees full cone \\
+    \hline
+    Visual magnitude threshold & 5.0 \\
+    \hline
+    Number of samples & 12530 \\
+    \hline
+\end{ntutab}
+
+%%%
+\textbf{Software runtime}
+
+% Table 4.3
+\begin{ntutab}{|c|c|c|}{4_3}{Software runtime}
+    \hline
+     & \textbf{Average} & \textbf{Worst case} \\
+    \hline
+    \textbf{Centroiding} & 17688 & 18061 \\
+    \hline
+    \textbf{Choosing Reference Star} & 54 & 105 \\
+    \hline
+    \textbf{Finding Star Pattern} & 30 & 109 \\
+    \hline
+    \textbf{Pattern Matching} & 83 & 155 \\
+    \hline
+\end{ntutab}
+
+% Figure 4.6
+\ntuepsfig[width=\textwidth]{4_6}{Software runtime}
+
+\noindent The average runtime is 17855 us (about 17.86 ms)
+
+%%%
+\newpage
+\noindent \textbf{Hardware – Software Co-processing runtime}
+
+% Table 4.4
+\begin{ntutab}{|c|c|c|}{4_4}{Hardware – Software Co-processing runtime}
+    \hline
+     & \textbf{Average} & \textbf{Worst case} \\
+    \hline
+    \textbf{IP core Initiation} & 6 & 6 \\
+    \hline
+    \textbf{DMA Data Streaming} & 2460 & 2485 \\
+    \hline
+    \textbf{Centroiding} & 3719 & 3806 \\
+    \hline
+    \textbf{Choosing Reference Star} & 54 & 145 \\
+    \hline
+    \textbf{Finding Star Pattern} & 30 & 109 \\
+    \hline
+    \textbf{Pattern Matching} & 83 & 155 \\
+    \hline
+\end{ntutab}
+
+% Figure 4.7
+\ntuepsfig[width=\textwidth]{4_7}{Software-Hardware co-processing runtime}
+
+\noindent The average runtime is 6352 us(about 6.35 ms)
+
+%%%%%%%%%
+\newpage \subsection{1024x1024 dataset}
+
+\noindent The images are captured by the star tracker SST-20S described by Table~\ref{tab:4_7}
+
+% Table 4.7
+\begin{ntutab}{|c|c|}{4_7}{Specifications of the SST-20S star tracker and the real image\cite{8374923}}
+    \hline
+    \textbf{Parameter} & Value \\
+    \hline
+    \textbf{Field of View (FOV)} & $15^o * 15^o$ \\
+    \hline
+    \textbf{Sensitivity (Mv)} & 6.3 \\
+    \hline
+    \textbf{Star catalog} & SAO J2000\cite{myers1997sky2000} \\
+    \hline
+    \textbf{Resolution (w * h)} & 1024 x 1024 pixels \\
+    \hline
+    \textbf{Pixel size ($\rho$)} & 13 µm \\
+    \hline
+    \textbf{Focal length (f)} & 50 mm \\
+    \hline
+    \textbf{Bits per pixel} & 8 \\
+    \hline
+    \textbf{Position accuracy} & 40 arcsec \\
+    \hline
+\end{ntutab}
+
+\textbf{Software runtime}
+
+% Table 4.5
+\begin{ntutab}{|c|c|c|}{4_5}{Software runtime}
+    \hline
+     & \textbf{Average} & \textbf{Worst case} \\
+    \hline
+    \textbf{Centroiding} & 70527 & 70561 \\
+    \hline
+    \textbf{Choosing Reference Star} & 63 & 108 \\
+    \hline
+    \textbf{Finding Star Pattern} & 54 & 115 \\
+    \hline
+    \textbf{Pattern Matching} & 136 & 155 \\
+    \hline
+\end{ntutab}
+
+% Figure 4.8
+\ntuepsfig[width=\textwidth]{4_8}{Software runtime}
+
+\noindent The average runtime is 70780 us (about 70.78 ms)
+
+%%%
+\newpage
+\noindent \textbf{Hardware – Software Co-processing runtime}
+
+% Table 4.6
+\begin{ntutab}{|c|c|c|}{4_6}{Hardware – Software Co-processing runtime}
+    \hline
+     & \textbf{Average} & \textbf{Worst case} \\
+    \hline
+    \textbf{IP core Initiation} & 6 & 6 \\
+    \hline
+    \textbf{DMA Data Streaming} & 9834 & 9838 \\
+    \hline
+    \textbf{Centroiding} & 3543 & 3598 \\
+    \hline
+    \textbf{Choosing Reference Star} & 63 & 108 \\
+    \hline
+    \textbf{Finding Star Pattern} & 54 & 115 \\
+    \hline
+    \textbf{Pattern Matching} & 136 & 155 \\
+    \hline
+\end{ntutab}
+
+% Figure 4.9
+\ntuepsfig[width=\textwidth]{4_9}{Hardware – Software Co-processing runtime}
+
+\noindent The average runtime is 13636 us (about 13.64 ms)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% subsection 4.2.3
+\newpage \subsection{Runtime Comparison}
+
+\begin{ntutab}{|c|c|c|}{4_7}{Runtime comparison}
+    \hline
+     & \textbf{Average(ms)} & \textbf{Worst case(ms)} \\
+    \hline
+    \textbf{Liebe method} & 190.6 & 304.7 \\
+    \hline
+    \textbf{Geometric voting method SW} & 958.4 & 1044.7 \\
+    \hline
+    \textbf{Pyramid method SW} & 352.3 & 576.6 \\
+    \hline
+    \textbf{Proposed method SW} & 70.8 & 70.9 \\
+    \hline
+    \textbf{Proposed method SW-HW coprocessing} & 13.6 & 13.8 \\
+    \hline
+\end{ntutab}
+
+\ntuepsfig[width=\textwidth]{4_10}{Runtime comparison}

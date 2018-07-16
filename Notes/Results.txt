@@ -1,0 +1,24 @@
+
+Build tree runtime: 1 us
+Build tree max: 342 us
+Build tree min: 342 us
+
+DMA transfer time: 99 us
+DMA transfer max: 99 us
+DMA transfer min: 99 us
+
+CCLAbel SW runtime: 705 us -- HW runtime: 10873 us
+CCLAbel SW max: 705 us -- HW max: 10873 us
+CCLAbel SW min: 705 us -- HW min: 10873 us
+
+Choose reference star runtime: 21 us
+Choose reference star max: 21 us
+Choose reference star min: 21 us
+
+Find the star pattern runtime: 1 us
+Find the star pattern max: 1 us
+Find the star pattern min: 1 us
+
+Linear search runtime: 1 us -- Tree database search runtime: 1185 us
+Linear search max: 1 us -- Tree database search max: 1185 us
+Linear search min: 1 us -- Tree database search min: 1185 us

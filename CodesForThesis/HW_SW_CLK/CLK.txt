@@ -1,0 +1,31 @@
+ 
+- 1 MHz
+ --------------- Results ---------------
+SW - HW Centroid result: Matched
+Star ID return: 574
+--------------- Runtime ---------------
+Build tree runtime: 343 us
+DMA transfer time: 99 us
+CCLAbel SW runtime: 706 us -- HW runtime: 10715 us
+Choose reference star runtime: 16 us
+Find the star pattern runtime: 0 us
+Linear search runtime: 1 us -- Tree database search runtime: 958 us
+---------- !!! SUCESS !!! ----------
+
+- 20 MHz
+ --------------- Results ---------------
+SW - HW Centroid result: Matched
+Star ID return: 574
+--------------- Runtime ---------------
+Build tree runtime: 343 us
+DMA transfer time: 99 us
+CCLAbel SW runtime: 706 us -- HW runtime: 10715 us
+Choose reference star runtime: 16 us
+Find the star pattern runtime: 0 us
+Linear search runtime: 1 us -- Tree database search runtime: 958 us
+---------- !!! SUCESS !!! ----------
+
+
+
+
+

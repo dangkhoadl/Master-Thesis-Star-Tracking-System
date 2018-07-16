@@ -1,0 +1,394 @@
+\chapter{Texture-based Image Classification}
+\label{chap:classification}
+
+\lhead{Chapter 6. \emph{Texture-based Image Classification}}
+
+In this chapter, we discuss our work on multi-class image classification that is based on an efficient integration of \emph{color} and \emph{texture} cues. We present our proposed classification method to efficiently recognize cloud types from Low Dynamic Range (LDR) sky/cloud image patches. 
+Multi-class classification of cloud types from images obtained by ground-based sky cameras is a challenging task. This is because clouds are generally featureless, and conventional machine learning techniques cannot be directly applied on them. Several feature descriptors are therefore developed to extract the most discriminatory cloud features. In this chapter, we systematically study the several features that were developed for cloud classification task. Also, we propose a new filter-bank based classification algorithm that efficiently extracts color and texture information from sky/cloud images, and surpasses the performance of these existing approaches. 
+
+\section{Cloud Classification}
+
+The classification of clouds into various types is an important step because individual cloud types have different properties. The most common scheme is the genera-based cloud classification proposed by the World Meteorological Organization (WMO)~\cite{WMO_guide}. It consists of $10$ categories. They can be sorted in $3$ basic groups based on their shapes:
+\begin{itemize}
+\item Cumulus: heap clouds (cumulus, stratocumulus, altocumulus, cirrocumulus and cumulonimbus)
+\item Stratus: layer clouds (stratus, nimbostratus, altostratus and cirrostratus)
+\item Cirrus: hair-like/feathery clouds (cirrus, cirrocumulus and cirrostratus)
+\end{itemize}
+Each genus can be further subdivided into several species and varieties, according to their shape and structure, or their transparency and arrangement inside the cloud. In our specific application of analyzing cloud attenuation in satellite path links~\cite{cloud_model_compare}, we however do not assume such precise categorization. This is because, occurrence of the all types of cloud is not significant in our tropical climate. In tropical countries like Singapore, we do not witness all the various kinds of cloud types. Furthermore, it is not possible to classify into various cloud categories, based on visual inspection only. Moreover, they are too precise for our measurement techniques and our objectives. Therefore, we contrive the $10$ different cloud types into $5$ categories. More details about the $5$ categories will be discussed later in Section~\ref{sec:chap6-exps} of this chapter. 
+
+ 
+Cloud classification is challenging because clouds are non-rigid in nature and do not have definite structure, color, texture or contour. The inherent difficulty in such problems is that the appearance of an object is heavily dependent on the illumination conditions, camera settings and the other ambient conditions. In the literature, several approaches based on the concept of filter responses and filter banks have been widely used. Gabor filters, Laplacian-of-Gaussian and other wavelet form filters are used in such applications. Moreover, several statistical features viz.\ mean, standard deviation and entropy of color channels are successfully used for cloud type recognition. In this chapter, we attempt to analyze these features from a machine-learning framework. We explore: which features have higher inter-class separability in the feature space, and are thus good candidates for classification?
+
+Conventional feature extraction techniques fail in cloud type recognition task, as clouds are generally \emph{fuzzy} in nature, and do not exhibit any strong features. Therefore, in most cases, color and texture plays the role of dominant cue features. However, a seamless integration of color into a texture classification framework is still an open question. In this chapter, we attempt to solve the question: how can \emph{color} and \emph{texture} cues be combined for an efficient cloud type recognition task?
+
+\section{Outline of Our Contribution}
+In this chapter, we discuss our proposed methodology to efficiently integrate \emph{texture} and \emph{color} cues for robust image classification. We evaluate the efficacy of several cloud features that were specifically designed for cloud type recognition. A systematic selection of color channel and texture parameters of cloud images is an important step for better classification results. We propose a filter-bank based cloud classification framework, that is competitive with respect to the state-of-the-art algorithms. We release the first large-scale cloud categorization database called SWIMCAT to the research community. SWIMCAT stands for Singapore Whole sky IMaging CATegories Database, containing $784$ images categorized in $5$ distinct categories: clear sky, patterned clouds, thick dark clouds, thick white clouds, and veil clouds. In this chapter, we will present a thorough analysis of the proposed classification algorithm for the task of cloud type recognition. 
+
+The main contributions of this chapter include: 
+\begin{itemize}
+\item A novel cloud classification framework which is extensively studied and tested in cloud images obtained in a tropical region like Singapore.
+\item Extensive evaluation of different cloud features in a large-scale cloud category database.
+\item Introduction of the first publicly-available, large-scale cloud category database called SWIMCAT, for further benchmark analysis.
+\end{itemize}
+
+
+The rest of this chapter is organized as follows. In Section~\ref{sec:chap6-features}, we analyze the different existing features that were developed for the task of cloud classification. We visualize these features, and identify the shortcomings of the existing methods. In this chapter, we perform a systematic analysis of the \emph{color} and \emph{texture} cues of sky/cloud images, and propose a complete framework in Section~\ref{sec:chap6-proposed} for cloud type recognition. Evaluation metrics and the first publicly available cloud categorization database are introduced in Section~\ref{sec:chap6-exps}. We discuss our classification results in Section~\ref{sec:chap6-results}. Finally, Section~\ref{sec:chap6-conclude} concludes the chapter.
+
+\section{Cloud Features}
+\label{sec:chap6-features}
+In this section, we will briefly go through the several features that were designed for effective cloud type classification. Suppose that a sample sky/cloud image is represented by $\mathbf{Z}_i \in {\rm I\!\mathbf{R}}^{m \times n \times 3}$,$i=1,2,\ldots,N$ which is an \emph{RGB} image in a dataset consisting of $N$ images. We assume that there are a total of $\overline{p}$ classes, and each category consists of $\overline{q}$ sky/cloud images. The corresponding $R$,$G$, $B$ images of $\mathbf{X}_i$ are represented by $\mathbf{Z}_i^{R}$, $\mathbf{Z}_i^{G}$ and $\mathbf{Z}_i^{B}$ respectively. Heinle et al.\ \cite{Heinle2010} uses a combination of these channels to design discriminatory features. Most of the other features were designed on the corresponding gray-scale image $\overline{\mathbf{Z}}_i$. For the sake of brevity and without the loss of generality, we will drop the index $i$ in our subsequent discussions of this chapter. 
+
+\subsection{Statistical Features (SF)}
+Statistical Features (SF) were widely used by ~\cite{cloud_LBP,satellite03}. It consists of calculating several statistical measures from an image such as mean, median, standard deviation, skewness and kurtosis. These features provide a overall sense of the color of the image and its variation. For example, the gray-scale version of a thick dark cloud will be \emph{darker} than a corresponding clear sky patch. The vectorized form of the gray-scale image $\overline{\mathbf{Z}}$ is represented as $\overline{\mathbf{z}}$. We derive the statistical features on the vectorized image. We calculate the mean, median, standard deviation, skewness and kurtosis on the vectorized image and represent it as $\overline{\mathbf{z}}_m$, $\overline{\mathbf{z}}_d$, $\overline{\mathbf{z}}_v$, $\overline{\mathbf{z}}_w$ and $\overline{\mathbf{z}}_k$ respectively. The SF feature is formed by concatenation all these measures together to form a $5$-dimensional feature vector [$\overline{\mathbf{z}}_m$, $\overline{\mathbf{z}}_d$, $\overline{\mathbf{z}}_v$, $\overline{\mathbf{z}}_w$, $\overline{\mathbf{z}}_k$] from a single gray-scale image $\overline{\mathbf{Z}}$. The SF do not take into account the spatial dependencies of the pixel values.
+
+\subsection{Spatial Gray Level Dependence Matrices (SGLDM)}
+Haralick et al.\ in ~\cite{Haralick73} proposed a texture feature that takes into account the spatial dependency of the gray-scale pixel values in an image. This feature indicates the probability that two pixels have the same gray-level values for a specific distance in a given orientation. We represent this in the form of a matrix called Gray-Level Co-occurrence Matrix (GLCM). We calculate the corresponding $8$-level quantized image of the gray-scale cloud image $\overline{\mathbf{Z}}$, and measure the spatial dependencies of two pixels with the same quantized value. For a particular pixel-of-interest in $\overline{\mathbf{Z}}$, we check the corresponding pixels which are oriented at angles of $0^{\circ}$, $45^{\circ}$, $90^{\circ}$ and $135^{\circ}$. This helps in distinguishing clouds having a regular pattern, as compared to other cloud types. Once GLCMs are calculated for the four different orientations, we calculate $13$ statistical measures for each of these orientations. We compute the angular second moment, contrast, correlation, sum of squares, inverse difference moment, sum average, sum variance, sum entropy, entropy, difference variance, difference entropy, and two information measures of correlation. The corresponding means and ranges of these $13$ statistical measures are computed across the $4$ directions. We concatenate the mean values of these $13$ measures and represent it as $\mbox{SGLDM}_m$. The corresponding feature with range values is called $\mbox{SGLDM}_r$.
+
+\subsection{Gray Level Difference Statistics (GLDS)}
+Gray Level Difference Statistics (GLDS) is a subset feature from SGLDM. It is developed by Weszka et al.\ ~\cite{Weszka76} and has been originally used for terrain classification. It is now used for the task of cloud classification as well. We compute the gray-level co-occurrence matrix for the four orientations of $0^{\circ}$, $45^{\circ}$, $90^{\circ}$ and $135^{\circ}$. The means of these four matrices are calculated, and we denote the $4$-dimensional feature vector as GLDS.
+
+\subsection{Fractal Feature (FF)}
+Wu et al.\ in ~\cite{Wu92} developed a multi-resolution feature descriptor that provides good classification accuracy for ultrasonic liver images, as compared to other textural features. This feature describes the overall \emph{roughness} in an image, which is based on fractal geometry in an image. This fractal dimension is represented using the Hurst exponent. We use the gray-scale cloud image $\overline{\mathbf{Z}}$, and compute three multi-resolution versions at ratios $1$, $1/2$ and $1/3$. The Hurst exponents are calculated for these $3$ versions, and we generate a $3$-dimensional fractal feature vector. 
+
+\subsection{Fourier Magnitude (FM)}
+The fourier transform is one of the conventional techniques to study the patterns in an image. In this case, we first generate the Fast Fourier Transform (FFT) of gray-scale cloud image $\overline{\mathbf{Z}}$. The FFT output contains both the magnitude and phase component. We use the magnitude component as the Fourier Magnitude (FM) feature vector for the image. 
+
+\subsection{Heinle Feature (HF)}
+Heinle in ~\cite{Heinle2010} proposed a $12$-dimensional feature for the task of cloud type recognition. It uses all the red, green and blue color channels, $\mathbf{Z}^R$, $\mathbf{Z}^G$ and $\mathbf{Z}^B$. Heinle Feature (HF) computes the following: the average of red and blue channel, standard deviation and skewness of blue channel, the average difference between red and green, red and blue, and green and blue. It also generates the GLCM matrix from the blue channel, and extracts the energy, contrast, homogeneity and entropy from it. The last dimension of the $12$-dimensional feature vector is the cloud cover, which is generated from the blue channel. 
+
+\subsection{Local Binary Pattern (LBP)}
+Local Binary Pattern (LBP) is a popular feature descriptor technique that is widely used in the computer vision community. It captures the distribution of gray-scale pixels in $8$-point neighborhood of a pixel value. LBP is a popular technique for feature extraction as it is invariant to illumination changes. Liu and Zhang in ~\cite{Liu16} used LBP in ground-based cloud classification. We use the LBP pattern of gray-scale cloud image $\overline{\mathbf{Z}}$ for our evaluation. 
+
+\subsection{Scale Invariant Feature Transform (SIFT)}
+
+Scale Invariant Feature Transform (SIFT) is another popular technique developed in computer vision community~\cite{SIFT}. It generates a collection of descriptors from an image that are invariant to an affine rotation, translation and scaling. It is also robust to illumination changes. SIFT has been used in numerous applications. Wu et al.\ in ~\cite{Wu15SIFT} has extracted SIFT features from ground-based images to identify $4$ distinct cloud conditions. For our analysis, we compute the SIFT descriptor on the gray-scale cloud image $\overline{\mathbf{Z}}$. Each descriptor is a $128$-dimensional vector, and subsequently all descriptors are concatenated together to form a single feature vector. 
+
+These features have been used extensively for cloud type recognition at several occasions. However, there is no unified study on all these $9$ cloud features. In a conventional classification framework, these feature descriptors are generated and used as an input in a classifier model (SVM, KNN etc.). In this chapter, we ask this question: does these \emph{designed} cloud features help in increasing the inter-class separability, leading to an increased classification accuracy?
+
+
+\section{Proposed Classification Approach}
+\label{sec:chap6-proposed}
+The existing cloud features are useful in identifying the color spaces and textural features for cloud type recognition. However, the classification results using these features are low. In this section, we propose a cloud classification framework that integrates color and texture cues efficiently to provide higher classification accuracy. Our approach is based on the original Varma and Zisserman's texton approach~\cite{varma_ziss2005}.
+
+In the original texton approach~\cite{varma_ziss2005}, the gray-scale input images are first convolved with a set of filters from a filter bank. These responses are clustered using k-means clustering to generate a set of cluster centers, which are called \emph{textons}. The process is repeated separately for all the classes. The generated textons from each classes are combined together to form a \emph{texton dictionary}. The individual classes are finally modeled using a histogram distribution of the individual textons from the dictionary. In our proposed cloud  classification methodology, we modify the original texton-based method primarily in two distinct ways. 
+
+\begin{enumerate}
+\item We generate the texton dictionary by exploiting the inherent information across categories. 
+\item Instead of a gray-scale image, we incorporate color into the classification framework in a systematic manner.
+\end{enumerate}
+
+Firstly, in the original approach, the set of textons are generated individually for each categories. In most cases, the differences between images across several categories are faint. This results in the generation of \emph{similar} textons in the dictionary, leading to a higher mismatch in the model creation stage. The motivation of any classification algorithm is to generate appropriate discriminative models for each categories. In our proposed approach, we aggregate the filter responses of the training images across all the categories. We use conventional k-means clustering on this concatenated filter response instead of individual classes' filter responses. The generated cluster centers are the modified textons. Subsequently, discriminative histogram for each category is generated. Our method uses the minimum number of textons and help in a compact and relevant representation of the input data space.
+
+Secondly, the original texton-based approach works on gray-scale image. Several methods have been introduced in the literature that exploits both color and texture in a single framework. One of the popular extensions to gray-scale texton-based classification is to apply the methodology separately to different color channels and components. The responses are then integrated into representative histograms of different categories. However, no clear analysis has been carried out which color channels are the most representative candidates in this approach? Usually, an educated guess is taken on what color spaces seem to appropriately represent the different features ably. In ~\cite{Sun2009}, Sun and He generate the composite feature vector by combining both filter response and RGB color vector. Burghouts and Geusebroek in ~\cite{bur2006} have treated color as a separate entity and added it as a post-processing step. In our proposed approach for cloud categorization task, we systematically choose the color channel that is best suited for this task.
+
+\subsection{Feature Descriptor}
+
+In our earlier Chapter~\ref{chap:colorchannels}, we identified the color channels that are optimum for cloud type recognition. 
+For the sample image $\mathbf{Z}_i \in {\rm I\!\mathbf{R}}^{m \times n \times 3}$, we extract the particular channel and refer as $\mathcal{R} \in {\rm I\!\mathbf{R}}^{m \times n}$. More details on this ratio channel can be found later in this chapter in Section~\ref{sec:chap6-optimalparams}. We convolve this color channel with the set of filters $\mathcal{F}_1, \mathcal{F}_2,\ldots,\mathcal{F}_{n_f}$ from the filter bank.
+
+\begin{equation*}
+\label{eq:conv}
+\mathbf{Y}=(\mathcal{F}_1 * \mathcal{R}(x,y),...,\mathcal{F}_{n_f} * \mathcal{R}(x,y)); \forall (x,y) \epsilon {\rm I\!\mathbf{R}} 
+\end{equation*} 
+
+This convolution operation is executed for all $\bar{q}$ images in the category. Also, the same is replicated across all the $\overline{p}$ categories. We obtain the concatenated matrix by aggregating the filter responses of the images across all categories. This aggregated matrix is the combined filter response; and we denote it by $\mathbf{Z}_{\Delta} \in {\rm I\!\mathbf{R}}^{m \times n \times {n_f} \times \bar{q} \times \overline{p}}$.
+
+\subsection{Discriminative Model}
+The filter responses for $mn$ pixels in the stacked filter response $\mathbf{Z}_{\Delta} \in {\rm I\!\mathbf{R}}^{m \times n \times {n_f} \times \overline{q} \times \overline{p}}$ are highly correlated with each other. We perform a general k-means clustering process in this stacked filter response matrix in order to find its subspace representation. The $n_t$ generated cluster centers are referred as the modified-textons in our classification framework. We illustrate this process in Fig.~\ref{fig:frmwrk}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{flow_chart.pdf}
+\caption[Proposed texton-based framework for cloud type recognition.]{Texton generation in our proposed cloud classification approach. Sky/cloud images from individual categories are convolved with filter bank. The generated filter responses are aggregated across the categories. The textons are generated from the k-means cluster of the concatenated filter response.}
+\label{fig:frmwrk}
+\end{figure}
+
+The frequency of occurrence of textons is a distinguishing feature for each category. For an individual image in each category, we compare the filter response at each pixel with every textons from the texton dictionary. Out of the $n_t$ textons, the one having the least $2$D Euclidean norm is mapped to the particular pixel. Thereby, we generate a texton map from each of the individual images of a category. The histogram generated from the texton map give us an indication of the frequency distribution of the textons in a single image. We average the $\overline{q}$ images in a category to determine the histogram $h_{\hat{j}}^{\mbox{class}}, \hat{j}=1,2,..,\overline{p}$.
+
+\subsection{Classification Metric}
+The testing stage of our classification framework involves the assignment of a category to each of the testing image. We generate the test histogram $h_{\hat{j}}^{\mbox{test}}$ using the textons in the texton dictionary. The generated histogram $h_{\hat{j}}^{\mbox{test}}$ is compared with each of the $\hat{j}$ model histograms one-by-one using $\chi^2$ statistic. This distance metric is shown in Eq.~\ref{eq:chi_metric}.
+
+\begin{equation}
+\label{eq:chi_metric}
+\chi^2=\frac{1}{2}\sum_{ }^{ }\frac{(h_{\hat{j}}^{\mbox{class}}-h_{\hat{j}}^{\mbox{test}})^2}{(h_{\hat{j}}^{\mbox{class}}+h_{\hat{j}}^{\mbox{test}})^2}
+\end{equation}
+
+This distance metric describes how unlikely a particular distribution is drawn from a given distribution. The category having the least $\chi^2$ distance is the assigned category for the test image. In our case, the number of bins is fixed for training and test histograms. Therefore, we do not suffer from any disadvantages in using this bin-by-bin dissimilarity metric.
+
+\section{Experimental Evaluations}
+\label{sec:chap6-exps}
+\subsection{Evaluation Metric}
+Let $TP$, $TN$, $FP$, $FN$ denote true positive, true negative, false positive and false negative respectively in a binary classification task. The performance of a general binary classification task is measured using precision and recall. They are described as $\mbox{Precision}=\frac{TP}{TP+FP}$ and $\mbox{Recall}=\frac{TP}{TP+FN}$ respectively. 
+
+However, in our task of cloud type recognition, we need an evaluation metric that is applicable for multi-class classification problem. Therefore, we report the following metrics to evaluate the performance: a) Average accuracy, b) Macro- precision and recall, c) Micro- precision and recall. 
+
+\subsubsection{Average accuracy}
+One of the most common metrics is accuracy, that represents the ratio of correctly matched classification results. We report the average accuracy value across the $\overline{p}$ categories. It is defined as: $\mbox{Accuracy}=\frac{1}{\overline{p}}\sum_{\hat{j}=1}^{\overline{p}}\frac{TP_{\hat{j}}+TN_{\hat{j}}}{TP_{\hat{j}}+FP_{\hat{j}}+TN_{\hat{j}}+FN_{\hat{j}}}$.
+
+\subsubsection{Macro- averaged values}
+Macro- averaged values provide an indication of the general performance of the classification framework. It provides equal weight to each categories. Macro- precision and recall for our multi-class classification task are described as $P_{macro}=\frac{1}{\overline{p}}\sum_{{\hat{j}}=1}^{\overline{p}}\frac{TP_{\hat{j}}}{TP_{\hat{j}}+FP_{\hat{j}}}$ and $R_{macro}=\frac{1}{\overline{p}}\sum_{{\hat{j}}=1}^{\overline{p}}\frac{TP_{\hat{j}}}{TP_{\hat{j}}+FN_{\hat{j}}}$ respectively. 
+
+\subsubsection{Micro- averaged values}
+Micro- average values, on the other hand, provide equal weights to per-image classification performance. Micro- precision and recall for our multi-class classification task are described as $P_{micro}=\frac{\sum_{\hat{j}=1}^{\overline{p}}TP_{\hat{j}}}{\sum_{\hat{j}=1}^{\overline{p}}TP_{\hat{j}}+\sum_{\hat{j}=1}^{\overline{p}}FP_{\hat{j}}}$ and $R_{micro}=\frac{\sum_{\hat{j}=1}^{\overline{p}}TP_{\hat{j}}}{\sum_{\hat{j}=1}^{\overline{p}}TP_{\hat{j}}+\sum_{\hat{j}=1}^{\overline{p}}FN_{\hat{j}}}$ respectively. 
+
+These evaluation metrics should be evaluated on a multi-class categorization database, along with the other state-of-the-art algorithms. Unfortunately, most of the existing works in the literature use proprietary images that are not publicly available. In the next section, we will discuss more on this drawback.
+
+\subsection{SWIMCAT Database}
+While there has been extensive work on sky/cloud images image analysis captured by ground-based cameras by a number of research groups around the world, public benchmarking databases in this domain are rare. We therefore created our own database for this purpose, which we call \textbf{SWIMCAT} (\textbf{S}ingapore \textbf{W}hole-sky \textbf{IM}aging \textbf{CAT}egories database)~\footnote{The SWIMCAT database is available for download from \url{http://vintage.winklerbros.net/swimcat.html}.}. This is the first of its kind in the application of automatic cloud classification.
+
+\subsubsection{Image acquisition}
+SWIMCAT contains images captured using WAHRSIS, a calibrated ground-based whole sky imager, which was designed by us~\cite{WAHRSIS}. We selected a total of $784$ patches comprising $5$ cloud categories from images that were captured in Singapore over the period January $2013$ to May $2014$.  The $5$ categories of clear sky, patterned clouds, thick dark clouds, thick white clouds, and veil clouds are defined based on visual features of sky/cloud conditions, in consultation with experts from the Singapore Meteorological Services. All image patches are of dimension $125 \times 125$ pixels. A representative image from each category is shown in Fig.~\ref{fig:cloud_classes}.  
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.17\textwidth]{clear_sky.pdf}
+\includegraphics[width=0.17\textwidth]{pattern_cloud.pdf}
+\includegraphics[width=0.17\textwidth]{thick_dark_cloud.pdf}
+\includegraphics[width=0.17\textwidth]{thick_white_cloud.pdf}
+\includegraphics[width=0.17\textwidth]{veil_cloud.pdf}
+\caption[Various cloud classes of SWIMCAT database.]{(a) Clear sky (b) Patterned clouds (c) Thick dark clouds (d) Thick white clouds (e) Veil clouds}
+\label{fig:cloud_classes}
+\end{figure}
+
+\subsubsection{Patch generation}
+The images captured by WAHRSIS are distorted owing to the fish eye lens of its imaging system. We model its fish eye lens using the geometric calibration function. By virtue of this calibration function, we can successfully relate every pixel of the captured image to the corresponding azimuth and elevation angle of the incident ray. We use ray tracing approach to generate undistorted cropped images. The camera is assumed to lie in the center of an hemisphere. We use a constant view angle of $15^{\circ}$ to generate output images having a fixed dimension $125 \times 125$, as illustrated in Fig.~\ref{fig:chap6-undistortion-results}. This process is continued for varying sets of azimuth and elevation angles. 
+
+
+\begin{figure}[htbp]
+\centering   
+\subfloat[Input image with the representation of the borders and diagonals of the output image]{\includegraphics[width=0.35\textwidth]{undistortion-original-mask}}\hspace{1em}
+\subfloat[Output image]{\includegraphics[width=0.35\textwidth]{undistortion-result}}
+\caption{Process to generate image patches of fixed dimension $125 \times 125$.}
+\label{fig:chap6-undistortion-results}
+\end{figure}
+
+This process of generating image patches is performed for several input images. Out of the generated image patches, a few images contain occlusion because of the neighboring buildings and surroundings. These patches are discarded from the database. 
+
+
+
+\section{Classification Results}
+\label{sec:chap6-results}
+In this section, we will provide a detailed analysis of the existing cloud features on SWIMCAT dataset. Our proposed approach based on texton-based classification is also evaluated on this dataset. We identify the most discriminatory cloud features in this task. However, the multi-class accuracy results using existing features is not high. We, thereby, provide the results of our proposed approach.
+
+\subsection{Cloud Features}
+The objectives of extracting features from sky/cloud images is to represent the various classes in the most discriminatory manner. A higher inter-class separation in the feature space representation indicate good candidates for classification.
+
+We extract the features on all the $784$ images of the dataset. The features SF, $\mbox{SGLDM}_m$, $\mbox{SGLDM}_r$, GLDS, FF, FM, LBP and SIFT are extracted from the gray-scale versions of the SWIMCAT dataset. The HF features are generated from a combination of red and blue channels of the image. These existing features are of different dimensions, and encode the discriminatory cues in the feature space. The dimensions of these feature vectors are high, and it is not possible to visualize them in their original feature space.
+
+
+Dimensionality reduction techniques are therefore, extensively used to project the higher dimension vectors into a lower dimension subspace. We use the Principal Component Analysis (PCA) to perform the dimensionality reduction of our feature vectors. PCA aims to transform the original feature space into distinct orthogonal axes, such that these new axes capture the maximum variance of the input data. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[height=3.2cm]{separate_f1n}
+\includegraphics[height=3.2cm]{separate_f2n}
+\includegraphics[height=3.2cm]{separate_f3n}\\
+\makebox[0.31\textwidth][c]{\hspace{3cm} \small(a) SF}
+\makebox[0.31\textwidth][c]{\small (b) $\mbox{SGLDM}_m$}
+\makebox[0.31\textwidth][c]{\hspace{-2.5cm} \small (c) $\mbox{SGLDM}_r$}\\
+\includegraphics[height=3.2cm]{separate_f4n}
+\includegraphics[height=3.2cm]{separate_f5n}
+\includegraphics[height=3.3cm]{separate_f6n}\\
+\makebox[0.31\textwidth][c]{\hspace{3cm} \small (d) GLDS}
+\makebox[0.31\textwidth][c]{\small (e) FF}
+\makebox[0.31\textwidth][c]{\hspace{-2.5cm} \small (f) FM}\\
+\includegraphics[height=3cm]{separate_f7n}
+\includegraphics[height=3cm]{separate_f8n}
+\includegraphics[height=3cm]{separate_f9n}\\
+\makebox[0.31\textwidth][c]{\hspace{3cm} \small (d) HF}
+\makebox[0.31\textwidth][c]{\small (e) LBP}
+\makebox[0.31\textwidth][c]{\hspace{-2.5cm} \small (f) SIFT}\\
+\caption[Visual representation of various cloud features in lower dimensional subspace.]{Each data point represents an image in the SWIMCAT dataset, and each color represents individual classes. The five categories: clear sky, patterned clouds, thick dark clouds, thick white clouds and veil clouds are represented in red, green, blue, cyan and magenta markers.}
+\label{fig:separation}
+\end{figure}
+
+Figure~\ref{fig:cloud_classes} shows the dimensionality reduction results for the different features. The SF feature separates the various classes comparatively well. This is because the variations in color between sky, dark clouds and white clouds are quite distinct. However, there is an overlap between patterned clouds and white clouds, as their average color of the two classes are quite similar. The $\mbox{SGLDM}_m$, $\mbox{SGLDM}_r$ features are based on GLCM matrices, and we observe that there is a high correlation between the features of different classes. The patterned clouds stand out in $\mbox{SGLDM}_r$, as they have a distinctive texture pattern. The GLDS feature is based on GLCM matrix, and we observe the same observation in its representation. The patterned clouds (represented in green) have clear separation with respect to the other cloud classes. The FF perform poorly, as the roughness is not a discriminatory feature cue between the $5$ cloud classes. We also observe that, in FM, the variation is observed mainly along the first principal axis. On the other hand, the HF uses a combination of red and blue channels' statistics, and cloud coverage measure to discriminate between the individual classes. The conventional computer vision techniques of LBP and SIFT fail to separate the different cloud classes. 
+
+\subsection{Optimal Parameter Selection}
+\label{sec:chap6-optimalparams}
+Our proposed texton-based approach is dependent on a number of parameters viz.\ color channel, set of filters in the filter bank, dimensions of the filters, and the number of textons needed in the clustering process. In this section, we will provide a detailed evaluation of these parameters for our proposed approach.
+
+\subsubsection{Color Channel}
+Based on the results of an earlier analysis of color channels we conducted in Chapter~\ref{chap:colorchannels}, we check the performance of Saturation ($S$) channel of the HSV color space, various common red-blue combinations ($R/B$, $R-B$, $\frac{B-R}{B+R}$), and chroma $C=\mbox{max}(R,G,B)-\mbox{min}(R,G,B)$. All other parameters are kept fixed (Filter set $3$, dimension $49 \times 49$, $30$ textons). From Table~\ref{tab:perform-eval}, it is observed that most of the color channels work well for sky, patterned clouds and thick white clouds because of their distinctive texture and color. Thick dark clouds have a low saturation component and are therefore correctly classified by color channel $S$ and $R/B$. The best performing color channel $R/B$ is selected for our final classification task. 
+
+\definecolor{Gray}{gray}{0.8}
+\begin{table}[htb]
+\scriptsize
+\centering
+%\begin{tabular}{ |rr||c|c|c|c|c|c|c|c|c|c| }
+\begin{tabular}{ |rr||L|L|L|L|L|L|L|L|L|L| }
+%\begin{tabularx}{0.5\textwidth}{ |XX||X|X|X|X|X|X|X|X|X|X|X|X| }
+\hline
+%& & \multicolumn{10}{c|}{\textbf{Performance Evaluation of different cloud types}}\\
+& & Sky & Pattern Clouds & Thick Dark Clouds & Thick White Clouds & Veil Clouds & Average & $P_{macro}$ & $R_{macro}$ & $P_{micro}$ & $R_{micro}$ \\ 
+%& &  & Clouds & Dark & White & Clouds &  &  &  &  &  \\ 
+\hline\hline
+\parbox[t]{3mm}{\multirow{5}{*}{\rotatebox[origin=c]{90}{Channels}}} & S & 0.96 & 1.00 & 0.82 & 0.93 & 0.82 & 0.91 & 0.91 & 0.91 & 0.87 & 0.84 \\ %\cline{2-12}\cline{2-5}
+& \cellcolor{Gray} $R/B$ & \cellcolor{Gray}1.00 & \cellcolor{Gray}1.00 & \cellcolor{Gray}0.98 & \cellcolor{Gray}1.00 & \cellcolor{Gray}0.69 & \cellcolor{Gray}0.93 & \cellcolor{Gray}0.94 & \cellcolor{Gray}0.93 & \cellcolor{Gray}1.00 & \cellcolor{Gray}0.75\\ %\cline{2-12}
+& $R-B$ & 0.93 & 1.00 & 0.09 & 1.00 & 0.91 & 0.79 & 0.79 & 0.79 & 0.92 & 0.89 \\ %\cline{2-12}
+& $\frac{B-R}{B+R}$ & 0.76 & 0.98 & 0.38 & 1.00 & 0.60 & 0.74 & 0.78 & 0.74 & 0.97 & 0.65 \\ %\cline{2-12}
+& $C$ & 0.91 & 1.00 & 0.38 & 1.00 & 0.91 & 0.84 & 0.87 & 0.84 & 0.95 & 0.90 \\ %\cline{2-12}\hline
+\hline\hline
+\parbox[t]{3mm}{\multirow{5}{*}{\rotatebox[origin=c]{90}{Filter sets}}} & Set 1 & 1.00& 1.00& 0.49 & 0.78 & 0.89 & 0.83 & 0.86 & 0.83 & 0.86 & 0.88 \\ %\cline{2-12}
+& Set 2 & 0.98 & 1.00& 0.60 & 0.78 & 0.89 & 0.85 & 0.87 &	0.85 & 0.88 & 0.88\\ %\cline{2-12}
+& \cellcolor{Gray}Set 3 & \cellcolor{Gray}1.00 & \cellcolor{Gray}1.00 & \cellcolor{Gray}0.93 & \cellcolor{Gray}1.00 & \cellcolor{Gray}0.70 & \cellcolor{Gray}0.92 & \cellcolor{Gray}0.93 &	\cellcolor{Gray}0.92 & \cellcolor{Gray}0.96 & \cellcolor{Gray}0.76\\ %\cline{2-12}
+& Set 4 & 1.00& 1.00& 0.53 & 0.78 & 0.89 & 0.84 &	0.86 & 0.84 & 0.88 & 0.88 \\ %\cline{2-12}
+& Set 5 & 0.98 & 1.00& 0.47 & 0.78 & 0.89 & 0.82 & 0.85 &	0.82 & 0.86 & 0.88 \\ %\cline{2-12}
+\hline\hline
+\parbox[t]{3mm}{\multirow{9}{*}{\rotatebox[origin=c]{90}{Filter dimension}}} & 19 $\times$  19 & 0.98 & 0.93 & 0.47 & 0.78 & 0.91 & 0.81 & 0.85 & 0.81 &	0.95 & 0.90 \\ %\cline{2-12}
+& 29 $\times$  29 & 1.00& 0.78 & 0.51 & 0.78 & 0.67 & 0.75 & 0.78 &	0.75 & 0.79 & 0.69 \\ %\cline{2-12}
+& 39 $\times$  39 & 1.00& 0.98 & 0.38 & 0.76 & 0.82 & 0.79 & 0.83 &	0.79 & 0.97 & 0.82 \\ %\cline{2-12}
+& \cellcolor{Gray}49 $\times$  49 & \cellcolor{Gray}1.00 & \cellcolor{Gray}1.00 & \cellcolor{Gray}0.97 & \cellcolor{Gray}1.00 & \cellcolor{Gray}0.68 &	\cellcolor{Gray}0.93 & \cellcolor{Gray}0.94 & \cellcolor{Gray}0.93 & \cellcolor{Gray}0.97 & \cellcolor{Gray}0.75 \\ %\cline{2-12}
+& 59 $\times$  59 & 0.98 & 1.00& 0.64 & 0.76 & 0.89 & 0.85 & 0.87 &	0.85 & 0.91 & 0.89 \\ %\cline{2-12}
+& 69 $\times$  69 & 0.98 & 0.84 & 0.64 & 0.58 & 0.87 & 0.78 & 0.79 & 0.78 & 0.69 & 0.85 \\ %\cline{2-12}
+& 79 $\times$  79 & 0.98 & 0.71 & 0.58 & 0.51 & 0.84 & 0.72 & 0.75 & 0.72 &	0.59 & 0.82\\ %\cline{2-12}
+& 89 $\times$  89 & 0.98 & 0.71 & 0.69 & 0.47 & 0.87 & 0.74 & 0.76 & 0.74 & 0.57 & 0.85 \\ %\cline{2-12}
+& 99 $\times$  99 & 1.00& 0.69 & 0.58 & 0.24 & 0.87 & 0.68 & 0.68 &	0.68 & 0.52 & 0.84 \\ %\cline{2-12}
+\hline\hline
+\parbox[t]{3mm}{\multirow{10}{*}{\rotatebox[origin=c]{90}{Number of textons \mbox{ }}}} & 10 & 1.00& 0.44 & 0.78 & 0.76 & 0.47 & 0.69 & 0.69 &	0.69 & 0.53 & 0.56\\ %\cline{2-12}
+& 20 & 0.98 &	0.98	& 0.42 & 0.8 &	0.82 &	0.80 & 0.84 &	0.80 &	0.95 &	0.82\\ %\cline{2-12}
+& \cellcolor{Gray}30 & \cellcolor{Gray}1.00 &	\cellcolor{Gray}1.00 & \cellcolor{Gray}0.97 & \cellcolor{Gray}1.00 & \cellcolor{Gray}0.68 & \cellcolor{Gray}0.93 & \cellcolor{Gray}0.94 & \cellcolor{Gray}0.93 &	\cellcolor{Gray}1.00 & \cellcolor{Gray}0.75\\ %\cline{2-12}
+& 40 & 1.00&	1.00 &	0.62 &	0.78 &	0.91 &	0.86 &	0.87 &	0.86 &	0.91 & 0.91\\ %\cline{2-12}
+& 50 & 1.00& 1.00& 0.56 & 0.80 & 0.91 & 0.85 &	0.87 & 0.85 & 0.93 & 0.91 \\ %\cline{2-12}
+& 60 & 0.98 & 1.00& 0.58 & 0.82 & 0.89 & 0.85 & 0.88 &	0.85 & 0.91 & 0.89 \\ %\cline{2-12}
+& 70 & 0.98 & 1.00& 0.56 & 0.82 & 0.89 & 0.85 & 0.87 &	0.85 & 0.91 & 0.88 \\ %\cline{2-12}
+& 80 & 0.98 & 	1.00 &	0.60 &	0.80 &	0.89 &	0.85 &	0.87 &	0.85 &	0.93 &	0.89 \\ %\cline{2-12}
+& 90 & 0.98 & 1.00& 0.58 & 0.82 & 0.89 & 0.85 & 0.87 &	0.85 & 0.93 & 0.89 \\ %\cline{2-12}
+& 100 & 0.98 & 1.00& 0.60 & 0.82 & 0.91 & 0.86 & 0.88 &	0.86 & 0.93 & 0.91 \\ %\cline{2-12}\hline
+\hline
+\end{tabular}
+\caption[Extensive evaluation of different parameters in our proposed cloud classification approach.]{Performance evaluation of sky/cloud recognition rates for different color channels, filter sets, filter dimensions, and number of textons. The best performing parameters are highlighted.}
+\label{tab:perform-eval}
+\end{table}
+
+
+\subsubsection{Filter Set}
+For our experiments, we use different sets of S-filters that aim to capture the majority of frequency components, and subsequently choose the most suitable filter set. Table~\ref{filter_table} shows the ($\hat{\sigma}$,$\hat{\tau}$) pairs for various scenarios, where $\hat{\sigma}$ denotes the scale of the filter in the filter set and $\hat{\tau}$ represents the number of cycles inside the gaussian envelope of the filter set. The individual filters are $L_1$-normalized before convolution with the input images. 
+
+\begin{table}[htb]
+\footnotesize 
+\centering
+\definecolor{Gray}{gray}{0.92}
+\begin{tabular}{r|ccccc}%{0.5\textwidth}{|X||X |X |X|X|X |X|}
+\hline 
+\scriptsize 
+($\hat{\sigma}$,$\hat{\tau}$) & Set 1 & Set 2 & Set 3 & Set 4 & Set 5\\ \hline
+(0.5,0) & \  & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\ 
+%\rowcolor{Gray}
+(2,1) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\ 
+%\rowcolor{Gray}
+(4,1) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+%\rowcolor{Gray}
+(4,2) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\ 
+%\rowcolor{Gray}
+(6,1) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+%\rowcolor{Gray}
+(6,2) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+%\rowcolor{Gray}
+(6,3) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\ 
+%\rowcolor{Gray}
+(8,1) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+%\rowcolor{Gray}
+(8,2) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$  \\
+%\rowcolor{Gray}
+(8,3) & $\checkmark$ & $\checkmark$ & $\checkmark$ & \  & $\checkmark$  \\ 
+%\rowcolor{Gray}
+(10,1) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \   \\
+%\rowcolor{Gray}
+(10,2) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \   \\
+%\rowcolor{Gray}
+(10,3) & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & \   \\
+%\rowcolor{Gray}
+(10,4) & $\checkmark$ & $\checkmark$ & $\checkmark$ & \  & \   \\ 
+(12,1) & \  & \  & $\checkmark$ & \  & \   \\
+(12,2) & \  & \  & $\checkmark$ & \  & \   \\
+(12,3) & \  & \  & $\checkmark$ & \  & \   \\
+(12,4) & \  & \  & $\checkmark$ & \  & \   \\ 
+\hline
+%\end{tabular}
+\end{tabular}
+\caption[Various sets of filters in the filter bank of our proposed cloud classification approach.]{The ($\hat{\sigma}$,$\hat{\tau}$) values for different sets. Set 1 represents the original S-Filter set.}
+\label{filter_table}
+\end{table}
+
+Table~\ref{tab:perform-eval} shows the effect of different filter sets ($\sigma$,$\tau$) on the final results. The other parameters are kept constant (Color channel $R/B$, Filter dimension $49 \times 49$, $30$  textons). The DC component in the filter set is required to capture the low frequencies of the image. An absence of the DC component particularly affects the performance for thick dark clouds, as such images contain pre-dominantly low frequency components. The optimal filter Set $3$ corresponds to a scenario that contains DC component and higher values of both $\sigma$ and $\tau$. 
+
+
+\subsubsection{Filter Dimension}
+As the SWIMCAT database consists of images with fixed dimension $125 \times 125$, the optimum filter size needs to be tuned accordingly. As before, we keep the other parameters fixed (Color channel  $R/B$, Filter set $3$, $30$ textons). From Table~\ref{tab:perform-eval}, we see that the average classification accuracy across different categories is poor for small filter sizes, as they fail to capture the predominant essence of the cloud textures. Also, at large filter size, the boundary effects reduce accuracy. The best performance is achieved with an intermediate filter size of $49 \times 49$ pixels, which is thus a good choice for the final classification task. 
+
+
+\subsubsection{Number of Textons}
+Table~\ref{tab:perform-eval} shows the effect of the number of textons on the classification performance. The other parameters are kept fixed (Color channel $R/B$, Filter Set $3$, dimension $49 \times 49$). The results are poor when the number of textons is small. However, beyond 30 textons, there is no significant performance gain in the classification accuracy. Thus, we select the number of textons as $30$ to avoid overfitting. 
+
+
+\subsection{Benchmarking Methods}
+In order to understand the efficacy of these features, we provide an objective evaluation of these benchmarking features. We use these individual features to train a Support Vector Machine (SVM) classifier. The trained model is used in the evaluation of the remaining testing images. 
+
+The entire SWIMCAT dataset is divided into two distinct sets - training and testing sets. We choose $40$ distinct images from each category in a random fashion, to create the training set. The remaining images from each category are considered as the testing set.
+
+We train individual SVM models for each of the features. The generated multi-class SVM is used to classify the images in the testing set. As described in Section~\ref{sec:chap6-exps}, we evaluate the accuracy, $P_{macro}$, $R_{macro}$, $P_{micro}$ and $R_{micro}$ of the images. The averaged value across all the testing images is reported in Table~\ref{tab:class_results}. 
+
+\begin{table}[htb]
+\normalsize
+\centering
+%\setlength{\tabcolsep}{4pt} % default: 6pt
+\begin{tabular}{|p{6cm}|c|c|c|c|c|}
+\hline
+\textbf{Methods} & \textbf{Accuracy} & \textbf{$P_{macro}$}& \textbf{$R_{macro}$}& \textbf{$P_{micro}$}& \textbf{$R_{micro}$}\\
+\hline 
+
+SF+SVM & 0.53 & 0.63 & 0.53 & 0.85 & 0.41 \\
+
+$\mbox{SGLDM}_{m}$+SVM & 0.65 & 0.67 & 0.83 & 0.56 & 0.67 \\
+
+$\mbox{SGLDM}_{r}$+SVM & 0.57 & 0.57 & 0.57 & 0.45 & 0.45 \\
+
+GLDS+SVM & 0.50 & 0.54 & 0.50 & 0.63 & 0.36 \\
+
+FF+SVM & 0.31 & 0.40 & 0.31 & \textbf{1.00} & 0.24 \\
+
+MI+SVM & 0.64 & 0.65 & 0.64 & 0.53 & \textbf{0.94} \\
+
+HF+SVM & 0.83 & 0.83 & 0.83 & 0.85 & 0.64 \\
+
+LBP+SVM & 0.27 & 0.41 & 0.27 & 0.07 & 0.93 \\
+
+SIFT+SVM & 0.31 & 0.40 & 0.31 & \textbf{1.00} & 0.24 \\
+
+Original texton approach & 0.78 & 0.78 & 0.78 & 0.70 & 0.85 \\
+
+Proposed approach (using GRAY color channel) & 0.75 & 0.73 & 0.75 & 0.77 & 0.71 \\
+
+Proposed approach (using $R/B$ ratio channel) & \textbf{0.95} & \textbf{0.95} & \textbf{0.95} & \textbf{1.00} & 0.79 \\
+\hline
+\end{tabular}
+\caption[Benchmarking of various cloud classification algorithms.]{Cloud type classification results of our proposed approach along with other benchmarking algorithms. We use Support Vector Machine (SVM) classifier, along with several feature descriptors. The best performances according to each criterion are depicted in bold.}
+\label{tab:class_results}
+\end{table}
+
+As expected, the conventional image-based feature extractor viz.\ LBP and SIFT have a poor classification accuracy. The HF+SVM performs comparatively well with an accuracy of $0.83$, as compared to other feature-based techniques. These observations are also evident from the various scatter plots in Fig.~\ref{fig:separation}. The confusion matrix generated using HF+SVM is shown in Fig.~\ref{fig:cmatrix}(a). The clear sky and patterned clouds are classified quite accurately. However, the thick white and veil clouds are mis-classified with each other. This is also confirmed from Fig.~\ref{fig:separation}, that \emph{cyan} and \emph{magenta} overlap with each other. We also benchmark our proposed texton-based approach on these images. We obtain the best accuracy of $0.95$, amongst all the methods. We use the $R/B$ color channel, because this channel is most appropriate amongst various color spaces and components~\cite{ICIP2015b}. The corresponding confusion matrix is shown in Fig.~\ref{fig:cmatrix}(b). All classes except veil clouds are classified accurately. Our proposed approach has a limitation that it obtains a low accuracy of $0.76$ for veil clouds. This is primarily, because veil clouds are very difficult to detect, and are often mis-interpreted as clear sky. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[height=4.4cm]{cm-HF}
+\includegraphics[height=4.4cm]{cm-proposed}\\
+\hspace{1cm}
+\makebox[0.4\textwidth][c]{(a) \small HF+SVM}\hspace{1cm}
+\makebox[0.4\textwidth][c]{(b) \small Proposed approach}\\
+\caption[Confusion matrix of cloud classification results.]{Confusion matrix across $5$ categories generated from (a) HF+SVM and (b) Proposed approach.}
+\label{fig:cmatrix}
+\end{figure}
+
+
+
+
+
+\section{Conclusion}
+\label{sec:chap6-conclude}
+In this chapter, we have provided a systematic analysis of the various features that were developed for the task of cloud type recognition. We observed that conventional machine-learning based feature extraction techniques do not generalize well in this task. Amongst the various features, Heinle features perform the best as it exploits the discriminatory cues of red and blue color channels, and also considers the cloud coverage as one of the parameters. However, the best performance is obtained from our proposed texton-based approach that uses optimized filter bank and color channel for optimal performance. We have presented an effective way to combine both color and texture features for accurate cloud classification results. Future works include the extension of this proposed texton-based approach to other remote sensing applications. 
+
+
+
+
+

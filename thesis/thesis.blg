@@ -1,0 +1,38 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
+The style file: unsrt.bst
+A level-1 auxiliary file: 1_foreword/abstract.aux
+A level-1 auxiliary file: 1_foreword/ack.aux
+A level-1 auxiliary file: 1_foreword/contents.aux
+A level-1 auxiliary file: 1_foreword/tables.aux
+A level-1 auxiliary file: 1_foreword/figures.aux
+A level-1 auxiliary file: 2_chapters/chap1.aux
+A level-1 auxiliary file: 2_chapters/chap2.aux
+A level-1 auxiliary file: 2_chapters/chap3.aux
+A level-1 auxiliary file: 2_chapters/chap4.aux
+A level-1 auxiliary file: 2_chapters/chap5.aux
+A level-1 auxiliary file: 3_bibliography/bib.aux
+Database file #1: ./3_bibliography/bib_reference.bib
+Warning--entry type for "network" isn't style-file defined
+--line 178 of file ./3_bibliography/bib_reference.bib
+Warning--entry type for "CCA" isn't style-file defined
+--line 203 of file ./3_bibliography/bib_reference.bib
+Warning--empty publisher in spartan
+Warning--empty author in edseee.38797119950101
+Warning--there's a number but no volume in edseee.38797119950101
+Warning--there's a number but no series in edselc.2-52.0-8487677997120120101
+Warning--empty author in edseee.655799920130101
+Warning--there's a number but no volume in edseee.655799920130101
+Warning--empty author in edseee.18038319930101
+Warning--there's a number but no volume in edseee.18038319930101
+Warning--empty author in 000176062300018n.d.
+Warning--empty year in 000176062300018n.d.
+Warning--empty author in edseee.103539620020101
+Warning--empty author in edseee.79314719990101
+Warning--empty journal in citation-254199748
+Warning--empty journal in citation-241677739
+Warning--empty author in edseee.456019820080101
+Warning--there's a number but no volume in edseee.456019820080101
+Warning--empty publisher in Dummies
+Warning--empty publisher in Xilinx
+Warning--empty year in 000384075100011n.d.
+(There were 21 warnings)
