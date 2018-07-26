@@ -39,11 +39,10 @@
 \contentsline {subsection}{\numberline {4.1.2}Power Analysis}{45}
 \contentsline {section}{\numberline {4.2}Runtime experiments}{46}
 \contentsline {subsection}{\numberline {4.2.1}Star data analysis}{46}
-\contentsline {subsection}{\numberline {4.2.2}512x512 dataset}{47}
+\contentsline {subsection}{\numberline {4.2.2}512x512 dataset}{48}
 \contentsline {subsection}{\numberline {4.2.3}1024x1024 dataset}{50}
-\contentsline {subsection}{\numberline {4.2.4}Runtime Comparison}{52}
-\contentsline {chapter}{\numberline {5}Conclusion and Future Works}{54}
+\contentsline {subsection}{\numberline {4.2.4}Runtime Comparison}{53}
+\contentsline {chapter}{\numberline {5}Summary and Future Works}{54}
 \contentsline {section}{\numberline {5.1}Summary}{54}
-\contentsline {section}{\numberline {5.2}Conclusion}{55}
-\contentsline {section}{\numberline {5.3}Future Works}{55}
+\contentsline {section}{\numberline {5.2}Future Works}{54}
 \contentsline {chapter}{Bibliography}{56}

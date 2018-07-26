@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6670 64-bit) (preloaded format=xelatex 2018.4.27)  16 JUL 2018 21:28
+This is XeTeX, Version 3.14159265-2.6-0.99999 (MiKTeX 2.9.6670 64-bit) (preloaded format=xelatex 2018.4.27)  26 JUL 2018 12:22
 entering extended mode
 **./thesis.tex
 (thesis.tex
@@ -767,29 +767,29 @@ File: figures/power_sum.eps Graphic file (type eps)
 File: figures/power.eps Graphic file (type eps)
 
 <figures/power.eps> [45]
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
 File: figures/4_4.eps Graphic file (type eps)
 <figures/4_4.eps>
 File: figures/4_5.eps Graphic file (type eps)
- <figures/4_5.eps> [46]
+ <figures/4_5.eps> [46] [47]
 File: figures/4_6.eps Graphic file (type eps)
- <figures/4_6.eps> [47] [48]
+ <figures/4_6.eps> [48]
 File: figures/4_7.eps Graphic file (type eps)
 
 <figures/4_7.eps> [49]
 File: figures/4_8.eps Graphic file (type eps)
- <figures/4_8.eps> [50]
+ <figures/4_8.eps> [50] [51]
 File: figures/4_9.eps Graphic file (type eps)
- <figures/4_9.eps> [51]
-Overfull \hbox (11.82066pt too wide) in paragraph at lines 255--269
+ <figures/4_9.eps> [52]
+Overfull \hbox (11.82066pt too wide) in paragraph at lines 260--274
  [][] 
  []
 
 File: figures/4_10.eps Graphic file (type eps)
-<figures/4_10.eps>) [52] [53]
+<figures/4_10.eps>) [53]
 \openout2 = `2_chapters/chap5.aux'.
 
  (2_chapters/chap5.tex
@@ -799,11 +799,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-) [54
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+[54
 
 
 
-] [55]
+]) [55]
 \openout2 = `3_bibliography/bib.aux'.
 
  (3_bibliography/bib.tex (thesis.bbl [56

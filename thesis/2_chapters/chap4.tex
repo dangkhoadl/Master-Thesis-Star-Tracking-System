@@ -52,11 +52,13 @@ The hardware components shown in Figure~\ref{fig:4_1} includes:
 
 \newpage \subsection{Power Analysis}
 
+The power consumption of the design is measured based on the condition described in Table~\ref{tab:environment}.
+
 \begin{ntutab}{|c|c|}{environment}{Environment condition}
     \hline
     \textbf{Condition} & \textbf{value} \\
     \hline
-    Ambient temperature &  \\
+    Ambient temperature & $30.0^oC$ \\
     \hline
     Airflow & 250 LFM \\
     \hline
@@ -66,6 +68,8 @@ The hardware components shown in Figure~\ref{fig:4_1} includes:
     \hline
 \end{ntutab}
 
+\noindent As in Figure~\ref{fig:power_sum} and Figure~\ref{fig:power}, the Processing System(the ARM A9 processor) consumes 77\% of the power supplied while other hardware components like the IP core, BRAM consume less power. This is due to the fact that generic processors are designed for multiple purpose tasks; hence they are not optimal for power consumption as the hardware solution for a specific task.
+
 \ntuepsfig[width=\textwidth]{power_sum}{Power consumption summary}
 
 \ntuepsfig[width=\textwidth]{power}{Power consumption by components}
@@ -73,6 +77,7 @@ The hardware components shown in Figure~\ref{fig:4_1} includes:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Section 4.2
+\newpage
 \section{Runtime experiments}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
