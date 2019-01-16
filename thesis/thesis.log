@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.8.7)  8 AUG 2018 00:06
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2018.10.27)  16 JAN 2019 23:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -423,12 +423,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
 Missing character: There is no – in font cmr12!
 
-Overfull \hbox (5.0301pt too wide) in paragraph at lines 13--14
-\OT1/cmr/m/n/12 Nanosatellite is a small ar-ti-fi-cial satel-lite with a wet ma
-ss be-tween 1  10 kg. Nanosatel-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
@@ -465,12 +459,12 @@ Overfull \hbox (8.92914pt too wide) in paragraph at lines 63--64
 -ware co-processing
  []
 
-) [4]
+[4]) [5]
 \openout2 = `2_chapters/chap2.aux'.
 
  (./2_chapters/chap2.tex
 Chapter 2.
-[5
+[6
 
 
 
@@ -479,7 +473,7 @@ File: figures/2_1.eps Graphic file (type eps)
  <figures/2_1.eps>
 Missing character: There is no ‘ in font cmr12!
 Missing character: There is no ’ in font cmr12!
- [6]
+ [7]
 File: figures/2_2.eps Graphic file (type eps)
  <figures/2_2.eps>
 File: figures/2_4.eps Graphic file (type eps)
@@ -489,7 +483,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--43
  []
 
 File: figures/2_3.eps Graphic file (type eps)
-<figures/2_3.eps> [7] [8]
+<figures/2_3.eps> [8] [9]
 Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
@@ -510,7 +504,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
-[9] [10]
+[10] [11]
 File: figures/2_6.eps Graphic file (type eps)
  <figures/2_6.eps>
 Missing character: There is no ’ in font cmr12!
@@ -519,7 +513,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
-[11]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
@@ -530,7 +524,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--170
  []
 
 File: figures/2_7.eps Graphic file (type eps)
-<figures/2_7.eps> [12]
+<figures/2_7.eps> [13]
 Missing character: There is no … in font cmr12!
 
 Underfull \hbox (badness 10000) in paragraph at lines 187--188
@@ -542,7 +536,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
-[13]
+[14]
 Underfull \hbox (badness 10000) in paragraph at lines 197--198
 
  []
@@ -569,7 +563,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
  []
 
-[14]
+[15]
 File: figures/2_8.eps Graphic file (type eps)
  <figures/2_8.eps>
 Missing character: There is no … in font cmr12!
@@ -578,9 +572,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--219
 
  []
 
-[15]
+[16]
 File: figures/2_9.eps Graphic file (type eps)
- <figures/2_9.eps>) [16]
+ <figures/2_9.eps>) [17]
 \openout2 = `2_chapters/chap3.aux'.
 
  (./2_chapters/chap3.tex
@@ -603,7 +597,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
-[17
+[18
 
 
 
@@ -621,7 +615,7 @@ Overfull \hbox (3.14104pt too wide) in paragraph at lines 28--29
 ex-i-ble Look-Up Ta-bles (LUTs)
  []
 
-[18] [19]
+[19] [20]
 Overfull \hbox (3.12364pt too wide) in paragraph at lines 32--33
 \OT1/cmr/m/n/12 tal so-lu-tions for dis-tribut-ing, de-lay-ing, mul-ti-ply-ing,
  di-vid-ing, and phase-shifting
@@ -638,7 +632,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--38
  []
 
 File: figures/3_spartan.eps Graphic file (type eps)
-<figures/3_spartan.eps> [20] [21]
+<figures/3_spartan.eps> [21] [22]
 Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
@@ -654,7 +648,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--54
 
  []
 
-[22]
+[23]
 File: figures/3_2.eps Graphic file (type eps)
  <figures/3_2.eps>
 Underfull \hbox (badness 10000) in paragraph at lines 58--59
@@ -667,7 +661,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-[23]
+[24]
 File: figures/3_4.eps Graphic file (type eps)
  <figures/3_4.eps>
 Underfull \hbox (badness 10000) in paragraph at lines 76--77
@@ -680,13 +674,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
-[24] [25]
+[25] [26]
 Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
 File: figures/3_6.eps Graphic file (type eps)
-<figures/3_6.eps> [26]
+<figures/3_6.eps> [27]
 File: figures/3_7.eps Graphic file (type eps)
  <figures/3_7.eps>
 Underfull \hbox (badness 10000) in paragraph at lines 107--108
@@ -694,14 +688,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 107--108
  []
 
 File: figures/3_8.eps Graphic file (type eps)
-<figures/3_8.eps> [27] [28]
+<figures/3_8.eps> [28] [29]
 File: figures/3_10.eps Graphic file (type eps)
  <figures/3_10.eps>
 Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
-[29]
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 154--155
 
  []
@@ -722,20 +716,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
-[30]
+[31]
 File: figures/3_11.eps Graphic file (type eps)
  <figures/3_11.eps>
 File: figures/3_12_2.eps Graphic file (type eps)
- <figures/3_12_2.eps> [31] [32]
+ <figures/3_12_2.eps> [32] [33]
 File: figures/3_12_3.eps Graphic file (type eps)
  <figures/3_12_3.eps>
 File: figures/3_12_4.eps Graphic file (type eps)
 
-<figures/3_12_4.eps> [33]
+<figures/3_12_4.eps> [34]
 File: figures/3_12_5.eps Graphic file (type eps)
  <figures/3_12_5.eps>
 File: figures/3_12_26.eps Graphic file (type eps)
- <figures/3_12_26.eps> [34]
+ <figures/3_12_26.eps> [35]
 File: figures/3_18.eps Graphic file (type eps)
 
 <figures/3_18.eps>
@@ -749,9 +743,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--230
 
  []
 
-[35]
+[36]
 File: figures/3_19.eps Graphic file (type eps)
- <figures/3_19.eps> [36]
+ <figures/3_19.eps> [37]
 File: figures/3_20.eps Graphic file (type eps)
  <figures/3_20.eps>
 File: figures/3_21.eps Graphic file (type eps)
@@ -763,7 +757,7 @@ File: figures/3_23.eps Graphic file (type eps)
  <figures/3_23.eps>
 Missing character: There is no “ in font cmr12!
 Missing character: There is no ” in font cmr12!
- [37] [38]
+ [38] [39]
 File: figures/3_13.eps Graphic file (type eps)
  <figures/3_13.eps>
 Missing character: There is no … in font cmr12!
@@ -777,11 +771,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
  []
 
-[39]
+[40]
 File: figures/3_15.eps Graphic file (type eps)
  <figures/3_15.eps>
 File: figures/3_16.eps Graphic file (type eps)
- <figures/3_16.eps>) [40] [41]
+ <figures/3_16.eps>) [41] [42]
 \openout2 = `2_chapters/chap4.aux'.
 
  (./2_chapters/chap4.tex
@@ -797,20 +791,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--29
 
  []
 
-[42
+[43
 
 
 
 ]
 File: figures/4_2.eps Graphic file (type eps)
- <figures/4_2.eps> [43]
+ <figures/4_2.eps> [44]
 File: figures/4_3.eps Graphic file (type eps)
- <figures/4_3.eps> [44]
+ <figures/4_3.eps> [45]
 File: figures/power_sum.eps Graphic file (type eps)
  <figures/power_sum.eps>
 File: figures/power.eps Graphic file (type eps)
 
-<figures/power.eps> [45]
+<figures/power.eps> [46]
 Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
@@ -818,29 +812,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--97
 File: figures/4_4.eps Graphic file (type eps)
 <figures/4_4.eps>
 File: figures/4_5.eps Graphic file (type eps)
- <figures/4_5.eps> [46] [47]
+ <figures/4_5.eps> [47] [48]
 File: figures/4_6.eps Graphic file (type eps)
- <figures/4_6.eps> [48]
+ <figures/4_6.eps> [49]
 Missing character: There is no – in font cmbx12!
 Missing character: There is no – in font cmr12!
 File: figures/4_7.eps Graphic file (type eps)
 
-<figures/4_7.eps> [49]
+<figures/4_7.eps> [50]
 Missing character: There is no µ in font cmr12!
 File: figures/4_8.eps Graphic file (type eps)
- <figures/4_8.eps> [50] [51]
+ <figures/4_8.eps> [51] [52]
 Missing character: There is no – in font cmbx12!
 Missing character: There is no – in font cmr12!
 File: figures/4_9.eps Graphic file (type eps)
  <figures/4_9.eps>
 Missing character: There is no – in font cmr12!
- [52]
+ [53]
 Overfull \hbox (13.3657pt too wide) in paragraph at lines 260--274
  [][] 
  []
 
 File: figures/4_10.eps Graphic file (type eps)
-<figures/4_10.eps>) [53]
+<figures/4_10.eps>) [54]
 \openout2 = `2_chapters/chap5.aux'.
 
  (./2_chapters/chap5.tex
@@ -856,18 +850,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
-[54
+[55
 
 
 
-]) [55]
+]) [56]
 \openout2 = `3_bibliography/bib.aux'.
 
- (./3_bibliography/bib.tex (./thesis.bbl [56
+ (./3_bibliography/bib.tex (./thesis.bbl [57
 
 
 
-] [57] [58])) [59]
+] [58] [59])) [60]
 (./thesis.aux (./1_foreword/abstract.aux) (./1_foreword/ack.aux)
 (./1_foreword/contents.aux) (./1_foreword/tables.aux) (./1_foreword/figures.aux
 ) (./2_chapters/chap1.aux) (./2_chapters/chap2.aux) (./2_chapters/chap3.aux)
@@ -878,11 +872,11 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  3791 strings out of 493638
- 52162 string characters out of 6146797
- 125974 words of memory out of 5000000
+ 52162 string characters out of 6146795
+ 125976 words of memory out of 5000000
  7014 multiletter control sequences out of 15000+600000
  9839 words of font info for 37 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  34i,9n,34p,1114b,324s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (68 pages).
+Output written on thesis.pdf (69 pages).

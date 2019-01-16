@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: thesis.aux
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
 The style file: unsrt.bst
 A level-1 auxiliary file: 1_foreword/abstract.aux
 A level-1 auxiliary file: 1_foreword/ack.aux
@@ -35,4 +37,45 @@ Warning--there's a number but no volume in edseee.456019820080101
 Warning--empty publisher in Dummies
 Warning--empty publisher in Xilinx
 Warning--empty year in 000384075100011n.d.
+You've used 32 entries,
+            1791 wiz_defined-function locations,
+            626 strings with 8857 characters,
+and the built_in function-call counts, 5609 in all, are:
+= -- 459
+> -- 237
+< -- 5
++ -- 95
+- -- 63
+* -- 335
+:= -- 871
+add.period$ -- 85
+call.type$ -- 32
+change.case$ -- 25
+chr.to.int$ -- 0
+cite$ -- 51
+duplicate$ -- 284
+empty$ -- 600
+format.name$ -- 63
+if$ -- 1260
+int.to.chr$ -- 0
+int.to.str$ -- 32
+missing$ -- 31
+newline$ -- 150
+num.names$ -- 25
+pop$ -- 131
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 130
+stack$ -- 0
+substring$ -- 183
+swap$ -- 51
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 19
+while$ -- 44
+width$ -- 34
+write$ -- 308
 (There were 21 warnings)

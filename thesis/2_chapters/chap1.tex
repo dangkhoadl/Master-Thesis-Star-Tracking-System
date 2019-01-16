@@ -10,24 +10,24 @@ Artificial satellites orbiting the earth are a critical component of modern soci
 
 \noindent Satellites operate in different orbits. Some popular orbit classes are Low Earth Orbit (LEO), Medium Earth Orbit (MEO) and High Earth Orbit (HEO)\cite{sat_wiki}. Low Earth Orbit is the area below 2000km, High Earth Orbit is the orbit above 35,500 km, and Medium Earth Orbit is the area between Low Earth Orbit and High Earth Orbit. Satellites are launched to their orbit by a self-propelled rocket as a piggyback payload. \\
 
-\noindent Nanosatellite is a small artificial satellite with a wet mass between 1 – 10 kg. Nanosatellites are cheap but capable of performing commercial missions and has lead researchers and scientist to explore the new way to use the Nanosatellites in LEO\cite{network}. Their designs are only comprised of low-cost components. Due to their cost-effective, fast development cycle and size convenience, Nanosatellites are becoming popular in educational and scientific development. Nanosatellites can be quickly built in a small university project. \\
+\noindent Nanosatellite is a small artificial satellite with a wet mass(the total mass of the hardware plus fuel and oxidizer) between 1 – 10 kg. Nanosatellites are cheap but capable of performing commercial missions and has led researchers and scientists to explore the new way to use the Nanosatellites in LEO\cite{network}. Their designs are only comprised of low-cost components. Due to their cost-effective, fast development cycle and size convenience, Nanosatellites are becoming popular in educational and scientific development. Nanosatellites can be quickly built in a small university project. \\
 
-\noindent A satellite needs an attitude determination system for navigation and acknowledging orientations. Its attitude needed to be calculated and predicted continuously during its operation on the orbit. By implying the celestial objects and properties around the satellite, the satellite can autonomously estimate the orientations. Some of the favorite reference objects are the Sun, the Earth magnetic field, the celestial sphere, and the stars. For Nanosatellites, the attitude determination system must be concise but operate effectively.
+\noindent A satellite needs an attitude determination system for navigation and acknowledging orientations. Its attitude needs to be calculated and predicted continuously during its operation on the orbit. By observing the celestial objects and properties around the satellite, the satellite can autonomously estimate the orientations. Some of the favorite reference objects are the Sun, the Earth magnetic field, the celestial sphere, and the stars. For Nanosatellites, the attitude determination system must be concise but operate effectively.
 
 % SubSection 1.1.1
-\subsection{Overview and Motivations}
+\subsection{Introduction to spacecraft attitude determination}
 
 Based on the celestial reference objects, many attitude determination sensors have been developed. Some of the sensors are the sun sensor, magnetometer, gyroscope, Earth horizon sensor\cite{MDP}. The sun sensor is the most common sensor to be mounted on Nanosatellites due to its low cost, low power consumption, and lightweight. The sun sensor is also integrated with an Inertial Measurement Unit (IMU) which is capable of measuring the magnetic field, rotational speed and acceleration or a GPS to provide satellite’s position and velocity vector. The only disadvantage of the sun sensor is that its accuracy can only reach 1 arcminute resolution while the attitude determination system need a higher efficiency up to arc seconds resolution\cite{edselc.2-52.0-001938469619810101}.
 
 % SubSection 1.1.2
 \subsection{Star Tracker for attitude determination approach}
 
-Another way of attitude determination approach is using star trackers. Star Tracker is an optical-electronics subsystem comprised of a CCD or CMOS Image sensor attached to an optical lens and a computing system, usually a microprocessor integrated into an ASIC board. The image sensor will firstly take an image of multiple star clusters at a specific fixed orientation. After that, the image is processed through the computing system to extract a particular feature of the model depending on a predefined algorithm. Then, the specific feature is compared which a prebuilt pattern or feature database stored in the memory. The output of the algorithm is often a star ID, which has a specific attitude, this attitude is again used to determine the attitude(orientation) of the spacecraft. \\
+Another way of attitude determination approach is using star trackers. Star Tracker is an optical-electronics subsystem comprises of a CCD or CMOS Image sensor attached to an optical lens and a computing system, usually a microprocessor integrated into an ASIC board. The image sensor will firstly take an image of multiple star clusters at a specific fixed orientation. After that, the image is processed through the computing system to extract a particular feature of the model depending on a predefined algorithm. Then, the specific feature is compared with a prebuilt pattern or feature database stored in the memory. The output of the algorithm is often a star ID, which has a specific attitude, this attitude is again used to determine the attitude(orientation) of the spacecraft. \\
 
 % Figure 1.1 and 1.2
 \ntumultiepsfig[width=\textwidth]{1_1}{Star tracker hardwares}{1_2}{Commercial star trackers}
 
-\noindent The star tracker is a preferred attitude determination approach because of its high accuracy compared to other sensors\cite{ntu.19915319780101}. However, the star tracker approach is less low cost and more power consumption than traditional approach by sun sensor and IMU. To achieve the best accuracy, the star tracker depends on the many factors such as the quality of the image sensor, the quality of the optical lens, most importantly the processing time of the computing subsystem, the runtime of the star tracking Algorithm. \\
+\noindent The star tracker is a preferred attitude determination approach because of its high accuracy compared to other sensors\cite{ntu.19915319780101}. However, the star tracker approach is high cost and more power consumption than the traditional approach by sun sensor and IMU. To achieve the best accuracy, the star tracker depends on the many factors such as the quality of the image sensor, the quality of the optical lens, and most importantly the processing time of the computing subsystem, and the runtime of the star tracking Algorithm. \\
 
 % Table 1.1
 \noindent Table~\ref{tab:AD_accuracy} depicts the accuracy comparison between star reference object and other celestial objects for attitude determination\cite{edseee.38797119950101}.
@@ -47,11 +47,11 @@ Another way of attitude determination approach is using star trackers. Star Trac
 
 % Section 1.2
 \section{Objectives}
-The essential goals of this research project are followed.
+The essential goals of this research project are as followed.
 \begin{itemize}
-	\item To analyze several star tracking algorithms especially in Lost in space (LIS) mode.
+	\item To analyze several star tracking algorithms especially in Lost in space (LIS) mode, the state that the spacecraft first time entering the orbit without any knowledge about its prior orientations compared to Tracking mode which is the state that the star tracker has been operating for a while, and its current orientations can be computed based on the prior information.
 	\item To implement and evaluate the performance of a star tracking algorithm on specific hardware using hardware and software co-processing approach.
-	\item To benchmark and optimize the algorithm on the terms of power consumption, the area of transistor implementation.
+	\item To benchmark and optimize the algorithm in terms of the power consumption and the area of transistor implementation.
 \end{itemize}
 
 % Section 1.3
@@ -68,6 +68,6 @@ The following are the significant contributions of this research project.
 The rest of the thesis is organized as followed:
 \begin{itemize}
 	\item Chapter 2: Introduces the basis of star tracking operation, reviews some of the state of the art star tracking algorithms and the chosen algorithm to be implemented by the software-hardware co-processing approach.
-	\item Chapter 3: Introduces and analyze a proposed algorithm going to be implemented on the hardware.
-	\item Chapter 4: Discuss the result of the implementation regarding runtime performance, hardware resources.
+	\item Chapter 3: Introduces and analyzes a proposed algorithm to be implemented on the hardware.
+	\item Chapter 4: Discusses the result of the implementation regarding runtime performance and hardware resources.
 \end{itemize}
