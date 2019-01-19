@@ -1,3 +1,3 @@
 
 ## Compiler
-*LatexMk -> XeLaTex
+*BibTex -> XeLaTex

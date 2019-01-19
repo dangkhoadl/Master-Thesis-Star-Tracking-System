@@ -1,4 +1,4 @@
-# Star Tracking projects
+# Star Tracking projecttha61y s
 My project to complete the Master of Engineering degree
 
 ## Hardwares Resources
@@ -14,6 +14,3 @@ My project to complete the Master of Engineering degree
 	- Object Recognition
 	- feature vector matching
 * A tree type data structore for fast search and matching algorithm
-
-## Latex thesis
-* XeLaTex compiler

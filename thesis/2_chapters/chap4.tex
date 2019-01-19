@@ -22,15 +22,15 @@ The hardware components shown in Figure~\ref{fig:4_1} includes:
 \ntuepsfig[width=\textwidth]{4_1}{Hardware design diagram}
 
 \noindent \textbf{Data path} \\
-\noindent The pixel data are streamed directly into memory by DMA module. The IP core is designed for centroiding processing the algorithm as soon as the first pixel data arrived. After the centroiding algorithm finishing, the IP core store the results of centroiding algorithm into BRAM and informs the PS by an interrupt signal. PS then takes the results from BRAM and process other stages. The data path is implemented through AXI. \\
+\noindent The pixel data are streamed directly into memory by DMA module. The IP core is designed for processing the centroiding algorithm as soon as the first pixel data arrived. After finishing the centroiding algorithm, the IP core stores the results of centroiding algorithm into BRAM and informs the PS by an interrupt signal. PS then takes the results from BRAM and processes the other stages. The data path is implemented through AXI. \\
 
 \noindent \textbf{Control signals} \\
-\noindent The PS and PL side communicate through an interrupt controller. The interrupt controller informs the PS if the centroiding algorithm or hardware timer has finished, informs the DMA controller if the memory is full, the DMA controller then flush the old data to free the memory. BRAM controller is a dual channel BRAM which is readable from PS side and writable from PL side. \\
+\noindent The PS and PL side communicate through an interrupt controller. The interrupt controller informs the PS if the centroiding algorithm or hardware timer has finished, informs the DMA controller if the memory is full. The DMA controller then flushes the old data to free the memory. BRAM controller is a dual channel BRAM which is readable from PS side and writable from PL side. \\
 
 % Figure 4.2
 \ntuepsfig[width=\textwidth]{4_2}{Hardware design block}
 
-\noindent The graph~\ref{fig:4_3} shows the percentage of hardware resources used over available resources from the zedboard. We still have more spare resources of the FPGA for other tasks.
+\noindent Figure~\ref{fig:4_3} shows the percentage of hardware resources used over the available resources from the zedboard. We still have spare resources of the FPGA for other tasks.
 
 % Table 4.1
 \begin{ntutab}{|c|c|c|c|}{resource}{Hardware resource consumption}
@@ -68,7 +68,7 @@ The power consumption of the design is measured based on the condition described
     \hline
 \end{ntutab}
 
-\noindent As in Figure~\ref{fig:power_sum} and Figure~\ref{fig:power}, the Processing System(the ARM A9 processor) consumes 77\% of the power supplied while other hardware components like the IP core, BRAM consume less power. This is due to the fact that generic processors are designed for multiple purpose tasks; hence they are not optimal for power consumption as the hardware solution for a specific task.
+\noindent As in Figure~\ref{fig:power_sum} and Figure~\ref{fig:power}, the Processing System(the ARM A9 processor) consumes 77\% of the power supplied while other hardware components like the IP core, BRAM consume less power. This is due to the fact that generic processors are designed for multiple purpose tasks; hence they are not optimal for power consumption compared to the hardware solution for a specific task.
 
 \ntuepsfig[width=\textwidth]{power_sum}{Power consumption summary}
 
@@ -93,7 +93,7 @@ The power consumption of the design is measured based on the condition described
     \item Star area (in pixels) of one star
 \end{itemize}
 
-The images simulated are based on the SSAO star catalog and the standard ESO star map. Randomized distribution false stars are added to each image. For each resolution dataset, we have 12530 simulated images. \\
+\noindent The images simulated are based on the SSAO star catalog and the standard ESO star map. Randomized distribution of false stars are added to each image. For each resolution dataset, we have 12530 simulated images. \\
 
 % Figure 4.4
 \ntuepsfig[scale=1.0]{4_4}{Number of stars in one image distribution}
@@ -107,7 +107,7 @@ The images simulated are based on the SSAO star catalog and the standard ESO sta
 % subsubsection 4.2.2.1
 \newpage \subsection{512x512 dataset}
 
-The star tracker is configured as Table~\ref{tab:4_2}
+The star tracker is configured as shown in Table~\ref{tab:4_2}
 
 % Table 4.2
 \begin{ntutab}{|c|c|}{4_2}{Star tracker configuration}

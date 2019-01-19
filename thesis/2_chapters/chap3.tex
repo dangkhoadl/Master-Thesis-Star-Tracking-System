@@ -19,7 +19,7 @@ FPGA (Field Programmable Gate Array) provides a general purpose digital logic wi
 
 \ntuepsfig[width=\textwidth]{3_Routing}{FPGA Routing Architecture\cite{Coursera}}
 
-\noindent \textbf{FPGA design flow}: The design begins with design entry, continues with simulation to verify the logic is implemented as expected, and then the tool will perform synthesis (also called mapping) to map the logic to the device architecture. Next the tool will create the interconnection between cells by place and routing (or fitting) the design. Another simulation after the fitting is done is a good practice. If this looks good, the next step to use the tool to create a programming file, which is then downloaded into the FPGA device for testing\cite{Coursera}. \\
+\noindent \textbf{FPGA design flow}: The design begins with design entry, continues with simulation to verify the logic is implemented as expected, and then the tool will perform synthesis (also called mapping) to map the logic to the device architecture. Next the tool will create the interconnection between cells by placing and routing (or fitting) the design. Another simulation after the fitting is done is a good practice. If this looks good, the next step to use the tool to create a programming file, which is then downloaded into the FPGA device for testing\cite{Coursera}. \\
 
 \ntuepsfig[width=\textwidth]{3_DesignFlow}{FPGA Development Process Design Flow\cite{Coursera}}
 
@@ -45,7 +45,7 @@ FPGA (Field Programmable Gate Array) provides a general purpose digital logic wi
 
 System-on-a-chip (SoC) is anatomy in embedded system which considers a processing board integrated with processor and hardware peripherals and memory for a specific function like digital, analog signal processing\cite{12457872420171101}. \\
 
-\noindent Traditional SoC board is a fixed Application Specific Integrated Circuit (ASIC) with is prebuilt for only one particular function or task. The processing time of ASIC board is speedy and high-efficiency due to the unique hardware prebuilt for this task. In the trade-off, the development time of an ASIC board takes much time due to multiple stages of hardware synthesis, testing and verification and the cost of development is enormous. ASIC board is only suitable for mass-production strategy with over 1 million products per a development cycle. \\
+\noindent Traditional SoC board is a fixed Application Specific Integrated Circuit (ASIC) which is prebuilt for only one particular function or task. The processing time of ASIC board is fast and highly efficient due to the unique hardware prebuilt for this task. In the trade-off, the development time of an ASIC board takes much longer due to multiple stages of hardware synthesis, testing and verification and the cost of development is enormous. ASIC board is only suitable for mass-production strategy with over 1 million products per development cycle. \\
 
 % Figure 3.1
 \ntuepsfig[width=\textwidth]{3_1}{An ASIC board}
@@ -73,7 +73,7 @@ System-on-a-chip (SoC) is anatomy in embedded system which considers a processin
 % subsection 3.2.1
 \subsection{Partition}
 
-Partitioning is the first stage of PSoC development. The algorithm or the program will be partitioned into suitable-size submodules. These submodules are later decided to implement on which side of the PSoC: Programmable Logics or Processing System. How the program partitioned is decided by the designer. \\
+Partitioning is the first stage of PSoC development. The algorithm or the program will be partitioned into suitable-size submodules. These submodules are later decided to be implemented on which side of the PSoC: Programmable Logics or Processing System. How the program is partitioned, decided by the designer. \\
 
 % Figure 3.5
 \ntuepsfig[width=\textwidth]{3_5}{Module partitioning\cite{Zynqbook}}
@@ -93,7 +93,7 @@ Profiling is a practical analysis that measures and analyze the space and time c
 % subsection 3.2.3
 \subsection{Partitioning and profiling results}
 
-The star tracking algorithm is partitioned into 4 submodules shown in Figure~\ref{fig:3_7}. The 4 submodules include:
+The star tracking algorithm is partitioned into 4 submodules as shown in Figure~\ref{fig:3_7}. The 4 submodules include:
 \begin{itemize}
 	\item \textbf{Centroiding}: Takes the star image and reproduce the star coordinates in the image.
 	\item \textbf{Choose the reference star}: From the list of star coordinates, proceeds to choose the reference star.
@@ -104,7 +104,7 @@ The star tracking algorithm is partitioned into 4 submodules shown in Figure~\re
 % Figure 3.7
 \ntuepsfig[width=\textwidth]{3_7}{Star tracking algorithm submodules partitioned.}
 
-\noindent After partitioning, all submodules are implemented on the Processing system side to examine the runtime of each submodules. The result of profiling stage in Figure~\ref{fig:3_8}. \\
+\noindent After partitioning, all submodules are implemented on the Processing system side to examine the runtime of each submodule. The result of profiling stage is shown in Figure~\ref{fig:3_8}. \\
 
 % Figure 3.8
 \ntuepsfig[width=\textwidth]{3_8}{Profiling result.}
@@ -126,7 +126,7 @@ The star tracking algorithm is partitioned into 4 submodules shown in Figure~\re
 	\hline
 \end{ntutab}
 
-\noindent Apparently, the most time-consuming submodule is the centroiding module. It can be explained because the centroiding stage is an image processing stage. Implementation of an image processing algorithm on general purpose processors is more costly and less effective than any other parallel processing approach like using a graphics processing unit (GPU), in this thesis, we design an IP core in the Programmable Logic side instead.
+\noindent Apparently, the most time-consuming submodule is the centroiding module. It can be explained because the centroiding stage is an image processing stage. Implementation of an image processing algorithm on general purpose processors is more costly and less effective than any other parallel processing approach like using a graphics processing unit (GPU), in this thesis, we design the centroiding module as an IP core in the Programmable Logic side instead.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Section 3.3
@@ -140,7 +140,7 @@ The star tracking algorithm is partitioned into 4 submodules shown in Figure~\re
 % subsubsection 3.3.1.1
 \subsubsection{Thresholding}
 
-In the first stage, the sky is captured by a Charge-coupled device(CCD) through lens then discretized into digital star images. In which, Each pixel is an 8-bit integer value which represents the intensity or brightness of a pixel(0 represent darkest pixel and 255 represents the brightest pixel). The star image is usually contaminated with noise as a result of dark current noise and non-star stellar object. Dark current noise arises from thermal energy within the silicon lattice. It can be represented as a background image generated by a certain period of exposure with the shutter closed\cite{MDP}. To eliminate the noise and separate star clusters from the background, we apply thresholding technique. The threshold level can be chosen by averaging all pixel intensities. The pixel which has a higher value than threshold level belongs to a star cluster while the pixel which has a lower value than the threshold belongs to the background. Figure~\ref{fig:3_10} shows how to separate star clusters from the background, the threshold, in this case, is 70.
+In the first stage, the sky is captured by a Charge-coupled device(CCD) through lens then discretized into digital star images. In which, each pixel is an 8-bit integer value which represents the intensity or brightness of a pixel(0 represents darkest pixel and 255 represents the brightest pixel). The star image is usually contaminated with noise as a result of dark current noise and non-star stellar object. Dark current noise arises from thermal energy within the silicon lattice. It can be represented as a background image generated by a certain period of exposure with the shutter closed\cite{MDP}. To eliminate the noise and separate star clusters from the background, we apply thresholding technique. The threshold level can be chosen by averaging all pixel intensities. The pixel which has a higher value than threshold level belongs to a star cluster while the pixel which has a lower value than the threshold belongs to the background. Figure~\ref{fig:3_10} shows how to separate star clusters from the background, the threshold, in this case, is 70.
 
 \ntuepsfig[scale=0.7]{3_10}{Thresholding separates star cluster pixels and background pixels}
 
@@ -149,9 +149,9 @@ In the first stage, the sky is captured by a Charge-coupled device(CCD) through 
 % subsubsection 3.3.1.2
 \subsubsection{The connected-components problem in centroiding}
 
-The raw image is contaminated with noises and other non-stellar objects. These noises can be canceled by setting a threshold level. If a pixel Intensity is less than the threshold level, we will set its value to 0(the background level) to differentiate from star cluster pattern. After all false star noises are canceled, the centroiding algorithm proceeds. \\
+The raw image is contaminated with noises and other non-stellar objects. These noises can be canceled by setting a threshold level. If a pixel Intensity is less than the threshold level, we will set its value to 0(the background level) to differentiate from star cluster pattern. After all false star noise is canceled, the centroiding algorithm proceeds. \\
 
-\noindent The technique to determine star centroids in a star image employs the connected component finding. The traditional approach of connected component finding is considering each pixel in the star image as a vertex in a graph. If a group of pixels belongs to a star cluster pattern, those vertices are connected. Therefore we can determine each independent star clusters by using graph traversing technique like Depth-First-Search (DFS) or Bread-First-Search (BFS). However, this submodule of the star tracking algorithm is implemented as an IP core by Hardware Description Language (HDL) which lack abilities to implement a recursive function or advanced data structure like Queue, Stack. \\
+\noindent The technique to determine star centroids in a star image employs the connected component finding. The traditional approach of connected component finding is considering each pixel in the star image as a vertex in a graph. If a group of pixels belongs to a star cluster pattern, those vertices are connected. Therefore we can determine each independent star cluster by using a graph traversing technique like Depth-First-Search (DFS) or Bread-First-Search (BFS). However, this submodule of the star tracking algorithm is implemented as an IP core by Hardware Description Language (HDL) which lack abilities to implement a recursive function or advanced data structure like Queue and Stack. \\
 
 \noindent The emergence of FPGAs with enough capacity to perform complex image processing tasks also led to high-performance architectures for connected component labeling\cite{CCA}. Most of these architectures utilize the one-pass scan algorithm, because of the limited memory resources available on an FPGA. These types of connected component labeling architectures are able to process several image pixels in parallel, thereby enabling a high throughput at low processing latency to be achieved\cite{000384075100011n.d.}. \\
 
@@ -177,7 +177,7 @@ The one-pass scan algorithm is a connected component labeling approach which per
 % Figure 3.11
 \ntuepsfig[scale=0.2]{3_11}{Left and above pixels of the current considering pixel.}
 
-\noindent An example of the one-pass scan algorithm applied to label 2-star clusters: In Figure~\ref{fig:3_12_2}, the first non-background pixel P has been scanned and comes into case 1(both left and above pixels are background pixels), so we create a new disjoint set(set 1) and add this pixel to set 1. 
+\noindent An example of the one-pass scan algorithm applied to label 2-star clusters: In Figure~\ref{fig:3_12_2}, the first non-background pixel P has been scanned and comes into case 1(both left and above pixels are background pixels), so we create a new disjoint set(set 1) and add this pixel to set 1.
 
 % Figure 3.10
 \ntuepsfig[scale=0.35]{3_12_2}{one-pass scan algorithm applied to label 2-star clusters - 1}
@@ -228,12 +228,12 @@ The one-pass scan algorithm is a connected component labeling approach which per
 
 \textbf{IP core submodules} \\
 
-\noindent The centroiding again is partitioned into submodules for specific purposes as Figure~\ref{fig:3_19}.
+\noindent The centroiding again is partitioned into submodules for specific purposes as shown in Figure~\ref{fig:3_19}.
 
 \ntuepsfig[width=\textwidth]{3_19}{IP core submodules}
 
 \begin{itemize}
-	\item \textbf{stream processing}: The submodule task is to process the one-pass scan algorithm after receiving a pixel from the stream. The submodule also in responsibility of maintaining and updating the labels and disjoint sets data structures stored in the BRAM. The pseudo codes of the implementation are shown in Figure~\ref{fig:3_20} and Figure~\ref{fig:3_21}
+	\item \textbf{stream processing}: The submodule task is to process the one-pass scan algorithm after receiving a pixel from the stream. The submodule also is in the responsibility of maintaining and updating the labels and disjoint sets data structures stored in the BRAM. The pseudo codes of the implementation are shown in Figure~\ref{fig:3_20} and Figure~\ref{fig:3_21}
 	\item \textbf{centroid calculating}: The submodule task is to calculate the centroid coordinates after the stream processing stage is completed based on Equation~\ref{eq:2_1}. The inputs of the centroid calculating submodule is the disjoint sets data structures. The pseudo codes of the implementation are shown in Figure~\ref{fig:3_22}
 	\item \textbf{BRAM}: served as the memory for the IP core. Stored the temporal data structures like: labels and disjoint sets and the final results(star centroid list).
 \end{itemize}
@@ -250,11 +250,11 @@ The one-pass scan algorithm is a connected component labeling approach which per
 % subsection 3.3.2
 \subsection{Choose the reference star}
 
-Figure~\ref{fig:3_13} shows a basic star image which then will be processed through the “Choose the reference star” stage. The first Image in an example is a typical star image. The outer circle represents the FOV of the star Image, and the small blue dots represent the star clusters. 
+Figure~\ref{fig:3_13} shows a basic star image which will be processed through the “Choose the reference star” stage. The first Image in the example is a typical star image. The outer circle represents the FOV of the star Image, and the small blue dots represent the star clusters. 
 
 \ntuepsfig[scale=0.35]{3_13}{Distances from the centre of the image to all stars}
 
-\noindent From the centre of the star Image, we calculate the distances from each star cluster to the centre by Euclidean distance as equation~\ref{eq:3_2}. The star which is nearest to the centre (have the minimum distance value) will be chosen as the reference star.
+\noindent We calculate the distances from each star cluster to the centre by Euclidean distance as given in equation~\ref{eq:3_2}. The star which is nearest to the centre (have the minimum distance value) will be chosen as the reference star.
 
 % Equation 3.2
 \begin{equation}
@@ -266,7 +266,7 @@ Figure~\ref{fig:3_13} shows a basic star image which then will be processed thro
 % subsection 3.3.3
 \subsection{Find the star pattern}
 
-After we have the reference star, the next stage is to generate the star pattern. The number of stars in the image is counted, and their distances to the reference star are calculated as equation~\ref{eq:3_3} to form a feature vector $f = \{N, D_1, D_2, D_3, … D_n\}$
+After we have the reference star, the next stage is to generate the star pattern. The number of stars in the image is counted, and their distances to the reference star are calculated using equation~\ref{eq:3_3} to form a feature vector $f = \{N, D_1, D_2, D_3, … D_n\}$
 
 % Equation 3.3
 \begin{equation}
@@ -284,6 +284,6 @@ In the last stage, the feature vector is matched to the prebuilt tree pattern da
 
 \ntuepsfig[width=\textwidth]{3_15}{Star pattern matching}
 
-\noindent In case of mismatching, a tolerance will be added to research for another star ID. This search can be performed parallel to increase the searching speed due to the specific tree structure of the prebuilt SPD as in Figure~\ref{fig:3_16}.
+\noindent In case of mismatching, a tolerance will be added to research for another star ID. This search can be performed in parallel to increase the searching speed due to the specific tree structure of the prebuilt SPD as shown in Figure~\ref{fig:3_16}.
 
 \ntuepsfig[width=\textwidth]{3_16}{Star pattern matching with tolerance}

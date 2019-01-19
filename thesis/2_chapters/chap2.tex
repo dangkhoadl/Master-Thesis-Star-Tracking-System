@@ -1,6 +1,6 @@
 
 % Chapter 2
-\chapter{Literature preview}
+\chapter{Literature Review}
 \label{chap:lit_review}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -9,15 +9,15 @@
 
 The star tracking algorithm operates mainly in 2 different modes: the Lost in Space (LIS) and Tracking modes:
 \begin{itemize}
-	\item LIS mode: the initial attitude is unknown, the star tracker must determine it which is the most critical part of the star tracking operation. LIS mode is operated at the time when the power system on or resets after an attitude determination attempt from tracking mode failed\cite{edselc.2-52.0-8487677997120120101}.
+	\item LIS mode: the initial attitude is unknown, the star tracker must determine it which is the most critical part of the star tracking operation. LIS mode is operated at the time when the power system is switched on or reset after an attitude determination attempt from tracking mode failed\cite{edselc.2-52.0-8487677997120120101}.
 	\item Tracking mode: after the initial attitude is recognized. The star tracker is switched to the Tracking mode. With the initial is acknowledged, the computing can easily predict and track the attitude based on the previous information.
 \end{itemize}
 
-\noindent On this research topic, we will only focus on the LIS mode operation. The LIS mode operation of a star tracker is generalize in Figure~\ref{fig:2_1} included in 3 main algorithms:
+\noindent On this research topic, we will only focus on the LIS mode operation. The LIS mode operation of a star tracker is generalized in Figure~\ref{fig:2_1} which includes 3 main algorithms:
 \begin{itemize}
 	\item Centroiding Algorithm: Perform an image preprocessing, the input is a star image captured from the image sensor processed to an output which are the coordinates of all star clusters presented in the image.
 	\item Star Recognition Algorithm: The main part of LIS mode. The coordinates of the stars will be used to calculate a feature vector depending on a specific Star Algorithm. A Star Pattern Database (SPD) is also prebuilt from the SAO catalog (Smithsonian Astrophysical Observatory Star Catalog) based on the specific pattern of the Star Algorithm and stored into the memory of the processing system for comparison and pattern recognition\cite{edseee.655799920130101}. Then, the feature vector will be looked up and matched to an entry in the SPD. The entry will return a star ID which is an identification of a star presenting in the star image.
-	\item Attitude Determination stage: The final stage of star tracking algorithm operated in LIS mode. The Star ID will be looked up again in the SAO catalog to extract the information about its attitude. Then a group of star attitude is still used to calculate the attitude of the satellite. Some of the well-known Attitude Determination methods are the QUEST and TRIAD.
+	\item Attitude Determination stage: The final stage of star tracking algorithm operated in LIS mode. The Star ID will be looked up again in the SAO catalog to extract the information about its attitude. Then a group of star attitude is used to calculate the attitude of the satellite. Some of the well-known Attitude Determination methods are the QUEST and TRIAD.
 \end{itemize}
 
 % Figure 2.1
@@ -29,7 +29,7 @@ The star tracking algorithm operates mainly in 2 different modes: the Lost in Sp
 % Section 2.2
 \section{Centroiding Algorithm}
 
-The first step is to acquire the image which is accomplished by the image sensor. The image acquired has to be processed for estimating the coordinate of the stars in the image plane. This is completed by applying the centroiding process on the image. The input of this step is a star image with multiple star clusters, the output is the coordinates of every stars presenting. Due to distributed energy surface, a star projection is spread over a 3x3 to 11x11 square area\cite{ntu.54658220060101}, the star projection is a group of connected pixels. Therefore, the best way to identify the star clusters is to apply the ‘connected component’ algorithm.
+The first step is to acquire the image which is accomplished by the image sensor. The image acquired has to be processed for estimating the coordinates of the stars in the image plane. This is completed by applying the centroiding process on the image. The input of this step is a star image with multiple star clusters. The output is the coordinate of every star presenting. Due to distributed energy surface, a star projection is spread over a 3x3 to 11x11 square area\cite{ntu.54658220060101}, the star projection is a group of connected pixels. Therefore, the best way to identify the star clusters is to apply the ‘connected component’ algorithm.
 
 % Figure 2.2
 \ntuepsfig[width=\textwidth]{2_2}{Stars projection onto a 2D image plane}
@@ -39,7 +39,7 @@ The first step is to acquire the image which is accomplished by the image sensor
 \ntuepsfig[width=\textwidth]{2_4}{Centroid of stars in an image}
 
 % Table 2.1
-\noindent Table~\ref{tab:starList}. \\
+\noindent Table~\ref{tab:starList} .\\
 
 \begin{ntutab}{|c|c|}{starList}{A list of star centroids in an image}
 	\hline
@@ -70,12 +70,12 @@ The first step is to acquire the image which is accomplished by the image sensor
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Section 2.3
-\section{Liebe Star Recognition algorithm}
+\section{Liebe Star Recognition Algorithm}
 
 The star pattern recognition algorithm based on the angular features formed by a star triplet was reported in\cite{edseee.38797119950101,edseee.18038319930101,000176062300018n.d.,edseee.103539620020101,edseee.79314719990101}. The idea of Liebe Algorithm is to utilize 3 nearest-to-the centre stars. The closest-to-the-centre star is chosen as the reference star which will then return the star ID for Attitude Determination stage. Then the next 2 stars are chosen from the neighboring stars of the reference star which have the minimum and the second minimum distance to it. \\
 
 % Equation 2.2
-\noindent The star triplet will form 2 angular distance $\theta_1, \theta_2$ and 1 angular angle $\theta$ which are defined by Equation~\ref{eq:2_2}
+\noindent The star triplet will form 2 angular distances $\theta_1, \theta_2$ and 1 angular angle $\theta$ which are defined by Equation~\ref{eq:2_2}
 \begin{equation}
 	\begin{aligned}
 		\theta_1 = \cos(V_A, V_B) \\
@@ -129,11 +129,11 @@ The star pattern recognition algorithm based on the angular features formed by a
 
 \noindent The most advantage of Liebe star recognition algorithm is that it is straightforward in implementation. It requires very few computations in the process. \\
 
-\noindent The weakness of this algorithm is the weak robustness due to the limitation of star utilizing. It only employs the three nearest stars to the centre and discards other stars which will then lead to a mismatch if the 2 predefined nearest neighboring star does not appear in the star image. Besides, if the reference star appears in the final entry of the Star Pattern Database. 
+\noindent The weakness of this algorithm is the weak robustness due to the limitation of star utilization. It only employs the three nearest stars to the centre and discards other stars which will then lead to a mismatch if the 2 predefined nearest neighboring stars does not appear in the star image. Besides, if the reference star appears in the final entry of the Star Pattern Database. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Section 2.4
-\section{Pyramid star recognition algorithm}
+\section{Pyramid Star Recognition Algorithm}
 
 To overcome the mismatches caused by lack of information employed by Liebe algorithm, the pyramid star recognition algorithm is proposed in\cite{S100702140670232220060101,citation-254199748,citation-241677739,citation-228999366,citation-26584290}. Its searching pattern is a combination of angular distances of 4 stars in the star image. In Figure~\ref{fig:2_6}, the 4 stars: A,B,C,D is chosen to build the pattern. The reference star which is star A in the example is the closest star to the centre of the image. Next, the 3 neighboring stars around star A are selected to form a feature vector from the 4-star angular distances.
 
@@ -166,13 +166,13 @@ To overcome the mismatches caused by lack of information employed by Liebe algor
 
 \noindent However, in a tradeoff, more memory space is needed since it requires to store at least 6 pairs of each starID entry this will lead to increase the memory required to store the star pattern database and the processing time will be increased due to the increase in pattern storage and comparisons. The time complexity is also a significant consideration. To solve this problem, the k-vector search has been introduced in\cite{citation-241677739,citation-26584290}. The time complexity has been reduced significantly which is equivalent to the Liebe searching method. \\
 
-\noindent Moreover, the pyramid star recognition algorithm has not yet solved the mismatch problem caused by missing stars. In the case of one or more neighboring stars of the reference, the star is missing the algorithm will fail and do not produce a correct result. \\
+\noindent Moreover, the pyramid star recognition algorithm has not yet solved the mismatch problem caused by missing stars. In the case of one or more neighboring stars of the reference are missing, the algorithm will fail and do not produce a correct result. \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Section 2.5
 \section{Geometric Voting algorithm}
 
-To overcome the weakness of Liebe and Pyramid star recognition algorithm, the Geometric Voting is proposed based on voting of radial distances\cite{edseee.456019820080101}. The Geometric Voting method considers all the nearby stars of the reference star appeared in the star image. Thanks to all stars in the image are employed, the Pyramid algorithm becomes more robust than the first two algorithms.
+To overcome the weaknesses of Liebe and Pyramid star recognition algorithms, the Geometric Voting is proposed based on voting of radial distances\cite{edseee.456019820080101}. The Geometric Voting method considers all the nearby stars of the reference star appeared in the star image. Thanks to all stars in the image are employed, the Pyramid algorithm becomes more robust than the first two algorithms.
 
 % Figure 2.7
 \ntuepsfig[scale=0.7]{2_7}{Geometric Voting star pattern}
@@ -184,21 +184,21 @@ To overcome the weakness of Liebe and Pyramid star recognition algorithm, the Ge
 	\label{eq:2_5}
 \end{equation}
 
-\noindent After capturing the image, $r_1, r_2,…,r_n$ are calculated based on the distance from the closest star to the centre which is the reference star to all other stars within the FOV of the star sensor. Then all the distances from the feature vector are compared to the predefined neighboring distances of every star ID in the SPD. With each distance is matched, a voting value of the star ID is increased. After the comparing distance stage processed, the star ID which has the highest vote is recognized as the correct star ID candidate. \\
+\noindent After capturing the image, $r_1, r_2,...,r_n$ are calculated based on the distance from the closest star to the centre which is the reference star for all other stars within the Field of View(FOV) of the star sensor. Then all the distances from the feature vector are compared to the predefined neighboring distances of every star ID in the SPD. With each distance is matched, a voting value of the star ID is increased. After the comparing distance stage processed, the star ID which has the highest vote is recognized as the correct star ID candidate. \\
 
-\noindent For the advantage of this recognition method, firstly it employs all the data presenting in the image. As a result, it reduces the mismatching issued caused by lack of data proposed by Liebe and Pyramid method. Thus, it is the most robust star recognition method compared to the first two introduced methods. \\
+\noindent The advantage of this recognition method is that it employs all the data presenting in the image. As a result, it reduces the mismatching issued caused by lack of data proposed by Liebe and Pyramid method. Thus, it is the most robust star recognition method compared to the first two introduced methods. \\
 
-\noindent The critical drawback of this method is the enormous space complexity needed to store the Star Pattern Database since each star ID entry must store the information of all of its neighboring stars. It leads to a requirement that a large memory must be used to store the Star Pattern Database to trade off the accuracy and robustness. Thus, the processing time for returning a star ID is increasing due to the increase in data processing and comparisons through the whole database.
+\noindent The critical drawback of this method is the enormous space complexity needed to store the Star Pattern Database since each star ID entry must store the information of all of its neighboring stars. It leads to the requirement that a large memory must be used to store the Star Pattern Database to trade off of the accuracy and robustness. Thus, the processing time for returning a star ID is increasing due to the increase in data processing and comparisons through the whole database.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Section 2.6
 \section{Star Identification Algorithm with Optimized database}
 
-In a quick review and analysis of the 3 prestigious and famous star recognition, we can come up with a conclusion that there is a trade-off between accuracy and robustness with the space complexity and processing time required. For the star tracker system, the choice of algorithm to be implemented on will depend on the scale of the satellite project. For military satellite, we favor the accuracy and robustness over the complexity of time and space. Thus, the computer system on those satellites must be fast enough to handle the complexity. \\
+In a quick review and analysis of the 3 prestigious and famous star recognition algorithms, we can come up with a conclusion that there is a trade-off between accuracy and robustness with the space complexity and processing time required. For the star tracker system, the choice of algorithm to be implemented on will depend on the scale of the satellite project. For military satellite, we favor the accuracy and robustness over the complexity of time and space. Thus, the computer system on those satellites must be fast enough to handle the complexity. \\
 
-\noindent For the implementation on the nanosatellites, the computer system is a small embedded processor with limited memory and processing ability which can not handle a large number of computations. Therefore, we need an optimized algorithm that is accurate, robust and can be implemented on a concise computer system. \\
+\noindent For the implementation on the nanosatellites, the computer system is a small embedded processor with limited memory and processing ability which can not handle a large number of computations. Therefore, we need an optimized algorithm that is accurate, robust and can be implemented on a small computer system. \\
 
-\noindent The chosen star tracking algorithm is conducted by the research “An Autonomous Star Recognition Algorithm with Optimized Star Catalogue for Fast Search Performance” M.D. Pham, K.S. Low and S.H. Chen\cite{edselc.2-52.0-8487677997120120101,edseee.655799920130101}. The research introduces a novel star pattern identification using an optimized database and proposes a search tree data structure for quick and advanced parallel search. \\
+\noindent The chosen star tracking algorithm is from the paper “An Autonomous Star Recognition Algorithm with Optimized Star Catalogue for Fast Search Performance” by M.D. Pham, K.S. Low and S.H. Chen\cite{edselc.2-52.0-8487677997120120101,edseee.655799920130101}. The algorithm introduces a novel star pattern identification using an optimized database and proposes a search tree data structure for quick and advanced parallel search. \\
 
 \noindent Due to the advance of the previous research have been proven, this star tracking algorithm will be chosen to be implemented on the hardware. \\
 
@@ -211,13 +211,13 @@ In a quick review and analysis of the 3 prestigious and famous star recognition,
 \begin{center}
 	\begin{itemize}
 		\item N: Number of stars appeared within the FOV of the star sensor.
-		\item $D_1, D_2, D_3…, D_n$: Distance from the reference star to all of its neighbors.
+		\item $D_1, D_2, D_3, ..., D_n$: Distances from the reference star to all of its neighbors.
 	\end{itemize}
 \end{center}
 
-\noindent To search and match the star pattern vector with the database, a special database structure is pre-built. The tree is built with multiple levels, the first level is N-Number of stars in the FOV, next layers will be the distances from the reference stars to all of its neighbors which are sorted ascendingly from nearest neighboring star to the farthest. \\
+\noindent To search and match the star pattern vector with the database, a special database structure is pre-built. The tree structure is built with multiple levels, the first level is N-Number of stars in the FOV, next layers will be the distances from the reference stars to all of its neighbors which are sorted ascendingly from nearest neighboring star to the farthest. \\
 
-\noindent In the searching and matching stage, each parameter from the star pattern is dispatched and matched to the equivalent level. If the matching succeeds, the next layer is considered. If all layers are matched the correct star ID will be returned; otherwise, we return a statement that the star pattern is a false pattern, no stars were matched. In this case, depend on the attitude determination system on the satellite, the star identification algorithm would be rerun or skipped to proceed the next star image.
+\noindent In the searching and matching stage, each parameter from the star pattern is dispatched and matched to the equivalent level. If the matching succeeds, the next layer is considered. If all layers are matched the correct star ID will be returned; otherwise, we return a statement that the star pattern is a false pattern, no stars were matched. In this case, depend on the attitude determination system on the satellite, the star identification algorithm would be rerun or skipped to proceed to the next star image.
 
 % Figure 2.9
 \ntuepsfig[scale=0.7]{2_9}{A star pattern database tree-styled structure}
