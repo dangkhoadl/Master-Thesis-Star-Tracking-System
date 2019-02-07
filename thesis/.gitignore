@@ -7,3 +7,5 @@
 *.lof
 *.gz
 *.dvi
+*.out 
+*.synctex.gz

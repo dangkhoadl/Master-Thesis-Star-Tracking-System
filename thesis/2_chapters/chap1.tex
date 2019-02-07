@@ -10,7 +10,7 @@ Artificial satellites orbiting the earth are a critical component of modern soci
 
 \noindent Satellites operate in different orbits. Some popular orbit classes are Low Earth Orbit (LEO), Medium Earth Orbit (MEO) and High Earth Orbit (HEO)\cite{sat_wiki}. Low Earth Orbit is the area below 2000km, High Earth Orbit is the orbit above 35,500 km, and Medium Earth Orbit is the area between Low Earth Orbit and High Earth Orbit. Satellites are launched to their orbit by a self-propelled rocket as a piggyback payload. \\
 
-\noindent Nanosatellite is a small artificial satellite with a wet mass(the total mass of the hardware plus fuel and oxidizer) between 1 – 10 kg. Nanosatellites are cheap but capable of performing commercial missions and has led researchers and scientists to explore the new way to use the Nanosatellites in LEO\cite{network}. Their designs are only comprised of low-cost components. Due to their cost-effective, fast development cycle and size convenience, Nanosatellites are becoming popular in educational and scientific development. Nanosatellites can be quickly built in a small university project. \\
+\noindent Nanosatellite is a small artificial satellite with a wet mass(the total mass of the hardware plus fuel and oxidizer) between 1 - 10 kg. Nanosatellites are cheap but capable of performing commercial missions and has led researchers and scientists to explore the new way to use the Nanosatellites in LEO\cite{network}. Their designs are only comprised of low-cost components. Due to their cost-effective, fast development cycle and size convenience, Nanosatellites are becoming popular in educational and scientific development. Nanosatellites can be quickly built in a small university project. \\
 
 \noindent A satellite needs an attitude determination system for navigation and acknowledging orientations. Its attitude needs to be calculated and predicted continuously during its operation on the orbit. By observing the celestial objects and properties around the satellite, the satellite can autonomously estimate the orientations. Some of the favorite reference objects are the Sun, the Earth magnetic field, the celestial sphere, and the stars. For Nanosatellites, the attitude determination system must be concise but operate effectively.
 
@@ -22,7 +22,7 @@ Based on the celestial reference objects, many attitude determination sensors ha
 % SubSection 1.1.2
 \subsection{Star Tracker for attitude determination approach}
 
-Another way of attitude determination approach is using star trackers. Star Tracker is an optical-electronics subsystem comprises of a CCD or CMOS Image sensor attached to an optical lens and a computing system, usually a microprocessor integrated into an ASIC board. The image sensor will firstly take an image of multiple star clusters at a specific fixed orientation. After that, the image is processed through the computing system to extract a particular feature of the model depending on a predefined algorithm. Then, the specific feature is compared with a prebuilt pattern or feature database stored in the memory. The output of the algorithm is often a star ID, which has a specific attitude, this attitude is again used to determine the attitude(orientation) of the spacecraft. \\
+Another way of attitude determination approach is using star trackers\cite{edseee.38797119950101}. Star Tracker is an optical-electronics subsystem comprises of a CCD or CMOS Image sensor attached to an optical lens and a computing system, usually a microprocessor integrated into an ASIC board. The image sensor will firstly take an image of multiple star clusters at a specific fixed orientation. After that, the image is processed through the computing system to extract a particular feature of the model depending on a predefined algorithm. Then, the specific feature is compared with a prebuilt pattern or feature database stored in the memory. The output of the algorithm is often a star ID, which has a specific attitude, this attitude is again used to determine the attitude(orientation) of the spacecraft. \\
 
 % Figure 1.1 and 1.2
 \ntumultiepsfig[width=\textwidth]{1_1}{Star tracker hardwares}{1_2}{Commercial star trackers}
@@ -56,11 +56,10 @@ The essential goals of this research project are as followed.
 
 % Section 1.3
 \section{Major contributions}
-The following are the significant contributions of this research project.
+The major contributions of this research project are summarized as follows:
 \begin{itemize}
-	\item Investigates and Analyses the star tracking algorithms on the advantages and weaknesses of traditional methods.
-	\item Reviews and examines in details the proposed algorithm by precedent research.
-	\item Implements the proposed method in term of hardware and software co-processing approach on an embedded system for star tracker.
+	\item First, we review three classic star tracking algorithms which are applying in commercial star trackers. Analyzing and comparing their strengths and weaknesses. We then discuss the novel star tracking algorithm presented in ``An Autonomous Star Recognition Algorithm with Optimized Star Catalogue for Fast Search Performance'' by M.D. Pham, K.S. Low and S.H. Chen\cite{edselc.2-52.0-8487677997120120101,edseee.655799920130101}, introduce the steps of the algorithm and explain why the algorithm is suitable for applying in nano-satellites compared to the three classic star tracking algorithms and chosen to be implemented by the hardware-software co-processing approach.
+	\item Based on the algorithm analysis, we partition the algorithm into submodules and propose which part should be implemented on the software part or the hardware part. Our main contribute includes (a) an optimized star tracking algorithm for hardware-software co-processing approach, (b) a star tracking embedded system for nano-satellites. 
 \end{itemize}
 
 % Section 1.4
@@ -70,4 +69,5 @@ The rest of the thesis is organized as followed:
 	\item Chapter 2: Introduces the basis of star tracking operation, reviews some of the state of the art star tracking algorithms and the chosen algorithm to be implemented by the software-hardware co-processing approach.
 	\item Chapter 3: Introduces and analyzes a proposed algorithm to be implemented on the hardware.
 	\item Chapter 4: Discusses the result of the implementation regarding runtime performance and hardware resources.
+	\item Chapter 5: Summarizes the work and proposes future research topics.
 \end{itemize}
