@@ -3,11 +3,9 @@
 \usepackage{thesis}
 
 \begin{document}
-	\pagenumbering{roman}
-
-	\thispagestyle{empty}
 
 	% Cover
+	\thispagestyle{empty}
 	\begin{center}
 		
 		\begin{figure}
@@ -33,20 +31,22 @@
 		
 	\end{center}
 	
-	\newpage
-	
-	\clearpage
-	\setcounter{page}{1}
-	
-	% Title
+	% Thesis Title
 	\thesistitle
 	{\MakeUppercase{IMPLEMENTATION OF AN AUTONOMOUS STAR RECOGNITION ALGORITHM USING HARDWARE-SOFTWARE CO-PROCESSING APPROACH}}
 	{\MakeUppercase{DANG LE DANG KHOA}}
 	{Master of Engineering}
 	{School of Electrical and Electronics Engineering}
 	{\emph{2018}}
-	
+	 \pagenumbering{gobble}
+
 	% Forewords
+	\newpage
+	\clearpage
+	\pagenumbering{roman}
+	\setcounter{page}{1}
+	\include{1_foreword/originality}% Statement of Originality
+	\include{1_foreword/supervisor}	% Supervisor Declaration Statement
 	\include{1_foreword/abstract}	% Abstracts
 	\include{1_foreword/ack}		% Acknowledgements
 	\include{1_foreword/contents}	% List of Contents
