@@ -1,4 +1,4 @@
-# Star Tracking projecttha61y s
+# Star Tracking project
 My project to complete the Master of Engineering degree
 
 ## Hardwares Resources
