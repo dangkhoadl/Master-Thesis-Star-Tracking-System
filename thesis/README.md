@@ -1,3 +1,6 @@
 
 ## Compiler
-*BibTex -> XeLaTex
+- `BibTex` -> `XeLaTex`
+
+## PDF merge and join
+- `pdfshuffler`
