@@ -1,4 +1,6 @@
-\documentclass[dvips,a4paper,12pt]{report}
+\documentclass[dvips,a4paper,12pt]{article}
+    % \renewcommand\bibname{References} % report: Reference new page
+    \renewcommand\refname{Reference} % article: Reference same page
 \usepackage{xcolor}
 \usepackage{float}
 \usepackage{graphicx}
@@ -90,7 +92,7 @@
     \item The author claimed that the proposed prebuilt tree structured star pattern database (SPD) was able to reduce space complexity while maintaining high accuracy and robustness, so this optimized algorithm could be used for nanosatellites which have limited memory. However, there is no comparison between the SPD algorithm and traditional algorithm on accuracy, storage consumption, and robustness in this thesis.
 
     \color{black}
-    The advantages of the proposed prebuilt tree structured star pattern database (SPD) over traditional algorithms in terms of space complexity, accuracy and robustness have been studied and proved by the previous research ``An Autonomous Star Recognition Algorithm with Optimized Star Catalogue for Fast Search Performance''[1]
+    The advantages of the proposed prebuilt tree structured star pattern database (SPD) over traditional algorithms in terms of space complexity, accuracy and robustness have been studied and proved by the previous research ``An Autonomous Star Recognition Algorithm with Optimized Star Catalogue for Fast Search Performance''\cite{MDP}.
 
     \color{blue}
     \item In Chapter 4.2, the author compares runtime spent by traditional methods and the proposed method in this thesis. He lists specific software runtime and hardware – software co-processing runtime when the same image dataset is used. Details of images used in experiments are also provided. However, the author only lists tables and figures to show image specifications and runtime. He does not give even one word to explain or conclude his experiment results.
@@ -98,6 +100,7 @@
     \color{black}
     I have amended detailed explanations to Chapter ``Runtime experiments'' (restructured to Chapter 4.3) from page 49 to page 56.
 
+    \newpage
     \color{blue}
     \item In Chapter 4.1, the author gives experiment results showing hardware consumption and power consumption when the proposed method is applied. But he does not give comparison on consumption between traditional methods and his own method, therefore, readers do not know how to evaluate his experiment results. If he could add experiment results about power and hardware consumption when traditional methods are used (under the same experimental conditions), and then give a comparison between traditional methods and his method, the advantages of his proposed method would be clearer.
 
@@ -107,11 +110,10 @@
 
 \end{enumerate}
 
+%%% References
 \color{black}
-\noindent \large{\textbf{Reference}}
-
-\noindent[1] M D Pham, K S Low, Shoushun Chen, and Y T Xing. A star pattern recognition algorithm for satellite attitude determination. In ISIEA 2012 - 2012 IEEE Symposium on Industrial Electronics and Applications, number ISIEA 2012 - 2012 IEEE Symposium on Industrial Electronics and Applications, pages 236–241, School of Electrical and Electronic Engineering, Nanyang Technological University, 2012.
-
+\bibliography{bib_reference}
+\bibliographystyle{plain}
 
 % ----------------------------------------- End content --------------------------------------------- %
 \end{document}
