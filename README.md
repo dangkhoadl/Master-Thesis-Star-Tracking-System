@@ -1,5 +1,5 @@
 # Star Tracking project
-My project to complete the Master of Engineering degree
+My project to complete the Master of Engineering degree at NTU, Singapore - Dr-NTU [publication](https://dr.ntu.edu.sg/handle/10220/48371)
 
 ## Hardwares Resources
 * 1 Zedboard ARM A9 Cortex
